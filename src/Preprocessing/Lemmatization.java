@@ -5,16 +5,18 @@
 // */
 //package Preprocessing;
 //
-//import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation; 
-//import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation; 
-//import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation; 
-//import edu.stanford.nlp.ling.CoreLabel; 
-//import edu.stanford.nlp.pipeline.Annotation; 
-//import edu.stanford.nlp.pipeline.StanfordCoreNLP; 
-//import edu.stanford.nlp.util.CoreMap; 
-//import java.util.ArrayList; 
-//import java.util.List; 
-//import java.util.Properties; 
+//import java.util.LinkedList;
+//import java.util.List;
+//import java.util.Properties;
+//
+//import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
+//import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
+//import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
+//import edu.stanford.nlp.ling.CoreLabel;
+//import edu.stanford.nlp.pipeline.Annotation;
+//import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+//import edu.stanford.nlp.util.CoreMap;
+//import java.util.ArrayList;
 //
 ///**
 // *
@@ -31,6 +33,7 @@
 //    
 //    this.pipeline = new StanfordCoreNLP(props);
 //}    
+//
 //public List<String> lemaList(String input){
 //    List<String> lemmas = new ArrayList<>();
 //    

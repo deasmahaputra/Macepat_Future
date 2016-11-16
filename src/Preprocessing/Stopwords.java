@@ -35,16 +35,17 @@ public class Stopwords {
 };
     
     public static ArrayList<String> wordList = new ArrayList<String>();
+    public static ArrayList<String> wordsListOut = new ArrayList<String>();
    
     public String removeStopwords(String input){
     
         String Sw = null;
         Sw = " ";
-        input = input.trim().replaceAll("\\s+"," ");
-        String[] words = input.split(" ");
+        //input = input.trim().replaceAll("\\s+"," ");
+        //String[] words = input.split(" ");
         
         //wordList.clear();
-        for(String word : words){
+        for(String word : input.split(" ")){
             wordList.add(word);
         }
         //System.out.println("Setelah loop :" + wordList);
@@ -53,14 +54,13 @@ public class Stopwords {
             for(int j = 0; j < stopword.length; j++){
                 if(wordList.contains(stopword[j])){
                     wordList.remove(stopword[j]);
-                }
+                }  
             }
-            
         }
-        for (String str : wordList){
+         for (String str : wordList){
             Sw = Sw + str + " ";
+            System.out.println("Hasil" + Sw + "\n");
         }
-        
        return Sw;
     }
 }

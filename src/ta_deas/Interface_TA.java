@@ -6,8 +6,10 @@
 package ta_deas;
 
 //import Preprocessing.Lemmatization;
+//import Preprocessing.Lemmatization;
 import Preprocessing.SW;
 import Preprocessing.StanfordTagger;
+//import Preprocessing.Stop;
 import Preprocessing.Stopwords;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,7 @@ public class Interface_TA extends javax.swing.JFrame {
     Stopwords sw = new Stopwords();
     SW stopword = new SW();
     StanfordTagger ST = new StanfordTagger();
+    //Stop st = new Stop();
     //Lemmatization lema = new Lemmatization();
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +52,6 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ComboDataset = new javax.swing.JComboBox<>();
-        bDataset = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -62,12 +64,12 @@ public class Interface_TA extends javax.swing.JFrame {
         CheckBC = new javax.swing.JCheckBox();
         CheckCR = new javax.swing.JCheckBox();
         ButtonPreprocessing = new javax.swing.JButton();
-        ComboPre = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         AreaSW = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,13 +89,6 @@ public class Interface_TA extends javax.swing.JFrame {
             }
         });
 
-        bDataset.setText("View");
-        bDataset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bDatasetActionPerformed(evt);
-            }
-        });
-
         jButton1.setText("Reset");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,16 +101,15 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bDataset, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jButton1)
-                .addGap(121, 121, 121))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ComboDataset, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ComboDataset, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jButton1)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -126,9 +120,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(ComboDataset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bDataset)
-                    .addComponent(jButton1))
+                .addComponent(jButton1)
                 .addContainerGap())
         );
 
@@ -207,8 +199,6 @@ public class Interface_TA extends javax.swing.JFrame {
             }
         });
 
-        ComboPre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apex DVD player", "Canon G3", "Zen Mp3 Player", "Nikon coolpix 4300", "Nokia 6610" }));
-
         jButton2.setText("Clear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,31 +211,26 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addComponent(CheckSW)
-                .addGap(56, 56, 56)
+                .addGap(51, 51, 51)
                 .addComponent(CheckLemma)
-                .addGap(37, 37, 37)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComboPre, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(CheckPT)
-                        .addGap(43, 43, 43)
-                        .addComponent(CheckBC)
-                        .addGap(41, 41, 41)
-                        .addComponent(CheckCR)
-                        .addGap(32, 32, 32)
-                        .addComponent(ButtonPreprocessing)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                .addGap(51, 51, 51)
+                .addComponent(CheckPT)
+                .addGap(47, 47, 47)
+                .addComponent(CheckBC)
+                .addGap(34, 34, 34)
+                .addComponent(CheckCR)
+                .addGap(32, 32, 32)
+                .addComponent(ButtonPreprocessing)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ComboPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CheckSW)
                     .addComponent(CheckLemma)
@@ -254,11 +239,11 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addComponent(CheckCR)
                     .addComponent(ButtonPreprocessing)
                     .addComponent(jButton2))
-                .addContainerGap())
+                .addGap(40, 40, 40))
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Stopwords"));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Preprocessing"));
 
         AreaSW.setColumns(20);
         AreaSW.setRows(5);
@@ -274,7 +259,7 @@ public class Interface_TA extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -294,8 +279,8 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -315,6 +300,19 @@ public class Interface_TA extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Extraction", jPanel6);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 992, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 538, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Evaluation", jPanel9);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -347,24 +345,21 @@ public class Interface_TA extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bDatasetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDatasetActionPerformed
-        String value = ComboDataset.getSelectedItem().toString();
-        inputan = call.Inputan("resources/dataset/"+value+".txt");
-        
+    public void data(){
+    String value = ComboDataset.getSelectedItem().toString();
+    inputan = call.Inputan("resources/dataset/"+value+".txt");
         for(int i = 0; i < inputan.size(); i++){
             AreaDataset.append(i + 1 + "." + inputan.get(i));
             AreaDataset.append("\n");
         }
-        
-    }//GEN-LAST:event_bDatasetActionPerformed
-
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AreaDataset.setText(" ");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ComboDatasetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDatasetActionPerformed
         
-        
+        data();
         
     }//GEN-LAST:event_ComboDatasetActionPerformed
 
@@ -377,27 +372,39 @@ public class Interface_TA extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckPTActionPerformed
 
     
+    
     private void ButtonPreprocessingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPreprocessingActionPerformed
-        String value = ComboPre.getSelectedItem().toString();
-        inputan = call.Inputan("resources/dataset/"+value+".txt");
-        
+//        String value = ComboPre.getSelectedItem().toString();
+//        inputan = call.Inputan("resources/dataset/"+value+".txt");
+//        
         for(int i = 0; i < inputan.size(); i++){
             //String data = inputan.get(i);
-            if(CheckSW.isSelected()){
-                String Stop = sw.removeStopwords(inputan.get(i));
-                System.out.println(Stop);
-                AreaSW.append(i+ 1 +"."+ Stop);
-                AreaSW.append("\n");
-                
-            }
+           
+            String coba = ST.tagger(inputan.get(i));
+            
             if(CheckPT.isSelected()){
                 String tag = ST.tagger(inputan.get(i));
                 AreaSW.append(i + 1 + "." + tag);
                 AreaSW.append("\n");
             }
-//            if(CheckLemma.isSelected()){
-//                String lemmati = lema.lemaList(inputann);
-//            }
+            
+             if(CheckSW.isSelected()){
+                String Stop = stopword.stopword(inputan.get(i));
+                //System.out.println(Stop);
+                AreaSW.append(i+ 1 + "." + Stop);
+                AreaSW.append("\n");
+                
+            }
+            if(CheckLemma.isSelected()){
+                //String lemmati = lema.lemaList(inputan.get(i));
+                 //AreaSW.append(i + 1 + "." + lemmati);
+                 AreaSW.append("\n");
+            }
+            if(CheckPT.isSelected() && CheckSW.isSelected()){
+                String ptsw = stopword.stopword(coba);
+                AreaSW.append(i + 1 + " . " + ptsw);
+                AreaSW.append("\n");
+            }
         }
         
     }//GEN-LAST:event_ButtonPreprocessingActionPerformed
@@ -451,8 +458,6 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckPT;
     private javax.swing.JCheckBox CheckSW;
     private javax.swing.JComboBox<String> ComboDataset;
-    private javax.swing.JComboBox<String> ComboPre;
-    private javax.swing.JButton bDataset;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -464,6 +469,7 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
