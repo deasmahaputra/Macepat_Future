@@ -34,6 +34,9 @@ public class SW {
 "Why", "Why’s", "With", "Won’t", "Would", "Wouldn’t", "You", "You’d", "You’ll", "You’re", "You’ve", "Your", "Yours", "Yourself", "Yourselves"
 };
     
+  public static String[] tag = {
+        "_CC","_CD","_DT","_EX","_FW","_IN","_JJ","_JJR","_JJS","_LS","_MD","_NN","_NNS","_NNP","_NNPS","_PDT","_POS","_PRP","_PRP$","_RB","_RBR","_RBS","_RP","_SYM","_TO","_UH","_VB","_VBD","_VBG","_VBN","_VBP","_VBZ","_WDT","_WP","_WP$","_WRB","_#","_$","_.","_,","_:","_(","_)","_`","_'"
+    };
     
 public static ArrayList<String> wordsList = new ArrayList<String>();
 public static ArrayList<String> wordsListOut = new ArrayList<String>();
@@ -77,6 +80,51 @@ public static ArrayList<String> wordsListOut = new ArrayList<String>();
         for (String str : wordsList) {
             StopW = StopW + str + " ";
             //System.out.println("Hasil" + StopW);
+        }
+        return StopW;
+    }
+    public static String stopwordwithtag(String WordTag) {
+        //tambahan
+        String StopW=null;
+        StopW="";
+        //
+        
+        String s=WordTag;
+        s=s.trim().replaceAll("\\s+", " ");
+        String[] words = s.split(" ");
+        
+        //tambahan
+        wordsList.clear();
+        wordsListOut.clear();
+        //
+        
+        for (String word : words) {
+            wordsList.add(word);
+        }
+
+        //remove stop words here from the temp list
+        for (int i = 0; i < wordsList.size(); i++) {
+        // get the item as string
+        for (int j = 0; j < stopWordsofwordnet.length; j++) {
+            String kata=stopWordsofwordnet[j];
+            for (int k = 0; k < tag.length; k++){
+                String tagger=tag[k];
+                if (wordsList.get(i).equals(kata+tagger)) {
+                    wordsListOut.add(wordsList.get(i));
+                }
+
+            }
+        }
+        }
+        
+        for (int l = 0; l < wordsListOut.size(); l++) {
+            if(wordsList.contains(wordsListOut.get(l))){
+                wordsList.remove(wordsListOut.get(l));
+            }
+        }
+        for (String str : wordsList) {
+            StopW = StopW+str+" ";
+            System.out.println("Hasil" + StopW);
         }
         return StopW;
     }

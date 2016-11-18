@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Stopwords {
     
-    public static String[] stopword = {//ditambahkan i (tanpa spasi)
+     public static String[] stopWordsofwordnet = {//ditambahkan i (tanpa spasi)
 "without", "see", "unless", "due", "also", "must", "might", "like", "]", "[", "}", "{", "<", ">", "?", "\"", "\\", "/", ")", "(", "will", "may", "can", "much", "every", "the", "in", "other", "this", "the", "many", "any", "an", "or", "for", "in", "an", "an ", "is", "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "aren’t", "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can’t", "cannot", "could",
 "couldn’t", "did", "didn’t", "do", "does", "doesn’t", "doing", "don’t", "down", "during", "each", "few", "for", "from", "further", "had", "hadn’t", "has", "hasn’t", "have", "haven’t", "having",
 "he", "he’d", "he’ll", "he’s", "her", "here", "here’s", "hers", "herself", "him", "himself", "his", "how", "how’s", "i","i ", " i", "i’d", "i’ll", "i’m", "i’ve", "if", "in", "into", "is",
@@ -34,33 +34,59 @@ public class Stopwords {
 "Why", "Why’s", "With", "Won’t", "Would", "Wouldn’t", "You", "You’d", "You’ll", "You’re", "You’ve", "Your", "Yours", "Yourself", "Yourselves"
 };
     
-    public static ArrayList<String> wordList = new ArrayList<String>();
-    public static ArrayList<String> wordsListOut = new ArrayList<String>();
-   
-    public String removeStopwords(String input){
-    
-        String Sw = null;
-        Sw = " ";
-        //input = input.trim().replaceAll("\\s+"," ");
-        //String[] words = input.split(" ");
+    public static String[] tag = {
+        "_CC","_CD","_DT","_EX","_FW","_IN","_JJ","_JJR","_JJS","_LS","_MD","_NN","_NNS","_NNP","_NNPS","_PDT","_POS","_PRP","_PRP$","_RB","_RBR","_RBS","_RP","_SYM","_TO","_UH","_VB","_VBD","_VBG","_VBN","_VBP","_VBZ","_WDT","_WP","_WP$","_WRB","_#","_$","_.","_,","_:","_(","_)","_`","_'"
+    };
+
+public static ArrayList<String> wordsList = new ArrayList<String>();
+public static ArrayList<String> wordsListOut = new ArrayList<String>();
+
+    /**
+     * @param args the command line arguments
+     */
+    public static String stopword(String WordTag) {
+        //tambahan
+        String StopW=null;
+        StopW="";
+        //
         
-        //wordList.clear();
-        for(String word : input.split(" ")){
-            wordList.add(word);
+        String s=WordTag;
+        s=s.trim().replaceAll("\\s+", " ");
+        String[] words = s.split(" ");
+        
+        //tambahan
+        wordsList.clear();
+        wordsListOut.clear();
+        //
+        
+        for (String word : words) {
+            wordsList.add(word);
         }
-        //System.out.println("Setelah loop :" + wordList);
-        
-        for(int i = 0; i < wordList.size(); i++){
-            for(int j = 0; j < stopword.length; j++){
-                if(wordList.contains(stopword[j])){
-                    wordList.remove(stopword[j]);
-                }  
+
+        //remove stop words here from the temp list
+        for (int i = 0; i < wordsList.size(); i++) {
+        // get the item as string
+        for (int j = 0; j < stopWordsofwordnet.length; j++) {
+            String kata=stopWordsofwordnet[j];
+            for (int k = 0; k < tag.length; k++){
+                String tagger=tag[k];
+                if (wordsList.get(i).equals(kata+tagger)) {
+                    wordsListOut.add(wordsList.get(i));
+                }
+
             }
         }
-         for (String str : wordList){
-            Sw = Sw + str + " ";
-            System.out.println("Hasil" + Sw + "\n");
         }
-       return Sw;
+        
+        for (int l = 0; l < wordsListOut.size(); l++) {
+            if(wordsList.contains(wordsListOut.get(l))){
+                wordsList.remove(wordsListOut.get(l));
+            }
+        }
+        for (String str : wordsList) {
+            StopW = StopW+str+" ";
+            System.out.println("Hasil" + StopW);
+        }
+        return StopW;
     }
 }

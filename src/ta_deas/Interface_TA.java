@@ -7,6 +7,7 @@ package ta_deas;
 
 //import Preprocessing.Lemmatization;
 //import Preprocessing.Lemmatization;
+import Preprocessing.Lemmatization;
 import Preprocessing.SW;
 import Preprocessing.StanfordTagger;
 //import Preprocessing.Stop;
@@ -35,6 +36,7 @@ public class Interface_TA extends javax.swing.JFrame {
     Stopwords sw = new Stopwords();
     SW stopword = new SW();
     StanfordTagger ST = new StanfordTagger();
+    Lemmatization lemma = new Lemmatization();
     //Stop st = new Stop();
     //Lemmatization lema = new Lemmatization();
     /**
@@ -380,31 +382,39 @@ public class Interface_TA extends javax.swing.JFrame {
         for(int i = 0; i < inputan.size(); i++){
             //String data = inputan.get(i);
            
-            String coba = ST.tagger(inputan.get(i));
+            String tagging = ST.tagger(inputan.get(i));
             
             if(CheckPT.isSelected()){
                 String tag = ST.tagger(inputan.get(i));
-                AreaSW.append(i + 1 + "." + tag);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil : " + tag);
+                AreaSW.append("\n");
+            }else if((CheckPT.isSelected()) && (CheckSW.isSelected())){
+                String ptsw = sw.stopword(tagging);
+                AreaSW.append(i + 1 + " . " + ptsw);
                 AreaSW.append("\n");
             }
             
-             if(CheckSW.isSelected()){
+            if(CheckSW.isSelected()){
                 String Stop = stopword.stopword(inputan.get(i));
                 //System.out.println(Stop);
                 AreaSW.append(i+ 1 + "." + Stop);
                 AreaSW.append("\n");
                 
+            }else if(CheckLemma.isSelected() && CheckSW.isSelected()){
+                String ptlm = lemma.lemmatize(tagging);
+                AreaSW.append(i + 1 + " . "+ ptlm);
+                AreaSW.append("\n");
+            
             }
             if(CheckLemma.isSelected()){
-                //String lemmati = lema.lemaList(inputan.get(i));
-                 //AreaSW.append(i + 1 + "." + lemmati);
+                String lemmati = lemma.lemmatizenotag(inputan.get(i));
+                 AreaSW.append(i + 1 + "." + lemmati);
                  AreaSW.append("\n");
             }
-            if(CheckPT.isSelected() && CheckSW.isSelected()){
-                String ptsw = stopword.stopword(coba);
-                AreaSW.append(i + 1 + " . " + ptsw);
-                AreaSW.append("\n");
-            }
+            
+            
         }
         
     }//GEN-LAST:event_ButtonPreprocessingActionPerformed
