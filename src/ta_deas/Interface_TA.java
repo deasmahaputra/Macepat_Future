@@ -10,8 +10,10 @@ package ta_deas;
 import Preprocessing.Lemmatization;
 import Preprocessing.SW;
 import Preprocessing.StanfordTagger;
+import Preprocessing.example;
 //import Preprocessing.Stop;
 import Preprocessing.Stopwords;
+import Preprocessing.CorreferenceResolution;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +39,8 @@ public class Interface_TA extends javax.swing.JFrame {
     SW stopword = new SW();
     StanfordTagger ST = new StanfordTagger();
     Lemmatization lemma = new Lemmatization();
+    CorreferenceResolution cr = new CorreferenceResolution();
+    //example ex = new example();
     //Stop st = new Stop();
     //Lemmatization lema = new Lemmatization();
     /**
@@ -411,6 +415,11 @@ public class Interface_TA extends javax.swing.JFrame {
             if(CheckLemma.isSelected()){
                 String lemmati = lemma.lemmatizenotag(inputan.get(i));
                  AreaSW.append(i + 1 + "." + lemmati);
+                 AreaSW.append("\n");
+            }
+            if(CheckCR.isSelected()){
+                String coref = cr.Coref(inputan.get(i));
+                AreaSW.append(i + 1 + "." + coref);
                  AreaSW.append("\n");
             }
             
