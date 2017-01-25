@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class SW {
     
  public static String[] stopWordsofwordnet = {
-"without", "see", "unless", "due", "also", "must", "might", "like", "]", "[", "}", "{", "<", ">", "?", "\"", "\\", "/", ")", "(", "will", "may", "can", "much", "every", "the", "in", "other", "this", "the", "many", "any", "an", "or", "for", "in", "an", "an ", "is", "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "aren’t", "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can’t", "cannot", "could",
+"without", "see", "unless", "due", "also", "must", "might", "like", "]", "[", "}", "{", "<", ">", "?", "\"", "\\", "/", ")", "+","*", "(","'m", "'ll", "'d","'ve","'s","n't","will", "may", "can", "much", "every", "the", "in", "other", "this", "the", "many", "any", "an", "or", "for", "in", "an", "an ", "is", "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "aren’t", "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can’t", "cannot", "could",
 "couldn’t", "did", "didn’t", "do", "does", "doesn’t", "doing", "don’t", "down", "during", "each", "few", "for", "from", "further", "had", "hadn’t", "has", "hasn’t", "have", "haven’t", "having",
 "he", "he’d", "he’ll", "he’s", "her", "here", "here’s", "hers", "herself", "him", "himself", "his", "how", "how’s", "i","i ", " i", "i’d", "i’ll", "i’m", "i’ve", "if", "in", "into", "is",
 "isn’t", "it", "it’s", "its", "itself", "let’s", "me", "more", "most", "mustn’t", "my", "myself", "no", "nor", "not", "of", "off", "on", "once", "only", "ought", "our", "ours", "ourselves",
@@ -25,7 +25,7 @@ public class SW {
 "why", "why’s", "with", "won’t", "would", "wouldn’t", "you", "you’d", "you’ll", "you’re", "you’ve", "your", "yours", "yourself", "yourselves",
 "Without", "See", "Unless", "Due", "Also", "Must", "Might", "Like", "Will", "May", "Can", "Much", "Every", "The", "In", "Other", "This", "The", "Many", "Any", "An", "Or", "For", "In", "An", "An ", "Is", "A", "About", "Above", "After", "Again", "Against", "All", "Am", "An", "And", "Any", "Are", "Aren’t", "As", "At", "Be", "Because", "Been", "Before", "Being", "Below", "Between", "Both", "But", "By", "Can’t", "Cannot", "Could",
 "Couldn’t", "Did", "Didn’t", "Do", "Does", "Doesn’t", "Doing", "Don’t", "Down", "During", "Each", "Few", "For", "From", "Further", "Had", "Hadn’t", "Has", "Hasn’t", "Have", "Haven’t", "Having",
-"He", "He’d", "He’ll", "He’s", "Her", "Here", "Here’s", "Hers", "Herself", "Him", "Himself", "His", "How", "How’s", "I", "I ", " I", "I’d", "I’ll", "I’m", "I’ve", "If", "In", "Into", "Is",
+"He", "He’d", "He’ll", "He’s", "Her", "Here", "Here’s", "Hers", "Herself", "Him", "Himself", "His", "How", "How’s", "I", "I ", " I", "I’d", "I’ll", "I’m", "i", "i'm", "i'd","i'll","I","i 'm", "I’ve", "If", "In", "Into", "Is",
 "Isn’t", "It", "It’s", "Its", "Itself", "Let’s", "Me", "More", "Most", "Mustn’t", "My", "Myself", "No", "Nor", "Not", "Of", "Off", "On", "Once", "Only", "Ought", "Our", "Ours", "Ourselves",
 "Out", "Over", "Own", "Same", "Shan’t", "She", "She’d", "She’ll", "She’s", "Should", "Shouldn’t", "So", "Some", "Such", "Than",
 "That", "That’s", "Their", "Theirs", "Them", "Themselves", "Then", "There", "There’s", "These", "They", "They’d", "They’ll", "They’re", "They’ve",
@@ -84,6 +84,52 @@ public static ArrayList<String> wordsListOut = new ArrayList<String>();
         return StopW;
     }
     public static String stopwordwithtag(String WordTag) {
+        //tambahan
+        String StopW=null;
+        StopW="";
+        //
+        
+        String s=WordTag;
+        s=s.trim().replaceAll("\\s+", " ");
+        String[] words = s.split(" ");
+        
+        //tambahan
+        wordsList.clear();
+        wordsListOut.clear();
+        //
+        
+        for (String word : words) {
+            wordsList.add(word);
+        }
+
+        //remove stop words here from the temp list
+        for (int i = 0; i < wordsList.size(); i++) {
+        // get the item as string
+        for (int j = 0; j < stopWordsofwordnet.length; j++) {
+            String kata=stopWordsofwordnet[j];
+            for (int k = 0; k < tag.length; k++){
+                String tagger=tag[k];
+                if (wordsList.get(i).equals(kata+tagger)) {
+                    wordsListOut.add(wordsList.get(i));
+                }
+
+            }
+        }
+        }
+        
+        for (int l = 0; l < wordsListOut.size(); l++) {
+            if(wordsList.contains(wordsListOut.get(l))){
+                wordsList.remove(wordsListOut.get(l));
+            }
+        }
+        for (String str : wordsList) {
+            StopW = StopW+str+" ";
+            System.out.println("Hasil" + StopW);
+        }
+        return StopW;
+    }
+    
+    public static String stopwordwithTag(String WordTag) {
         //tambahan
         String StopW=null;
         StopW="";
