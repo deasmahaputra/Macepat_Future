@@ -10,10 +10,10 @@ package ta_deas;
 import Preprocessing.Lemmatization;
 import Preprocessing.SW;
 import Preprocessing.StanfordTagger;
-import Preprocessing.example;
+//import Preprocessing.example;
 //import Preprocessing.Stop;
 import Preprocessing.Stopwords;
-import Preprocessing.CorreferenceResolution;
+//import Preprocessing.CorreferenceResolution;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class Interface_TA extends javax.swing.JFrame {
     SW stopword = new SW();
     StanfordTagger ST = new StanfordTagger();
     Lemmatization lemma = new Lemmatization();
-    CorreferenceResolution cr = new CorreferenceResolution();
+    //CorreferenceResolution cr = new CorreferenceResolution();
     //example ex = new example();
     //Stop st = new Stop();
     //Lemmatization lema = new Lemmatization();
@@ -75,7 +75,26 @@ public class Interface_TA extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         AreaSW = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,7 +164,7 @@ public class Interface_TA extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -187,7 +206,13 @@ public class Interface_TA extends javax.swing.JFrame {
 
         CheckLemma.setText("Lemmatization");
 
+        CheckPT.setSelected(true);
         CheckPT.setText("POS Tagging");
+        CheckPT.setEnabled(false);
+        CheckPT.setFocusPainted(false);
+        CheckPT.setFocusable(false);
+        CheckPT.setRequestFocusEnabled(false);
+        CheckPT.setRolloverEnabled(false);
         CheckPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckPTActionPerformed(evt);
@@ -205,7 +230,7 @@ public class Interface_TA extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Clear");
+        jButton2.setText("Reset");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -285,7 +310,7 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,31 +319,173 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Preprocessing", jPanel3);
 
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Extraxtion", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+
+        jLabel2.setText("Pattern Knowladge");
+
+        jCheckBox1.setText("Rule");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox2.setText("Type Depedency");
+
+        jCheckBox3.setText("NP Parser");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Taxonomy");
+
+        jCheckBox4.setText("Automatic Taxonomy");
+
+        jLabel4.setText("Lexicon Base");
+
+        jLabel5.setText("Prequent Base");
+
+        jCheckBox5.setText("Lexicon Base");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox6.setText("Frequent Base");
+
+        jButton3.setText("OK");
+
+        jButton4.setText("Clear");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox3)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jCheckBox1))
+                                .addGap(88, 88, 88)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jCheckBox4))
+                                .addGap(72, 72, 72)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jCheckBox5))
+                                .addGap(70, 70, 70)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBox6)
+                                    .addComponent(jLabel5)))
+                            .addComponent(jCheckBox2))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jCheckBox4)
+                            .addComponent(jCheckBox5)
+                            .addComponent(jCheckBox6)))
+                    .addComponent(jButton3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox3)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 992, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Extraction", jPanel6);
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HASIL EKSTRAKSI", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane4.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 992, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Evaluation", jPanel9);
+        jTabbedPane1.addTab("Feature & Opinion", jPanel9);
+        jTabbedPane1.addTab("Evaluation", jTabbedPane2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -361,6 +528,7 @@ public class Interface_TA extends javax.swing.JFrame {
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AreaDataset.setText(" ");
+        inputan.clear();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ComboDatasetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDatasetActionPerformed
@@ -387,42 +555,115 @@ public class Interface_TA extends javax.swing.JFrame {
             //String data = inputan.get(i);
            
             String tagging = ST.tagger(inputan.get(i));
+            String lemanotag = lemma.lemmatizenotag(inputan.get(i));
+            String stop = stopword.stopword(inputan.get(i));
+            //pos tagging
+          
+            String tag = ST.tagger(inputan.get(i));
+                //AreaSW.append(i + 1 + "." + inputan.get(i));
+              
+                
             
-            if(CheckPT.isSelected()){
-                String tag = ST.tagger(inputan.get(i));
+//            
+//             if(CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
+//                    && !CheckSW.isSelected() && !CheckLemma.isSelected()){
+//                String tag = ST.tagger(inputan.get(i));
+//                AreaSW.append(i + 1 + "." + inputan.get(i));
+//                AreaSW.append("\n");
+//                AreaSW.append("Hasil : " + tag);
+//                AreaSW.append("\n");
+//                
+//            }
+            //stopwords && POS TAG
+             if(CheckSW.isSelected() && CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
+                     && !CheckLemma.isSelected()){
+                String st = ST.tagger(stop);
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
-                AreaSW.append("Hasil : " + tag);
+                AreaSW.append("Hasil POS Tagging : " + tag);
                 AreaSW.append("\n");
-            }else if((CheckPT.isSelected()) && (CheckSW.isSelected())){
-                String ptsw = sw.stopword(tagging);
-                AreaSW.append(i + 1 + " . " + ptsw);
+                AreaSW.append("Hasil Stopwords :" + st);
                 AreaSW.append("\n");
-            }
-            
-            if(CheckSW.isSelected()){
-                String Stop = stopword.stopword(inputan.get(i));
-                //System.out.println(Stop);
-                AreaSW.append(i+ 1 + "." + Stop);
+//                AreaSW.append("Hasil Coba : " + stop);
+             }
+             
+             if(CheckSW.isSelected() && !CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
+                     && !CheckLemma.isSelected()){
+                String st = stopword.stopword(inputan.get(i));
+                String pt = ST.tagger(st);
+                String stpt = stopword.stopwordwithTag(tag);
+                AreaSW.append("Hasil : " + stpt);
                 AreaSW.append("\n");
                 
-            }else if(CheckLemma.isSelected() && CheckSW.isSelected()){
-                String ptlm = lemma.lemmatize(tagging);
-                AreaSW.append(i + 1 + " . "+ ptlm);
+//                AreaSW.append("Hasil Coba : " + stop);
+             }
+             //lemma
+              if(CheckLemma.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
+                    && !CheckSW.isSelected() && !CheckPT.isSelected()){
+                String lemmati = lemma.lemmatizenotag(inputan.get(i));
+                 AreaSW.append(i + 1 + "." + inputan.get(i));
+                 AreaSW.append("\n");
+                 AreaSW.append("Hasil :" + lemmati);
+                 AreaSW.append("\n");
+                 
+            }
+            //pos tagging dan stopwords
+//            if(CheckPT.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() 
+//                    && !CheckCR.isSelected() && !CheckLemma.isSelected()){
+//                String ptsw = sw.stopword(tagging);
+//                AreaSW.append(i + 1 + "." + inputan.get(i));
+//                AreaSW.append("\n");
+//                AreaSW.append("Hasil : " + ptsw);
+//                AreaSW.append("\n");
+//                
+//            }
+            //Lemma dan Stopwords
+            if(CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() && 
+                    !CheckCR.isSelected() && !CheckPT.isSelected()){
+                String swlema = sw.stopword(lemanotag);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil : "+ swlema);
                 AreaSW.append("\n");
             
             }
-            if(CheckLemma.isSelected()){
-                String lemmati = lemma.lemmatizenotag(inputan.get(i));
-                 AreaSW.append(i + 1 + "." + lemmati);
-                 AreaSW.append("\n");
+            //Post tag dan lemma
+            if(CheckPT.isSelected() && CheckLemma.isSelected() && !CheckBC.isSelected() 
+                    && !CheckCR.isSelected() && !CheckSW.isSelected()){
+                String ptlemma = lemma.lemmatize(tagging);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil : " + ptlemma);
+                AreaSW.append("\n");
+                
             }
-            if(CheckCR.isSelected()){
-                String coref = cr.Coref(inputan.get(i));
-                AreaSW.append(i + 1 + "." + coref);
-                 AreaSW.append("\n");
+            //POS TAG, LEMMA, STOPWORDS
+             if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() 
+                    && !CheckCR.isSelected() ){
+                //String st = stopword.stopwordwithTag(tag);
+                String st = stopword.stopword(inputan.get(i));
+                String pt = ST.tagger(st);
+                String stpt = stopword.stopwordwithTag(tag);
+                //String posstop = stopword.stopwordwithTag(tag);
+                String lemmas = lemma.lemmatize(stpt);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil POS Tagging : " + tag);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil Stopwords : " + stpt);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil Lemmatization : " + lemmas);
+                AreaSW.append("\n");
+                
             }
-            
+//           
+//            if(CheckCR.isSelected()){
+//                
+////                String coref = cr.Coref(inputan.get(i));
+////                AreaSW.append(i + 1 + "." + coref);
+////                 AreaSW.append("\n");
+//            }
+//            
             
         }
         
@@ -431,6 +672,18 @@ public class Interface_TA extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         AreaSW.setText(" ");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -479,8 +732,22 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboDataset;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -491,6 +758,11 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

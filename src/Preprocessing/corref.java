@@ -5,32 +5,32 @@
  */
 package Preprocessing;
 
-import java.util.Properties
-
-import scala.collection.JavaConversions._
-import scala.collection.mutable.ArrayBuffer
-
-import edu.stanford.nlp.pipeline.StanfordCoreNLP
-import edu.stanford.nlp.pipeline.Annotation
-import edu.stanford.nlp.dcoref.CorefCoreAnnotations.CorefChainAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation
-import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation
-import edu.stanford.nlp.util.IntPair
-import edu.stanford.nlp.dcoref.CorefChain.CorefMention
-import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation
-
 /**
  *
  * @author DEAS
  */
-public class example {
+
+import java.util.Properties;
+
+
+import edu.stanford.nlp.dcoref.CorefCoreAnnotations;
+import edu.stanford.nlp.dcoref.CorefChain;
+import edu.stanford.nlp.dcoref.Mention;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
+import java.util.Map;
+public class corref {
     
-    public static String Corref(String doc) {
+      public static void main(String[] args) {
         Properties props = new Properties();
-        props.put("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,mention,coref");
         props.put("dcoref.score", true);
-        pipeline = new StanfordCoreNLP(props);
-        Annotation document = new Annotation(doc);
+        Annotation document = new Annotation("The atom is a basic unit of matter, it   consists of a dense central nucleus surrounded by a cloud of negatively charged electrons.");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+        pipeline.annotate(document);
+       
 
         pipeline.annotate(document);
         Map<Integer, CorefChain> graph = document.get(CorefChainAnnotation.class);
@@ -51,5 +51,6 @@ public class example {
           } 
                 println ""          
         }
+  }
     
 }
