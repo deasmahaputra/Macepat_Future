@@ -7,15 +7,39 @@ package ta_deas;
 
 //import Preprocessing.Lemmatization;
 //import Preprocessing.Lemmatization;
+import PatternKnowladge.inputFile;
+import PatternKnowladge.Fitur;
+import PatternKnowladge.Opini;
+import PatternKnowladge.Rule;
+import PatternKnowladge.StanParser;
+import PatternKnowladge.ngram;
+import Preprocessing.BioChunking;
+import Preprocessing.CorreferenceResolution;
+import Preprocessing.IobChunk;
 import Preprocessing.Lemmatization;
+import Preprocessing.PorterStem;
 import Preprocessing.SW;
 import Preprocessing.StanfordTagger;
 //import Preprocessing.example;
 //import Preprocessing.Stop;
 import Preprocessing.Stopwords;
+import edu.smu.tspell.wordnet.WordNetDatabase;
+import edu.stanford.nlp.trees.Tree;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.Writer;
 //import Preprocessing.CorreferenceResolution;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,6 +53,50 @@ public class Interface_TA extends javax.swing.JFrame {
     public Interface_TA() {
         initComponents();
     }
+    //public static ArrayList<String> inputan = new ArrayList<String>();
+    public static ArrayList<String> inputanFull = new ArrayList<String>();
+    public static List<String> nounPhrases = new ArrayList<String>();
+    public static ArrayList<String> corpus = new ArrayList<String>();
+    public static ArrayList<String> corpuspre = new ArrayList<String>();
+    public static ArrayList<String> dataFit = new ArrayList<String>();
+    public static ArrayList<String> dataFitPre = new ArrayList<String>();
+    public static ArrayList<String> noDobelDataFit = new ArrayList<String>();
+    public static ArrayList<String> opPos = new ArrayList<String>();
+    public static ArrayList<String> opNeg = new ArrayList<String>();
+    public static ArrayList<String> inpOpini = new ArrayList<String>();
+    public static ArrayList<String> kalimatPre = new ArrayList<String>();
+    public static ArrayList<String> ngram = new ArrayList<String>();
+    public static ArrayList<String> ngram2 = new ArrayList<String>();
+    public static ArrayList<String> listFit = new ArrayList<String>();
+    public static ArrayList<String> noDobel = new ArrayList<String>();
+    public static ArrayList<String> listKandidat = new ArrayList<String>();
+    public static ArrayList<String> listKandidat2 = new ArrayList<String>();
+    public static ArrayList<String> temp1 = new ArrayList<String>();
+    public static ArrayList<String> temp2 = new ArrayList<String>();
+    public static ArrayList<String> fiturrule = new ArrayList<String>();
+    public static ArrayList<String> tmpfit = new ArrayList<String>();
+    public static ArrayList<String> fixFit = new ArrayList<String>();
+    public static ArrayList<String> polaritas = new ArrayList<String>();
+    public static ArrayList<ArrayList<String>> fp = new ArrayList<ArrayList<String>>();
+    public static ArrayList<String> temp3 = new ArrayList<String>();
+    public static ArrayList<String> temp4 = new ArrayList<String>();
+    public static ArrayList<String> totalfitur = new ArrayList<String>();
+    public static ArrayList<String> fiturkalimat = new ArrayList<String>();
+    public static ArrayList<ArrayList<String>> fiturkalimattotal = new ArrayList<ArrayList<String>>();
+    public static ArrayList<ArrayList<String>> fiturpolaritastotal = new ArrayList<ArrayList<String>>();
+    public static ArrayList<ArrayList<String>> totalfiturfp = new ArrayList<ArrayList<String>>();
+    public static ArrayList<Double> jumlah = new ArrayList<Double>();
+    public static ArrayList<Double> jumlah2 = new ArrayList<Double>();
+    public static ArrayList<String> typeD = new ArrayList<String>();
+    public static ArrayList<ArrayList<String>> listGroup = new ArrayList<ArrayList<String>>();
+    public static ArrayList<String> tmpOpini = new ArrayList<>();
+    //public static ArrayList<String> tmpFitOp = new ArrayList<>();\
+    public static ArrayList<ArrayList<String>> listFitOp = new ArrayList<ArrayList<String>>();
+    public static Tree tree;
+    
+    //=== opini ===//
+    public static ArrayList<String> token = new ArrayList<String>();
+    //============//
     
     
     public static ArrayList<String> inputan = new ArrayList<String>();
@@ -39,6 +107,17 @@ public class Interface_TA extends javax.swing.JFrame {
     SW stopword = new SW();
     StanfordTagger ST = new StanfordTagger();
     Lemmatization lemma = new Lemmatization();
+    BioChunking bio = new BioChunking();
+    CorreferenceResolution corref = new CorreferenceResolution();
+    outputFile output = new outputFile();
+    ngram Ng = new ngram();
+    Rule Rl= new Rule();
+    Opini Op = new Opini();
+    Fitur Fit = new Fitur();
+    PorterStem Ps = new PorterStem();
+    StanParser Parser = new StanParser();
+    inputFile input = new inputFile();
+    IobChunk iobchunk = new IobChunk();
     //CorreferenceResolution cr = new CorreferenceResolution();
     //example ex = new example();
     //Stop st = new Stop();
@@ -77,24 +156,47 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        CheckRule = new javax.swing.JCheckBox();
+        jCheckBoxTypeDepedency = new javax.swing.JCheckBox();
+        jCheckBoxNpParser = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
         jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        AreaExtraksi = new javax.swing.JTextArea();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jComboBoxRule1A = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        jComboBox11 = new javax.swing.JComboBox<>();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox13 = new javax.swing.JComboBox<>();
+        jComboBox14 = new javax.swing.JComboBox<>();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel12 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,7 +209,7 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel1.setText("File :");
 
-        ComboDataset.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apex DVD player", "Canon G3", "Zen Mp3 Player", "Nikon coolpix 4300", "Nokia 6610" }));
+        ComboDataset.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apex DVD player", "Canon G3", "Zen Mp3 Player", "Nikon coolpix 4300", "Nokia 6610", "Nokia 6600", "Canon PowerShot SD500", "Canon S100", "Diaper Champ", "Hitachi router", "ipod", "Linksys Router", "MicroMP3", "norton", "data" }));
         ComboDataset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDatasetActionPerformed(evt);
@@ -174,7 +276,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,6 +315,7 @@ public class Interface_TA extends javax.swing.JFrame {
         CheckPT.setFocusable(false);
         CheckPT.setRequestFocusEnabled(false);
         CheckPT.setRolloverEnabled(false);
+        CheckPT.setVerifyInputWhenFocusTarget(false);
         CheckPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckPTActionPerformed(evt);
@@ -305,7 +408,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,19 +429,19 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel2.setText("Pattern Knowladge");
 
-        jCheckBox1.setText("Rule");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        CheckRule.setText("Rule");
+        CheckRule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                CheckRuleActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Type Depedency");
+        jCheckBoxTypeDepedency.setText("Type Depedency");
 
-        jCheckBox3.setText("NP Parser");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxNpParser.setText("NP Parser");
+        jCheckBoxNpParser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                jCheckBoxNpParserActionPerformed(evt);
             }
         });
 
@@ -346,20 +449,12 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jCheckBox4.setText("Automatic Taxonomy");
 
-        jLabel4.setText("Lexicon Base");
-
-        jLabel5.setText("Prequent Base");
-
-        jCheckBox5.setText("Lexicon Base");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("OK");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-
-        jCheckBox6.setText("Frequent Base");
-
-        jButton3.setText("OK");
 
         jButton4.setText("Clear");
 
@@ -370,73 +465,238 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBoxNpParser)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jCheckBox1))
+                                    .addComponent(CheckRule))
                                 .addGap(88, 88, 88)
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(jCheckBox4))
-                                .addGap(72, 72, 72)
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jCheckBox5))
-                                .addGap(70, 70, 70)
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox6)
-                                    .addComponent(jLabel5)))
-                            .addComponent(jCheckBox2))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(68, Short.MAX_VALUE))
+                                    .addComponent(jCheckBox4)))
+                            .addComponent(jCheckBoxTypeDepedency))
+                        .addGap(72, 72, 72)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox6)))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CheckRule)
+                    .addComponent(jCheckBox4)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBoxTypeDepedency)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(jCheckBoxNpParser)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        AreaExtraksi.setColumns(20);
+        AreaExtraksi.setRows(5);
+        jScrollPane3.setViewportView(AreaExtraksi);
+
+        jComboBoxRule1A.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jLabel13.setText("Rule 1");
+
+        jLabel14.setText("Rule 2");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jLabel15.setText("Rule 3");
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jLabel16.setText("Rule 4");
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jLabel17.setText("Rule 5");
+
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jLabel18.setText("Rule 6");
+
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+        jComboBox11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox11ActionPerformed(evt);
+            }
+        });
+
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jLabel4.setText("Rule 7");
+
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxRule1A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox9, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox11, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox10, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxRule1A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))))
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 37, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("Rule", jPanel14);
+
+        jLabel7.setText("jLabel7");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(286, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(293, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("NP Parser", jPanel16);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jTabbedPane3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,7 +704,9 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jTabbedPane3))
                 .addContainerGap())
         );
 
@@ -474,7 +736,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,13 +749,26 @@ public class Interface_TA extends javax.swing.JFrame {
         jTabbedPane1.addTab("Feature & Opinion", jPanel9);
         jTabbedPane1.addTab("Evaluation", jTabbedPane2);
 
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1064, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 551, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab6", jPanel12);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 997, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
                 .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
@@ -518,173 +793,933 @@ public class Interface_TA extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void data(){
-    String value = ComboDataset.getSelectedItem().toString();
-    inputan = call.Inputan("resources/dataset/"+value+".txt");
-        for(int i = 0; i < inputan.size(); i++){
-            AreaDataset.append(i + 1 + "." + inputan.get(i));
-            AreaDataset.append("\n");
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        //FITUR
+        fiturkalimat.clear();
+        fiturkalimattotal.clear();
+        
+        fiturpolaritastotal.clear();
+        noDobel.clear();
+
+        jumlah.clear();
+        jumlah2.clear();
+
+        //jumlah benar,salah,tidak terekstrak
+        jumlah.add(0.0); //benar
+        jumlah.add(0.0); //salah
+        jumlah.add(0.0); //fitur data set
+        jumlah.add(0.0); //fitur ekstraksi
+        jumlah.add(0.0); //precision
+        jumlah.add(0.0); //recall
+        //
+
+        //OPINI
+        //jumlah benar,salah,tidak terekstrak
+        jumlah2.add(0.0); //benar
+        jumlah2.add(0.0); //salah
+        jumlah2.add(0.0); //fitur data set
+        jumlah2.add(0.0); //fitur ekstraksi
+        jumlah2.add(0.0); //precision
+        jumlah2.add(0.0); //recall
+
+        jumlah2.add(0.0);// 6 benar positif
+        jumlah2.add(0.0);// 7 benar negatif
+        jumlah2.add(0.0);// 8 fitur dataset positif
+        jumlah2.add(0.0);// 9 fitur dataset negatif
+        jumlah2.add(0.0);// 10 fitur ekstrak positif
+        jumlah2.add(0.0);// 11 fitur ekstrak negatif
+        jumlah2.add(0.0);// 12 precision positif
+        jumlah2.add(0.0);// 13 precision negatif
+        jumlah2.add(0.0);// 14 recall positif
+        jumlah2.add(0.0);// 15 recall negatif
+
+        int total=0;
+        int benar=0;
+        
+        String rulesatua = jComboBoxRule1A.getSelectedItem().toString();
+        String[] temp;
+        String delimiter = " ";
+
+        temp = rulesatua.split(delimiter);   
+        String a = temp[0];   
+        String b = temp[1];
+        String c = temp[2];
+        
+        System.out.println("Isi a : "+ a + "Isi b : " +b +" Isi c : "+ c);
+
+        File f=new File("C:/Program Files (x86)/WordNet/2.1/dict");
+        System.setProperty("wordnet.database.dir", f.toString());
+        //setting path for the WordNet Directory
+
+        WordNetDatabase database = WordNetDatabase.getFileInstance();
+        //============================//
+        //System.out.println("Isi Kalimat Pre" + kalimatPre);
+        for(int i = 0; i<kalimatPre.size(); i++){
+            nounPhrases.clear();
+            fixFit.clear();
+            temp1.clear();
+            temp2.clear();
+            fiturrule.clear();
+            temp3.clear();
+            temp4.clear();
+            tmpfit.clear();
+            listKandidat.clear();
+            listKandidat2.clear();
+            typeD.clear();
+            token.clear();
+            tree=null;
+            listFitOp.clear();
+            listFit.clear();
+            totalfiturfp.clear();
+            totalfitur.clear();
+            polaritas.clear();
+            fp.clear();
+
+            output.tulis(i+1+". Kalimat : "+kalimatPre.get(i));
+
+            ArrayList<ArrayList<String>> fitpo = new ArrayList<ArrayList<String>>();
+            
+            if(CheckLemma.isSelected()){
+                fitpo = input.dataSetFP(inputanFull.get(i),2); //lakukan lemma pada dataset polar
+            }
+            
+            /*
+            else if(jCheckBox3.isSelected() && jCheckBox3.isSelected()){ //lakukan lemma kemudian di stemming pada dataset polar
+                fitpo = input.dataSetFP(inputanFull.get(i),3);
+            }*/
+            else{
+                fitpo = input.dataSetFP(inputanFull.get(i),0);
+            }
+
+            ngram=Ng.PNgrams(kalimatPre.get(i));
+
+            // 3 Grams
+            ngram2=Ng.PNgrams2(kalimatPre.get(i));
+
+            if(CheckRule.isSelected()){
+
+                ArrayList<String> fiturdanopini = new ArrayList<>();
+                AreaExtraksi.append(i+1+". Hasil Rule :");
+                AreaExtraksi.append("\n");
+                output.tulis("Hasil Rule : ");
+                String fiturkalimat = "";
+                String fituropinikalimat = "";
+                //2-gram ==========================================================
+                for (int j = 0; j < ngram.size(); j++) {
+                    String opi=Rl.Reg(ngram.get(j));
+                    if(opi!=null){
+                        //hasil rule
+                        //output.tulis(opi);
+
+                        AreaExtraksi.append(opi);
+                        AreaExtraksi.append("\n");
+
+                        //ambil opini dari ngram adj/adv
+                        tmpOpini = Op.getToken(ngram.get(j));
+
+                        //pilih fitur
+                        //if(jRadioButton1.isSelected()){
+                            listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
+                            //}
+
+                        /*else if(jRadioButton2.isSelected()){
+                            listFit=Fit.getFiturNoCorp(opi); //tanpa corpus
+                        }*/
+
+                        //pilih fitur
+                        for (int k = 0; k < listFit.size(); k++) {
+                            String fitr=listFit.get(k);
+                            if(fitr!=null){
+                                //fiturkalimat = fiturkalimat + fitr + ",";
+
+                                //masukkan opini pada list jika fitur dari 2-gram didapatkan
+                                //pasangkan opini dengan fitur
+                                if(!tmpOpini.isEmpty()){
+                                    for(int count = 0; count < tmpOpini.size(); count++){
+                                        //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+                                        if(!fitr.contains(tmpOpini.get(count))){
+                                            //tmpFitOp.clear();
+                                            ArrayList<String> tmpFitOp = new ArrayList<String>();
+                                            tmpFitOp.add(fitr);
+                                            tmpFitOp.add(tmpOpini.get(count));
+                                            if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                                                listFitOp.add(tmpFitOp);
+                                                String fituropini = fitr + "-" + tmpOpini.get(count);
+                                                fiturdanopini.add(fituropini);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //masukkan fitur ke list fitur
+                                //System.out.println("Fitur : "+fitr);
+                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+                                    temp1.add(fitr);
+                                    //output.tulis("dari rule 2gram = "+fitr);
+                                }
+                                if ( (Collections.frequency(fiturrule, fitr)) < 1 ){
+                                    fiturrule.add(fitr);
+                                    //output.tulis("dari rule 2gram = "+fitr);
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                //3-gram ==========================================================
+
+                for (int j = 0; j < ngram2.size(); j++) {
+                    String opi2=Rl.Reg(ngram2.get(j));
+                    if(opi2!=null){
+                        //output.tulis(opi2);
+
+                        AreaExtraksi.append(opi2);
+                        AreaExtraksi.append("\n");
+
+                        //ambil opini dari ngram adj/adv
+                        tmpOpini = Op.getToken(ngram2.get(j));
+
+                        //pilih fitur
+                        //if(jRadioButton1.isSelected()){
+                            listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
+                            //}
+
+                        /*else if(jRadioButton2.isSelected()){
+                            listFit=Fit.getFiturNoCorp(opi2); //tanpa corpus
+                        }*/
+
+                        for (int k = 0; k < listFit.size(); k++) {
+                            String fitr=listFit.get(k);
+                            if(fitr!=null){
+                                //fiturkalimat = fiturkalimat + fitr + ",";
+
+                                //masukkan opini pada list jika fitur dari 3-gram didapatkan
+                                //pasangkan opini dengan fitur
+                                if(!tmpOpini.isEmpty()){
+                                    for(int count = 0; count < tmpOpini.size(); count++){
+                                        //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+                                        if(!fitr.contains(tmpOpini.get(count))){
+                                            //tmpFitOp.clear();
+                                            ArrayList<String> tmpFitOp = new ArrayList<String>();
+                                            tmpFitOp.add(fitr);
+                                            tmpFitOp.add(tmpOpini.get(count));
+                                            if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                                                listFitOp.add(tmpFitOp);
+                                                String fituropini = fitr + "-" + tmpOpini.get(count);
+                                                fiturdanopini.add(fituropini);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                    System.out.println("Fiturnya :" + fitr);
+                                if ((Collections.frequency(temp2, fitr)) < 1 ){
+                                    temp2.add(fitr);
+                                    //output.tulis("dari rule 3gram = "+fitr);
+                                }
+                                if ((Collections.frequency(fiturrule, fitr)) < 1 ){
+                                    fiturrule.add(fitr);
+                                    System.out.print("dari rule 3gram = "+fitr);
+                                    System.out.println("ISI RULE" + fiturrule);
+                                }
+                            }
+                            //System.out.println("Fiturnya : "+fitr);
+                        }
+                         
+                         //System.out.println("ISI RULE" + fiturrule);
+                    }
+                }
+                System.out.println("ISI RULE" + fiturrule);
+                 //AreaExtraksi.append("ISI FITURRULE" + fiturrule.get(i));
+                if(!fiturrule.isEmpty()){
+                    
+                    for(int cnt = 0; cnt < fiturrule.size(); cnt++){
+                        fiturkalimat = fiturkalimat + fiturrule.get(cnt) + ",";
+                    }
+                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+                }
+                else{
+                    fiturkalimat = "-";
+                }
+
+                if(!fiturdanopini.isEmpty()){
+                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
+                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
+                    }
+                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+                }
+                else{
+                    fituropinikalimat = "-";
+                }
+
+                output.tulis("Hasil Rule : "+fiturkalimat);
+                AreaExtraksi.append("Fitur : "+fiturkalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("=============================================");
+                AreaExtraksi.append("\n");
+            }
+            
+            //NP PARSER CODE..
+            if(jCheckBoxNpParser.isSelected()){
+            ArrayList<String> fiturdanopini = new ArrayList<>();
+                String fiturkalimat = "";
+                String fituropinikalimat = "";
+                
+                AreaExtraksi.append(i+1+". Hasil NP parser :");
+                AreaExtraksi.append("\n");
+                // Stanford Parser=================================================
+                //get tree
+
+                tree = Parser.parse(kalimatPre.get(i));
+                List<Tree> leaves = tree.getLeaves();
+                for (Tree leaf : leaves) { 
+                    Tree parent = leaf.parent(tree);
+                    //System.out.print(leaf.label().value() + "-" + parent.label().value() + " ");
+                }
+                //output.tulis("Tree = "+tree);
+                AreaExtraksi.append(tree.toString());
+                AreaExtraksi.append("\n");
+                
+                //ambil tag NP pada tree dgn maks 3 kata
+                nounPhrases=Parser.GetNounPhrases(tree);
+
+                for(int it = 0; it < nounPhrases.size(); it++)
+                {
+                    //output.tulis("Hasil NounPhrases : "+nounPhrases.get(it));
+
+                    AreaExtraksi.append(nounPhrases.get(it));
+                    AreaExtraksi.append("\n");
+                    //if(jRadioButton1.isSelected()){
+                        //cek Np dengan corpus
+                        listFit=Fit.getFiturParser(nounPhrases.get(it), corpuspre); //dengan corpus
+                    //}
+                        
+                    /*else if(jRadioButton1.isSelected()){
+                        listFit=Fit.getFiturParserNoCorp(nounPhrases.get(it)); //tanpa corpus
+                    }*/
+
+                    //hasil fitur dari parser dimasukkan ke list
+                    if(!listFit.isEmpty()){
+                        for (int l = 0; l < listFit.size(); l++) {
+                            //jTextArea16.append("Fitur : ");
+                            String fitr=listFit.get(l);
+                            if(fitr!=null){
+                                fiturkalimat = fiturkalimat + fitr + ",";
+                                
+                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+                                    //output.tulis("Dari parser: "+fitr);
+                                    temp1.add(fitr);
+                                }
+                                //mendapatkan pasangan fitur dan opini
+                                //2gram
+                                for (int j = 0; j < ngram.size(); j++) {
+                                    //ambil opini dari ngram adj/adv
+                                    tmpOpini = Op.getToken(ngram.get(j));
+                                    String kalNgram = Ps.removetag(ngram.get(j));
+                                    
+                                    if(!tmpOpini.isEmpty()){
+                                        if(kalNgram.toLowerCase().contains(fitr.toLowerCase())){
+                                            for(int count = 0; count < tmpOpini.size(); count++){
+                                                //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+                                                if(!fitr.contains(tmpOpini.get(count))){
+                                                    //tmpFitOp.clear();
+                                                    ArrayList<String> tmpFitOp = new ArrayList<String>();
+                                                    tmpFitOp.add(fitr);
+                                                    tmpFitOp.add(tmpOpini.get(count));
+                                                    String fituropini = fitr + "-" + tmpOpini.get(count);
+                                                    if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+                                                        fiturdanopini.add(fituropini);
+                                                    }
+                                                    if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                                                        listFitOp.add(tmpFitOp);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                //3gram
+                                for (int j = 0; j < ngram2.size(); j++) {
+                                    //ambil opini dari ngram adj/adv
+                                    tmpOpini = Op.getToken(ngram2.get(j));
+                                    String kalNgram = Ps.removetag(ngram2.get(j));
+                                    
+                                    if(!tmpOpini.isEmpty()){
+                                        if(kalNgram.toLowerCase().contains(fitr.toLowerCase())){
+                                            for(int count = 0; count < tmpOpini.size(); count++){
+                                                //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+                                                if(!fitr.contains(tmpOpini.get(count))){
+                                                    //tmpFitOp.clear();
+                                                    ArrayList<String> tmpFitOp = new ArrayList<String>();
+                                                    tmpFitOp.add(fitr);
+                                                    tmpFitOp.add(tmpOpini.get(count));
+                                                    String fituropini = fitr + "-" + tmpOpini.get(count);
+                                                    if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+                                                        fiturdanopini.add(fituropini);
+                                                    }
+                                                    if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                                                        listFitOp.add(tmpFitOp);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    //jika hasil parser tidak ada fitur
+                    //cek setiap kata yg ada pada NP dengan corpus
+                    else{
+                        //if(jRadioButton1.isSelected()){
+                            listFit=Fit.getFiturParser2(nounPhrases.get(it), corpuspre); //dengan corpus
+                        //}
+                            
+                        /*           
+                        else if(jRadioButton2.isSelected()){
+                            listFit=Fit.getFiturParser2NoCorp(nounPhrases.get(it)); //tanpa corpus
+                        }
+                        */    
+                        
+                        for (int l = 0; l < listFit.size(); l++) {
+                            String fitr=listFit.get(l);
+                            if(fitr!=null){
+                                fiturkalimat = fiturkalimat + fitr + ",";
+                                
+                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+                                    temp1.add(fitr);
+                                } 
+                                
+                                //mendapatkan pasangan fitur dan opini
+                                //2gram
+                                for (int j = 0; j < ngram.size(); j++) {
+                                    //ambil opini dari ngram adj/adv
+                                    tmpOpini = Op.getToken(ngram.get(j));
+                                    String kalNgram = Ps.removetag(ngram.get(j));
+                                    
+                                    if(!tmpOpini.isEmpty()){
+                                        if(kalNgram.toLowerCase().contains(fitr.toLowerCase())){
+                                            for(int count = 0; count < tmpOpini.size(); count++){
+                                                //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+                                                if(!fitr.contains(tmpOpini.get(count))){
+                                                    //tmpFitOp.clear();
+                                                    ArrayList<String> tmpFitOp = new ArrayList<String>();
+                                                    tmpFitOp.add(fitr);
+                                                    tmpFitOp.add(tmpOpini.get(count));
+                                                    String fituropini = fitr + "-" + tmpOpini.get(count);
+                                                    if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+                                                        fiturdanopini.add(fituropini);
+                                                    }
+                                                    if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                                                        listFitOp.add(tmpFitOp);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                //3gram
+                                for (int j = 0; j < ngram2.size(); j++) {
+                                    //ambil opini dari ngram adj/adv
+                                    tmpOpini = Op.getToken(ngram2.get(j));
+                                    String kalNgram = Ps.removetag(ngram2.get(j));
+                                    
+                                    if(!tmpOpini.isEmpty()){
+                                        if(kalNgram.toLowerCase().contains(fitr.toLowerCase())){
+                                            for(int count = 0; count < tmpOpini.size(); count++){
+                                                //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+                                                if(!fitr.contains(tmpOpini.get(count))){
+                                                    //tmpFitOp.clear();
+                                                    ArrayList<String> tmpFitOp = new ArrayList<String>();
+                                                    tmpFitOp.add(fitr);
+                                                    tmpFitOp.add(tmpOpini.get(count));
+                                                    String fituropini = fitr + "-" + tmpOpini.get(count);
+                                                    if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+                                                        fiturdanopini.add(fituropini);
+                                                    }
+                                                    if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                                                        listFitOp.add(tmpFitOp);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if(fiturkalimat != ""){
+                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+                }
+                else{
+                    fiturkalimat = "-";
+                }
+                
+                if(!fiturdanopini.isEmpty()){
+                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
+                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
+                    }
+                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+                }
+                else{
+                    fituropinikalimat = "-";
+                }
+                
+                output.tulis("Hasil Nounphrase : "+fiturkalimat);
+                AreaExtraksi.append("Fitur : "+fiturkalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("=============================================");
+                AreaExtraksi.append("\n");
+            
+            }
+            
+            //Depedency parser
+            if(jCheckBoxTypeDepedency.isSelected()){
+                ArrayList<String> fiturdanopini = new ArrayList<>();
+                String fiturkalimat = "";
+                String fituropinikalimat = "";
+                
+                AreaExtraksi.append(i+1+". Hasil Type Dependencies :");
+                AreaExtraksi.append("\n");
+                
+                //typeD=Parser.typeDP(Ps.removetag(kalimatPre.get(i)));
+                typeD=Parser.typeDP(inputan.get(i));
+                AreaExtraksi.append(Parser.tes);
+                AreaExtraksi.append("\n");
+                //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
+                //jTextArea15.append("\n");
+                //output.tulis("Fitur dan opini : "+typeD);
+                for(int it=0;it<typeD.size();it++){
+                    AreaExtraksi.append(typeD.get(it));
+                    AreaExtraksi.append("\n");
+                    String[] words = typeD.get(it).split(" ");
+
+                    String tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
+                    String tdOpini=words[1].trim().replaceAll("\\s+", " "); //mengambil opini
+
+                    //if(jRadioButton1.isSelected()){
+                        listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
+                    //}
+                    
+                    /*
+                    else if(jRadioButton2.isSelected()){
+                        listFit=Fit.getFiturParserNoCorp(tdFitur); //cek fitur tanpa corpus
+                    }
+                    */
+                        
+                    if(!listFit.isEmpty()){
+
+                        //ambil pasangan fitur dan opini nya
+                        //tmpFitOp.clear();
+                        ArrayList<String> tmpFitOp = new ArrayList<String>();
+                        tmpFitOp.add(tdFitur);
+                        tmpFitOp.add(tdOpini);
+                        String fituropini = tdFitur + "-" + tdOpini;
+                        System.out.println("Isi Dari FiturOpini : " + fituropini);
+                        if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+                            fiturdanopini.add(fituropini);
+                        }
+                        if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                            listFitOp.add(tmpFitOp);
+                        }
+                        //
+
+                        for (int l = 0; l < listFit.size(); l++) {
+                            String fitr=listFit.get(l);
+                            
+                            if(fitr!=null){                                
+                                fiturkalimat = fiturkalimat + fitr + ",";
+                                
+                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+                                    temp1.add(fitr);
+                                    //output.tulis("TD = "+fitr);
+                                } 
+                            }
+                        }
+                    }
+                }
+                if(fiturkalimat != ""){
+                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+                }
+                else{
+                    fiturkalimat = "-";
+                }
+                
+                if(!fiturdanopini.isEmpty()){
+                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
+                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
+                    }
+                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+                }
+                else{
+                    fituropinikalimat = "-";
+                }
+                
+                output.tulis("Hasil Parser : "+fiturkalimat);
+                AreaExtraksi.append("Fitur : "+fiturkalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("=============================================");
+                AreaExtraksi.append("\n");
+            }
+            
+           
         }
-    }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jCheckBoxNpParserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxNpParserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxNpParserActionPerformed
+
+    private void CheckRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRuleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckRuleActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        AreaSW.setText(" ");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ButtonPreprocessingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPreprocessingActionPerformed
+        //        String value = ComboPre.getSelectedItem().toString();
+        //        inputan = call.Inputan("resources/dataset/"+value+".txt");
+        kalimatPre.clear();
+        
+        if(CheckLemma.isSelected()){
+            dataFitPre= input.fiturproPre2(dataFit);
+            corpuspre = input.corpuspre(corpus, 1);
+            //noDobelDataFit = corpuspre;
+        }
+        
+        //System.out.println("ukuran datafit pre : "+dataFitPre.size());
+        //for(int count = 0; count < dataFitPre.size(); count++){
+            //System.out.println("data fitur pre1 : "+dataFitPre.get(count));
+        //}
+        
+        //for(int count = 0; count < corpuspre.size(); count++){
+            //System.out.println("corpus pre1 : "+corpuspre.get(count));
+        //}
+        
+        for(int count = 0; count < corpuspre.size(); count++){
+            if ( (Collections.frequency(noDobelDataFit, corpuspre.get(count))) < 1 ){
+                noDobelDataFit.add(corpuspre.get(count));
+            }
+        }
+       
+        for(int i = 0; i < inputan.size(); i++){
+            nounPhrases.clear();
+            temp1.clear();
+            temp2.clear();
+            fiturrule.clear();
+            temp3.clear();
+            temp4.clear();
+            tmpfit.clear();
+            fixFit.clear();
+            listKandidat.clear();
+            listKandidat2.clear();
+            typeD.clear();
+            listFit.clear();
+            token.clear();
+            tree=null;
+            listFitOp.clear();
+            //String data = inputan.get(i);
+            
+            String result = ST.tagger(inputan.get(i));
+            String tagging = ST.tagger(inputan.get(i));
+            String lemanotag = lemma.lemmatizenotag(inputan.get(i));
+            String stop = stopword.stopword(inputan.get(i));
+           
+            //pos tagging
+
+            //String tag = ST.tagger(inputan.get(i));
+            
+            
+            //AreaSW.append(i + 1 + "." + inputan.get(i));
+
+            //
+            //             if(CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
+                //                    && !CheckSW.isSelected() && !CheckLemma.isSelected()){
+                //                String tag = ST.tagger(inputan.get(i));
+                //                AreaSW.append(i + 1 + "." + inputan.get(i));
+                //                AreaSW.append("\n");
+                //                AreaSW.append("Hasil : " + tag);
+                //                AreaSW.append("\n");
+                //
+                //            }
+            //stopwords && POS TAG
+            if(CheckSW.isSelected() && CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
+                && !CheckLemma.isSelected()){
+                result = ST.tagger(stop);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil POS Tagging : " + tagging);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil Stopwords :" + result);
+                AreaSW.append("\n");
+                //                AreaSW.append("Hasil Coba : " + stop);
+            }
+            //STOPWORD
+            if(CheckSW.isSelected() && !CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
+                && !CheckLemma.isSelected()){
+                result = stopword.stopword(inputan.get(i));
+                //String pt = ST.tagger(st);
+                //String stpt = stopword.stopwordwithTag(tag);
+                
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil : " + result);
+                AreaSW.append("\n");
+                
+               
+
+                //                AreaSW.append("Hasil Coba : " + stop);
+            }
+            //lemma
+            if(CheckLemma.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
+                && !CheckSW.isSelected() && !CheckPT.isSelected()){
+                result = lemma.lemmatizenotag(inputan.get(i));
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil :" + result);
+                AreaSW.append("\n");
+
+            }
+            //Coref
+//            if(!CheckLemma.isSelected() && !CheckBC.isSelected() && CheckCR.isSelected()
+//                && !CheckSW.isSelected() && !CheckPT.isSelected()){
+//                
+////                String[] stockArr = new String[inputan.size()];
+////                stockArr = inputan.toArray(stockArr);
+//                String[] text = {
+//                "The atom is a basic unit of matter, it consists of a dense central nucleus surrounded by a cloud of negatively charged electrons.", 
+//                "Barack Obama was born in Hawaii.  He is the president. Obama was elected in 2008.",
+//                "Cannon 6D the best camera 2016. it has 16 MP Resolution"
+//                }; 
+//                for(String s : text){
+//                System.out.println(s);
+//                //StringBuilder sb = new StringBuilder();
+////                for(String tampung : inputan){
+////                sb.append(tampung);
+//                //String tamp = tamp;
+//                //System.out.println(tamp);
+//                String cr = corref.Corref(s);
+//                AreaSW.append(i + 1 + "." + inputan.get(i));
+//                AreaSW.append("\n");
+//                AreaSW.append("Hasil Coref :" + cr);
+//                AreaSW.append("\n");
+//                }
+//
+//            }
+
+
+             if(!CheckLemma.isSelected() && !CheckBC.isSelected() && CheckCR.isSelected()
+                && !CheckSW.isSelected() && !CheckPT.isSelected()){
+                String[] tamp = new String[inputan.size()];
+                tamp = inputan.toArray(tamp);
+                result = iobchunk.Iob(tamp);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil :" + result);
+                AreaSW.append("\n");
+                 
+             }
+            //pos tagging
+                        if(CheckPT.isSelected() && !CheckSW.isSelected() && !CheckBC.isSelected()
+                                    && !CheckCR.isSelected() && !CheckLemma.isSelected()){
+                               
+                                FileWriter writer; 
+                        try {
+                          writer = new FileWriter("output/output.txt");
+                           for(String str: inputan) {
+                                   String tamp = str;
+                                  writer.write(tagging);
+                                }
+                                writer.close();
+                        } catch (IOException ex) {
+                           Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                         }
+                               
+
+                                AreaSW.append(i + 1 + "." + inputan.get(i));
+                                AreaSW.append("\n");
+                                AreaSW.append("Hasil Pos Tagging : " + tagging);
+                                AreaSW.append("\n");
+                
+                            }
+            //Lemma dan Stopwords
+            if(CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() &&
+                !CheckCR.isSelected() && !CheckPT.isSelected()){
+                result = sw.stopword(lemanotag);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("Hasil Lemmatization :" + lemanotag);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil : "+ result);
+                AreaSW.append("\n");
+
+            }
+            //Post tag dan lemma
+            if(CheckPT.isSelected() && CheckLemma.isSelected() && !CheckBC.isSelected()
+                && !CheckCR.isSelected() && !CheckSW.isSelected()){
+                result = lemma.lemmatize(tagging);
+                String[] tampung = result.split("");
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil : " + result);
+                AreaSW.append("\n");
+                
+                 PrintWriter out = null;
+                try {
+                    File file = new File("output/PosLemmatizationa.txt");
+                    out = new PrintWriter(new FileWriter(file));
+                    for (String s : tampung) {
+                        out.println(result);
+                    }
+                } catch (IOException ex) {
+                    System.out.println(ex);
+                } finally {
+                    out.close();
+                }
+
+            }
+            //POS TAG, LEMMA, STOPWORDS
+            if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected()
+                && !CheckCR.isSelected() ){
+                //String st = stopword.stopwordwithTag(tag);
+                String st = stopword.stopword(inputan.get(i));
+                String pt = ST.tagger(st);
+                String stpt = stopword.stopwordwithTag(tagging);
+                //String posstop = stopword.stopwordwithTag(tag);
+                String lemmas = lemma.lemmatize(stpt);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil POS Tagging : " + tagging);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil Stopwords : " + stpt);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil Lemmatization : " + lemmas);
+                AreaSW.append("\n");
+
+            }
+            //POS TAG, LEMMA, STOPWORDS, IOB
+            if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && CheckBC.isSelected()
+                && !CheckCR.isSelected() ){
+                //String st = stopword.stopwordwithTag(tag);
+                
+                try {
+                    String Bio = bio.Chunker(stop);
+                    String st = stopword.stopword(inputan.get(i));
+                    String pt = ST.tagger(st);
+                    String stpt = stopword.stopwordwithTag(tagging);
+                    String lemmas = lemma.lemmatize(stpt);
+                    AreaSW.append(i + 1 + "." + inputan.get(i));
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil POS Tagging : " + tagging);
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil IOB" + Bio);
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil Stopwords : " + stpt);
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil Lemmatization : " + lemmas);
+                    AreaSW.append("\n");
+                } catch (IOException ex) {
+                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //String posstop = stopword.stopwordwithTag(tag);
+                
+
+            }
+            
+            if(!CheckLemma.isSelected() && CheckBC.isSelected() && !CheckCR.isSelected()
+                && !CheckSW.isSelected() && !CheckPT.isSelected()){
+                String Bio;
+                try {
+                    Bio = bio.Chunker(lemanotag);
+                    AreaSW.append(i + 1 + "." + inputan.get(i));
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil :" + Bio);
+                    AreaSW.append("\n");
+                } catch (IOException ex) {
+                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+
+            }
+            
+            kalimatPre.add(result);
+            
+            //
+            //            if(CheckCR.isSelected()){
+                //
+                ////                String coref = cr.Coref(inputan.get(i));
+                ////                AreaSW.append(i + 1 + "." + coref);
+                ////                 AreaSW.append("\n");
+                //            }
+            //
+
+        }
+    }//GEN-LAST:event_ButtonPreprocessingActionPerformed
+
+    private void CheckPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckPTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckPTActionPerformed
+
+    private void CheckSWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckSWActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckSWActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AreaDataset.setText(" ");
         inputan.clear();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ComboDatasetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDatasetActionPerformed
+        String value=ComboDataset.getSelectedItem().toString();
         
+        inputan.clear();
+        dataFitPre.clear();
+        corpus.clear();
+        noDobelDataFit.clear();
+        inputanFull.clear();
+        dataFit.clear();
+        opPos.clear();
+        opNeg.clear();
+        corpuspre.clear();
+        
+        // Input File
+        corpus=input.corpus("resources/dataset/"+value+".txt");
+        corpuspre = corpus;
+        //noDobelDataFit = corpuspre;
+        //noDobelDataFit=input.dataSetNoDBL("customer review data/"+value+".txt");
+        inputan=input.inp("resources/dataset/"+value+".txt");
+        inputanFull=input.inpFull("resources/dataset/"+value+".txt");
+        dataFit=input.fiturpro("resources/dataset/"+value+".txt");
+        dataFitPre = dataFit;
         data();
-        
     }//GEN-LAST:event_ComboDatasetActionPerformed
 
-    private void CheckSWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckSWActionPerformed
+    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CheckSWActionPerformed
+    }//GEN-LAST:event_jComboBox11ActionPerformed
 
-    private void CheckPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckPTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CheckPTActionPerformed
-
-    
-    
-    private void ButtonPreprocessingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPreprocessingActionPerformed
-//        String value = ComboPre.getSelectedItem().toString();
-//        inputan = call.Inputan("resources/dataset/"+value+".txt");
-//        
+    public void data(){
+    String value = ComboDataset.getSelectedItem().toString();
+    inputan = call.Inputan("resources/dataset/"+value+".txt");
         for(int i = 0; i < inputan.size(); i++){
-            //String data = inputan.get(i);
-           
-            String tagging = ST.tagger(inputan.get(i));
-            String lemanotag = lemma.lemmatizenotag(inputan.get(i));
-            String stop = stopword.stopword(inputan.get(i));
-            //pos tagging
-          
-            String tag = ST.tagger(inputan.get(i));
-                //AreaSW.append(i + 1 + "." + inputan.get(i));
-              
-                
-            
-//            
-//             if(CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
-//                    && !CheckSW.isSelected() && !CheckLemma.isSelected()){
-//                String tag = ST.tagger(inputan.get(i));
-//                AreaSW.append(i + 1 + "." + inputan.get(i));
-//                AreaSW.append("\n");
-//                AreaSW.append("Hasil : " + tag);
-//                AreaSW.append("\n");
-//                
-//            }
-            //stopwords && POS TAG
-             if(CheckSW.isSelected() && CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
-                     && !CheckLemma.isSelected()){
-                String st = ST.tagger(stop);
-                AreaSW.append(i + 1 + "." + inputan.get(i));
-                AreaSW.append("\n");
-                AreaSW.append("Hasil POS Tagging : " + tag);
-                AreaSW.append("\n");
-                AreaSW.append("Hasil Stopwords :" + st);
-                AreaSW.append("\n");
-//                AreaSW.append("Hasil Coba : " + stop);
-             }
-             
-             if(CheckSW.isSelected() && !CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
-                     && !CheckLemma.isSelected()){
-                String st = stopword.stopword(inputan.get(i));
-                String pt = ST.tagger(st);
-                String stpt = stopword.stopwordwithTag(tag);
-                AreaSW.append("Hasil : " + stpt);
-                AreaSW.append("\n");
-                
-//                AreaSW.append("Hasil Coba : " + stop);
-             }
-             //lemma
-              if(CheckLemma.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected() 
-                    && !CheckSW.isSelected() && !CheckPT.isSelected()){
-                String lemmati = lemma.lemmatizenotag(inputan.get(i));
-                 AreaSW.append(i + 1 + "." + inputan.get(i));
-                 AreaSW.append("\n");
-                 AreaSW.append("Hasil :" + lemmati);
-                 AreaSW.append("\n");
-                 
-            }
-            //pos tagging dan stopwords
-//            if(CheckPT.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() 
-//                    && !CheckCR.isSelected() && !CheckLemma.isSelected()){
-//                String ptsw = sw.stopword(tagging);
-//                AreaSW.append(i + 1 + "." + inputan.get(i));
-//                AreaSW.append("\n");
-//                AreaSW.append("Hasil : " + ptsw);
-//                AreaSW.append("\n");
-//                
-//            }
-            //Lemma dan Stopwords
-            if(CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() && 
-                    !CheckCR.isSelected() && !CheckPT.isSelected()){
-                String swlema = sw.stopword(lemanotag);
-                AreaSW.append(i + 1 + "." + inputan.get(i));
-                AreaSW.append("\n");
-                AreaSW.append("Hasil : "+ swlema);
-                AreaSW.append("\n");
-            
-            }
-            //Post tag dan lemma
-            if(CheckPT.isSelected() && CheckLemma.isSelected() && !CheckBC.isSelected() 
-                    && !CheckCR.isSelected() && !CheckSW.isSelected()){
-                String ptlemma = lemma.lemmatize(tagging);
-                AreaSW.append(i + 1 + "." + inputan.get(i));
-                AreaSW.append("\n");
-                AreaSW.append("Hasil : " + ptlemma);
-                AreaSW.append("\n");
-                
-            }
-            //POS TAG, LEMMA, STOPWORDS
-             if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() 
-                    && !CheckCR.isSelected() ){
-                //String st = stopword.stopwordwithTag(tag);
-                String st = stopword.stopword(inputan.get(i));
-                String pt = ST.tagger(st);
-                String stpt = stopword.stopwordwithTag(tag);
-                //String posstop = stopword.stopwordwithTag(tag);
-                String lemmas = lemma.lemmatize(stpt);
-                AreaSW.append(i + 1 + "." + inputan.get(i));
-                AreaSW.append("\n");
-                AreaSW.append("Hasil POS Tagging : " + tag);
-                AreaSW.append("\n");
-                AreaSW.append("Hasil Stopwords : " + stpt);
-                AreaSW.append("\n");
-                AreaSW.append("Hasil Lemmatization : " + lemmas);
-                AreaSW.append("\n");
-                
-            }
-//           
-//            if(CheckCR.isSelected()){
-//                
-////                String coref = cr.Coref(inputan.get(i));
-////                AreaSW.append(i + 1 + "." + coref);
-////                 AreaSW.append("\n");
-//            }
-//            
-            
+            AreaDataset.append(i + 1 + "." + inputan.get(i));
+            AreaDataset.append(inputan.get(i));
+            AreaDataset.append("\n");
         }
-        
-    }//GEN-LAST:event_ButtonPreprocessingActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AreaSW.setText(" ");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
-
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
-
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -722,32 +1757,55 @@ public class Interface_TA extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea AreaDataset;
+    private javax.swing.JTextArea AreaExtraksi;
     private javax.swing.JTextArea AreaSW;
     private javax.swing.JButton ButtonPreprocessing;
     private javax.swing.JCheckBox CheckBC;
     private javax.swing.JCheckBox CheckCR;
     private javax.swing.JCheckBox CheckLemma;
     private javax.swing.JCheckBox CheckPT;
+    private javax.swing.JCheckBox CheckRule;
     private javax.swing.JCheckBox CheckSW;
     private javax.swing.JComboBox<String> ComboDataset;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBoxNpParser;
+    private javax.swing.JCheckBox jCheckBoxTypeDepedency;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
+    private javax.swing.JComboBox<String> jComboBox13;
+    private javax.swing.JComboBox<String> jComboBox14;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
+    private javax.swing.JComboBox<String> jComboBoxRule1A;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -762,7 +1820,7 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

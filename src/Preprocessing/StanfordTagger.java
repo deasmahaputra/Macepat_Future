@@ -7,24 +7,32 @@ package Preprocessing;
 
 
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+import java.io.IOException;
 /**
  *
- * @author DEAS
+ * @author cahyadi
  */
 public class StanfordTagger {
-    MaxentTagger max;
-    
+    MaxentTagger target;
     public StanfordTagger(){
-     max = new MaxentTagger("lib/english-bidirectional-distsim.tagger");
+        target = new MaxentTagger("lib/english-bidirectional-distsim.tagger");
     }
-     public String tagger(String input){
-         
-         String target = input;
-         String sample = max.tagString(target);
-         
-         System.out.println(sample);
-         return sample;
-     
-     }
     
+    public String tagger(String input) {
+        // TODO code application logic here
+        
+        // The sample string
+ 
+        String sample = input;
+
+        // The tagged string
+
+        String tagged = target.tagString(sample);
+
+        // Output the result
+
+        System.out.println(tagged);
+        
+        return tagged;
+    }
 }

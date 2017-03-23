@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author DEAS
  */
 public class CallFile {
+    
     public static ArrayList<String> listString= new ArrayList<String>();
     
     public static ArrayList<String> Inputan (String Input){
