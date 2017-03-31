@@ -131,8 +131,7 @@ public class CorrefOOP {
                 //String clus3 = clust2;
                  tamp = tamp + clust2;
                  //tampung[] = clust2;
-                 System.out.println("Ini isinya tamp : " +tamp);
-                 
+                 System.out.println("Ini isinya tamp : " +tamp);           
 //     
            // }
     }

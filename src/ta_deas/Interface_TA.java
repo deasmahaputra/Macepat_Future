@@ -9,20 +9,24 @@ package ta_deas;
 //import Preprocessing.Lemmatization;
 import PatternKnowladge.inputFile;
 import PatternKnowladge.Fitur;
+import PatternKnowladge.GetRule;
 import PatternKnowladge.Opini;
 import PatternKnowladge.Rule;
 import PatternKnowladge.StanParser;
 import PatternKnowladge.ngram;
 import Preprocessing.BioChunking;
+import Preprocessing.Corref.GetCorref;
 import Preprocessing.CorreferenceResolution;
 import Preprocessing.IobChunk;
 import Preprocessing.Lemmatization;
 import Preprocessing.PorterStem;
+import Preprocessing.RegIob;
 import Preprocessing.SW;
 import Preprocessing.StanfordTagger;
 //import Preprocessing.example;
 //import Preprocessing.Stop;
 import Preprocessing.Stopwords;
+import Preprocessing.getData;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 import edu.stanford.nlp.trees.Tree;
 import java.io.BufferedWriter;
@@ -118,6 +122,8 @@ public class Interface_TA extends javax.swing.JFrame {
     StanParser Parser = new StanParser();
     inputFile input = new inputFile();
     IobChunk iobchunk = new IobChunk();
+    GetRule ruleget = new GetRule();
+    RegIob regbio = new RegIob();
     //CorreferenceResolution cr = new CorreferenceResolution();
     //example ex = new example();
     //Stop st = new Stop();
@@ -168,27 +174,34 @@ public class Interface_TA extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        jComboBoxRule1A = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBoxRule1a = new javax.swing.JComboBox<>();
+        jComboBoxRule1b = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBoxRule2a = new javax.swing.JComboBox<>();
+        jComboBoxRule2b = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        jComboBoxRule3a = new javax.swing.JComboBox<>();
+        jComboBoxRule3b = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        jComboBoxRule4a = new javax.swing.JComboBox<>();
+        jComboBoxRule4b = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox9 = new javax.swing.JComboBox<>();
-        jComboBox10 = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jComboBox12 = new javax.swing.JComboBox<>();
+        jComboBoxRule6a = new javax.swing.JComboBox<>();
+        jComboBoxRule6b = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox13 = new javax.swing.JComboBox<>();
-        jComboBox14 = new javax.swing.JComboBox<>();
+        jComboBoxRule7a = new javax.swing.JComboBox<>();
+        jComboBoxRule7b = new javax.swing.JComboBox<>();
+        jComboBoxRule1C = new javax.swing.JComboBox<>();
+        jComboBoxRule2c = new javax.swing.JComboBox<>();
+        jComboBoxRule3c = new javax.swing.JComboBox<>();
+        jComboBoxRule4c = new javax.swing.JComboBox<>();
+        jComboBoxRule5a = new javax.swing.JComboBox<>();
+        jComboBoxRule6c = new javax.swing.JComboBox<>();
+        jComboBoxRule7c = new javax.swing.JComboBox<>();
+        jComboBoxRule5b = new javax.swing.JComboBox<>();
+        jComboBoxRule5c = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -276,7 +289,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,7 +321,6 @@ public class Interface_TA extends javax.swing.JFrame {
 
         CheckLemma.setText("Lemmatization");
 
-        CheckPT.setSelected(true);
         CheckPT.setText("POS Tagging");
         CheckPT.setEnabled(false);
         CheckPT.setFocusPainted(false);
@@ -408,7 +420,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -508,52 +520,170 @@ public class Interface_TA extends javax.swing.JFrame {
         AreaExtraksi.setRows(5);
         jScrollPane3.setViewportView(AreaExtraksi);
 
-        jComboBoxRule1A.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+
+        jComboBoxRule1a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule1a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule1aActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule1b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1B", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule1b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule1bActionPerformed(evt);
+            }
+        });
 
         jLabel13.setText("Rule 1");
 
         jLabel14.setText("Rule 2");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jLabel15.setText("Rule 3");
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jLabel16.setText("Rule 4");
-
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jLabel17.setText("Rule 5");
-
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-
-        jLabel18.setText("Rule 6");
-
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
-        jComboBox11.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxRule2a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule2a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox11ActionPerformed(evt);
+                jComboBoxRule2aActionPerformed(evt);
             }
         });
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+        jComboBoxRule2b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule2b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule2bActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Rule 3");
+
+        jComboBoxRule3a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule3a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule3aActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule3b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3B", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule3b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule3bActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Rule 4");
+
+        jComboBoxRule4a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4A", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule4a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule4aActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule4b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule4b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule4bActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Rule 5");
+
+        jLabel18.setText("Rule 6");
+
+        jComboBoxRule6a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule6a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule6aActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule6b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule6b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule6bActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Rule 7");
 
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7A", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+        jComboBoxRule7a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule7a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule7aActionPerformed(evt);
+            }
+        });
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7B", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", " " }));
+        jComboBoxRule7b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule7b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule7bActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule1C.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1C", " ", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule1C.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule1CActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule2c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2C", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule2c.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule2cActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule3c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule3c.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule3cActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule4c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule4c.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule4cActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule5a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5A", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule5a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule5aActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule6c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule6c.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule6cActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule7c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule7c.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule7cActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule5b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule5b.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule5bActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRule5c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule5c.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRule5cActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -565,9 +695,9 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxRule7a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
-                        .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBoxRule7b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
@@ -577,31 +707,51 @@ public class Interface_TA extends javax.swing.JFrame {
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel18))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxRule4a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxRule4b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jComboBoxRule4c, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxRule1A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jComboBoxRule3a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jComboBoxRule3b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxRule3c, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jComboBoxRule2a, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxRule1a, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox9, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox11, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(5, 5, 5)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(jComboBoxRule1b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBoxRule1C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(jComboBoxRule2b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBoxRule2c, 0, 1, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jComboBoxRule5a, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxRule6a, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox10, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jComboBoxRule6b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jComboBoxRule7c, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jComboBoxRule6c, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jComboBoxRule5b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBoxRule5c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -609,42 +759,49 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxRule1A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addComponent(jComboBoxRule1a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule1b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(jComboBoxRule1C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxRule2a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule2b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule2c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxRule3a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule3b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule3c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxRule4a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule4b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule4c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                    .addComponent(jComboBoxRule5a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule5b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule5c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxRule6b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxRule6a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxRule6c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                            .addComponent(jComboBoxRule7a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxRule7b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jComboBoxRule7c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -653,7 +810,7 @@ public class Interface_TA extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 37, Short.MAX_VALUE))
+                .addGap(0, 41, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -671,7 +828,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(279, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -688,14 +845,14 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(141, Short.MAX_VALUE)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3)))
                 .addGap(48, 48, 48))
         );
         jPanel6Layout.setVerticalGroup(
@@ -736,7 +893,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -753,7 +910,7 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1064, Short.MAX_VALUE)
+            .addGap(0, 1083, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -837,16 +994,20 @@ public class Interface_TA extends javax.swing.JFrame {
         int total=0;
         int benar=0;
         
-        String rulesatua = jComboBoxRule1A.getSelectedItem().toString();
-        String[] temp;
-        String delimiter = " ";
-
-        temp = rulesatua.split(delimiter);   
-        String a = temp[0];   
-        String b = temp[1];
-        String c = temp[2];
-        
-        System.out.println("Isi a : "+ a + "Isi b : " +b +" Isi c : "+ c);
+//        String rulesatua = jComboBoxRule1A.getSelectedItem().toString();
+//        String rulesatub = jComboBoxRule1b.getSelectedItem().toString();
+//        String rulesatuc = jComboBoxRule1C.getSelectedItem().toString();
+//        String[] temp;
+//        String delimiter = " ";
+//
+//        temp = rulesatua.split(delimiter);   
+//        String a = temp[0];   
+//        String b = temp[1];
+//        String c = temp[2];
+//        
+//        System.out.println("Isi a : "+ a + "Isi b : " +b +" Isi c : "+ c);
+//        
+//        GetRule rule1 = new GetRule(rulesatua, rulesatub, rulesatuc);
 
         File f=new File("C:/Program Files (x86)/WordNet/2.1/dict");
         System.setProperty("wordnet.database.dir", f.toString());
@@ -1519,19 +1680,36 @@ public class Interface_TA extends javax.swing.JFrame {
 //
 //            }
 
-
+//=========================================IOB COBA =========================================================
              if(!CheckLemma.isSelected() && !CheckBC.isSelected() && CheckCR.isSelected()
                 && !CheckSW.isSelected() && !CheckPT.isSelected()){
+//                 StringBuilder sb = new StringBuilder();
+//                 sb.append(inputan.get(i));
+//                getData data = new getData();
+//                data.setDataIob(sb.toString());
                 String[] tamp = new String[inputan.size()];
                 tamp = inputan.toArray(tamp);
-                result = iobchunk.Iob(tamp);
+                result = iobchunk.Iob(inputan.get(i));
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
                 AreaSW.append("Hasil :" + result);
                 AreaSW.append("\n");
                  
              }
-            //pos tagging
+             
+//             if(!CheckLemma.isSelected() && !CheckBC.isSelected() && CheckCR.isSelected()
+//                && !CheckSW.isSelected() && !CheckPT.isSelected()){
+//                GetCorref hasilcoref = new GetCorref();
+//                result = hasilcoref.getHasilcoref();
+//                AreaSW.append(i + 1 + "." + inputan.get(i));
+//                AreaSW.append("\n");
+//                AreaSW.append("Hasil :" + result);
+//                AreaSW.append("\n");
+//                 
+//             }
+//             
+//==========================================POS TAG ============================================================
+
                         if(CheckPT.isSelected() && !CheckSW.isSelected() && !CheckBC.isSelected()
                                     && !CheckCR.isSelected() && !CheckLemma.isSelected()){
                                
@@ -1636,19 +1814,30 @@ public class Interface_TA extends javax.swing.JFrame {
                 
 
             }
-            
+//=======================================BIO CHUNKING ========================================================
             if(!CheckLemma.isSelected() && CheckBC.isSelected() && !CheckCR.isSelected()
                 && !CheckSW.isSelected() && !CheckPT.isSelected()){
-                String Bio;
-                try {
-                    Bio = bio.Chunker(lemanotag);
-                    AreaSW.append(i + 1 + "." + inputan.get(i));
-                    AreaSW.append("\n");
-                    AreaSW.append("Hasil :" + Bio);
-                    AreaSW.append("\n");
-                } catch (IOException ex) {
-                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                //String reg = null;
+                String[] tamp = new String[inputan.size()];
+                tamp = inputan.toArray(tamp);
+                result = iobchunk.Iob(inputan.get(i));
+                String reg = regbio.RegBio(result);
+                AreaSW.append(i + 1 + "." + inputan.get(i));
+                AreaSW.append("\n");
+                AreaSW.append("Hasil :" + result);
+                AreaSW.append("\n");
+                AreaSW.append("Hasil Regex :" + reg);
+                AreaSW.append("\n");
+//                String Bio;
+//                try {
+//                    Bio = bio.Chunker(lemanotag);
+//                    AreaSW.append(i + 1 + "." + inputan.get(i));
+//                    AreaSW.append("\n");
+//                    AreaSW.append("Hasil :" + Bio);
+//                    AreaSW.append("\n");
+//                } catch (IOException ex) {
+//                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+//                }
                 
 
             }
@@ -1705,9 +1894,110 @@ public class Interface_TA extends javax.swing.JFrame {
         data();
     }//GEN-LAST:event_ComboDatasetActionPerformed
 
-    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox11ActionPerformed
+    private void jComboBoxRule6aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6aActionPerformed
+        String r6a = jComboBoxRule6a.getSelectedItem().toString();
+        ruleget.setRule6a(r6a);
+    }//GEN-LAST:event_jComboBoxRule6aActionPerformed
+
+    private void jComboBoxRule1aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1aActionPerformed
+        String r1a = jComboBoxRule1a.getSelectedItem().toString();
+        ruleget.setRule1a(r1a);
+    }//GEN-LAST:event_jComboBoxRule1aActionPerformed
+
+    private void jComboBoxRule1bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1bActionPerformed
+        String r1b = jComboBoxRule1b.getSelectedItem().toString();
+        ruleget.setRule1b(r1b);
+    }//GEN-LAST:event_jComboBoxRule1bActionPerformed
+
+    private void jComboBoxRule1CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1CActionPerformed
+       String r1c = jComboBoxRule1C.getSelectedItem().toString();
+       ruleget.setRule1c(r1c);
+    }//GEN-LAST:event_jComboBoxRule1CActionPerformed
+
+    private void jComboBoxRule2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2aActionPerformed
+        String r2a = jComboBoxRule2a.getSelectedItem().toString();
+        ruleget.setRule2a(r2a);
+    }//GEN-LAST:event_jComboBoxRule2aActionPerformed
+
+    private void jComboBoxRule2bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2bActionPerformed
+        String r2b = jComboBoxRule2b.getSelectedItem().toString();
+        ruleget.setRule2b(r2b);
+    }//GEN-LAST:event_jComboBoxRule2bActionPerformed
+
+    private void jComboBoxRule2cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2cActionPerformed
+        String r2c = jComboBoxRule2c.getSelectedItem().toString();
+        ruleget.setRule2c(r2c);
+    }//GEN-LAST:event_jComboBoxRule2cActionPerformed
+
+    private void jComboBoxRule3aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3aActionPerformed
+        String r3a = jComboBoxRule3a.getSelectedItem().toString();
+        ruleget.setRule3a(r3a);
+    }//GEN-LAST:event_jComboBoxRule3aActionPerformed
+
+    private void jComboBoxRule3bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3bActionPerformed
+        String r3b = jComboBoxRule3b.getSelectedItem().toString();
+        ruleget.setRule3b(r3b);
+    }//GEN-LAST:event_jComboBoxRule3bActionPerformed
+
+    private void jComboBoxRule3cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3cActionPerformed
+        String r3c = jComboBoxRule3c.getSelectedItem().toString();
+        ruleget.setRule3c(r3c);
+    }//GEN-LAST:event_jComboBoxRule3cActionPerformed
+
+    private void jComboBoxRule4aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4aActionPerformed
+        String r4a = jComboBoxRule4a.getSelectedItem().toString();
+        ruleget.setRule4a(r4a);
+    }//GEN-LAST:event_jComboBoxRule4aActionPerformed
+
+    private void jComboBoxRule4bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4bActionPerformed
+        String r4b = jComboBoxRule4b.getSelectedItem().toString();
+        ruleget.setRule4b(r4b);
+    }//GEN-LAST:event_jComboBoxRule4bActionPerformed
+
+    private void jComboBoxRule4cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4cActionPerformed
+        String r4c = jComboBoxRule4c.getSelectedItem().toString();
+        ruleget.setRule4c(r4c);
+    }//GEN-LAST:event_jComboBoxRule4cActionPerformed
+
+    private void jComboBoxRule5aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5aActionPerformed
+        String r5a = jComboBoxRule5a.getSelectedItem().toString();
+        ruleget.setRule5a(r5a);
+    }//GEN-LAST:event_jComboBoxRule5aActionPerformed
+
+    private void jComboBoxRule5bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5bActionPerformed
+        String r5b = jComboBoxRule5b.getSelectedItem().toString();
+        ruleget.setRule5b(r5b);
+    }//GEN-LAST:event_jComboBoxRule5bActionPerformed
+
+    private void jComboBoxRule5cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5cActionPerformed
+        String r5c = jComboBoxRule5c.getSelectedItem().toString();
+        ruleget.setRule5c(r5c);
+    }//GEN-LAST:event_jComboBoxRule5cActionPerformed
+
+    private void jComboBoxRule6bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6bActionPerformed
+        String r6b = jComboBoxRule6b.getSelectedItem().toString();
+        ruleget.setRule6b(r6b);
+    }//GEN-LAST:event_jComboBoxRule6bActionPerformed
+
+    private void jComboBoxRule6cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6cActionPerformed
+        String r6c = jComboBoxRule6c.getSelectedItem().toString();
+        ruleget.setRule6c(r6c);
+    }//GEN-LAST:event_jComboBoxRule6cActionPerformed
+
+    private void jComboBoxRule7aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7aActionPerformed
+       String r7a = jComboBoxRule7a.getSelectedItem().toString();
+        ruleget.setRule7a(r7a);
+    }//GEN-LAST:event_jComboBoxRule7aActionPerformed
+
+    private void jComboBoxRule7bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7bActionPerformed
+       String r7b = jComboBoxRule7b.getSelectedItem().toString();
+        ruleget.setRule7b(r7b);
+    }//GEN-LAST:event_jComboBoxRule7bActionPerformed
+
+    private void jComboBoxRule7cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7cActionPerformed
+        String r7c = jComboBoxRule7c.getSelectedItem().toString();
+        ruleget.setRule7c(r7c);
+    }//GEN-LAST:event_jComboBoxRule7cActionPerformed
 
     public void data(){
     String value = ComboDataset.getSelectedItem().toString();
@@ -1774,20 +2064,27 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBoxNpParser;
     private javax.swing.JCheckBox jCheckBoxTypeDepedency;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox13;
-    private javax.swing.JComboBox<String> jComboBox14;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
-    private javax.swing.JComboBox<String> jComboBoxRule1A;
+    private javax.swing.JComboBox<String> jComboBoxRule1C;
+    private javax.swing.JComboBox<String> jComboBoxRule1a;
+    private javax.swing.JComboBox<String> jComboBoxRule1b;
+    private javax.swing.JComboBox<String> jComboBoxRule2a;
+    private javax.swing.JComboBox<String> jComboBoxRule2b;
+    private javax.swing.JComboBox<String> jComboBoxRule2c;
+    private javax.swing.JComboBox<String> jComboBoxRule3a;
+    private javax.swing.JComboBox<String> jComboBoxRule3b;
+    private javax.swing.JComboBox<String> jComboBoxRule3c;
+    private javax.swing.JComboBox<String> jComboBoxRule4a;
+    private javax.swing.JComboBox<String> jComboBoxRule4b;
+    private javax.swing.JComboBox<String> jComboBoxRule4c;
+    private javax.swing.JComboBox<String> jComboBoxRule5a;
+    private javax.swing.JComboBox<String> jComboBoxRule5b;
+    private javax.swing.JComboBox<String> jComboBoxRule5c;
+    private javax.swing.JComboBox<String> jComboBoxRule6a;
+    private javax.swing.JComboBox<String> jComboBoxRule6b;
+    private javax.swing.JComboBox<String> jComboBoxRule6c;
+    private javax.swing.JComboBox<String> jComboBoxRule7a;
+    private javax.swing.JComboBox<String> jComboBoxRule7b;
+    private javax.swing.JComboBox<String> jComboBoxRule7c;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

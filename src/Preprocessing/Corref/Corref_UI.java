@@ -232,8 +232,14 @@ public class Corref_UI extends javax.swing.JFrame {
       String tampMention = coreff.getMention();
       String tampResult = coreff.getResult();
       
+      
+      
       //for(String tamp : inputan){
       tampung = inputan.get(i).replaceAll(tampResult, " "+tampMention);
+      GetCorref hasilcoref = new GetCorref();
+      hasilcoref.setHasilcoref(tampung);
+      
+      //String tamp = hasilcoref.getHasilcoref().toString();
       //}
      //String cooref = coref.Corref(inputan.get(i));
      jTextAreaCorref.append(i + 1 + "." + inputan.get(i));
