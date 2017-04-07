@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ta_deas.CallFile;
+import ta_deas.Interface_TA;
 import static ta_deas.Interface_TA.inputan;
 
 /**
@@ -225,6 +226,8 @@ public class Corref_UI extends javax.swing.JFrame {
 
     private void jButtonCorrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCorrefActionPerformed
      //CorrefOOP coref = new CorrefOOP();
+     
+        
       for(int i = 0; i < inputan.size(); i++){
       MyResult coreff = Corref(inputan.get(i));
       String tampung = null;
@@ -232,12 +235,17 @@ public class Corref_UI extends javax.swing.JFrame {
       String tampMention = coreff.getMention();
       String tampResult = coreff.getResult();
       
+//      Interface_TA frameutama = new Interface_TA();
+//      Interface_TA.AreaSW.setText(tampung);
+//      frameutama.setVisible(true);
       
       
       //for(String tamp : inputan){
       tampung = inputan.get(i).replaceAll(tampResult, " "+tampMention);
-      GetCorref hasilcoref = new GetCorref();
-      hasilcoref.setHasilcoref(tampung);
+      GetCorref.setHasilcoref(tampung);
+      
+      
+      //hasilcoref.setHasilcoref(tampung);
       
       //String tamp = hasilcoref.getHasilcoref().toString();
       //}

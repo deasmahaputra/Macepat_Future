@@ -9,6 +9,7 @@ package ta_deas;
 //import Preprocessing.Lemmatization;
 import PatternKnowladge.inputFile;
 import PatternKnowladge.Fitur;
+import PatternKnowladge.GetDataRule;
 import PatternKnowladge.GetRule;
 import PatternKnowladge.Opini;
 import PatternKnowladge.Rule;
@@ -122,8 +123,397 @@ public class Interface_TA extends javax.swing.JFrame {
     StanParser Parser = new StanParser();
     inputFile input = new inputFile();
     IobChunk iobchunk = new IobChunk();
-    GetRule ruleget = new GetRule();
+//    GetRule ruleget = new GetRule();
     RegIob regbio = new RegIob();
+    
+    
+    public void getRuleSelected(){
+        
+        GetDataRule getdatarule = GetDataRule.getInstance();
+        String rulesatua = jComboBoxRule1a.getSelectedItem().toString();
+        String rulesatub = jComboBoxRule1b.getSelectedItem().toString();
+        String rulesatuc = jComboBoxRule1C.getSelectedItem().toString();
+        String ruleduaa = jComboBoxRule2a.getSelectedItem().toString();
+        String ruleduab = jComboBoxRule2b.getSelectedItem().toString();
+        String ruleduac = jComboBoxRule2c.getSelectedItem().toString();
+        String ruletigaa = jComboBoxRule3a.getSelectedItem().toString();
+        String ruletigab = jComboBoxRule3b.getSelectedItem().toString();
+        String ruletigac = jComboBoxRule3c.getSelectedItem().toString();
+        String ruleempata = jComboBoxRule4a.getSelectedItem().toString();
+        String ruleempatb = jComboBoxRule4b.getSelectedItem().toString();
+        String ruleempatc = jComboBoxRule4c.getSelectedItem().toString();
+        String rulelimaa = jComboBoxRule5a.getSelectedItem().toString();
+        String rulelimab = jComboBoxRule5b.getSelectedItem().toString();
+        String rulelimac = jComboBoxRule5c.getSelectedItem().toString();
+        String ruleenama = jComboBoxRule6a.getSelectedItem().toString();
+        String ruleenamb = jComboBoxRule6b.getSelectedItem().toString();
+        String ruleenamc = jComboBoxRule6c.getSelectedItem().toString();
+        String ruletujuha = jComboBoxRule7a.getSelectedItem().toString();
+        String ruletujuhb = jComboBoxRule7b.getSelectedItem().toString();
+        String ruletujuhc = jComboBoxRule7c.getSelectedItem().toString();
+        String ruledelapana = jComboBoxRule8a.getSelectedItem().toString();
+        String ruledelapanb = jComboBoxRule8b.getSelectedItem().toString();
+        String ruledelapanc = jComboBoxRule8c.getSelectedItem().toString();
+        
+        if(rulesatua == "-"){
+            getdatarule.setRule1A1(" ");
+            getdatarule.setRule1A2(" ");
+            getdatarule.setRule1a3(" ");
+        
+        }else{
+            String[] temp1a;
+            String delimiter = " ";
+
+            temp1a = rulesatua.split(delimiter);
+            getdatarule.setRule1A1(temp1a[0].toString());
+            getdatarule.setRule1A2(temp1a[1].toString());
+            getdatarule.setRule1a3(temp1a[2].toString());
+        }
+        if(rulesatub == "-"){
+            getdatarule.setRule1B1(" ");
+            getdatarule.setRule1B2(" ");
+            getdatarule.setRule1B3(" ");
+        
+        }else{
+            String[] temp1b;
+            String delimiter = " ";
+
+            temp1b = rulesatub.split(delimiter);
+            getdatarule.setRule1B1(temp1b[0].toString());
+            getdatarule.setRule1B2(temp1b[1].toString());
+            getdatarule.setRule1B3(temp1b[2].toString());
+        }
+        
+        if(rulesatuc == "-"){
+            getdatarule.setRule1C1(" ");
+            getdatarule.setRule1C2(" ");
+            getdatarule.setRule1C3(" ");
+        
+        }else{
+            String[] temp1c;
+            String delimiter = " ";
+
+            temp1c = rulesatuc.split(delimiter);
+            getdatarule.setRule1C1(temp1c[0].toString());
+            getdatarule.setRule1C2(temp1c[1].toString());
+            getdatarule.setRule1C3(temp1c[2].toString());
+        }
+        
+        if(ruleduaa == "-"){
+            getdatarule.setRule2A1(" ");
+            getdatarule.setRule2A2(" ");
+            getdatarule.setRule2a3(" ");
+        
+        }else{
+            String[] temp2a;
+            String delimiter = " ";
+
+            temp2a = ruleduaa.split(delimiter);
+            getdatarule.setRule2A1(temp2a[0].toString());
+            getdatarule.setRule2A2(temp2a[1].toString());
+            getdatarule.setRule2a3(temp2a[2].toString());
+        }
+        
+        if(ruleduab == "-"){
+            getdatarule.setRule2B1(" ");
+            getdatarule.setRule2B2(" ");
+            getdatarule.setRule2B3(" ");
+        
+        }else{
+            String[] temp2b;
+            String delimiter = " ";
+
+            temp2b = ruleduab.split(delimiter);
+            getdatarule.setRule2B1(temp2b[0].toString());
+            getdatarule.setRule2B2(temp2b[1].toString());
+            getdatarule.setRule2B3(temp2b[2].toString());
+        }
+        
+        if(ruleduac == "-"){
+            getdatarule.setRule2C1(" ");
+            getdatarule.setRule2C2(" ");
+            getdatarule.setRule2C3(" ");
+        
+        }else{
+            String[] temp2c;
+            String delimiter = " ";
+
+            temp2c = ruleduac.split(delimiter);
+            getdatarule.setRule2C1(temp2c[0].toString());
+            getdatarule.setRule2C2(temp2c[1].toString());
+            getdatarule.setRule2C3(temp2c[2].toString());
+        }
+        
+        if(ruletigaa == "-"){
+            getdatarule.setRule3A1(" ");
+            getdatarule.setRule3A2(" ");
+            getdatarule.setRule3a3(" ");
+        
+        }else{
+            String[] temp3a;
+            String delimiter = " ";
+
+            temp3a = ruletigaa.split(delimiter);
+            getdatarule.setRule3A1(temp3a[0].toString());
+            getdatarule.setRule3A2(temp3a[1].toString());
+            getdatarule.setRule3a3(temp3a[2].toString());
+        }
+        
+        if(ruletigab == "-"){
+            getdatarule.setRule3B1(" ");
+            getdatarule.setRule3B2(" ");
+            getdatarule.setRule3B3(" ");
+        
+        }else{
+            String[] temp3b;
+            String delimiter = " ";
+
+            temp3b = ruletigab.split(delimiter);
+            getdatarule.setRule3B1(temp3b[0].toString());
+            getdatarule.setRule3B2(temp3b[1].toString());
+            getdatarule.setRule3B3(temp3b[2].toString());
+        }
+        
+        if(ruletigac == "-"){
+            getdatarule.setRule3C1(" ");
+            getdatarule.setRule3C2(" ");
+            getdatarule.setRule3C3(" ");
+        
+        }else{
+            String[] temp3c;
+            String delimiter = " ";
+
+            temp3c = ruletigac.split(delimiter);
+            getdatarule.setRule3C1(temp3c[0].toString());
+            getdatarule.setRule3C2(temp3c[1].toString());
+            getdatarule.setRule3C3(temp3c[2].toString());
+        }
+        
+        if(ruleempata == "-"){
+            getdatarule.setRule4A1(" ");
+            getdatarule.setRule4A2(" ");
+            getdatarule.setRule4a3(" ");
+        
+        }else{
+            String[] temp4a;
+            String delimiter = " ";
+
+            temp4a = ruleempata.split(delimiter);
+            getdatarule.setRule4A1(temp4a[0].toString());
+            getdatarule.setRule4A2(temp4a[1].toString());
+            getdatarule.setRule4a3(temp4a[2].toString());
+        }
+        
+         if(ruleempatb == "-"){
+            getdatarule.setRule4B1(" ");
+            getdatarule.setRule4B2(" ");
+            getdatarule.setRule4B3(" ");
+        
+        }else{
+            String[] temp4b;
+            String delimiter = " ";
+
+            temp4b = ruleempatb.split(delimiter);
+            getdatarule.setRule4B1(temp4b[0].toString());
+            getdatarule.setRule4B2(temp4b[1].toString());
+            getdatarule.setRule4B3(temp4b[2].toString());
+        }
+         
+        if(ruleempatc == "-"){
+            getdatarule.setRule4C1(" ");
+            getdatarule.setRule4C2(" ");
+            getdatarule.setRule4C3(" ");
+        
+        }else{
+            String[] temp4c;
+            String delimiter = " ";
+
+            temp4c = ruleempatc.split(delimiter);
+            getdatarule.setRule4C1(temp4c[0].toString());
+            getdatarule.setRule4C2(temp4c[1].toString());
+            getdatarule.setRule4C3(temp4c[2].toString());
+        }
+        
+        if(rulelimaa == "-"){
+            getdatarule.setRule5A1(" ");
+            getdatarule.setRule5A2(" ");
+            getdatarule.setRule5a3(" ");
+        
+        }else{
+            String[] temp5a;
+            String delimiter = " ";
+
+            temp5a = rulelimaa.split(delimiter);
+            getdatarule.setRule5A1(temp5a[0].toString());
+            getdatarule.setRule5A2(temp5a[1].toString());
+            getdatarule.setRule5a3(temp5a[2].toString());
+        }
+        
+        if(rulelimab == "-"){
+            getdatarule.setRule5B1(" ");
+            getdatarule.setRule5B2(" ");
+            getdatarule.setRule5B3(" ");
+        
+        }else{
+            String[] temp5b;
+            String delimiter = " ";
+
+            temp5b = rulelimab.split(delimiter);
+            getdatarule.setRule5B1(temp5b[0].toString());
+            getdatarule.setRule5B2(temp5b[1].toString());
+            getdatarule.setRule5B3(temp5b[2].toString());
+        }
+        
+        if(rulelimac == "-"){
+            getdatarule.setRule5C1(" ");
+            getdatarule.setRule5C2(" ");
+            getdatarule.setRule5C3(" ");
+        
+        }else{
+            String[] temp5c;
+            String delimiter = " ";
+
+            temp5c = rulelimac.split(delimiter);
+            getdatarule.setRule5C1(temp5c[0].toString());
+            getdatarule.setRule5C2(temp5c[1].toString());
+            getdatarule.setRule5C3(temp5c[2].toString());
+        }
+        
+        if(ruleenama == "-"){
+            getdatarule.setRule6A1(" ");
+            getdatarule.setRule6A2(" ");
+            getdatarule.setRule6a3(" ");
+        
+        }else{
+            String[] temp6a;
+            String delimiter = " ";
+
+            temp6a = ruleenama.split(delimiter);
+            getdatarule.setRule6A1(temp6a[0].toString());
+            getdatarule.setRule6A2(temp6a[1].toString());
+            getdatarule.setRule6a3(temp6a[2].toString());
+        }
+        
+        if(ruleenamb == "-"){
+            getdatarule.setRule6B1(" ");
+            getdatarule.setRule6B2(" ");
+            getdatarule.setRule6B3(" ");
+        
+        }else{
+            String[] temp6b;
+            String delimiter = " ";
+
+            temp6b = ruleenama.split(delimiter);
+            getdatarule.setRule6B1(temp6b[0].toString());
+            getdatarule.setRule6B2(temp6b[1].toString());
+            getdatarule.setRule6B3(temp6b[2].toString());
+        }
+        
+        if(ruleenamc == "-"){
+            getdatarule.setRule6C1(" ");
+            getdatarule.setRule6C2(" ");
+            getdatarule.setRule6C3(" ");
+        
+        }else{
+            String[] temp6c;
+            String delimiter = " ";
+
+            temp6c = ruleenamc.split(delimiter);
+            getdatarule.setRule6C1(temp6c[0].toString());
+            getdatarule.setRule6C2(temp6c[1].toString());
+            getdatarule.setRule6C3(temp6c[2].toString());
+        }
+        
+        if(ruletujuha == "-"){
+            getdatarule.setRule7A1(" ");
+            getdatarule.setRule7A2(" ");
+            getdatarule.setRule7a3(" ");
+        
+        }else{
+            String[] temp7a;
+            String delimiter = " ";
+
+            temp7a = ruletujuha.split(delimiter);
+            getdatarule.setRule7A1(temp7a[0].toString());
+            getdatarule.setRule7A2(temp7a[1].toString());
+            getdatarule.setRule7a3(temp7a[2].toString());
+        }
+        
+        if(ruletujuhb == "-"){
+            getdatarule.setRule7B1(" ");
+            getdatarule.setRule7B2(" ");
+            getdatarule.setRule7B3(" ");
+        
+        }else{
+            String[] temp7b;
+            String delimiter = " ";
+
+            temp7b = ruletujuhb.split(delimiter);
+            getdatarule.setRule7B1(temp7b[0].toString());
+            getdatarule.setRule7B2(temp7b[1].toString());
+            getdatarule.setRule7B3(temp7b[2].toString());
+        }
+        
+        if(ruletujuhc == "-"){
+            getdatarule.setRule7C1(" ");
+            getdatarule.setRule7C2(" ");
+            getdatarule.setRule7C3(" ");
+        
+        }else{
+            String[] temp7c;
+            String delimiter = " ";
+
+            temp7c = ruletujuhc.split(delimiter);
+            getdatarule.setRule7C1(temp7c[0].toString());
+            getdatarule.setRule7C2(temp7c[1].toString());
+            getdatarule.setRule7C3(temp7c[2].toString());
+        }
+        
+        if(ruledelapana == "-"){
+            getdatarule.setRule8A1(" ");
+            getdatarule.setRule8A2(" ");
+            getdatarule.setRule8a3(" ");
+        
+        }else{
+            String[] temp8a;
+            String delimiter = " ";
+
+            temp8a = ruledelapana.split(delimiter);
+            getdatarule.setRule8A1(temp8a[0].toString());
+            getdatarule.setRule8A2(temp8a[1].toString());
+            getdatarule.setRule8a3(temp8a[2].toString());
+        }
+        
+        if(ruledelapanb == "-"){
+            getdatarule.setRule8B1(" ");
+            getdatarule.setRule8B2(" ");
+            getdatarule.setRule8B3(" ");
+        
+        }else{
+            String[] temp8b;
+            String delimiter = " ";
+
+            temp8b = ruledelapanb.split(delimiter);
+            getdatarule.setRule8B1(temp8b[0].toString());
+            getdatarule.setRule8B2(temp8b[1].toString());
+            getdatarule.setRule8B3(temp8b[2].toString());
+        }
+        
+        if(ruledelapanc == "-"){
+            getdatarule.setRule8C1(" ");
+            getdatarule.setRule8C2(" ");
+            getdatarule.setRule8C3(" ");
+        
+        }else{
+            String[] temp8c;
+            String delimiter = " ";
+
+            temp8c = ruledelapanc.split(delimiter);
+            getdatarule.setRule8C1(temp8c[0].toString());
+            getdatarule.setRule8C2(temp8c[1].toString());
+            getdatarule.setRule8C3(temp8c[2].toString());
+        }
+    }
     //CorreferenceResolution cr = new CorreferenceResolution();
     //example ex = new example();
     //Stop st = new Stop();
@@ -202,6 +592,10 @@ public class Interface_TA extends javax.swing.JFrame {
         jComboBoxRule7c = new javax.swing.JComboBox<>();
         jComboBoxRule5b = new javax.swing.JComboBox<>();
         jComboBoxRule5c = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBoxRule8a = new javax.swing.JComboBox<>();
+        jComboBoxRule8b = new javax.swing.JComboBox<>();
+        jComboBoxRule8c = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -321,6 +715,7 @@ public class Interface_TA extends javax.swing.JFrame {
 
         CheckLemma.setText("Lemmatization");
 
+        CheckPT.setSelected(true);
         CheckPT.setText("POS Tagging");
         CheckPT.setEnabled(false);
         CheckPT.setFocusPainted(false);
@@ -524,14 +919,14 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBoxRule1a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule1a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule1a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule1aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule1b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1B", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule1b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
         jComboBoxRule1b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule1bActionPerformed(evt);
@@ -542,14 +937,14 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel14.setText("Rule 2");
 
-        jComboBoxRule2a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule2a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule2a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule2aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule2b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule2b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule2b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule2bActionPerformed(evt);
@@ -558,14 +953,14 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel15.setText("Rule 3");
 
-        jComboBoxRule3a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule3a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule3a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule3aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule3b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3B", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule3b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule3b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule3bActionPerformed(evt);
@@ -574,14 +969,14 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel16.setText("Rule 4");
 
-        jComboBoxRule4a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4A", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule4a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule4a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule4aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule4b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule4b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule4b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule4bActionPerformed(evt);
@@ -592,14 +987,14 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel18.setText("Rule 6");
 
-        jComboBoxRule6a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule6a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule6a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule6aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule6b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule6b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule6b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule6bActionPerformed(evt);
@@ -608,82 +1003,90 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel4.setText("Rule 7");
 
-        jComboBoxRule7a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7A", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule7a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule7a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule7aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule7b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule7b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule7b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule7bActionPerformed(evt);
             }
         });
 
-        jComboBoxRule1C.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1C", " ", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule1C.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 1C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule1C.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule1CActionPerformed(evt);
             }
         });
 
-        jComboBoxRule2c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2C", "_JJ", "_NN", "_RB", "_VBN", " " }));
+        jComboBoxRule2c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 2C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule2c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule2cActionPerformed(evt);
             }
         });
 
-        jComboBoxRule3c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule3c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 3C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule3c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule3cActionPerformed(evt);
             }
         });
 
-        jComboBoxRule4c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule4c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 4C", "_JJ _JJR _JJS", "_NN _NNS", "_RB _RBR _RBS", "_VBN _VBD", "-", " " }));
         jComboBoxRule4c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule4cActionPerformed(evt);
             }
         });
 
-        jComboBoxRule5a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5A", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule5a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule5a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule5aActionPerformed(evt);
             }
         });
 
-        jComboBoxRule6c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule6c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 6C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule6c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule6cActionPerformed(evt);
             }
         });
 
-        jComboBoxRule7c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule7c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 7C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule7c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule7cActionPerformed(evt);
             }
         });
 
-        jComboBoxRule5b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5B", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule5b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
         jComboBoxRule5b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule5bActionPerformed(evt);
             }
         });
 
-        jComboBoxRule5c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5C", " ", "_JJ", "_NN", "_RB", "_VBN" }));
+        jComboBoxRule5c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 5C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
         jComboBoxRule5c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxRule5cActionPerformed(evt);
             }
         });
+
+        jLabel5.setText("Rule 8");
+
+        jComboBoxRule8a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rule 8A", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
+
+        jComboBoxRule8b.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RULE 8B", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-" }));
+
+        jComboBoxRule8c.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RULE 8C", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _", "-", " " }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -691,13 +1094,7 @@ public class Interface_TA extends javax.swing.JFrame {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxRule7a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(jComboBoxRule7b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
@@ -751,8 +1148,27 @@ public class Interface_TA extends javax.swing.JFrame {
                                         .addComponent(jComboBoxRule5b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jComboBoxRule5c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxRule8a, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxRule7a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(jComboBoxRule7b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxRule8b, 0, 1, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBoxRule8c, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -801,7 +1217,13 @@ public class Interface_TA extends javax.swing.JFrame {
                             .addComponent(jComboBoxRule7b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jComboBoxRule7c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jComboBoxRule8a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule8b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRule8c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -810,7 +1232,7 @@ public class Interface_TA extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 41, Short.MAX_VALUE))
+                .addGap(0, 77, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -828,7 +1250,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(279, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -850,8 +1272,8 @@ public class Interface_TA extends javax.swing.JFrame {
                         .addContainerGap(141, Short.MAX_VALUE)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3)))
                 .addGap(48, 48, 48))
         );
@@ -953,6 +1375,72 @@ public class Interface_TA extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //FITUR
+        getRuleSelected();
+//        GetRule getrule = GetRule.getInstance();
+//        String r1a = jComboBoxRule1a.getSelectedItem().toString();
+//        getrule.setRule1a(r1a);
+//        
+//        String r1b = jComboBoxRule1b.getSelectedItem().toString();
+//        getrule.setRule1b(r1b);
+//        
+//        String r1c = jComboBoxRule1C.getSelectedItem().toString();
+//        getrule.setRule1c(r1c);
+//        
+//        String r2a = jComboBoxRule2a.getSelectedItem().toString();
+//        getrule.setRule2a(r2a);
+//
+//        String r2b = jComboBoxRule2b.getSelectedItem().toString();
+//        getrule.setRule2b(r2b);        
+//
+//        String r2c = jComboBoxRule2c.getSelectedItem().toString();
+//        getrule.setRule2c(r2c);
+//        
+//        String r3a = jComboBoxRule3a.getSelectedItem().toString();
+//        getrule.setRule3a(r3a);
+//        
+//        String r3b = jComboBoxRule3b.getSelectedItem().toString();
+//        getrule.setRule3b(r3b); 
+//        
+//        String r3c = jComboBoxRule3c.getSelectedItem().toString();
+//        getrule.setRule3c(r3c);
+//        
+//        String r4a = jComboBoxRule4a.getSelectedItem().toString();
+//        getrule.setRule4a(r4a); 
+//        
+//        String r4b = jComboBoxRule4b.getSelectedItem().toString();
+//        getrule.setRule4b(r4b);    
+//        
+//        String r4c = jComboBoxRule4c.getSelectedItem().toString();
+//        getrule.setRule4c(r4c);   
+//        
+//        String r5a = jComboBoxRule5a.getSelectedItem().toString();
+//        getrule.setRule5a(r5a);  
+//        
+//        String r5b = jComboBoxRule5b.getSelectedItem().toString();
+//        getrule.setRule5b(r5b);
+//        
+//        String r5c = jComboBoxRule5c.getSelectedItem().toString();
+//        getrule.setRule5c(r5c);        
+//
+//        String r6a = jComboBoxRule6a.getSelectedItem().toString();
+//        getrule.setRule6a(r6a);   
+//        
+//        String r6b = jComboBoxRule6b.getSelectedItem().toString();
+//        getrule.setRule6b(r6b);
+//        
+//        String r6c = jComboBoxRule6c.getSelectedItem().toString();
+//        getrule.setRule6c(r6c);    
+//        
+//        String r7a = jComboBoxRule7a.getSelectedItem().toString();
+//        getrule.setRule7a(r7a);  
+//        
+//        String r7b = jComboBoxRule7b.getSelectedItem().toString();
+//        getrule.setRule7b(r7b);
+//
+//        String r7c = jComboBoxRule7c.getSelectedItem().toString();
+//        getrule.setRule7c(r7c);        
+        
+        //System.out.println("Isi rule gui : " + r1a + r1b);
         fiturkalimat.clear();
         fiturkalimattotal.clear();
         
@@ -994,18 +1482,12 @@ public class Interface_TA extends javax.swing.JFrame {
         int total=0;
         int benar=0;
         
-//        String rulesatua = jComboBoxRule1A.getSelectedItem().toString();
-//        String rulesatub = jComboBoxRule1b.getSelectedItem().toString();
-//        String rulesatuc = jComboBoxRule1C.getSelectedItem().toString();
-//        String[] temp;
-//        String delimiter = " ";
-//
-//        temp = rulesatua.split(delimiter);   
-//        String a = temp[0];   
-//        String b = temp[1];
-//        String c = temp[2];
+        
+//        String rule1a1 = temp1a[0];   
+//        String rule1a2 = temp1a[1];
+//        String rule1a3 = temp1a[2];
 //        
-//        System.out.println("Isi a : "+ a + "Isi b : " +b +" Isi c : "+ c);
+        //System.out.println("Isi a : "+ a + "Isi b : " +b +" Isi c : "+ c);
 //        
 //        GetRule rule1 = new GetRule(rulesatua, rulesatub, rulesatuc);
 
@@ -1068,7 +1550,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 String fituropinikalimat = "";
                 //2-gram ==========================================================
                 for (int j = 0; j < ngram.size(); j++) {
-                    String opi=Rl.Reg(ngram.get(j));
+                    String opi=Rl.rules(ngram.get(j));
                     if(opi!=null){
                         //hasil rule
                         //output.tulis(opi);
@@ -1132,7 +1614,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 //3-gram ==========================================================
 
                 for (int j = 0; j < ngram2.size(); j++) {
-                    String opi2=Rl.Reg(ngram2.get(j));
+                    String opi2=Rl.rules(ngram2.get(j));
                     if(opi2!=null){
                         //output.tulis(opi2);
 
@@ -1680,19 +2162,20 @@ public class Interface_TA extends javax.swing.JFrame {
 //
 //            }
 
-//=========================================IOB COBA =========================================================
+//=========================================CORREF RESOLUTION =========================================================
              if(!CheckLemma.isSelected() && !CheckBC.isSelected() && CheckCR.isSelected()
                 && !CheckSW.isSelected() && !CheckPT.isSelected()){
+                 
 //                 StringBuilder sb = new StringBuilder();
 //                 sb.append(inputan.get(i));
 //                getData data = new getData();
 //                data.setDataIob(sb.toString());
-                String[] tamp = new String[inputan.size()];
-                tamp = inputan.toArray(tamp);
-                result = iobchunk.Iob(inputan.get(i));
+//                String[] tamp = new String[inputan.size()];
+//                tamp = inputan.toArray(tamp);
+                result = GetCorref.getHasilcoref();
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
-                AreaSW.append("Hasil :" + result);
+                AreaSW.append("Hasil :" + GetCorref.getHasilcoref());
                 AreaSW.append("\n");
                  
              }
@@ -1797,6 +2280,11 @@ public class Interface_TA extends javax.swing.JFrame {
                     String pt = ST.tagger(st);
                     String stpt = stopword.stopwordwithTag(tagging);
                     String lemmas = lemma.lemmatize(stpt);
+                    String[] tamp = new String[inputan.size()];
+                    tamp = inputan.toArray(tamp);
+                    result = iobchunk.Iob(stop);
+                    String reg = regbio.RegBio(result);
+                    
                     AreaSW.append(i + 1 + "." + inputan.get(i));
                     AreaSW.append("\n");
                     AreaSW.append("Hasil POS Tagging : " + tagging);
@@ -1805,7 +2293,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     AreaSW.append("\n");
                     AreaSW.append("Hasil Stopwords : " + stpt);
                     AreaSW.append("\n");
-                    AreaSW.append("Hasil Lemmatization : " + lemmas);
+                    AreaSW.append("Hasil Lemmatization : " + result);
                     AreaSW.append("\n");
                 } catch (IOException ex) {
                     Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
@@ -1895,108 +2383,108 @@ public class Interface_TA extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboDatasetActionPerformed
 
     private void jComboBoxRule6aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6aActionPerformed
-        String r6a = jComboBoxRule6a.getSelectedItem().toString();
-        ruleget.setRule6a(r6a);
+//        String r6a = jComboBoxRule6a.getSelectedItem().toString();
+//        ruleget.setRule6a(r6a);
     }//GEN-LAST:event_jComboBoxRule6aActionPerformed
 
     private void jComboBoxRule1aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1aActionPerformed
-        String r1a = jComboBoxRule1a.getSelectedItem().toString();
-        ruleget.setRule1a(r1a);
+//        String r1a = jComboBoxRule1a.getSelectedItem().toString();
+//        ruleget.setRule1a(r1a);
     }//GEN-LAST:event_jComboBoxRule1aActionPerformed
 
     private void jComboBoxRule1bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1bActionPerformed
-        String r1b = jComboBoxRule1b.getSelectedItem().toString();
-        ruleget.setRule1b(r1b);
+//        String r1b = jComboBoxRule1b.getSelectedItem().toString();
+//        ruleget.setRule1b(r1b);
     }//GEN-LAST:event_jComboBoxRule1bActionPerformed
 
     private void jComboBoxRule1CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1CActionPerformed
-       String r1c = jComboBoxRule1C.getSelectedItem().toString();
-       ruleget.setRule1c(r1c);
+//       String r1c = jComboBoxRule1C.getSelectedItem().toString();
+//       ruleget.setRule1c(r1c);
     }//GEN-LAST:event_jComboBoxRule1CActionPerformed
 
     private void jComboBoxRule2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2aActionPerformed
-        String r2a = jComboBoxRule2a.getSelectedItem().toString();
-        ruleget.setRule2a(r2a);
+//        String r2a = jComboBoxRule2a.getSelectedItem().toString();
+//        ruleget.setRule2a(r2a);
     }//GEN-LAST:event_jComboBoxRule2aActionPerformed
 
     private void jComboBoxRule2bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2bActionPerformed
-        String r2b = jComboBoxRule2b.getSelectedItem().toString();
-        ruleget.setRule2b(r2b);
+//        String r2b = jComboBoxRule2b.getSelectedItem().toString();
+//        ruleget.setRule2b(r2b);
     }//GEN-LAST:event_jComboBoxRule2bActionPerformed
 
     private void jComboBoxRule2cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2cActionPerformed
-        String r2c = jComboBoxRule2c.getSelectedItem().toString();
-        ruleget.setRule2c(r2c);
+//        String r2c = jComboBoxRule2c.getSelectedItem().toString();
+//        ruleget.setRule2c(r2c);
     }//GEN-LAST:event_jComboBoxRule2cActionPerformed
 
     private void jComboBoxRule3aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3aActionPerformed
-        String r3a = jComboBoxRule3a.getSelectedItem().toString();
-        ruleget.setRule3a(r3a);
+//        String r3a = jComboBoxRule3a.getSelectedItem().toString();
+//        ruleget.setRule3a(r3a);
     }//GEN-LAST:event_jComboBoxRule3aActionPerformed
 
     private void jComboBoxRule3bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3bActionPerformed
-        String r3b = jComboBoxRule3b.getSelectedItem().toString();
-        ruleget.setRule3b(r3b);
+//        String r3b = jComboBoxRule3b.getSelectedItem().toString();
+//        ruleget.setRule3b(r3b);
     }//GEN-LAST:event_jComboBoxRule3bActionPerformed
 
     private void jComboBoxRule3cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3cActionPerformed
-        String r3c = jComboBoxRule3c.getSelectedItem().toString();
-        ruleget.setRule3c(r3c);
+//        String r3c = jComboBoxRule3c.getSelectedItem().toString();
+//        ruleget.setRule3c(r3c);
     }//GEN-LAST:event_jComboBoxRule3cActionPerformed
 
     private void jComboBoxRule4aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4aActionPerformed
-        String r4a = jComboBoxRule4a.getSelectedItem().toString();
-        ruleget.setRule4a(r4a);
+//        String r4a = jComboBoxRule4a.getSelectedItem().toString();
+//        ruleget.setRule4a(r4a);
     }//GEN-LAST:event_jComboBoxRule4aActionPerformed
 
     private void jComboBoxRule4bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4bActionPerformed
-        String r4b = jComboBoxRule4b.getSelectedItem().toString();
-        ruleget.setRule4b(r4b);
+//        String r4b = jComboBoxRule4b.getSelectedItem().toString();
+//        ruleget.setRule4b(r4b);
     }//GEN-LAST:event_jComboBoxRule4bActionPerformed
 
     private void jComboBoxRule4cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4cActionPerformed
-        String r4c = jComboBoxRule4c.getSelectedItem().toString();
-        ruleget.setRule4c(r4c);
+//        String r4c = jComboBoxRule4c.getSelectedItem().toString();
+//        ruleget.setRule4c(r4c);
     }//GEN-LAST:event_jComboBoxRule4cActionPerformed
 
     private void jComboBoxRule5aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5aActionPerformed
-        String r5a = jComboBoxRule5a.getSelectedItem().toString();
-        ruleget.setRule5a(r5a);
+//        String r5a = jComboBoxRule5a.getSelectedItem().toString();
+//        ruleget.setRule5a(r5a);
     }//GEN-LAST:event_jComboBoxRule5aActionPerformed
 
     private void jComboBoxRule5bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5bActionPerformed
-        String r5b = jComboBoxRule5b.getSelectedItem().toString();
-        ruleget.setRule5b(r5b);
+//        String r5b = jComboBoxRule5b.getSelectedItem().toString();
+//        ruleget.setRule5b(r5b);
     }//GEN-LAST:event_jComboBoxRule5bActionPerformed
 
     private void jComboBoxRule5cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5cActionPerformed
-        String r5c = jComboBoxRule5c.getSelectedItem().toString();
-        ruleget.setRule5c(r5c);
+//        String r5c = jComboBoxRule5c.getSelectedItem().toString();
+//        ruleget.setRule5c(r5c);
     }//GEN-LAST:event_jComboBoxRule5cActionPerformed
 
     private void jComboBoxRule6bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6bActionPerformed
-        String r6b = jComboBoxRule6b.getSelectedItem().toString();
-        ruleget.setRule6b(r6b);
+//        String r6b = jComboBoxRule6b.getSelectedItem().toString();
+//        ruleget.setRule6b(r6b);
     }//GEN-LAST:event_jComboBoxRule6bActionPerformed
 
     private void jComboBoxRule6cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6cActionPerformed
-        String r6c = jComboBoxRule6c.getSelectedItem().toString();
-        ruleget.setRule6c(r6c);
+//        String r6c = jComboBoxRule6c.getSelectedItem().toString();
+//        ruleget.setRule6c(r6c);
     }//GEN-LAST:event_jComboBoxRule6cActionPerformed
 
     private void jComboBoxRule7aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7aActionPerformed
-       String r7a = jComboBoxRule7a.getSelectedItem().toString();
-        ruleget.setRule7a(r7a);
+//       String r7a = jComboBoxRule7a.getSelectedItem().toString();
+//        ruleget.setRule7a(r7a);
     }//GEN-LAST:event_jComboBoxRule7aActionPerformed
 
     private void jComboBoxRule7bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7bActionPerformed
-       String r7b = jComboBoxRule7b.getSelectedItem().toString();
-        ruleget.setRule7b(r7b);
+//       String r7b = jComboBoxRule7b.getSelectedItem().toString();
+//        ruleget.setRule7b(r7b);
     }//GEN-LAST:event_jComboBoxRule7bActionPerformed
 
     private void jComboBoxRule7cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7cActionPerformed
-        String r7c = jComboBoxRule7c.getSelectedItem().toString();
-        ruleget.setRule7c(r7c);
+//        String r7c = jComboBoxRule7c.getSelectedItem().toString();
+//        ruleget.setRule7c(r7c);
     }//GEN-LAST:event_jComboBoxRule7cActionPerformed
 
     public void data(){
@@ -2048,7 +2536,7 @@ public class Interface_TA extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea AreaDataset;
     private javax.swing.JTextArea AreaExtraksi;
-    private javax.swing.JTextArea AreaSW;
+    public static javax.swing.JTextArea AreaSW;
     private javax.swing.JButton ButtonPreprocessing;
     private javax.swing.JCheckBox CheckBC;
     private javax.swing.JCheckBox CheckCR;
@@ -2085,6 +2573,9 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxRule7a;
     private javax.swing.JComboBox<String> jComboBoxRule7b;
     private javax.swing.JComboBox<String> jComboBoxRule7c;
+    private javax.swing.JComboBox<String> jComboBoxRule8a;
+    private javax.swing.JComboBox<String> jComboBoxRule8b;
+    private javax.swing.JComboBox<String> jComboBoxRule8c;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2095,6 +2586,7 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

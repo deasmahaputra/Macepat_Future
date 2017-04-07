@@ -11,14 +11,14 @@ package Preprocessing.Corref;
  */
 public class GetCorref {
     
-    private String hasilcoref;
+    public static String hasilcoref;
 
-    public String getHasilcoref() {
+    public static String getHasilcoref(){
         return hasilcoref;
     }
 
-    public void setHasilcoref(String hasilcoref) {
-        this.hasilcoref = hasilcoref;
+    public static void setHasilcoref(String hasilcoref) {
+        GetCorref.hasilcoref = hasilcoref;
     }
     
     

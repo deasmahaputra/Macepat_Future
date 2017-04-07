@@ -360,6 +360,7 @@
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="CheckPT">
                       <Properties>
+                        <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="POS Tagging"/>
                         <Property name="enabled" type="boolean" value="false"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -440,6 +441,9 @@
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -471,8 +475,8 @@
                                   <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jTabbedPane3" min="-2" pref="328" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jTabbedPane3" min="-2" pref="471" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -659,7 +663,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -682,14 +686,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jComboBoxRule7a" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                              <Component id="jComboBoxRule7b" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -760,8 +757,34 @@
                                                   </Group>
                                               </Group>
                                           </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jComboBoxRule8a" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jComboBoxRule7a" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                                      <Component id="jComboBoxRule7b" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jComboBoxRule8b" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jComboBoxRule8c" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -821,7 +844,14 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="85" max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxRule8a" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxRule8b" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxRule8c" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="54" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -832,11 +862,11 @@
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="6">
                                     <StringItem index="0" value="Rule 1A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -850,13 +880,12 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule1b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="5">
                                     <StringItem index="0" value="Rule 1B"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -880,13 +909,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule2a">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 2A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -900,13 +930,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule2b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
-                                    <StringItem index="0" value="Rule 2A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                  <StringArray count="7">
+                                    <StringItem index="0" value="Rule 2B"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -925,13 +956,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule3a">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 3A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -945,13 +977,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule3b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 3B"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -970,12 +1003,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule4a">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 4A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -989,12 +1023,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule4b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 4B"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1018,13 +1053,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule6a">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 6A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1038,12 +1074,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule6b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 6B"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1062,13 +1099,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule7a">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 7A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1082,12 +1120,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule7b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 7B"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1101,14 +1140,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule1C">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="7">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 1C"/>
-                                    <StringItem index="1" value=" "/>
-                                    <StringItem index="2" value="_JJ"/>
-                                    <StringItem index="3" value="_NN"/>
-                                    <StringItem index="4" value="_RB"/>
-                                    <StringItem index="5" value="_VBN"/>
-                                    <StringItem index="6" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1124,11 +1162,11 @@
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="6">
                                     <StringItem index="0" value="Rule 2C"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
-                                    <StringItem index="5" value=" "/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1144,11 +1182,11 @@
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="6">
                                     <StringItem index="0" value="Rule 3C"/>
-                                    <StringItem index="1" value=" "/>
-                                    <StringItem index="2" value="_JJ"/>
-                                    <StringItem index="3" value="_NN"/>
-                                    <StringItem index="4" value="_RB"/>
-                                    <StringItem index="5" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1162,13 +1200,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule4c">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 4C"/>
-                                    <StringItem index="1" value=" "/>
-                                    <StringItem index="2" value="_JJ"/>
-                                    <StringItem index="3" value="_NN"/>
-                                    <StringItem index="4" value="_RB"/>
-                                    <StringItem index="5" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1182,12 +1221,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule5a">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 5A"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1201,13 +1241,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule6c">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 6C"/>
-                                    <StringItem index="1" value=" "/>
-                                    <StringItem index="2" value="_JJ"/>
-                                    <StringItem index="3" value="_NN"/>
-                                    <StringItem index="4" value="_RB"/>
-                                    <StringItem index="5" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1221,13 +1262,14 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule7c">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 7C"/>
-                                    <StringItem index="1" value=" "/>
-                                    <StringItem index="2" value="_JJ"/>
-                                    <StringItem index="3" value="_NN"/>
-                                    <StringItem index="4" value="_RB"/>
-                                    <StringItem index="5" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1241,12 +1283,13 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule5b">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="5">
+                                  <StringArray count="6">
                                     <StringItem index="0" value="Rule 5B"/>
-                                    <StringItem index="1" value="_JJ"/>
-                                    <StringItem index="2" value="_NN"/>
-                                    <StringItem index="3" value="_RB"/>
-                                    <StringItem index="4" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -1260,19 +1303,77 @@
                             <Component class="javax.swing.JComboBox" name="jComboBoxRule5c">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="6">
+                                  <StringArray count="7">
                                     <StringItem index="0" value="Rule 5C"/>
-                                    <StringItem index="1" value=" "/>
-                                    <StringItem index="2" value="_JJ"/>
-                                    <StringItem index="3" value="_NN"/>
-                                    <StringItem index="4" value="_RB"/>
-                                    <StringItem index="5" value="_VBN"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
                                   </StringArray>
                                 </Property>
                               </Properties>
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxRule5cActionPerformed"/>
                               </Events>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel5">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Rule 8"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JComboBox" name="jComboBoxRule8a">
+                              <Properties>
+                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                  <StringArray count="6">
+                                    <StringItem index="0" value="Rule 8A"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                  </StringArray>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JComboBox" name="jComboBoxRule8b">
+                              <Properties>
+                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                  <StringArray count="6">
+                                    <StringItem index="0" value="RULE 8B"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                  </StringArray>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                              </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JComboBox" name="jComboBoxRule8c">
+                              <Properties>
+                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                  <StringArray count="7">
+                                    <StringItem index="0" value="RULE 8C"/>
+                                    <StringItem index="1" value="_JJ _JJR _JJS"/>
+                                    <StringItem index="2" value="_NN _NNS _"/>
+                                    <StringItem index="3" value="_RB _RBR _RBS"/>
+                                    <StringItem index="4" value="_VBN _VBD _"/>
+                                    <StringItem index="5" value="-"/>
+                                    <StringItem index="6" value=" "/>
+                                  </StringArray>
+                                </Property>
+                              </Properties>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
@@ -1296,7 +1397,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="279" max="32767" attributes="0"/>
+                                  <EmptySpace pref="422" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

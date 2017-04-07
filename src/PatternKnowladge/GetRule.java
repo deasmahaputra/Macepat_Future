@@ -11,6 +11,8 @@ package PatternKnowladge;
  */
 public class GetRule {
     
+    private static GetRule getrule = new GetRule();
+    
     private String rule1a;
     private String rule1b;
     private String rule1c;
@@ -33,8 +35,14 @@ public class GetRule {
     private String rule7b;
     private String rule7c;
 
+    private GetRule(){}
+    
+    public static GetRule getInstance(){
+        return getrule;
+    }
+    
     public String getRule1a() {
-        return rule1a;
+        return this.rule1a;
     }
 
     public void setRule1a(String rule1a) {
@@ -42,7 +50,7 @@ public class GetRule {
     }
 
     public String getRule1b() {
-        return rule1b;
+        return this.rule1b;
     }
 
     public void setRule1b(String rule1b) {
