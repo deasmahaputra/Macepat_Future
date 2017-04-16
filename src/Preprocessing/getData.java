@@ -11,7 +11,15 @@ package Preprocessing;
  */
 public class getData {
     
+    private static getData getdata = new getData();
+    
     private String dataIob;
+    
+    private getData(){}
+    
+    private static getData getInstance(){
+    return getdata;
+    }
 
     public String getDataIob() {
         return dataIob;

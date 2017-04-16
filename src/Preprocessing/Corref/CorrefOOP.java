@@ -20,6 +20,10 @@ import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -33,6 +37,10 @@ public class CorrefOOP {
     
    public static MyResult Corref(String text){
        //MyResult result = new MyResult(tamp, clust);
+    List<String> tumpukan = new ArrayList<>();
+    //String[] tumpukan = null;
+    GetCorref getcorref = GetCorref.getInstance();
+    String dataset = getcorref.getInputan();
        
     Properties props = new Properties();
     props.put("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
@@ -129,14 +137,19 @@ public class CorrefOOP {
 
                 //System.out.println("Hasilnya : " + clust2);
                 //String clus3 = clust2;
-                 tamp = tamp + clust2;
-                 //tampung[] = clust2;
-                 System.out.println("Ini isinya tamp : " +tamp);           
-//     
+                 tumpukan.add(clust2 + " ");
+                 for(String hasiltamp : tumpukan)
+                 tamp += hasiltamp;
+                 System.out.println("Ini isinya tamp : " +tamp);      
+                 getcorref.setMention(clust);
+                 getcorref.setResult(tamp);
+//                 for(int j = 0; j < tumpukan.size(); j++){
+//                 getcorref.setInputan(dataset.replaceAll(clust, " "+tumpukan.get(j)));
+//              };
            // }
-    }
-            
-    }
+           
+    }       
+   }
    
    return new MyResult(clust, tamp);
    }

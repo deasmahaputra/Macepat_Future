@@ -10,16 +10,54 @@ package Preprocessing.Corref;
  * @author DEAS
  */
 public class GetCorref {
+    private static GetCorref getcorref = new GetCorref();
     
-    public static String hasilcoref;
+    public static String Mention ;
+    public static String Result;
+    public static String inputan;
 
-    public static String getHasilcoref(){
-        return hasilcoref;
+    private GetCorref(){}
+    
+    public static GetCorref getInstance(){
+     return getcorref;
+    }
+    
+    public static GetCorref getGetcorref() {
+        return getcorref;
     }
 
-    public static void setHasilcoref(String hasilcoref) {
-        GetCorref.hasilcoref = hasilcoref;
+    public static void setGetcorref(GetCorref getcorref) {
+        GetCorref.getcorref = getcorref;
     }
+
+    public static String getMention() {
+        return Mention;
+    }
+
+    public static void setMention(String Mention) {
+        GetCorref.Mention = Mention;
+    }
+
+    public static String getResult() {
+        return Result;
+    }
+
+    public static void setResult(String Result) {
+        GetCorref.Result = Result;
+    }
+
+    public static String getInputan() {
+        return inputan;
+    }
+
+    public static void setInputan(String inputan) {
+        GetCorref.inputan = inputan;
+    }
+    
+    
+    
+
+    
     
     
     

@@ -93,6 +93,826 @@ public class GetDataRule {
     private String rule8C2;
     private String rule8C3;
     
+    private String rule9A1;
+    private String rule9A2;
+    private String rule9a3;
+    private String rule9B1;
+    private String rule9B2;
+    private String rule9B3;
+    private String rule9C1;
+    private String rule9C2;
+    private String rule9C3;
+    
+    private String rule10A1;
+    private String rule10A2;
+    private String rule10a3;
+    private String rule10B1;
+    private String rule10B2;
+    private String rule10B3;
+    private String rule10C1;
+    private String rule10C2;
+    private String rule10C3;
+    
+    private String rule11A1;
+    private String rule11A2;
+    private String rule11a3;
+    private String rule11B1;
+    private String rule11B2;
+    private String rule11B3;
+    private String rule11C1;
+    private String rule11C2;
+    private String rule11C3;
+    
+    private String rule12A1;
+    private String rule12A2;
+    private String rule12a3;
+    private String rule12B1;
+    private String rule12B2;
+    private String rule12B3;
+    private String rule12C1;
+    private String rule12C2;
+    private String rule12C3;
+    
+    private String rule13A1;
+    private String rule13A2;
+    private String rule13a3;
+    private String rule13B1;
+    private String rule13B2;
+    private String rule13B3;
+    private String rule13C1;
+    private String rule13C2;
+    private String rule13C3;
+    
+    private String rule14A1;
+    private String rule14A2;
+    private String rule14a3;
+    private String rule14B1;
+    private String rule14B2;
+    private String rule14B3;
+    private String rule14C1;
+    private String rule14C2;
+    private String rule14C3;
+    
+    private String rule15A1;
+    private String rule15A2;
+    private String rule15a3;
+    private String rule15B1;
+    private String rule15B2;
+    private String rule15B3;
+    private String rule15C1;
+    private String rule15C2;
+    private String rule15C3;
+    
+    private String rule16A1;
+    private String rule16A2;
+    private String rule16a3;
+    private String rule16B1;
+    private String rule16B2;
+    private String rule16B3;
+    private String rule16C1;
+    private String rule16C2;
+    private String rule16C3;
+    
+    private String rule17A1;
+    private String rule17A2;
+    private String rule17a3;
+    private String rule17B1;
+    private String rule17B2;
+    private String rule17B3;
+    private String rule17C1;
+    private String rule17C2;
+    private String rule17C3;
+    
+    private String rule18A1;
+    private String rule18A2;
+    private String rule18a3;
+    private String rule18B1;
+    private String rule18B2;
+    private String rule18B3;
+    private String rule18C1;
+    private String rule18C2;
+    private String rule18C3;
+
+    public String getRule9A1() {
+        return rule9A1;
+    }
+
+    public void setRule9A1(String rule9A1) {
+        this.rule9A1 = rule9A1;
+    }
+
+    public String getRule9A2() {
+        return rule9A2;
+    }
+
+    public void setRule9A2(String rule9A2) {
+        this.rule9A2 = rule9A2;
+    }
+
+    public String getRule9a3() {
+        return rule9a3;
+    }
+
+    public void setRule9a3(String rule9a3) {
+        this.rule9a3 = rule9a3;
+    }
+
+    public String getRule9B1() {
+        return rule9B1;
+    }
+
+    public void setRule9B1(String rule9B1) {
+        this.rule9B1 = rule9B1;
+    }
+
+    public String getRule9B2() {
+        return rule9B2;
+    }
+
+    public void setRule9B2(String rule9B2) {
+        this.rule9B2 = rule9B2;
+    }
+
+    public String getRule9B3() {
+        return rule9B3;
+    }
+
+    public void setRule9B3(String rule9B3) {
+        this.rule9B3 = rule9B3;
+    }
+
+    public String getRule9C1() {
+        return rule9C1;
+    }
+
+    public void setRule9C1(String rule9C1) {
+        this.rule9C1 = rule9C1;
+    }
+
+    public String getRule9C2() {
+        return rule9C2;
+    }
+
+    public void setRule9C2(String rule9C2) {
+        this.rule9C2 = rule9C2;
+    }
+
+    public String getRule9C3() {
+        return rule9C3;
+    }
+
+    public void setRule9C3(String rule9C3) {
+        this.rule9C3 = rule9C3;
+    }
+
+    public String getRule10A1() {
+        return rule10A1;
+    }
+
+    public void setRule10A1(String rule10A1) {
+        this.rule10A1 = rule10A1;
+    }
+
+    public String getRule10A2() {
+        return rule10A2;
+    }
+
+    public void setRule10A2(String rule10A2) {
+        this.rule10A2 = rule10A2;
+    }
+
+    public String getRule10a3() {
+        return rule10a3;
+    }
+
+    public void setRule10a3(String rule10a3) {
+        this.rule10a3 = rule10a3;
+    }
+
+    public String getRule10B1() {
+        return rule10B1;
+    }
+
+    public void setRule10B1(String rule10B1) {
+        this.rule10B1 = rule10B1;
+    }
+
+    public String getRule10B2() {
+        return rule10B2;
+    }
+
+    public void setRule10B2(String rule10B2) {
+        this.rule10B2 = rule10B2;
+    }
+
+    public String getRule10B3() {
+        return rule10B3;
+    }
+
+    public void setRule10B3(String rule10B3) {
+        this.rule10B3 = rule10B3;
+    }
+
+    public String getRule10C1() {
+        return rule10C1;
+    }
+
+    public void setRule10C1(String rule10C1) {
+        this.rule10C1 = rule10C1;
+    }
+
+    public String getRule10C2() {
+        return rule10C2;
+    }
+
+    public void setRule10C2(String rule10C2) {
+        this.rule10C2 = rule10C2;
+    }
+
+    public String getRule10C3() {
+        return rule10C3;
+    }
+
+    public void setRule10C3(String rule10C3) {
+        this.rule10C3 = rule10C3;
+    }
+
+    public String getRule11A1() {
+        return rule11A1;
+    }
+
+    public void setRule11A1(String rule11A1) {
+        this.rule11A1 = rule11A1;
+    }
+
+    public String getRule11A2() {
+        return rule11A2;
+    }
+
+    public void setRule11A2(String rule11A2) {
+        this.rule11A2 = rule11A2;
+    }
+
+    public String getRule11a3() {
+        return rule11a3;
+    }
+
+    public void setRule11a3(String rule11a3) {
+        this.rule11a3 = rule11a3;
+    }
+
+    public String getRule11B1() {
+        return rule11B1;
+    }
+
+    public void setRule11B1(String rule11B1) {
+        this.rule11B1 = rule11B1;
+    }
+
+    public String getRule11B2() {
+        return rule11B2;
+    }
+
+    public void setRule11B2(String rule11B2) {
+        this.rule11B2 = rule11B2;
+    }
+
+    public String getRule11B3() {
+        return rule11B3;
+    }
+
+    public void setRule11B3(String rule11B3) {
+        this.rule11B3 = rule11B3;
+    }
+
+    public String getRule11C1() {
+        return rule11C1;
+    }
+
+    public void setRule11C1(String rule11C1) {
+        this.rule11C1 = rule11C1;
+    }
+
+    public String getRule11C2() {
+        return rule11C2;
+    }
+
+    public void setRule11C2(String rule11C2) {
+        this.rule11C2 = rule11C2;
+    }
+
+    public String getRule11C3() {
+        return rule11C3;
+    }
+
+    public void setRule11C3(String rule11C3) {
+        this.rule11C3 = rule11C3;
+    }
+
+    public String getRule12A1() {
+        return rule12A1;
+    }
+
+    public void setRule12A1(String rule12A1) {
+        this.rule12A1 = rule12A1;
+    }
+
+    public String getRule12A2() {
+        return rule12A2;
+    }
+
+    public void setRule12A2(String rule12A2) {
+        this.rule12A2 = rule12A2;
+    }
+
+    public String getRule12a3() {
+        return rule12a3;
+    }
+
+    public void setRule12a3(String rule12a3) {
+        this.rule12a3 = rule12a3;
+    }
+
+    public String getRule12B1() {
+        return rule12B1;
+    }
+
+    public void setRule12B1(String rule12B1) {
+        this.rule12B1 = rule12B1;
+    }
+
+    public String getRule12B2() {
+        return rule12B2;
+    }
+
+    public void setRule12B2(String rule12B2) {
+        this.rule12B2 = rule12B2;
+    }
+
+    public String getRule12B3() {
+        return rule12B3;
+    }
+
+    public void setRule12B3(String rule12B3) {
+        this.rule12B3 = rule12B3;
+    }
+
+    public String getRule12C1() {
+        return rule12C1;
+    }
+
+    public void setRule12C1(String rule12C1) {
+        this.rule12C1 = rule12C1;
+    }
+
+    public String getRule12C2() {
+        return rule12C2;
+    }
+
+    public void setRule12C2(String rule12C2) {
+        this.rule12C2 = rule12C2;
+    }
+
+    public String getRule12C3() {
+        return rule12C3;
+    }
+
+    public void setRule12C3(String rule12C3) {
+        this.rule12C3 = rule12C3;
+    }
+
+    public String getRule13A1() {
+        return rule13A1;
+    }
+
+    public void setRule13A1(String rule13A1) {
+        this.rule13A1 = rule13A1;
+    }
+
+    public String getRule13A2() {
+        return rule13A2;
+    }
+
+    public void setRule13A2(String rule13A2) {
+        this.rule13A2 = rule13A2;
+    }
+
+    public String getRule13a3() {
+        return rule13a3;
+    }
+
+    public void setRule13a3(String rule13a3) {
+        this.rule13a3 = rule13a3;
+    }
+
+    public String getRule13B1() {
+        return rule13B1;
+    }
+
+    public void setRule13B1(String rule13B1) {
+        this.rule13B1 = rule13B1;
+    }
+
+    public String getRule13B2() {
+        return rule13B2;
+    }
+
+    public void setRule13B2(String rule13B2) {
+        this.rule13B2 = rule13B2;
+    }
+
+    public String getRule13B3() {
+        return rule13B3;
+    }
+
+    public void setRule13B3(String rule13B3) {
+        this.rule13B3 = rule13B3;
+    }
+
+    public String getRule13C1() {
+        return rule13C1;
+    }
+
+    public void setRule13C1(String rule13C1) {
+        this.rule13C1 = rule13C1;
+    }
+
+    public String getRule13C2() {
+        return rule13C2;
+    }
+
+    public void setRule13C2(String rule13C2) {
+        this.rule13C2 = rule13C2;
+    }
+
+    public String getRule13C3() {
+        return rule13C3;
+    }
+
+    public void setRule13C3(String rule13C3) {
+        this.rule13C3 = rule13C3;
+    }
+
+    public String getRule14A1() {
+        return rule14A1;
+    }
+
+    public void setRule14A1(String rule14A1) {
+        this.rule14A1 = rule14A1;
+    }
+
+    public String getRule14A2() {
+        return rule14A2;
+    }
+
+    public void setRule14A2(String rule14A2) {
+        this.rule14A2 = rule14A2;
+    }
+
+    public String getRule14a3() {
+        return rule14a3;
+    }
+
+    public void setRule14a3(String rule14a3) {
+        this.rule14a3 = rule14a3;
+    }
+
+    public String getRule14B1() {
+        return rule14B1;
+    }
+
+    public void setRule14B1(String rule14B1) {
+        this.rule14B1 = rule14B1;
+    }
+
+    public String getRule14B2() {
+        return rule14B2;
+    }
+
+    public void setRule14B2(String rule14B2) {
+        this.rule14B2 = rule14B2;
+    }
+
+    public String getRule14B3() {
+        return rule14B3;
+    }
+
+    public void setRule14B3(String rule14B3) {
+        this.rule14B3 = rule14B3;
+    }
+
+    public String getRule14C1() {
+        return rule14C1;
+    }
+
+    public void setRule14C1(String rule14C1) {
+        this.rule14C1 = rule14C1;
+    }
+
+    public String getRule14C2() {
+        return rule14C2;
+    }
+
+    public void setRule14C2(String rule14C2) {
+        this.rule14C2 = rule14C2;
+    }
+
+    public String getRule14C3() {
+        return rule14C3;
+    }
+
+    public void setRule14C3(String rule14C3) {
+        this.rule14C3 = rule14C3;
+    }
+
+    public String getRule15A1() {
+        return rule15A1;
+    }
+
+    public void setRule15A1(String rule15A1) {
+        this.rule15A1 = rule15A1;
+    }
+
+    public String getRule15A2() {
+        return rule15A2;
+    }
+
+    public void setRule15A2(String rule15A2) {
+        this.rule15A2 = rule15A2;
+    }
+
+    public String getRule15a3() {
+        return rule15a3;
+    }
+
+    public void setRule15a3(String rule15a3) {
+        this.rule15a3 = rule15a3;
+    }
+
+    public String getRule15B1() {
+        return rule15B1;
+    }
+
+    public void setRule15B1(String rule15B1) {
+        this.rule15B1 = rule15B1;
+    }
+
+    public String getRule15B2() {
+        return rule15B2;
+    }
+
+    public void setRule15B2(String rule15B2) {
+        this.rule15B2 = rule15B2;
+    }
+
+    public String getRule15B3() {
+        return rule15B3;
+    }
+
+    public void setRule15B3(String rule15B3) {
+        this.rule15B3 = rule15B3;
+    }
+
+    public String getRule15C1() {
+        return rule15C1;
+    }
+
+    public void setRule15C1(String rule15C1) {
+        this.rule15C1 = rule15C1;
+    }
+
+    public String getRule15C2() {
+        return rule15C2;
+    }
+
+    public void setRule15C2(String rule15C2) {
+        this.rule15C2 = rule15C2;
+    }
+
+    public String getRule15C3() {
+        return rule15C3;
+    }
+
+    public void setRule15C3(String rule15C3) {
+        this.rule15C3 = rule15C3;
+    }
+
+    public String getRule16A1() {
+        return rule16A1;
+    }
+
+    public void setRule16A1(String rule16A1) {
+        this.rule16A1 = rule16A1;
+    }
+
+    public String getRule16A2() {
+        return rule16A2;
+    }
+
+    public void setRule16A2(String rule16A2) {
+        this.rule16A2 = rule16A2;
+    }
+
+    public String getRule16a3() {
+        return rule16a3;
+    }
+
+    public void setRule16a3(String rule16a3) {
+        this.rule16a3 = rule16a3;
+    }
+
+    public String getRule16B1() {
+        return rule16B1;
+    }
+
+    public void setRule16B1(String rule16B1) {
+        this.rule16B1 = rule16B1;
+    }
+
+    public String getRule16B2() {
+        return rule16B2;
+    }
+
+    public void setRule16B2(String rule16B2) {
+        this.rule16B2 = rule16B2;
+    }
+
+    public String getRule16B3() {
+        return rule16B3;
+    }
+
+    public void setRule16B3(String rule16B3) {
+        this.rule16B3 = rule16B3;
+    }
+
+    public String getRule16C1() {
+        return rule16C1;
+    }
+
+    public void setRule16C1(String rule16C1) {
+        this.rule16C1 = rule16C1;
+    }
+
+    public String getRule16C2() {
+        return rule16C2;
+    }
+
+    public void setRule16C2(String rule16C2) {
+        this.rule16C2 = rule16C2;
+    }
+
+    public String getRule16C3() {
+        return rule16C3;
+    }
+
+    public void setRule16C3(String rule16C3) {
+        this.rule16C3 = rule16C3;
+    }
+
+    public String getRule17A1() {
+        return rule17A1;
+    }
+
+    public void setRule17A1(String rule17A1) {
+        this.rule17A1 = rule17A1;
+    }
+
+    public String getRule17A2() {
+        return rule17A2;
+    }
+
+    public void setRule17A2(String rule17A2) {
+        this.rule17A2 = rule17A2;
+    }
+
+    public String getRule17a3() {
+        return rule17a3;
+    }
+
+    public void setRule17a3(String rule17a3) {
+        this.rule17a3 = rule17a3;
+    }
+
+    public String getRule17B1() {
+        return rule17B1;
+    }
+
+    public void setRule17B1(String rule17B1) {
+        this.rule17B1 = rule17B1;
+    }
+
+    public String getRule17B2() {
+        return rule17B2;
+    }
+
+    public void setRule17B2(String rule17B2) {
+        this.rule17B2 = rule17B2;
+    }
+
+    public String getRule17B3() {
+        return rule17B3;
+    }
+
+    public void setRule17B3(String rule17B3) {
+        this.rule17B3 = rule17B3;
+    }
+
+    public String getRule17C1() {
+        return rule17C1;
+    }
+
+    public void setRule17C1(String rule17C1) {
+        this.rule17C1 = rule17C1;
+    }
+
+    public String getRule17C2() {
+        return rule17C2;
+    }
+
+    public void setRule17C2(String rule17C2) {
+        this.rule17C2 = rule17C2;
+    }
+
+    public String getRule17C3() {
+        return rule17C3;
+    }
+
+    public void setRule17C3(String rule17C3) {
+        this.rule17C3 = rule17C3;
+    }
+
+    public String getRule18A1() {
+        return rule18A1;
+    }
+
+    public void setRule18A1(String rule18A1) {
+        this.rule18A1 = rule18A1;
+    }
+
+    public String getRule18A2() {
+        return rule18A2;
+    }
+
+    public void setRule18A2(String rule18A2) {
+        this.rule18A2 = rule18A2;
+    }
+
+    public String getRule18a3() {
+        return rule18a3;
+    }
+
+    public void setRule18a3(String rule18a3) {
+        this.rule18a3 = rule18a3;
+    }
+
+    public String getRule18B1() {
+        return rule18B1;
+    }
+
+    public void setRule18B1(String rule18B1) {
+        this.rule18B1 = rule18B1;
+    }
+
+    public String getRule18B2() {
+        return rule18B2;
+    }
+
+    public void setRule18B2(String rule18B2) {
+        this.rule18B2 = rule18B2;
+    }
+
+    public String getRule18B3() {
+        return rule18B3;
+    }
+
+    public void setRule18B3(String rule18B3) {
+        this.rule18B3 = rule18B3;
+    }
+
+    public String getRule18C1() {
+        return rule18C1;
+    }
+
+    public void setRule18C1(String rule18C1) {
+        this.rule18C1 = rule18C1;
+    }
+
+    public String getRule18C2() {
+        return rule18C2;
+    }
+
+    public void setRule18C2(String rule18C2) {
+        this.rule18C2 = rule18C2;
+    }
+
+    public String getRule18C3() {
+        return rule18C3;
+    }
+
+    public void setRule18C3(String rule18C3) {
+        this.rule18C3 = rule18C3;
+    }
+    
     private GetDataRule(){}
     
     public static GetDataRule getInstance(){

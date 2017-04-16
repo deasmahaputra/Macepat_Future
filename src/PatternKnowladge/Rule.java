@@ -157,6 +157,96 @@ public class Rule{
                     }
                 }
             }
+            
+            else if(kata1.endsWith(getdatarule.getRule9A1())||kata1.endsWith(getdatarule.getRule9A2())||kata1.endsWith(getdatarule.getRule9a3())){
+                if(kata2.endsWith(getdatarule.getRule9B1())||kata2.endsWith(getdatarule.getRule9B2())||kata2.endsWith(getdatarule.getRule9B3())){
+                    if(kata3.endsWith(getdatarule.getRule9C1())||kata3.endsWith(getdatarule.getRule9C2())||kata3.endsWith(getdatarule.getRule9C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule10A1())||kata1.endsWith(getdatarule.getRule10A2())||kata1.endsWith(getdatarule.getRule10a3())){
+                if(kata2.endsWith(getdatarule.getRule10B1())||kata2.endsWith(getdatarule.getRule10B2())||kata2.endsWith(getdatarule.getRule10B3())){
+                    if(kata3.endsWith(getdatarule.getRule10C1())||kata3.endsWith(getdatarule.getRule10C2())||kata3.endsWith(getdatarule.getRule10C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule11A1())||kata1.endsWith(getdatarule.getRule11A2())||kata1.endsWith(getdatarule.getRule11a3())){
+                if(kata2.endsWith(getdatarule.getRule11B1())||kata2.endsWith(getdatarule.getRule11B2())||kata2.endsWith(getdatarule.getRule11B3())){
+                    if(kata3.endsWith(getdatarule.getRule11C1())||kata3.endsWith(getdatarule.getRule11C2())||kata3.endsWith(getdatarule.getRule11C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule12A1())||kata1.endsWith(getdatarule.getRule12A2())||kata1.endsWith(getdatarule.getRule12a3())){
+                if(kata2.endsWith(getdatarule.getRule12B1())||kata2.endsWith(getdatarule.getRule12B2())||kata2.endsWith(getdatarule.getRule12B3())){
+                    if(kata3.endsWith(getdatarule.getRule12C1())||kata3.endsWith(getdatarule.getRule12C2())||kata3.endsWith(getdatarule.getRule12C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule13A1())||kata1.endsWith(getdatarule.getRule13A2())||kata1.endsWith(getdatarule.getRule13a3())){
+                if(kata2.endsWith(getdatarule.getRule13B1())||kata2.endsWith(getdatarule.getRule13B2())||kata2.endsWith(getdatarule.getRule13B3())){
+                    if(kata3.endsWith(getdatarule.getRule13C1())||kata3.endsWith(getdatarule.getRule13C2())||kata3.endsWith(getdatarule.getRule13C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule14A1())||kata1.endsWith(getdatarule.getRule14A2())||kata1.endsWith(getdatarule.getRule14a3())){
+                if(kata2.endsWith(getdatarule.getRule14B1())||kata2.endsWith(getdatarule.getRule14B2())||kata2.endsWith(getdatarule.getRule14B3())){
+                    if(kata3.endsWith(getdatarule.getRule14C1())||kata3.endsWith(getdatarule.getRule14C2())||kata3.endsWith(getdatarule.getRule14C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule15A1())||kata1.endsWith(getdatarule.getRule15A2())||kata1.endsWith(getdatarule.getRule15a3())){
+                if(kata2.endsWith(getdatarule.getRule15B1())||kata2.endsWith(getdatarule.getRule15B2())||kata2.endsWith(getdatarule.getRule15B3())){
+                    if(kata3.endsWith(getdatarule.getRule15C1())||kata3.endsWith(getdatarule.getRule15C2())||kata3.endsWith(getdatarule.getRule15C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule16A1())||kata1.endsWith(getdatarule.getRule16A2())||kata1.endsWith(getdatarule.getRule16a3())){
+                if(kata2.endsWith(getdatarule.getRule16B1())||kata2.endsWith(getdatarule.getRule16B2())||kata2.endsWith(getdatarule.getRule16B3())){
+                    if(kata3.endsWith(getdatarule.getRule16C1())||kata3.endsWith(getdatarule.getRule16C2())||kata3.endsWith(getdatarule.getRule16C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule17A1())||kata1.endsWith(getdatarule.getRule17A2())||kata1.endsWith(getdatarule.getRule17a3())){
+                if(kata2.endsWith(getdatarule.getRule17B1())||kata2.endsWith(getdatarule.getRule17B2())||kata2.endsWith(getdatarule.getRule17B3())){
+                    if(kata3.endsWith(getdatarule.getRule17C1())||kata3.endsWith(getdatarule.getRule17C2())||kata3.endsWith(getdatarule.getRule17C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
+            
+            else if(kata1.endsWith(getdatarule.getRule18A1())||kata1.endsWith(getdatarule.getRule18A2())||kata1.endsWith(getdatarule.getRule18a3())){
+                if(kata2.endsWith(getdatarule.getRule18B1())||kata2.endsWith(getdatarule.getRule18B2())||kata2.endsWith(getdatarule.getRule18B3())){
+                    if(kata3.endsWith(getdatarule.getRule18C1())||kata3.endsWith(getdatarule.getRule18C2())||kata3.endsWith(getdatarule.getRule18C3())){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2+" "+kata3);
+                        opini=kata1+" "+kata2+" "+kata3;
+                    }
+                }
+            }
         }
       //}
       

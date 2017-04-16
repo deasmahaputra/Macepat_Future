@@ -7,10 +7,14 @@ package Preprocessing.Corref;
 
 import static Preprocessing.Corref.CorrefOOP.Corref;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ta_deas.CallFile;
@@ -29,10 +33,11 @@ public class Corref_UI extends javax.swing.JFrame {
     public Corref_UI() {
         initComponents();
     }
-    CorrefOOP coref = new CorrefOOP();
+    //CorrefOOP coref = new CorrefOOP();
     CallFile call = new CallFile();
     //MyResult result = new MyResult(mention, result)
      public static ArrayList<String> inputan = new ArrayList<String>();
+      public static ArrayList<String> outputnya = new ArrayList<String>();
             
      public void Data(){
          String value = jComboBox1.getSelectedItem().toString();
@@ -230,10 +235,12 @@ public class Corref_UI extends javax.swing.JFrame {
         
       for(int i = 0; i < inputan.size(); i++){
       MyResult coreff = Corref(inputan.get(i));
-      String tampung = null;
+      String tampung = "";
       tampung = " ";
       String tampMention = coreff.getMention();
       String tampResult = coreff.getResult();
+      
+      GetCorref getCorref = GetCorref.getInstance();
       
 //      Interface_TA frameutama = new Interface_TA();
 //      Interface_TA.AreaSW.setText(tampung);
@@ -241,8 +248,34 @@ public class Corref_UI extends javax.swing.JFrame {
       
       
       //for(String tamp : inputan){
-      tampung = inputan.get(i).replaceAll(tampResult, " "+tampMention);
-      GetCorref.setHasilcoref(tampung);
+//      List<String> tamp = new ArrayList<>();
+//      tamp.add(inputan.get(i).replaceAll(tampResult, " "+tampMention));
+//      for(String hasil : tamp){
+//          tampung += hasil;
+     
+      tampung = inputan.get(i).replaceAll(tampResult, " "+tampMention + " ");
+      outputnya.add(inputan.get(i).replace(tampResult, " "+tampMention + " "));
+      
+      GetCorref getcorref = GetCorref.getInstance();
+      getCorref.setInputan(inputan.get(i));
+      //GetCorref.setHasilcoref(tampung);
+      //}
+      try
+        {
+            PrintWriter pr = new PrintWriter("output/Diaper Champ.txt");    
+
+            for (int j=0; j<outputnya.size() ; j++)
+            {
+                pr.println(outputnya.get(j));
+                //pr.append("\n");
+            }
+            pr.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            //System.out.println("No such file exists.");
+        }
       
       
       //hasilcoref.setHasilcoref(tampung);
