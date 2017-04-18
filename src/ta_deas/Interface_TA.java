@@ -13,8 +13,10 @@ import PatternKnowladge.GetDataRule;
 import PatternKnowladge.GetRule;
 import PatternKnowladge.Opini;
 import PatternKnowladge.Rule;
+import PatternKnowladge.Rule2;
 import PatternKnowladge.StanParser;
 import PatternKnowladge.ngram;
+import PatternKnowladge.parseRule;
 import Preprocessing.BioChunking;
 import Preprocessing.Corref.GetCorref;
 import Preprocessing.CorreferenceResolution;
@@ -118,6 +120,7 @@ public class Interface_TA extends javax.swing.JFrame {
     outputFile output = new outputFile();
     ngram Ng = new ngram();
     Rule Rl= new Rule();
+    Rule2 R2 = new Rule2();
     Opini Op = new Opini();
     Fitur Fit = new Fitur();
     PorterStem Ps = new PorterStem();
@@ -1121,6 +1124,8 @@ public class Interface_TA extends javax.swing.JFrame {
         jComboBoxRule18c4 = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextAreaRule = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -1997,21 +2002,31 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel7.setText("jLabel7");
 
+        jTextAreaRule.setColumns(20);
+        jTextAreaRule.setRows(5);
+        jScrollPane6.setViewportView(jTextAreaRule);
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7)
-                .addContainerGap(457, Short.MAX_VALUE))
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(730, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("NP Parser", jPanel16);
@@ -2297,6 +2312,9 @@ public class Interface_TA extends javax.swing.JFrame {
             ngram2=Ng.PNgrams2(kalimatPre.get(i));
 
             if(CheckRule.isSelected()){
+                parseRule parserule = parseRule.getInstance();
+                String textRule = jTextAreaRule.getText().toString();
+                parserule.setData(textRule);
                 getRuleSelected();
                 ArrayList<String> fiturdanopini = new ArrayList<>();
                 AreaExtraksi.append(i+1+". Hasil Rule :");
@@ -2306,7 +2324,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 String fituropinikalimat = "";
                 //2-gram ==========================================================
                 for (int j = 0; j < ngram.size(); j++) {
-                    String opi=Rl.rules(ngram.get(j));
+                    String opi=R2.rules(ngram.get(j));
                     if(opi!=null){
                         //hasil rule
                         //output.tulis(opi);
@@ -2370,7 +2388,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 //3-gram ==========================================================
 
                 for (int j = 0; j < ngram2.size(); j++) {
-                    String opi2=Rl.rules(ngram2.get(j));
+                    String opi2=R2.rules(ngram2.get(j));
                     if(opi2!=null){
                         //output.tulis(opi2);
 
@@ -3398,9 +3416,11 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextAreaRule;
     // End of variables declaration//GEN-END:variables
 }

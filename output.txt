@@ -56165,3 +56165,2882 @@ Hasil Rule : -
 11. Kalimat : great_JJ job_NN canon_NN !_. 
 Hasil Rule : 
 Hasil Rule : -
+1. Kalimat : want_VB start_VB saying_VBG camera_NN small_JJ reason_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,small
+Hasil Parser : -
+2. Kalimat : people_NNS ,_, reviews_NNS ,_, complain_VBP small_JJ size_NN ,_, does_VBZ n't_RB compare_VB larger_JJR cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : small,size,cameras
+Hasil Parser : size
+3. Kalimat : I_PRP 'm_VBP high_JJ school_NN ,_, camera_NN perfect_JJ use_NN for_IN ,_, carrying_VBG around_IN pocket_NN take_NN pictures_NNS whenever_WRB want_VBP to_TO ,_, friends_NNS funny_JJ things_NNS happen_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,use,pictures
+Hasil Parser : -
+4. Kalimat : thing_NN do_VBP n't_RB small_JJ size_NN -LRB-_-LRB- 8_CD MEG_NN -RRB-_-RRB- memory_NN card_NN comes_VBZ it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : small,size
+Hasil Parser : size
+5. Kalimat : move_NN pictures_NNS day_NN room_NN pictures_NNS next_JJ ,_, do_VBP n't_RB enough_JJ money_NN buy_VB 256_CD MEG_NNP card_NN I_PRP 've_VBP eye_NN while_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,room,pictures
+Hasil Parser : -
+6. Kalimat : larger_JJR memory_NN card_NN extra_JJ battery_NN good_JJ things_NNS buy_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : memory
+Hasil Parser : battery
+7. Kalimat : pictures_NNS taken_VBD dark_JJ nice_JJ I_NNP 'd_NNP them_PRP ,_, 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+8. Kalimat : I_PRP 'd_MD say_VB camera_NN perfect_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+9. Kalimat : OK_UH ,_, quite_RB everything_NN ..._: but_CC camera_NN compact_NN side_NN need_VBP it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,compact
+Hasil Parser : -
+10. Kalimat : bought_VBN camera_NN reason_NN considering_VBG it_PRP ,_, already_RB bought_VBD it_PRP --_: it_PRP 's_VBZ size_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,size
+Hasil Parser : -
+11. Kalimat : amazingly_RB small_JJ ,_, it_PRP 's_VBZ hard_JJ believe_VBP packed_JJ camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+12. Kalimat : take_VB everywhere_RB ,_, literally_RB ,_, 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+13. Kalimat : small_JJ able_JJ keep_VB pocket_NN ,_, do_VBP n't_RB fear_VB get_VB ruined_VBN pocket_NN durable_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+14. Kalimat : small_JJ covering_NN lens_NN ,_, need_VBP worry_NN lens_NN get_VB scratched_VBN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : small,covering,lens,small,lens,lens
+Hasil Parser : covering
+15. Kalimat : picture_NN quality_NN surprised_VBD me_PRP ,_, first_JJ saw_NN camera_NN saw_VBD small_JJ instantly_RB assumed_VBN picture_NN quality_NN good_JJ --_: but_CC wrong_JJ !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : picture quality,camera,small,picture quality
+Hasil Parser : -
+16. Kalimat : picture_NN quality_NN camera_NN outstanding_JJ -LRB-_-LRB- taking_VBG its_PRP$ '_POS size_NN price_NN consideration_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : picture,camera,price
+Hasil Parser : -
+17. Kalimat : However_RB ,_, things_NNS complain_VBP about_IN ..._: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+18. Kalimat : First_RB off_RB ,_, battery_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery
+Hasil Parser : -
+19. Kalimat : camera_NN uses_VBZ lithium_NN battery_NN ,_, find_VB lithium_NN batteries_NNS highly_RB inconvenient_JJ ;_: vacation_NN ,_, nearest_JJS place_NN buy_NN batteries_NNS just_RB gas_NN station_NN --_: there_EX way_NN going_VBG find_VB lithium_NN batteries_NNS there_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,battery,batteries,batteries,batteries
+Hasil Parser : -
+20. Kalimat : inconvenient_JJ ,_, battery_NN life_NN span_NN short_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery
+Hasil Parser : -
+21. Kalimat : longest_JJS I_PRP 've_VBP work_NN 1_CD hour_NN 45_CD minutes_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+22. Kalimat : is_VBZ n't_RB uncommon_JJ cameras_NNS ,_, though_RB ,_, just_RB long_RB bring_VB charger_NN spare_JJ batteries_NNS ,_, fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras,batteries
+Hasil Parser : -
+23. Kalimat : Another_DT problem_NN camera_NN zoom_NN function_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+24. Kalimat : small_JJ zoom_NN length_NN think_VBP zoom_NN silent_JJ since_IN hardly_RB zooms_VBZ in_IN ..._: wrong_JJ !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : small,zoom
+Hasil Parser : zoom
+25. Kalimat : wrong_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+26. Kalimat : zoom_VB function_NN camera_NN loud_RB sometimes_RB unable_JJ use_NN find_VB situation_NN quiet_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : zoom,camera,use
+Hasil Parser : -
+27. Kalimat : Even_RB just_RB turning_VBG camera_NN move_NN lens_NN little_RB ,_, resulting_VBG noisy_JJ start-up_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,lens,start-up
+Hasil Parser : start-up
+28. Kalimat : flash_VB weak_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+29. Kalimat : Really_RB dissapointing_JJ ._. inside_RB ,_, ca_MD n't_RB farther_RBR away_RB 10_CD feet_NNS lit_VBD room_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : room
+Hasil Parser : room
+30. Kalimat : last_JJ problem_NN found_VBD camera_NN macro_NN function_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,macro
+Hasil Parser : -
+31. Kalimat : auto-focus_JJ camera_NN seems_VBZ trouble_NN focusing_VBG subject_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : auto-focus,camera
+Hasil Parser : -
+32. Kalimat : make_VB matters_NNS work_VB ,_, manual_JJ override_NN overcome_VBD problem_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+33. Kalimat : focus_NN great_JJ ,_, though_RB ,_, taking_VBG macro_NN shot_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : macro
+Hasil Parser : -
+34. Kalimat : flaws_NNS found_VBD camera_NN ,_, 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+35. Kalimat : it_PRP 's_VBZ first_JJ choice_NN cameras_NNS ,_, 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+36. Kalimat : come_VB across_IN beginner_NN cameras_NNS prefer_VBP camera_NN ,_, thing_NN keep_VBP mind_NN camera_NN size_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras,camera,camera,size
+Hasil Parser : -
+37. Kalimat : just_RB looking_VBG something_NN keep_VB times_NNS ,_, great_JJ camera_NN choice_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+38. Kalimat : researched_VBN digital_JJ cameras_NNS month_NN purchasing_VBG s100_NN ..._: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : s100
+Hasil Parser : -
+39. Kalimat : considering_VBG needs_NNS researching_VBG marketplace_NN ,_, decided_VBD s100_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : s100
+Hasil Parser : -
+40. Kalimat : little_JJ gem_NN four_CD months_NNS now_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+41. Kalimat : given_VBN zero_NN problems_NNS ,_, use_VB it_PRP ,_, better_RBR become_VB taking_VBG advantage_NN strengths_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+42. Kalimat : regular_JJ Canon_NNP Elph_NNP -LRB-_-LRB- APS_NNP -RRB-_-RRB- ,_, well_RB JVC_NNP digital_JJ camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+43. Kalimat : looking_VBG blend_VB two_CD bought_VBD camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+44. Kalimat : I_PRP 'll_MD share_VB observations_NNS differ_VBP bit_NN reviewers_NNS noted_VBD ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+45. Kalimat : 1_LS -RRB-_-RRB- perhaps_RB small_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : small
+Hasil Parser : -
+46. Kalimat : find_VB bit_RB difficult_JJ manage_VBP tiny_JJ buttons_NNS impossible_JJ read_NN icons_NNS reading_VBG glasses_NNS on_IN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : tiny,buttons
+Hasil Parser : -
+47. Kalimat : size_NN makes_VBZ holding_VBG steady_JJ long_JJ bit_NN challenge_NN -LRB-_-LRB- not_RB enough_JJ camera_NN body_NN grip_NN finger_NN tips_NNS -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : size
+Hasil Parser : body
+48. Kalimat : 2_LS -RRB-_-RRB- delay_NN time_NN fully_RB depress_VBP shutter_NN time_NN picture_NN taken_VBN long_JJ yield_NN fuzzy_JJ shots_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : delay,picture,shots
+Hasil Parser : -
+49. Kalimat : unusually_RB slow_JJ autofocus_NN system_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+50. Kalimat : 3_LS -RRB-_-RRB- lack_VBP intermediate_JJ resolution_NN setting_NN ,_, reviewers_NNS suggested_VBD ,_, problem_NN ,_, problem_NN meaningless_JJ larger_JJR CompactFlash_NNP memory_NN card_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : resolution
+Hasil Parser : -
+51. Kalimat : -LRB-_-LRB- I_PRP got_VBD 64_CD meg_NN card_NN holds_VBZ 105_CD pics_NNS 1600_CD x_CC 1200_CD res_NNS -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pics
+Hasil Parser : -
+52. Kalimat : 4_LS -RRB-_-RRB- camera_NN gets_VBZ really_RB hot_JJ busy_JJ snapping_VBG away_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+53. Kalimat : hot_JJ enough_JJ annoying_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+54. Kalimat : Canon_NNP says_VBZ it_PRP 's_VBZ normal_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+55. Kalimat : found_VBN gets_VBZ less_RBR warm_JJ LCD_NNS off_IN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : LCD
+Hasil Parser : -
+56. Kalimat : wonderfully_RB small_JJ digital_JJ camera_NN produces_VBZ fantastically_RB good_JJ pictures_NNS printed_VBD decent_JJ photo-quality_JJ printer_NN -LRB-_-LRB- with_IN photo_JJ quality_NN paper_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : camera,camera
+57. Kalimat : replace_VB high-end_JJ 35mm_CD SLR_NN it_PRP 's_VBZ great_JJ toy_NN keep_VB near_IN times_NNS snapshots_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : snapshots
+Hasil Parser : -
+58. Kalimat : used_VBN digital_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+59. Kalimat : IS_VBZ best_JJS camera_NN digital_JJ images_NNS want_VBP to_TO :_: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,images
+Hasil Parser : -
+60. Kalimat : Take_VB quick_JJ pictures_NNS excelent_JJ resolution_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,resolution
+Hasil Parser : resolution
+61. Kalimat : Hate_VB wait_NN shots_NNS 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : wait,shots
+Hasil Parser : -
+62. Kalimat : Download_VB fast_JJ computer_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+63. Kalimat : great_JJ easy_JJ use_NN bundled_VBD software_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : use,software
+Hasil Parser : software
+64. Kalimat : Travel_NNP knowing_VBG pocket_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+65. Kalimat : FYI_NNP ,_, Battery_NNP does_VBZ n't_RB die_VB do_VB n't_RB use_VB LCD_NNS 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : Battery,LCD
+Hasil Parser : -
+66. Kalimat : color_NN light_NN captured_VBD camera_NN 12-day_JJ trip_NN Turkey_NNP -LRB-_-LRB- gorgeous_JJ vividly_RB colored_VBN ceramic_JJ tiles_NNS inside_IN darkened_JJ mosques_NNS -RRB-_-RRB- far_RB superior_JJ anything_NN I_PRP 've_VBP ever_RB gotten_VBN traditional_JJ 35-mm_JJ film_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : light
+Hasil Parser : camera,camera
+67. Kalimat : love_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+68. Kalimat : do_VBP n't_RB believe_VB camera_NN still_RB available_JJ ._. find_VB one_CD ,_, get_VB it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+69. Kalimat : It_PRP 's_VBZ still_RB one_CD smallest_JJS 2MP_NN digital_JJ cameras_NNS market_NN ,_, absolutely_RB one_CD best-built_JJ stylish_JJ cameras_NNS ever_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+70. Kalimat : bought_VBN camera_NN based_VBN recommendations_NNS friends_NNS it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+71. Kalimat : pleased_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+72. Kalimat : It_PRP 's_VBZ best_JJS list_NN pros_NNS cons_NNS camera_NN :_: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+73. Kalimat : I_PRP 've_VBP incredibly_RB happy_JJ camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+74. Kalimat : camera_NN great_JJ you_PRP 're_VBP used_VBN high-end_JJ SLR_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+75. Kalimat : It_PRP 's_VBZ overkill_RB simple_JJ snapshots_NNS ,_, you_PRP 've_VBP got_VBN way_NN money_NN blow_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : snapshots
+Hasil Parser : -
+76. Kalimat : Exposure_NN compensation_NN 1/3_CD stop_NN increments_NNS -LRB-_-LRB- I_PRP leave_VBP set_VBN +1_CD /_: 3_CD stop_NN brighten_NN default_NN exposure_NN ,_, goes_VBZ bit_RB dark_JJ taste_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : exposure
+Hasil Parser : -
+77. Kalimat : Slow-syncro_JJ flash_NN ,_, macro/infinity_NN mode_NN ,_, etc._NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : flash,mode
+Hasil Parser : flash,mode
+78. Kalimat : zoom_NN range_NN little_JJ narrow_JJ -LRB-_-LRB- 35-70mm_JJ 35mm_CD film_NN equivalent_NN -RRB-_-RRB- ,_, given_VBN camera_NN wallet_NN ,_, ca_MD n't_RB think_VB real_JJ complaint_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : zoom,camera
+Hasil Parser : -
+79. Kalimat : SS_NN body_NN wonderful_JJ ,_, feels_VBZ high-quality_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : body,body
+Hasil Parser : -
+80. Kalimat : It_PRP 's_VBZ body_NN popular_JJ ELP2_NN APS_NN camera_NN -LRB-_-LRB- take_NN look_VB standard_JJ credit_NN card_NN wallet_NN you_PRP 'll_MD idea_NN front_NN profile_NN !_. -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : body,camera
+Hasil Parser : body,camera
+81. Kalimat : 2X_CD optical_JJ zoom_NN -LRB-_-LRB- you_PRP pretty_RB ignore_VB time_NN manufacturer_NN refers_VBZ ``_`` digital_JJ zoom_NN ''_'' -RRB-_-RRB- 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : zoom,zoom
+Hasil Parser : -
+82. Kalimat : left_JJ camera_NN car_NN Maine_NNP -LRB-_-LRB- not_RB hot_JJ place_NN -RRB-_-RRB- LCD_NNS screen_NN cracked_VBD !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+83. Kalimat : realized_VBN major_JJ design_NN flaw_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : design
+Hasil Parser : -
+84. Kalimat : camera_NN 's_POS functionality_NN available_JJ -LRB-_-LRB- or_CC selectable_JJ -RRB-_-RRB- screen_NN functional_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+85. Kalimat : screen_NN stops_NNS working_VBG ,_, you_PRP 're_VBP luck_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : screen
+Hasil Parser : -
+86. Kalimat : wrote_VBD another_DT review_NN update_VB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+87. Kalimat : discovered_VBN camera_NN manual_NN mode_NN gives_VBZ total_JJ control_NN exposure_NN ,_, white_JJ balance_NN ,_, flash_NN -LRB-_-LRB- red_JJ eye_NN ,_, person_NN bright_JJ background_NN ,_, flash_NN on_IN ,_, flash_VB off_RP ,_, flash_VB automatic_JJ -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,mode,exposure
+Hasil Parser : mode
+88. Kalimat : used_VBN camera_NN 3_CD weeks_NNS far_RB ,_, taking_VBG 500_CD pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,pictures
+Hasil Parser : -
+89. Kalimat : 2_CD batteries_NNS 128_CD mb_NN card_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : batteries
+Hasil Parser : -
+90. Kalimat : useful_JJ facts_NNS :_: -_: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+91. Kalimat : battery_NN charge_NN ,_, camera_NN takes_VBZ approximately_RB 70_CD pictures_NNS ,_, camera_NN opened_VBD closed_JJ pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery,camera,pictures,camera,pictures
+Hasil Parser : -
+92. Kalimat : 64mb_JJ card_NN stores_NNS approximately_RB 100_CD pictures_NNS default_NN resolution_NN -LRB-_-LRB- ie_FW 500k_FW 1.5_CD mb_NN per_IN picture_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,picture
+Hasil Parser : -
+93. Kalimat : viewfinder_NN accurately_RB represent_VBP pucture_NN taken_VBN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : viewfinder
+Hasil Parser : -
+94. Kalimat : LCD_NNS used_VBD ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : LCD
+Hasil Parser : -
+95. Kalimat : However_RB ,_, dark_JJ settings_NNS use_VBP viewfinder_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : viewfinder
+Hasil Parser : use
+96. Kalimat : digital_JJ zoom_NN crap_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : zoom
+Hasil Parser : zoom
+97. Kalimat : Turn_VB off_RP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+98. Kalimat : fits_VBZ pocket_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+99. Kalimat : closest_JJS competitor_NN SONY_NN DSC-P1_NN -LRB-_-LRB- 3.3_CD mp_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+100. Kalimat : camera_NN little_RB larger_JJR defeat_NN whole_JJ purpose_NN truly_RB portable_JJ camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,camera,camera
+Hasil Parser : camera
+101. Kalimat : take_VB camera_NN everywhere_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+102. Kalimat : Tamrac_NNP makes_VBZ tiny_JJ pouch_NN best_JJS camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+103. Kalimat : front_RB even_RB zipper_NN extra_JJ battery_NN wallet_NN stuff_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : battery
+104. Kalimat : panorama_NN setting_NN unbelieveable_JJ !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+105. Kalimat : take_VB around_RP 12_CD pictures_NNS circle_NN ,_, stitch_VBP together_RB voila_VBN ;_: perfect_JJ memory_NN standing_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,memory
+Hasil Parser : memory
+106. Kalimat : pictures_NNS little_JJ dark_NN sometimes_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+107. Kalimat : option_NN flash_NN automatic_JJ off_IN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : flash
+108. Kalimat : new_JJ Canon_NNP s300_NN 33_CD %_NN larger_JJR 26_CD %_NN heavier_JJR S100_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+109. Kalimat : movie_NN mode_NN record_NN max_NN 30_CD seconds_NNS 160X120_NN per_IN clip_NN max_NN 4_CD seconds_NNS 640X480_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : movie mode
+Hasil Parser : -
+110. Kalimat : one_CD resolution_NN 1024X768_NN ``_`` Normal_JJ ''_'' compression_NN mode_NN ._. And_CC ,_, 3X_NN zoom_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : mode
+111. Kalimat : price_NN $_$ ..._: more_JJR ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+112. Kalimat : originally_RB gave_VBD camera_NN 5_CD stars_NNS ._. Windows_NNP 98_CD wonderful_JJ got_VBD new_JJ computer_NN last_JJ November_NNP XP_NN usb_NN software_NN Sooo_NN ..._: compatible_JJ XP_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+113. Kalimat : found_VBN however_RB just_RB buy_VB card_NN reader_NN solve_VBP problem_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+114. Kalimat : new_JJ drivers_NNS cannon_NN 's_POS site_NN help_NN try_VB want_VB made_VBN use_NN backup_NN software_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : drivers,software
+Hasil Parser : software
+115. Kalimat : Adobe_NNP software_NN wonderful_JJ 98_CD let_VB print_NN correctly_RB XP_NN forced_VBD create_VB document_NN either_CC print_NN Windows_NNP export_NN another_DT application_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : software
+Hasil Parser : -
+116. Kalimat : takes_VBZ gorgeous_JJ pictures_NNS 2.1_CD MP_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,camera
+Hasil Parser : -
+117. Kalimat : love_NN camera_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+118. Kalimat : thing_NN do_VBP n't_RB buy_VB larger_JJR memory_NN card_NN ,_, first_JJ thing_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : memory
+Hasil Parser : -
+119. Kalimat : got_VBD camera_NN unbelievably_RB low_JJ price_NN amazon_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : price
+120. Kalimat : recommend_VB camera_NN unequivocally_RB !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+121. Kalimat : got_VBD camera_NN unbelievably_RB low_JJ price_NN amazon_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : price
+122. Kalimat : recommend_VB camera_NN unequivocally_RB !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+123. Kalimat : last_JJ digital_JJ camera_NN Apple_NNP QuickTake_NNP 200_CD ,_, shot_VBD 640x480_CD pixel_NN images_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : images
+Hasil Parser : camera,camera
+124. Kalimat : Apple_NNP actually_RB better_JJR two_CD repects_NNS :_: turned-on_NN quickly_RB showed_VBD just_RB shot_VBN right_JJ shot_NN it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+125. Kalimat : ELPH_NN latter_JJ hold_NN shutter_NN button_NN view_VBP it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+126. Kalimat : DOES_NNS work_VBP even_RB turn_VB LCD_NNS viewing_VBG --_: great_JJ battery_NN saver_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : LCD,battery
+Hasil Parser : -
+127. Kalimat : I_PRP 've_VBP using_VBG camera_NN months_NNS now_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+128. Kalimat : great_JJ camera_NN ,_, points_NNS do_VBP n't_RB notice_VB reviews_NNS here_RB ,_, concern_NN especially_RB advanced_JJ amatuer_NN :_: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+129. Kalimat : Good_JJ quality_NN fun_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+130. Kalimat : purchased_VBD Elph_NNP s100_NNP mainly_RB thought_VBD cool_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : s100
+Hasil Parser : -
+131. Kalimat : I_PRP 'm_VBP professional_JJ photographer_NNP using_VBG pro_JJ digital_JJ equipment_NN looking_VBG something_NN around_IN house_NN wife_NN capture_NN candid_JJ moments_NNS kids_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+132. Kalimat : practice_NN ,_, we_PRP 've_VBP VERY_RB happy_JJ results_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+133. Kalimat : camera_NN great_JJ job_NN exposure_NN prints_NNS made_VBD professional_JJ printer_NN looks_VBZ great_JJ -LRB-_-LRB- not_RB good_JJ prints_NNS pro_JJ digital_JJ camera_NN ,_, still_RB VERY_RB good_JJ -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera,camera
+134. Kalimat : last_JJ digital_JJ camera_NN Canon_NNP Powershot_NNP A5_NNP Zoom_NNP ,_, liked_VBD quite_RB bit_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera,camera
+135. Kalimat : ready_JJ upgrade_NN discovered_VBD Canon_NNP going_VBG come_VBN even_RB smaller_JJR digital_JJ camera_NN higher_JJR resolution_NN ,_, S100_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : resolution,S100
+Hasil Parser : camera
+136. Kalimat : second_JJ digital_JJ camera_NN ,_, I_PRP 'm_VBP impressed_JJ Canon_NNP S100_NN Digital_NNP Elph_NNP EVER_NNP Kodak_NNP DC240_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera,camera
+137. Kalimat : camera_NN light_NN tiny_JJ literally_RB carry_VBP everywhere_RB me_PRP ,_, great_JJ considering_VBG I_PRP 'm_VBP artist_NN capture_NN interesting_JJ items_NNS future_JJ painting_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,light,tiny,camera
+Hasil Parser : -
+138. Kalimat : software_NN comes_VBZ Digital_NNP Elph_NNP nice_JJ intuitive_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : software
+Hasil Parser : -
+139. Kalimat : especially_RB way_NN ZoomBrowser_NNP EX_NNP lets_VBZ look_VB virtual_JJ filmstrip_NN pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+140. Kalimat : PhotoStitch_NN software_NN cool_NN want_VBP 360_CD degree_NN panorama_NN shots_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : software
+Hasil Parser : -
+141. Kalimat : I_PRP 'd_MD suggest_VB buy_NN camera_NN ,_, case_NN extra_JJ battery_NN pack_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,case,battery
+Hasil Parser : -
+142. Kalimat : complaint_NN reason_NN gave_VBD 4_CD stars_NNS instead_RB 5_CD on-camera_JJ controls_NNS are_VBP n't_RB intuitive_JJ be_VB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+143. Kalimat : I_PRP 've_VBP often_RB struggled_VBN get_VB something_NN work_NN way_NN want_VBP it_PRP ,_, hate_NN carry_VBP manual_JJ time_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : work
+Hasil Parser : -
+144. Kalimat : that_IN ,_, love_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+145. Kalimat : pictures_NNS uniformly_RB excellent_JJ color_NN rendering_VBG perfect_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+146. Kalimat : good_JJ :_: Small_JJ size_NN ;_: durable-seeming_JJ metal_NN case_NN ;_: easy_JJ use_NN ;_: visually_RB distinctive_JJ ;_: good_JJ picture_NN quality_NN ;_: fast_RB USB_JJ connection_NN ;_: mostly_RB intuitive_JJ operation_NN ;_: really_RB cool_JJ PhotoStitch_NNP software_NN knits_VBZ pictures_NNS together_RB give_VBP wide_JJ panoramas_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : Small,size,case,use,picture,pictures
+Hasil Parser : size,case,case,software
+147. Kalimat : compact_JJ size_NN highest_JJS priority_NN 2-megapixel_JJ camera_NN ,_, Canon_NNP PowerShot_NNP S100_NNP Digital_NNP Elph_NNP standout_NN choice_NN aptly_RB named_VBN diminutive_JJ design_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : compact,size,camera,design
+Hasil Parser : size,camera,design
+148. Kalimat : S100_NN 's_POS image_NN quality_NN rates_NNS middle_JJ class_NN ,_, still_RB reasonable_JJ choice_NN students_NNS ,_, families_NNS ,_, small_JJ businesses_NNS looking_VBG ultra-portable_JJ camera_NN weighs_VBZ less_RBR half_JJ pound_NN media_NNS battery_NN pack_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : S100,small,camera,battery
+Hasil Parser : camera
+149. Kalimat : Recently_RB dinner_NN friends_NNS ,_, debating_VBG merits_NNS one_CD digital_JJ camera_NN vs._CC another_DT ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+150. Kalimat : One_CD friends_NNS going_VBG camera_NN fancy_NN was_VBD ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+151. Kalimat : talking_VBG ,_, took_VBD S100_NN front_JJ pocket_NN Levi_NNP 's_POS took_VBD picture_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : S100,picture
+Hasil Parser : -
+152. Kalimat : said_VBD ,_, fancy_JJ camera_NN that_IN ?_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+153. Kalimat : No_RB ,_, does_VBZ n't_RB -LRB-_-LRB- ca_MD n't_RB -RRB-_-RRB- always_RB carry_VB him_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+154. Kalimat : End_NN story_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+155. Kalimat : purchased_VBN camera_NN went_VBD sale_NN ,_, would_MD n't_RB minded_VBD keeping_VBG extra_JJ $_$ $_$ $_$ ,_, definitely_RB worth_JJ it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+156. Kalimat : absolutely_RB ,_, completely_RB satisfied_VBN product_NN capabilities_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : product
+Hasil Parser : -
+157. Kalimat : computer_NN expert_NN ,_, first_JJ -LRB-_-LRB- and_CC probably_RB last_JJ -RRB-_-RRB- digital_JJ camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : camera,camera
+158. Kalimat : great_JJ product_NN ,_, Canon_NNP done_VBD excellent_JJ job_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : product
+Hasil Parser : product
+159. Kalimat : I_PRP 've_VBP reluctant_JJ join_VB digital_JJ camera_NN communitysince_NN I_PRP 've_VBP avid_JJ ``_`` legacy_NN ''_'' photographer_NNP mylife_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+160. Kalimat : received_VBN little_JJ jewel_NN gift_NN honestly_RB say_VBP Iabsolutely_RB love_VB it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : jewel
+161. Kalimat : give_VB product_NN five_CD stars_NNS usability_NN ,_, performance_NN ,_, expandability_NN ,_, definitely_RB looks_VBZ !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : product,usability,performance,expandability,performance
+Hasil Parser : -
+162. Kalimat : I_PRP 've_VBP camera_NN three_CD years_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+163. Kalimat : price_NN -LSB-_-LRB- -1_CD -RSB-_-RRB- -LSB-_-LRB- u_NN -RSB-_-RRB- I_PRP bought_VBD new_JJ ,_, cutting_VBG edge_NN expensive_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : price
+Hasil Parser : -
+164. Kalimat : put_VBN 128MB_JJ CF_NN card_NN it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+165. Kalimat : First_RB ,_, say_VBP NEVER_NNP slightest_JJS problem_NN camera_NN software_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+166. Kalimat : I_PRP 've_VBP probably_RB taken_VBN upwards_NNS 5000_CD pictures_NNS it_PRP ,_, it_PRP 's_VBZ country_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+167. Kalimat : software_NN installed_VBN Windows_NNP 95_CD ,_, 98_CD ,_, 2000_CD XP_NN have_VBP n't_RB problems_NNS it_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : software
+Hasil Parser : -
+168. Kalimat : camera_NN solid_JJ ,_, performs_VBZ well_RB ,_, takes_VBZ good_JJ pictures_NNS ,_, battery_NN lasts_VBZ pretty_RB long_JJ disable_JJ LCD_NNS viewfinder_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,pictures,battery
+Hasil Parser : -
+169. Kalimat : battery_NN life_NN big_JJ deal_NN ,_, one_CD purchase_NN second_JJ battery_NN rotate_VB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery
+Hasil Parser : battery
+170. Kalimat : said_VBD ,_, little_JJ disappointed_JJ quality_NN pictures_NNS camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+171. Kalimat : razor_NN sharp_JJ ,_, color_NN balance_NN perfect_JJ ,_, focus_NN great_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : sharp,color balance
+Hasil Parser : -
+172. Kalimat : taking_VBG pictures_NNS people_NNS ,_, however_RB ,_, shows_VBZ EVERY_NN flaw_NN subject_NN 's_POS skin_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+173. Kalimat : Scratches_NNS ,_, oil_NN ,_, freckles_NNS magnified_VBD come_VBN looking_VBG horrific_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+174. Kalimat : requires_VBZ extensive_JJ Photoshopping_VBG fix_NN flaws_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+175. Kalimat : cameras_NNS taking_VBG pics_NNS subjects_NNS turn_VBP looking_VBG better_RBR ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras,pics
+Hasil Parser : -
+176. Kalimat : say_VB takes_VBZ long_JJ moment_NN camera_NN digital_JJ image_NN processing_NN time_NN press_NN button_NN camera_NN actually_RB takes_VBZ picture_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,picture
+Hasil Parser : processing
+177. Kalimat : time_NN shot_NN 's_POS taken_VBN ,_, something_NN -LRB-_-LRB- especially_RB squirmy_JJ child_NN sports_NNS play_VBP -RRB-_-RRB- invariably_RB moved_VBD it_PRP 's_VBZ exact_JJ picture_NN wanted_VBD ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : picture
+178. Kalimat : I_PRP 'm_VBP going_VBG buy_VB real_JJ Single-Lens_JJ Reflex_NN -LRB-_-LRB- SLR_NN -RRB-_-RRB- take_VBP baby_NN pictures_NNS ,_, I_PRP 'll_MD keep_VB travel_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,camera
+Hasil Parser : -
+179. Kalimat : I_PRP 'm_VBP writer_NN new_JJ digital_JJ photography_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+180. Kalimat : I_PRP 've_VBP owned_VBN 35mm_CD cameras_NNS years_NNS ,_, including_VBG one_CD SLR_NN two_CD point_NN &_CC shoots_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+181. Kalimat : waiting_VBG prices_NNS digital_JJ cameras_NNS come_VBP taking_VBG plunge_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+182. Kalimat : year_NN ,_, cruise_NN Nova_NNP Scotia_NNP coming_VBG August_NNP ,_, decided_VBD time_NN right_RB just_RB purchased_VBN Canon_NNP S100_NNP Digital_NNP Elph_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+183. Kalimat : say_VB ,_, think_VB coolest_JJS camera_NN I_PRP 've_VBP ever_RB owned_VBN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+184. Kalimat : First_RB ,_, really_RB tiny_JJ ;_: size_NN pack_NN cigarettes_NNS ,_, maybe_RB scooch_VBP deeper_JJR ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : tiny,size
+Hasil Parser : -
+185. Kalimat : included_VBD battery_NN charger_NN larger_JJR !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery
+Hasil Parser : -
+186. Kalimat : Second_JJ ,_, incredibly_RB easy_JJ use_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+187. Kalimat : just_RB went_VBD quick_JJ photo_NN shoot_NN NYC_NNP 's_POS Central_NNP Park_NNP today_NN ,_, bunch_NN beautiful_JJ photos_NNS took_VBD ,_, say_VBP -LRB-_-LRB- and_CC do_VB !_. -RRB-_-RRB- 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : photos
+Hasil Parser : -
+188. Kalimat : camera_NN easy_JJ use_NN point_NN shoot_NN ,_, instant_JJ review_NN LCD_NNS screen_NN ,_, retake_NN flubbed_VBD shots_NNS spot_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,shots
+Hasil Parser : -
+189. Kalimat : two-times_JJ optical_JJ zoom_NN operates_VBZ smoothly_RB quietly_RB ,_, lo_FW behold_FW ,_, two-piece_JJ shutter-like_JJ cap_NN automatically_RB slides_VBZ closed_JJ lens_NN turn_NN camera_NN off_IN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : zoom,cap
+Hasil Parser : zoom,zoom,cap,cap
+190. Kalimat : problems_NNS installing_VBG running_VBG camera_NN software_NN PC_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,software
+Hasil Parser : -
+191. Kalimat : I_PRP 'm_VBP still_RB learning_VBG file_NN sizes_NNS -LRB-_-LRB- and_CC large_JJ large_JJ email_NN -RRB-_-RRB- ,_, erase_VB one_CD photo_NN wanted_VBD keep_VB getting_VBG used_VBN menu_NN system_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+192. Kalimat : otherwise_RB thrilled_VBN taken_VBN plunge_NN digital_JJ photography_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+193. Kalimat : two_CD advantages_NNS digital_JJ photography_NN had_VBD n't_RB anticipated_VBN ,_, beyond_IN lack_NN film_NN developing_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+194. Kalimat : One_CD lack_NN censorship_NN photos_NNS --_: time_NN some_DT ,_, uh_UH ,_, fashion_NN photography_NN wife_NN girlfriend_NN ,_, that_WDT 's_VBZ something_NN enjoy_VB !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+195. Kalimat : Another_DT ability_NN upload_NN images_NNS PC_NN memory_NN card_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+196. Kalimat : great_JJ source_NN personal_JJ entertainment_NN travelers_NNS ,_, catch_NN drift_NN ,_, zoom_NN LCD_NNS images_NNS !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : LCD,images
+Hasil Parser : -
+197. Kalimat : recommend_VB Canon_NNP 's_POS soft_JJ case_NN camera_NN ,_, slot_NN attach_VBP belt_NN along_IN second_NN nicely_RB finished_VBD compartment_NN hold_VBP extra_JJ battery_NN memory_NN card_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : case,battery
+198. Kalimat : reviews_NNS noted_VBD ,_, definitely_RB want_VBP one_CD additional_JJ memory_NN cards_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+199. Kalimat : I_PRP 've_VBP found_VBN get_VB nine_CD twelve_CD compressed_VBN 1600_CD X_NN 1200_CD photos_NNS one_CD 8MB_NN card_NN ,_, 28_CD images_NNS uploaded_VBD PC_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : images
+Hasil Parser : -
+200. Kalimat : rate_NN ,_, interested_JJ digital_JJ photography_NN price_NN confusion_NN held_VBD back_RB ,_, consider_VB Canon_NNP S100_NNP Digital_NNP Elph_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+201. Kalimat : really_RB perfect_JJ travel_NN camera_NN ,_, plus_CC offers_VBZ convenience_NN digital_JJ photography_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+202. Kalimat : you_PRP 're_VBP looking_VBG digital_JJ camera_NN replace_VB big_JJ Nikon_NNP Canon_NNP SLR_NNP ,_, forget_VB -_: film_NN still_RB king_NN exquisite_JJ detail_NN fine_NN color_NN rendition_NN critical_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+203. Kalimat : give_VB digital_JJ cameras_NNS ,_, though_RB ,_, ask_VB questions_NNS :_: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+204. Kalimat : got_VBD flew_VBN shelves_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+205. Kalimat : Really_RB it_PRP ,_, easy_JJ use_NN ,_, great_JJ images_NNS ,_, intuitive_JJ ,_, fits_VBZ jacket_NN pocket_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : use,images
+Hasil Parser : use
+206. Kalimat : else_RB say_VB ?_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+207. Kalimat : looking_VBG compact_JJ ,_, rugged_JJ -LRB-_-LRB- I_PRP carry_VBP hiking_VBG ,_, skiing_NN ,_, boating_VBG ,_, etc_NN -RRB-_-RRB- camera_NN easy_JJ use_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : compact
+Hasil Parser : camera,camera
+208. Kalimat : wanted_JJ standard_JJ memory_NN expansion_NN -LRB-_-LRB- CF_NN cards_NNS -RRB-_-RRB- ,_, macro_NN mode_NN ,_, possible_JJ ,_, waterproof_JJ housing_NN -LRB-_-LRB- for_IN kayaking_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : memory
+Hasil Parser : -
+209. Kalimat : camera_NN capabilities_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera
+210. Kalimat : Even_RB waterproof_JJ housing_NN small_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : housing
+Hasil Parser : -
+211. Kalimat : lens_NN retracts_VBZ metal_NN cover_NN do_VBP n't_RB need_VB fuss_NN lens_NN cap_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : lens,lens,cap
+Hasil Parser : -
+212. Kalimat : metal_NN housing_NN seems_VBZ rugged_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : housing
+Hasil Parser : -
+213. Kalimat : Turn-on_NN ready-to-shoot_NN 3_CD seconds_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+214. Kalimat : I_PRP 'd_MD give_VB 5_CD stars_NNS automatic_JJ modes_NNS better_RBR true_JJ manual_JJ focus_NN exposure_NN modes_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : focus,focus
+215. Kalimat : example_NN ,_, auto_NN mode_NN ca_MD n't_RB use_VB flash_NN redeye_NN reduction_NN ,_, manual_JJ mode_NN that_DT ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : flash,mode,manual mode
+Hasil Parser : mode
+216. Kalimat : auto_NN color_NN balance_NN often_RB fooled_VBD dense_JJ clouds_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : auto color balance
+Hasil Parser : -
+217. Kalimat : need_MD use_VB manual_JJ exposure_NN adjustment_NN backlight_NN bright_JJ light_JJ conditions_NNS snow_NN background_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : exposure
+Hasil Parser : -
+218. Kalimat : dynamic_JJ range_NN seems_VBZ quite_RB good_JJ Kodak_NNP DC260_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : dynamic range
+Hasil Parser : -
+219. Kalimat : macro_NN mode_NN works_VBZ well_RB ,_, although_IN takes_VBZ practice_NN since_IN camera_NN does_VBZ n't_RB clearly_RB indicate_VB ca_MD n't_RB focus_VB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : macro mode,camera
+Hasil Parser : -
+220. Kalimat : white-LED_JJ backlit_JJ LCD_NNS bright_JJ crisp_JJ ,_, even_RB sunlight_NN ,_, relatively_RB easy_JJ battery_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : LCD,LCD
+221. Kalimat : panorama_NN modes_NNS wonderful_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : panorama modes
+Hasil Parser : -
+222. Kalimat : Buy_VB least_JJS two_CD batteries_NNS you_PRP 'll_MD never_RB run_VB field_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : batteries
+Hasil Parser : -
+223. Kalimat : High-res_JJ photos_NNS take_VBP 1-1_CD .5_CD MBytes_NNS want_VBP CF_NN card_NN sized_VBD accordingly_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : photos
+Hasil Parser : -
+224. Kalimat : It_PRP 's_VBZ small_JJ light_NN ,_, even_RB spare_JJ battery_NN ,_, really_RB take_VB anywhere_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery
+Hasil Parser : battery
+225. Kalimat : auto_NN mode_NN anyone_NN use_NN point_NN shoot_NN camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : mode,camera
+Hasil Parser : -
+226. Kalimat : manual_JJ modes_NNS give_VBP lot_NN control_NN exposure_NN white_JJ balance_NN -LRB-_-LRB- but_CC manual_JJ focus_NN manual_JJ exposure_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : manual modes,exposure
+Hasil Parser : focus,exposure
+227. Kalimat : 1600x1200_NN means_VBZ really_RB good_JJ ,_, cropped_VBN 5x7_NN prints_VBZ acceptable_JJ 8x10s_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+228. Kalimat : better_JJR cameras_NNS none_NN anywhere_RB near_IN light_JJ compact_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras,light,compact
+Hasil Parser : -
+229. Kalimat : It_PRP 's_VBZ little_JJ jewel_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : jewel
+Hasil Parser : jewel
+230. Kalimat : VERY_RB smal_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+231. Kalimat : You_PRP 'll_MD carry_VB day_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+232. Kalimat : I_PRP 've_VBP taking_VBG near_IN 100_CD pictures_NNS per_IN month_NN since_IN got_VBN mine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+233. Kalimat : I_PRP 've_VBP lot_NN cameras_NNS ,_, one_CD ACTUALLY_NN used_VBN ,_, stored_VBN desk_NN :_: it_PRP 's_VBZ allways_FW shist_FW pocket_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+234. Kalimat : 2_LS -_: Excellent_JJ picture_NN quality_NN simple_JJ use_NN !!!_NN 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : picture,use
+Hasil Parser : -
+235. Kalimat : Fool_NN proof_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+236. Kalimat : started_VBD shooting_VBG even_RB reading_VBG manual_NN -LRB-_-LRB- not_RB recommended_VBN all_DT -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+237. Kalimat : 3_LS -_: USB_JJ kicks_VBZ !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+238. Kalimat : 2_CD secs_NNS download_VBP 600KB_FW 1600x1200_FW picture_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : picture
+Hasil Parser : -
+239. Kalimat : 4_LS -_: Looks_VBZ great_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+240. Kalimat : Silver_NN metal_NN case_NN -_: NOT_NN PLASTIC_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : case
+Hasil Parser : case
+241. Kalimat : 5_CD -_: Excelent_JJ software_NN package_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : software
+Hasil Parser : -
+242. Kalimat : 6_CD -_: Small_JJ clear_JJ TFT_NNP screen_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : screen,screen
+243. Kalimat : Take_VB shots_NNS angles_NNS thought_VBD would_MD n't_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : shots
+Hasil Parser : -
+244. Kalimat : Do_VBP n't_RB care_VB sunlight_NN :_: it_PRP 's_VBZ TFT_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : TFT
+Hasil Parser : -
+245. Kalimat : 7_CD -_: 360_CD panoramic_JJ pictures_NNS big_JJ deal_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+246. Kalimat : 8_CD -_: Buttons_NNPS little_JJ ,_, steady_JJ fingers_NNS dealed_VBD casio_FW wirst_FW calculator_NN watch_NN ,_, deal_NN almost_RB anything_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+247. Kalimat : Buttons_NNPS size_VBP OK_JJ me_PRP ,_, wife_NN ,_, grany_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : Buttons
+Hasil Parser : size
+248. Kalimat : 9_CD -_: Cons_NNS ?_. single_JJ one_CD 5_CD months_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+249. Kalimat : researched_VBN researched_VBD getting_VBG canon_JJ s20_NN canon_NN s100_NN ,_, course_NN got_VBD latter_JJ !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+250. Kalimat : glad_JJ did_VBD !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+251. Kalimat : looking_VBG something_NN was_VBD n't_RB complicated_VBN use_NN help_NN pics_NNS post_VBP Ebay_NNP show_VBP detial_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : use,pics
+Hasil Parser : -
+252. Kalimat : camera_NN great_JJ ,_, wonderfully_RB small_JJ ,_, attactive_JJ hi-tech_JJ casing_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,casing
+Hasil Parser : casing,casing
+253. Kalimat : easy_JJ use_NN someone_NN who_WP 's_VBZ just_RB hopping_VBG digital_JJ camera_NN bandwagon_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+254. Kalimat : love_NN go_VB Walgreen_NNP 's_POS get_VB pictures_NNS develpoed_VBN anymore_RB !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures,pictures
+Hasil Parser : -
+255. Kalimat : Definitely_RB good_JJ investment_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+256. Kalimat : controls_NNS easy_RB understand_VBP big_JJ enough_RB easy_JJ use_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+257. Kalimat : recommend_VB spending_VBG little_JJ money_NN perfect_JJ digital_JJ camera_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : camera,camera
+258. Kalimat : added_VBN second_JJ battery_NN -LRB-_-LRB- about_IN $_$ 69_CD ,_, recharges_VBZ two_CD hours_NNS -RRB-_-RRB- large_JJ -LRB-_-LRB- 192Mb_JJ less_JJR $_$ 400_CD -RRB-_-RRB- CF_NN module_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery
+Hasil Parser : battery
+259. Kalimat : Now_RB take_VB 300_CD 1600_CD x_CC 1280_CD shots_NNS -LRB-_-LRB- or_CC webshot_NN fanatic_JJ ,_, 1,141_CD pictures_NNS 640_CD x_CC 480_CD -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+260. Kalimat : optical_JJ digital_JJ zooms_NNS combine_VBP give_VB effective_JJ 4x_NN zoom_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : zooms,zoom
+Hasil Parser : zoom,zoom
+261. Kalimat : enough_JJ capacity_NN capability_NN complete_JJ household_NN inventory_NN ,_, example_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : capacity
+Hasil Parser : capacity
+262. Kalimat : seem_VB pricy_NN ,_, spending_VBG $_$ 27_CD 25_CD APS_NN images_NNS ,_, prints_NNS CD_NN ,_, camera_NN pay_NN year_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+263. Kalimat : 35mm_CD camera_NN outfit_NN cost_NN quite_RB bit_VBD money_NN years_NNS ago_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+264. Kalimat : because_RB ,_, it_PRP 's_VBZ small_JJ ,_, wo_MD n't_RB cary_VB around_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+265. Kalimat : wo_MD n't_RB cary_VB around_RB ,_, wo_MD n't_RB use_VB it_PRP ,_, wo_MD n't_RB use_VB it_PRP ,_, what_WP 's_VBZ point_NN ?_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+266. Kalimat : first_JJ impression_NN Elph_NN S100_NN could_MD n't_RB POSSIBLY_VB room_NN thing_NN anything_NN battery_NN memory_NN card_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : room
+Hasil Parser : -
+267. Kalimat : Somehow_RB ,_, engineers_NNS Canon_NNP it_PRP ,_, results_VBZ nothing_NN less_RBR astounding_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+268. Kalimat : little_JJ skeptical_JJ people_NNS said_VBD camera_NN ,_, it_PRP 's_VBZ just_RB small_JJ ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+269. Kalimat : getting_VBG one_CD Christmas_NNP Amazon_NNP ,_, I_PRP 'm_VBP now_RB believer_NN :_: Digital_NNP Elph_NNP truly_RB world_NN 's_POS smallest_JJS digital_JJ camera_NN shoots_VBZ great_JJ pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : camera
+270. Kalimat : I_PRP 've_VBP camera_NN just_RB 2_CD years_NNS takes_VBZ pretty_RB good_JJ pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,pictures
+Hasil Parser : -
+271. Kalimat : size_NN tiny_JJ ,_, love_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : size,tiny
+Hasil Parser : -
+272. Kalimat : bought_VBD extra_JJ memory_NN backup_NN battery_NN -LRB-_-LRB- so_RB use_VB one_CD charging_NN -RRB-_-RRB- ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : memory,battery
+273. Kalimat : Sometimes_RB pictures_NNS onthe_VBP dark_JJ side_NN ,_, I_PRP 'm_VBP able_JJ fix_NN using_VBG Photoshop_NNP 6.0_CD ``_`` adjust_VB levels_NNS ''_'' function_NN ..._: sure_JJ person_NN Photoshop_NNP ,_, though_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+274. Kalimat : OK_JJ bookmarked_JJ pages_NNS camera_NN home_NN computer_NN ,_, place_NN sure_JJ wife_NN see_VB ,_, loh_FW behold_FW ,_, get_VB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+275. Kalimat : Thank_VB Santa_NNP !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+276. Kalimat : bought_VBN camera_NN end_NN August_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+277. Kalimat : camera_NN bought_VBD 128MB_NN compact_JJ flash_NN card_NN ,_, extra_JJ battery_NN ,_, carrying_VBG case_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,battery,case
+Hasil Parser : battery
+278. Kalimat : recently_RB bought_VBD Viking_JJ 's_POS IntelliFlash_NNP Memory_NN Reader_NNP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+279. Kalimat : I_PRP 've_VBP got_VBN couple_JJ digital_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+280. Kalimat : Olympus_NNP 2500_CD Olympus_NNP 620_CD ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+281. Kalimat : Really_RB them_PRP ,_, work_VB well_RB macro_JJ function_NN 2500_CD really_RB helps_VBZ Ebay_NNP biz_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : work,macro
+Hasil Parser : -
+282. Kalimat : BUT_NN big_JJ cameras_NNS ,_, reside_VBP large_JJ case_NN ,_, need_VBP kinds_NNS batteries_NNS ,_, short_JJ they_PRP 're_VBP pain_NN lug_NN around_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : case
+283. Kalimat : I_PRP 've_VBP struggled_VBN years_NNS supposedly_RB high-quality_JJ point_NN shoot_NN 35mm_CD cameras_NNS delivering_VBG astonishingly_RB inconsistent_JJ results_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+284. Kalimat : Canon_NNP S100_NN destroys_VBZ problem_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : S100
+Hasil Parser : -
+285. Kalimat : I_PRP 've_VBP camera_NN roughly_RB 3_CD weeks_NNS now_RB I_PRP 've_VBP taken_VBN approximately_RB 250_CD pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera,pictures
+Hasil Parser : -
+286. Kalimat : results_NNS superb_VBP ..._: print_NN computer_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+287. Kalimat : Positives_NNS :_: 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+288. Kalimat : camera_NN easy_JJ use_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : camera
+Hasil Parser : -
+289. Kalimat : just_RB took_VBD box_NN ,_, charged_JJ battery_NN ,_, started_VBD taking_VBG pictures_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : battery,pictures
+Hasil Parser : -
+290. Kalimat : features_NNS incredibly_RB intuitive_JJ ,_, even_RB novice_NN me_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : features,features
+Hasil Parser : -
+291. Kalimat : recommend_VB getting_VBG larger_JJR Compact_NNP Flash_NNP card_NN ,_, start_VB taking_VBG pictures_NNS ,_, wo_MD n't_RB want_VB stop_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+292. Kalimat : pictures_NNS beautiful_JJ ,_, camera_NN small_JJ carry_VBP anywhere_RB ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : pictures
+Hasil Parser : -
+293. Kalimat : I_PRP ,_, others_NNS ,_, waited_VBD years_NNS convergence_NN price_NN ,_, features_NNS ,_, size_NN ease_NN use_NN hit_VBD happy_JJ center_NN point_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : price,features
+Hasil Parser : -
+294. Kalimat : Well_RB wait_VB more_JJR !_. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+295. Kalimat : bought_VBD little_JJ guy_NN weeks_NNS back_RB ,_, saythat_NN never_RB fun_NN new_JJ toy_NN this_DT ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : -
+Hasil Parser : -
+296. Kalimat : willdefinitly_RB appreciate_VB small_JJ size_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : small,size
+Hasil Parser : size
+297. Kalimat : take_VB anywhere_RB withyou_NN ,_, unlike_IN bulky_JJ cameras_NNS ,_, capture_NN moment_NN yourlife_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+Hasil Nounphrase : cameras
+Hasil Parser : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : use
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : -
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : -
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : canon powershot g3
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : canon powershot g3
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
+1. Kalimat : recently_RB purchased_VBN canon_NN powershot_NN g3_NN extremely_RB satisfied_JJ purchase_NN ._. 
+Hasil Rule : 
+Hasil Rule : canon powershot g3
+2. Kalimat : camera_NN easy_JJ use_NN ,_, fact_NN recent_JJ trip_NN past_NN week_NN asked_VBD take_VB picture_NN vacationing_VBG elderly_JJ group_NN ._. 
+Hasil Rule : 
+Hasil Rule : camera,use,picture
+3. Kalimat : took_VBD picture_NN camera_NN ,_, offered_VBD take_VB picture_NN us_PRP ._. 
+Hasil Rule : 
+Hasil Rule : picture,camera
+4. Kalimat : just_RB told_VBN ,_, press_NN halfway_RB ,_, wait_NN box_NN turn_VB green_JJ press_NN rest_NN way_NN ._. 
+Hasil Rule : 
+Hasil Rule : -
+5. Kalimat : fired_VBN away_RB picture_NN turned_VBD quite_RB nicely_RB ._. pictures_NNS thusfar_VBP ._. 
+Hasil Rule : 
+Hasil Rule : picture
+6. Kalimat : work_NN constituants_NNS owned_VBD g2_NN highly_RB recommended_VBD canon_NN picture_NN quality_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+7. Kalimat : easily_RB enlarging_VBG pictures_NNS 8 1/2_CD x_CC 11_CD visable_JJ loss_NN picture_NN quality_NN even_RB using_VBG best_JJS possible_JJ setting_NN yet_RB super_JJ fine_NN ._. 
+Hasil Rule : 
+Hasil Rule : picture,picture quality
+8. Kalimat : ensure_VB get_VB larger_JJR flash_NN ,_, 128_CD 256_CD ,_, selling_VBG larger_JJR flash_NN ,_, 32mb_JJ pinch_NN you_PRP 'll_MD quickly_RB want_VB larger_JJR flash_NN card_NN 4mp_JJ cameras_NNS ._. 
+Hasil Rule : 
+Hasil Rule : -
+9. Kalimat : bottom_JJ line_NN ,_, well_RB made_VBN camera_NN ,_, easy_JJ use_NN ,_, flexible_JJ powerful_JJ features_NNS include_VBP ability_NN use_NN external_JJ flash_NN lense_NN filters_VBZ choices_NNS ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+10. Kalimat : highly_RB recommend_VB camera_NN anyone_NN looking_VBG excellent_JJ quality_NN pictures_NNS combination_NN ease_NN use_NN flexibility_NN get_VB advanced_JJ options_NNS adjust_VBP ._. 
+Hasil Rule : 
+Hasil Rule : camera,use
+11. Kalimat : great_JJ job_NN canon_NN !_. 
+Hasil Rule : 
+Hasil Rule : -
