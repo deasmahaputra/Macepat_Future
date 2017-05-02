@@ -38,4 +38,19 @@ public class CallFile {
       return listString;
     }
     
+    public static ArrayList<String> Input (String input) throws IOException{
+        try{
+        BufferedReader in = new BufferedReader(new FileReader(input));
+        
+        String line;
+        while((line = in.readLine()) != null){
+            System.out.println(line);
+            listString.add(line);
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    return listString;
+    }
+    
 }

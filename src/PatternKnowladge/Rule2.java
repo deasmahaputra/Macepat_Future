@@ -2500,7 +2500,24 @@ public class Rule2 {
          satu1a = "_VBN";
          satu1b = "_VBD";
          satu1c = " ";  
-      }else{
+      }else if(satua.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = "_VB";
+          satu1c = " ";  
+      }else if(satua.equals("_RP")){
+          satu1a = "_RP";
+          satu1b = "_RP";
+          satu1c = " ";  
+      }else if(satua.equals("_DT")){
+          satu1a = "_DT";
+          satu1b = "_DT";
+          satu1c = " ";  
+      }else if(satua.equals("_IN")){
+          satu1a = "_IN";
+          satu1b = "_IN";
+          satu1c = " ";  
+      }
+      else{
          satu1a = " ";
          satu1b = " ";
          satu1c = " ";  
@@ -2521,7 +2538,23 @@ public class Rule2 {
       }else if(satub.equals("_VBN")){
          satu2a = "_VBN";
          satu2b = "_VBD";
-         satu2c = " ";  
+         satu2c = " "; 
+      }else if(satua.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_RP")){
+          satu1a = "_RP";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_DT")){
+          satu1a = "_DT";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_IN")){
+          satu1a = "_IN";
+          satu1b = "";
+          satu1c = " ";  
       }else{
          satu2a = " ";
          satu2b = " ";
@@ -2543,7 +2576,27 @@ public class Rule2 {
       }else if(satuc.equals("_VBN")){
          satu3a = "_VBN";
          satu3b = "_VBD";
-         satu3c = " ";  
+         satu3c = " "; 
+      }else if(satub.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = "";
+          satu1c = " ";
+      }else if(satua.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_RP")){
+          satu1a = "_RP";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_DT")){
+          satu1a = "_DT";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_IN")){
+          satu1a = "_IN";
+          satu1b = "";
+          satu1c = " ";  
       }else{
          satu3a = " ";
          satu3b = " ";
@@ -2568,6 +2621,22 @@ public class Rule2 {
          dua1a = "_VBN";
          dua1b = "_VBD";
          dua1c = " ";  
+      }else if(satua.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_RP")){
+          satu1a = "_RP";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_DT")){
+          satu1a = "_DT";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_IN")){
+          satu1a = "_IN";
+          satu1b = "";
+          satu1c = " ";  
       }else{
          dua1a = " ";
          dua1b = " ";
@@ -2590,6 +2659,22 @@ public class Rule2 {
          dua2a = "_VBN";
          dua2b = "_VBD";
          dua2c = " ";  
+      }else if(satua.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_RP")){
+          satu1a = "_RP";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_DT")){
+          satu1a = "_DT";
+          satu1b = "";
+          satu1c = " ";  
+      }else if(satua.equals("_IN")){
+          satu1a = "_IN";
+          satu1b = "";
+          satu1c = " ";  
       }else{
          dua2a = " ";
          dua2b = " ";
@@ -2612,6 +2697,22 @@ public class Rule2 {
          dua3a = "_VBN";
          dua3b = "_VBD";
          dua3c = " ";  
+      }else if(satua.equals("_VB")){
+          satu1a = "_VB";
+          satu1b = " ";
+          satu1c = " ";  
+      }else if(satua.equals("_RP")){
+          satu1a = "_RP";
+          satu1b = " ";
+          satu1c = " ";  
+      }else if(satua.equals("_DT")){
+          satu1a = "_DT";
+          satu1b = " ";
+          satu1c = " ";  
+      }else if(satua.equals("_IN")){
+          satu1a = "_IN";
+          satu1b = " ";
+          satu1c = " ";  
       }else{
          dua3a = " ";
          dua3b = " ";
@@ -3758,7 +3859,253 @@ public class Rule2 {
                 }
                opini=kata1+" "+tampkata2+" "+tampkata3;
             }
+        else if(kata1.endsWith(tiga1a)||kata1.endsWith(tiga1b)||kata1.endsWith(tiga1c)){
+               if(tiga2a != " "){
+                    if(kata2.endsWith(tiga2a)||kata2.endsWith(tiga2b)||kata2.endsWith(tiga2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(tiga3a != " "){
+                    if(kata3.endsWith(tiga3a)||kata3.endsWith(tiga3b)||kata3.endsWith(tiga3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+        else if(kata1.endsWith(empat1a)||kata1.endsWith(empat1b)||kata1.endsWith(empat1c)){
+               if(empat2a != " "){
+                    if(kata2.endsWith(empat2a)||kata2.endsWith(empat2b)||kata2.endsWith(empat2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(empat3a != " "){
+                    if(kata3.endsWith(empat3a)||kata3.endsWith(empat3b)||kata3.endsWith(empat3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            
+        }
+        else if(kata1.endsWith(lima1a)||kata1.endsWith(lima1b)||kata1.endsWith(lima1c)){
+               if(lima2a != " "){
+                    if(kata2.endsWith(lima2a)||kata2.endsWith(lima2b)||kata2.endsWith(lima2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(lima3a != " "){
+                    if(kata3.endsWith(lima3a)||kata3.endsWith(lima3b)||kata3.endsWith(lima3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+        else if(kata1.endsWith(enam1a)||kata1.endsWith(enam1b)||kata1.endsWith(enam1c)){
+               if(enam2a != " "){
+                    if(kata2.endsWith(enam2a)||kata2.endsWith(enam2b)||kata2.endsWith(enam2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(enam3a != " "){
+                    if(kata3.endsWith(enam3a)||kata3.endsWith(enam3b)||kata3.endsWith(enam3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(tujuh1a)||kata1.endsWith(tujuh1b)||kata1.endsWith(tujuh1c)){
+               if(tujuh2a != " "){
+                    if(kata2.endsWith(tujuh2a)||kata2.endsWith(tujuh2b)||kata2.endsWith(tujuh2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(tujuh3a != " "){
+                    if(kata3.endsWith(tujuh3a)||kata3.endsWith(tujuh3b)||kata3.endsWith(tujuh3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(delapan1a)||kata1.endsWith(delapan1b)||kata1.endsWith(delapan1c)){
+               if(delapan2a != " "){
+                    if(kata2.endsWith(delapan2a)||kata2.endsWith(delapan2b)||kata2.endsWith(delapan2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(delapan3a != " "){
+                    if(kata3.endsWith(delapan3a)||kata3.endsWith(delapan3b)||kata3.endsWith(delapan3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(sembilan1a)||kata1.endsWith(sembilan1b)||kata1.endsWith(sembilan1c)){
+               if(sembilan2a != " "){
+                    if(kata2.endsWith(sembilan2a)||kata2.endsWith(sembilan2b)||kata2.endsWith(sembilan2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(sembilan3a != " "){
+                    if(kata3.endsWith(sembilan3a)||kata3.endsWith(sembilan3b)||kata3.endsWith(sembilan3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+        else if(kata1.endsWith(sepuluh1a)||kata1.endsWith(sepuluh1b)||kata1.endsWith(sepuluh1c)){
+               if(sepuluh2a != " "){
+                    if(kata2.endsWith(sepuluh2a)||kata2.endsWith(sepuluh2b)||kata2.endsWith(sepuluh2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(sepuluh3a != " "){
+                    if(kata3.endsWith(sepuluh3a)||kata3.endsWith(sepuluh3b)||kata3.endsWith(sepuluh3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(sebelas1a)||kata1.endsWith(sebelas1b)||kata1.endsWith(sebelas1c)){
+               if(sebelas2a != " "){
+                    if(kata2.endsWith(sebelas2a)||kata2.endsWith(sebelas2b)||kata2.endsWith(sebelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(sebelas3a != " "){
+                    if(kata3.endsWith(sebelas3a)||kata3.endsWith(sebelas3b)||kata3.endsWith(sebelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(duabelas1a)||kata1.endsWith(duabelas1b)||kata1.endsWith(duabelas1c)){
+               if(duabelas2a != " "){
+                    if(kata2.endsWith(duabelas2a)||kata2.endsWith(duabelas2b)||kata2.endsWith(duabelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(duabelas3a != " "){
+                    if(kata3.endsWith(duabelas3a)||kata3.endsWith(duabelas3b)||kata3.endsWith(duabelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(tigabelas1a)||kata1.endsWith(tigabelas1b)||kata1.endsWith(tigabelas1c)){
+               if(tigabelas2a != " "){
+                    if(kata2.endsWith(tigabelas2a)||kata2.endsWith(tigabelas2b)||kata2.endsWith(tigabelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(tigabelas3a != " "){
+                    if(kata3.endsWith(tigabelas3a)||kata3.endsWith(tigabelas3b)||kata3.endsWith(tigabelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(empatbelas1a)||kata1.endsWith(empatbelas1b)||kata1.endsWith(empatbelas1c)){
+               if(empatbelas2a != " "){
+                    if(kata2.endsWith(empatbelas2a)||kata2.endsWith(empatbelas2b)||kata2.endsWith(empatbelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(empatbelas3a != " "){
+                    if(kata3.endsWith(empatbelas3a)||kata3.endsWith(empatbelas3b)||kata3.endsWith(empatbelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(limabelas1a)||kata1.endsWith(limabelas1b)||kata1.endsWith(limabelas1c)){
+               if(limabelas2a != " "){
+                    if(kata2.endsWith(limabelas2a)||kata2.endsWith(limabelas2b)||kata2.endsWith(limabelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(limabelas3a != " "){
+                    if(kata3.endsWith(limabelas3a)||kata3.endsWith(limabelas3b)||kata3.endsWith(limabelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(enambelas1a)||kata1.endsWith(enambelas1b)||kata1.endsWith(enambelas1c)){
+               if(enambelas2a != " "){
+                    if(kata2.endsWith(enambelas2a)||kata2.endsWith(enambelas2b)||kata2.endsWith(enambelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(enambelas3a != " "){
+                    if(kata3.endsWith(enambelas3a)||kata3.endsWith(enambelas3b)||kata3.endsWith(enambelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(tujuhbelas1a)||kata1.endsWith(tujuhbelas1b)||kata1.endsWith(tujuhbelas1c)){
+               if(tujuhbelas2a != " "){
+                    if(kata2.endsWith(tujuhbelas2a)||kata2.endsWith(tujuhbelas2b)||kata2.endsWith(tujuhbelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(tujuhbelas3a != " "){
+                    if(kata3.endsWith(tujuhbelas3a)||kata3.endsWith(tujuhbelas3b)||kata3.endsWith(tujuhbelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      else if(kata1.endsWith(delapanbelas1a)||kata1.endsWith(delapanbelas1b)||kata1.endsWith(delapanbelas1c)){
+               if(delapanbelas2a != " "){
+                    if(kata2.endsWith(delapanbelas2a)||kata2.endsWith(delapanbelas2b)||kata2.endsWith(delapanbelas2c)){//tambahan jjr dan jjs
+                        //System.out.println(kata1+" "+kata2);
+                        tampkata2 += kata2;
+                    }
+                if(delapanbelas3a != " "){
+                    if(kata3.endsWith(delapanbelas3a)||kata3.endsWith(delapanbelas3b)||kata3.endsWith(delapanbelas3c)){
+                        tampkata3 += kata3;
+                    }
+                }
+                    
+                }
+               opini=kata1+" "+tampkata2+" "+tampkata3;
+            }
+      
+      
+      
       }
+      
+      
        // }else if(getRule2a == "_RB" && getRule2b == "_JJ" && getRule2c == " "){
             
         //}else if(getRule4a == "_NN" && getRule4b == "_JJ" && getRule4c == " "){

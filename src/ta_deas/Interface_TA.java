@@ -15,8 +15,11 @@ import PatternKnowladge.Opini;
 import PatternKnowladge.Rule;
 import PatternKnowladge.Rule2;
 import PatternKnowladge.StanParser;
+import PatternKnowladge.akurasi;
+import PatternKnowladge.grouping;
 import PatternKnowladge.ngram;
 import PatternKnowladge.parseRule;
+import PatternKnowladge.polaritas;
 import Preprocessing.BioChunking;
 import Preprocessing.Corref.GetCorref;
 import Preprocessing.CorreferenceResolution;
@@ -30,6 +33,9 @@ import Preprocessing.StanfordTagger;
 //import Preprocessing.Stop;
 import Preprocessing.Stopwords;
 import Preprocessing.getData;
+import Taxonomy.CleaningFitur;
+import Taxonomy.FiturTaxonomy;
+import Taxonomy.OntologyTranverserAPI2;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 import edu.stanford.nlp.trees.Tree;
 import java.io.BufferedWriter;
@@ -73,6 +79,7 @@ public class Interface_TA extends javax.swing.JFrame {
     public static ArrayList<String> opNeg = new ArrayList<String>();
     public static ArrayList<String> inpOpini = new ArrayList<String>();
     public static ArrayList<String> kalimatPre = new ArrayList<String>();
+    public static ArrayList<String> kalimatIob = new ArrayList<String>();
     public static ArrayList<String> ngram = new ArrayList<String>();
     public static ArrayList<String> ngram2 = new ArrayList<String>();
     public static ArrayList<String> listFit = new ArrayList<String>();
@@ -127,878 +134,884 @@ public class Interface_TA extends javax.swing.JFrame {
     StanParser Parser = new StanParser();
     inputFile input = new inputFile();
     IobChunk iobchunk = new IobChunk();
+    OntologyTranverserAPI2 ontolog = new OntologyTranverserAPI2();
 //    GetRule ruleget = new GetRule();
     RegIob regbio = new RegIob();
+    akurasi akrs= new akurasi();
+    polaritas polar = new polaritas();
+    grouping group = new grouping();
+    CleaningFitur clnfit = new CleaningFitur();
+    FiturTaxonomy fitTax = new FiturTaxonomy();
     
     
-    public void getRuleSelected(){
-        
-        GetDataRule getdatarule = GetDataRule.getInstance();
-        String rulesatua = jComboBoxRule1a4.getSelectedItem().toString();
-        String rulesatub = jComboBoxRule1b4.getSelectedItem().toString();
-        String rulesatuc = jComboBoxRule1C4.getSelectedItem().toString();
-        String ruleduaa = jComboBoxRule2a4.getSelectedItem().toString();
-        String ruleduab = jComboBoxRule2b4.getSelectedItem().toString();
-        String ruleduac = jComboBoxRule2c4.getSelectedItem().toString();
-        String ruletigaa = jComboBoxRule3a4.getSelectedItem().toString();
-        String ruletigab = jComboBoxRule3b4.getSelectedItem().toString();
-        String ruletigac = jComboBoxRule3c4.getSelectedItem().toString();
-        String ruleempata = jComboBoxRule4a4.getSelectedItem().toString();
-        String ruleempatb = jComboBoxRule4b4.getSelectedItem().toString();
-        String ruleempatc = jComboBoxRule4c4.getSelectedItem().toString();
-        String rulelimaa = jComboBoxRule5a4.getSelectedItem().toString();
-        String rulelimab = jComboBoxRule5b4.getSelectedItem().toString();
-        String rulelimac = jComboBoxRule5c4.getSelectedItem().toString();
-        String ruleenama = jComboBoxRule6a4.getSelectedItem().toString();
-        String ruleenamb = jComboBoxRule6b4.getSelectedItem().toString();
-        String ruleenamc = jComboBoxRule6c4.getSelectedItem().toString();
-        String ruletujuha = jComboBoxRule7a4.getSelectedItem().toString();
-        String ruletujuhb = jComboBoxRule7b4.getSelectedItem().toString();
-        String ruletujuhc = jComboBoxRule7c4.getSelectedItem().toString();
-        String ruledelapana = jComboBoxRule8a4.getSelectedItem().toString();
-        String ruledelapanb = jComboBoxRule8b4.getSelectedItem().toString();
-        String ruledelapanc = jComboBoxRule8c4.getSelectedItem().toString();
-        String rulesembilana = jComboBoxRule9a4.getSelectedItem().toString();
-        String rulesembilanb = jComboBoxRule9b4.getSelectedItem().toString();
-        String rulesembilanc = jComboBoxRule9c4.getSelectedItem().toString();
-        String rulesepuluha = jComboBoxRule10a4.getSelectedItem().toString();
-        String rulesepuluhb = jComboBoxRule10b4.getSelectedItem().toString();
-        String rulesepuluhc = jComboBoxRule10c4.getSelectedItem().toString();
-        String rulesebelasa = jComboBoxRule11a4.getSelectedItem().toString();
-        String rulesebelasb = jComboBoxRule11b4.getSelectedItem().toString();
-        String rulesebelasc = jComboBoxRule11c4.getSelectedItem().toString();
-        String ruleduabelasa = jComboBoxRule12a4.getSelectedItem().toString();
-        String ruleduabelasb = jComboBoxRule12b4.getSelectedItem().toString();
-        String ruleduabelasc = jComboBoxRule12c4.getSelectedItem().toString();
-        String ruletigabelasa = jComboBoxRule13a4.getSelectedItem().toString();
-        String ruletigabelasb = jComboBoxRule13b4.getSelectedItem().toString();
-        String ruletigabelasc = jComboBoxRule13c4.getSelectedItem().toString();
-        String ruleempatbelasa = jComboBoxRule14a4.getSelectedItem().toString();
-        String ruleempatbelasb = jComboBoxRule14b4.getSelectedItem().toString();
-        String ruleempatbelasc = jComboBoxRule14c4.getSelectedItem().toString();
-        String rulelimabelasa = jComboBoxRule15a4.getSelectedItem().toString();
-        String rulelimabelasb = jComboBoxRule15b4.getSelectedItem().toString();
-        String rulelimabelasc = jComboBoxRule15c4.getSelectedItem().toString();
-        String ruleenambelasa = jComboBoxRule16a4.getSelectedItem().toString();
-        String ruleenambelasb = jComboBoxRule16b4.getSelectedItem().toString();
-        String ruleenambelasc = jComboBoxRule16c4.getSelectedItem().toString();
-        String ruletujuhbelasa = jComboBoxRule17a4.getSelectedItem().toString();
-        String ruletujuhbelasb = jComboBoxRule17b4.getSelectedItem().toString();
-        String ruletujuhbelasc = jComboBoxRule17c4.getSelectedItem().toString();
-        String ruledelapanbelasa = jComboBoxRule18a4.getSelectedItem().toString();
-        String ruledelapanbelasb = jComboBoxRule18b4.getSelectedItem().toString();
-        String ruledelapanbelasc = jComboBoxRule18c4.getSelectedItem().toString();
-        
-        if(rulesatua == "-"){
-            getdatarule.setRule1A1(" ");
-            getdatarule.setRule1A2(" ");
-            getdatarule.setRule1a3(" ");
-        
-        }else{
-            String[] temp1a;
-            String delimiter = " ";
-
-            temp1a = rulesatua.split(delimiter);
-            getdatarule.setRule1A1(temp1a[0].toString());
-            getdatarule.setRule1A2(temp1a[1].toString());
-            getdatarule.setRule1a3(temp1a[2].toString());
-        }
-        if(rulesatub == "-"){
-            getdatarule.setRule1B1(" ");
-            getdatarule.setRule1B2(" ");
-            getdatarule.setRule1B3(" ");
-        
-        }else{
-            String[] temp1b;
-            String delimiter = " ";
-
-            temp1b = rulesatub.split(delimiter);
-            getdatarule.setRule1B1(temp1b[0].toString());
-            getdatarule.setRule1B2(temp1b[1].toString());
-            getdatarule.setRule1B3(temp1b[2].toString());
-        }
-        
-        if(rulesatuc == "-"){
-            getdatarule.setRule1C1(" ");
-            getdatarule.setRule1C2(" ");
-            getdatarule.setRule1C3(" ");
-        
-        }else{
-            String[] temp1c;
-            String delimiter = " ";
-
-            temp1c = rulesatuc.split(delimiter);
-            getdatarule.setRule1C1(temp1c[0].toString());
-            getdatarule.setRule1C2(temp1c[1].toString());
-            getdatarule.setRule1C3(temp1c[2].toString());
-        }
-        
-        if(ruleduaa == "-"){
-            getdatarule.setRule2A1(" ");
-            getdatarule.setRule2A2(" ");
-            getdatarule.setRule2a3(" ");
-        
-        }else{
-            String[] temp2a;
-            String delimiter = " ";
-
-            temp2a = ruleduaa.split(delimiter);
-            getdatarule.setRule2A1(temp2a[0].toString());
-            getdatarule.setRule2A2(temp2a[1].toString());
-            getdatarule.setRule2a3(temp2a[2].toString());
-        }
-        
-        if(ruleduab == "-"){
-            getdatarule.setRule2B1(" ");
-            getdatarule.setRule2B2(" ");
-            getdatarule.setRule2B3(" ");
-        
-        }else{
-            String[] temp2b;
-            String delimiter = " ";
-
-            temp2b = ruleduab.split(delimiter);
-            getdatarule.setRule2B1(temp2b[0].toString());
-            getdatarule.setRule2B2(temp2b[1].toString());
-            getdatarule.setRule2B3(temp2b[2].toString());
-        }
-        
-        if(ruleduac == "-"){
-            getdatarule.setRule2C1(" ");
-            getdatarule.setRule2C2(" ");
-            getdatarule.setRule2C3(" ");
-        
-        }else{
-            String[] temp2c;
-            String delimiter = " ";
-
-            temp2c = ruleduac.split(delimiter);
-            getdatarule.setRule2C1(temp2c[0].toString());
-            getdatarule.setRule2C2(temp2c[1].toString());
-            getdatarule.setRule2C3(temp2c[2].toString());
-        }
-        
-        if(ruletigaa == "-"){
-            getdatarule.setRule3A1(" ");
-            getdatarule.setRule3A2(" ");
-            getdatarule.setRule3a3(" ");
-        
-        }else{
-            String[] temp3a;
-            String delimiter = " ";
-
-            temp3a = ruletigaa.split(delimiter);
-            getdatarule.setRule3A1(temp3a[0].toString());
-            getdatarule.setRule3A2(temp3a[1].toString());
-            getdatarule.setRule3a3(temp3a[2].toString());
-        }
-        
-        if(ruletigab == "-"){
-            getdatarule.setRule3B1(" ");
-            getdatarule.setRule3B2(" ");
-            getdatarule.setRule3B3(" ");
-        
-        }else{
-            String[] temp3b;
-            String delimiter = " ";
-
-            temp3b = ruletigab.split(delimiter);
-            getdatarule.setRule3B1(temp3b[0].toString());
-            getdatarule.setRule3B2(temp3b[1].toString());
-            getdatarule.setRule3B3(temp3b[2].toString());
-        }
-        
-        if(ruletigac == "-"){
-            getdatarule.setRule3C1(" ");
-            getdatarule.setRule3C2(" ");
-            getdatarule.setRule3C3(" ");
-        
-        }else{
-            String[] temp3c;
-            String delimiter = " ";
-
-            temp3c = ruletigac.split(delimiter);
-            getdatarule.setRule3C1(temp3c[0].toString());
-            getdatarule.setRule3C2(temp3c[1].toString());
-            getdatarule.setRule3C3(temp3c[2].toString());
-        }
-        
-        if(ruleempata == "-"){
-            getdatarule.setRule4A1(" ");
-            getdatarule.setRule4A2(" ");
-            getdatarule.setRule4a3(" ");
-        
-        }else{
-            String[] temp4a;
-            String delimiter = " ";
-
-            temp4a = ruleempata.split(delimiter);
-            getdatarule.setRule4A1(temp4a[0].toString());
-            getdatarule.setRule4A2(temp4a[1].toString());
-            getdatarule.setRule4a3(temp4a[2].toString());
-        }
-        
-         if(ruleempatb == "-"){
-            getdatarule.setRule4B1(" ");
-            getdatarule.setRule4B2(" ");
-            getdatarule.setRule4B3(" ");
-        
-        }else{
-            String[] temp4b;
-            String delimiter = " ";
-
-            temp4b = ruleempatb.split(delimiter);
-            getdatarule.setRule4B1(temp4b[0].toString());
-            getdatarule.setRule4B2(temp4b[1].toString());
-            getdatarule.setRule4B3(temp4b[2].toString());
-        }
-         
-        if(ruleempatc == "-"){
-            getdatarule.setRule4C1(" ");
-            getdatarule.setRule4C2(" ");
-            getdatarule.setRule4C3(" ");
-        
-        }else{
-            String[] temp4c;
-            String delimiter = " ";
-
-            temp4c = ruleempatc.split(delimiter);
-            getdatarule.setRule4C1(temp4c[0].toString());
-            getdatarule.setRule4C2(temp4c[1].toString());
-            getdatarule.setRule4C3(temp4c[2].toString());
-        }
-        
-        if(rulelimaa == "-"){
-            getdatarule.setRule5A1(" ");
-            getdatarule.setRule5A2(" ");
-            getdatarule.setRule5a3(" ");
-        
-        }else{
-            String[] temp5a;
-            String delimiter = " ";
-
-            temp5a = rulelimaa.split(delimiter);
-            getdatarule.setRule5A1(temp5a[0].toString());
-            getdatarule.setRule5A2(temp5a[1].toString());
-            getdatarule.setRule5a3(temp5a[2].toString());
-        }
-        
-        if(rulelimab == "-"){
-            getdatarule.setRule5B1(" ");
-            getdatarule.setRule5B2(" ");
-            getdatarule.setRule5B3(" ");
-        
-        }else{
-            String[] temp5b;
-            String delimiter = " ";
-
-            temp5b = rulelimab.split(delimiter);
-            getdatarule.setRule5B1(temp5b[0].toString());
-            getdatarule.setRule5B2(temp5b[1].toString());
-            getdatarule.setRule5B3(temp5b[2].toString());
-        }
-        
-        if(rulelimac == "-"){
-            getdatarule.setRule5C1(" ");
-            getdatarule.setRule5C2(" ");
-            getdatarule.setRule5C3(" ");
-        
-        }else{
-            String[] temp5c;
-            String delimiter = " ";
-
-            temp5c = rulelimac.split(delimiter);
-            getdatarule.setRule5C1(temp5c[0].toString());
-            getdatarule.setRule5C2(temp5c[1].toString());
-            getdatarule.setRule5C3(temp5c[2].toString());
-        }
-        
-        if(ruleenama == "-"){
-            getdatarule.setRule6A1(" ");
-            getdatarule.setRule6A2(" ");
-            getdatarule.setRule6a3(" ");
-        
-        }else{
-            String[] temp6a;
-            String delimiter = " ";
-
-            temp6a = ruleenama.split(delimiter);
-            getdatarule.setRule6A1(temp6a[0].toString());
-            getdatarule.setRule6A2(temp6a[1].toString());
-            getdatarule.setRule6a3(temp6a[2].toString());
-        }
-        
-        if(ruleenamb == "-"){
-            getdatarule.setRule6B1(" ");
-            getdatarule.setRule6B2(" ");
-            getdatarule.setRule6B3(" ");
-        
-        }else{
-            String[] temp6b;
-            String delimiter = " ";
-
-            temp6b = ruleenamb.split(delimiter);
-            getdatarule.setRule6B1(temp6b[0].toString());
-            getdatarule.setRule6B2(temp6b[1].toString());
-            getdatarule.setRule6B3(temp6b[2].toString());
-        }
-        
-        if(ruleenamc == "-"){
-            getdatarule.setRule6C1(" ");
-            getdatarule.setRule6C2(" ");
-            getdatarule.setRule6C3(" ");
-        
-        }else{
-            String[] temp6c;
-            String delimiter = " ";
-
-            temp6c = ruleenamc.split(delimiter);
-            getdatarule.setRule6C1(temp6c[0].toString());
-            getdatarule.setRule6C2(temp6c[1].toString());
-            getdatarule.setRule6C3(temp6c[2].toString());
-        }
-        
-        if(ruletujuha == "-"){
-            getdatarule.setRule7A1(" ");
-            getdatarule.setRule7A2(" ");
-            getdatarule.setRule7a3(" ");
-        
-        }else{
-            String[] temp7a;
-            String delimiter = " ";
-
-            temp7a = ruletujuha.split(delimiter);
-            getdatarule.setRule7A1(temp7a[0].toString());
-            getdatarule.setRule7A2(temp7a[1].toString());
-            getdatarule.setRule7a3(temp7a[2].toString());
-        }
-        
-        if(ruletujuhb == "-"){
-            getdatarule.setRule7B1(" ");
-            getdatarule.setRule7B2(" ");
-            getdatarule.setRule7B3(" ");
-        
-        }else{
-            String[] temp7b;
-            String delimiter = " ";
-
-            temp7b = ruletujuhb.split(delimiter);
-            getdatarule.setRule7B1(temp7b[0].toString());
-            getdatarule.setRule7B2(temp7b[1].toString());
-            getdatarule.setRule7B3(temp7b[2].toString());
-        }
-        
-        if(ruletujuhc == "-"){
-            getdatarule.setRule7C1(" ");
-            getdatarule.setRule7C2(" ");
-            getdatarule.setRule7C3(" ");
-        
-        }else{
-            String[] temp7c;
-            String delimiter = " ";
-
-            temp7c = ruletujuhc.split(delimiter);
-            getdatarule.setRule7C1(temp7c[0].toString());
-            getdatarule.setRule7C2(temp7c[1].toString());
-            getdatarule.setRule7C3(temp7c[2].toString());
-        }
-        
-        if(ruledelapana == "-"){
-            getdatarule.setRule8A1(" ");
-            getdatarule.setRule8A2(" ");
-            getdatarule.setRule8a3(" ");
-        
-        }else{
-            String[] temp8a;
-            String delimiter = " ";
-
-            temp8a = ruledelapana.split(delimiter);
-            getdatarule.setRule8A1(temp8a[0].toString());
-            getdatarule.setRule8A2(temp8a[1].toString());
-            getdatarule.setRule8a3(temp8a[2].toString());
-        }
-        
-        if(ruledelapanb == "-"){
-            getdatarule.setRule8B1(" ");
-            getdatarule.setRule8B2(" ");
-            getdatarule.setRule8B3(" ");
-        
-        }else{
-            String[] temp8b;
-            String delimiter = " ";
-
-            temp8b = ruledelapanb.split(delimiter);
-            getdatarule.setRule8B1(temp8b[0].toString());
-            getdatarule.setRule8B2(temp8b[1].toString());
-            getdatarule.setRule8B3(temp8b[2].toString());
-        }
-        
-        if(ruledelapanc == "-"){
-            getdatarule.setRule8C1(" ");
-            getdatarule.setRule8C2(" ");
-            getdatarule.setRule8C3(" ");
-        
-        }else{
-            String[] temp8c;
-            String delimiter = " ";
-
-            temp8c = ruledelapanc.split(delimiter);
-            getdatarule.setRule8C1(temp8c[0].toString());
-            getdatarule.setRule8C2(temp8c[1].toString());
-            getdatarule.setRule8C3(temp8c[2].toString());
-        }
-        
-        if(rulesembilana == "-"){
-            getdatarule.setRule9A1(" ");
-            getdatarule.setRule9A2(" ");
-            getdatarule.setRule9a3(" ");
-        
-        }else{
-            String[] temp9a;
-            String delimiter = " ";
-
-            temp9a = rulesembilana.split(delimiter);
-            getdatarule.setRule9A1(temp9a[0].toString());
-            getdatarule.setRule9A2(temp9a[1].toString());
-            getdatarule.setRule9a3(temp9a[2].toString());
-        }
-        
-        if(rulesembilanb == "-"){
-            getdatarule.setRule9B1(" ");
-            getdatarule.setRule9B2(" ");
-            getdatarule.setRule9B3(" ");
-        
-        }else{
-            String[] temp9b;
-            String delimiter = " ";
-
-            temp9b = rulesembilanb.split(delimiter);
-            getdatarule.setRule9B1(temp9b[0].toString());
-            getdatarule.setRule9B2(temp9b[1].toString());
-            getdatarule.setRule9B3(temp9b[2].toString());
-        }
-        
-        if(rulesembilanc == "-"){
-            getdatarule.setRule9C1(" ");
-            getdatarule.setRule9C2(" ");
-            getdatarule.setRule9C3(" ");
-        
-        }else{
-            String[] temp9c;
-            String delimiter = " ";
-
-            temp9c = rulesembilanc.split(delimiter);
-            getdatarule.setRule9C1(temp9c[0].toString());
-            getdatarule.setRule9C2(temp9c[1].toString());
-            getdatarule.setRule9C3(temp9c[2].toString());
-        }
-        
-        if(rulesepuluha == "-"){
-            getdatarule.setRule10A1(" ");
-            getdatarule.setRule10A2(" ");
-            getdatarule.setRule10a3(" ");
-        
-        }else{
-            String[] temp10a;
-            String delimiter = " ";
-
-            temp10a = rulesepuluha.split(delimiter);
-            getdatarule.setRule10A1(temp10a[0].toString());
-            getdatarule.setRule10A2(temp10a[1].toString());
-            getdatarule.setRule10a3(temp10a[2].toString());
-        }
-        
-        if(rulesepuluhb == "-"){
-            getdatarule.setRule10B1(" ");
-            getdatarule.setRule10B2(" ");
-            getdatarule.setRule10B3(" ");
-        
-        }else{
-            String[] temp10b;
-            String delimiter = " ";
-
-            temp10b = rulesepuluhb.split(delimiter);
-            getdatarule.setRule10B1(temp10b[0].toString());
-            getdatarule.setRule10B2(temp10b[1].toString());
-            getdatarule.setRule10B3(temp10b[2].toString());
-        }
-        
-        if(rulesepuluhc == "-"){
-            getdatarule.setRule10C1(" ");
-            getdatarule.setRule10C2(" ");
-            getdatarule.setRule10C3(" ");
-        
-        }else{
-            String[] temp10c;
-            String delimiter = " ";
-
-            temp10c = rulesepuluhc.split(delimiter);
-            getdatarule.setRule10A1(temp10c[0].toString());
-            getdatarule.setRule10A2(temp10c[1].toString());
-            getdatarule.setRule10a3(temp10c[2].toString());
-        }
-        
-        if(rulesebelasa == "-"){
-            getdatarule.setRule11A1(" ");
-            getdatarule.setRule11A2(" ");
-            getdatarule.setRule11a3(" ");
-        
-        }else{
-            String[] temp11a;
-            String delimiter = " ";
-
-            temp11a = rulesebelasa.split(delimiter);
-            getdatarule.setRule11A1(temp11a[0].toString());
-            getdatarule.setRule11A2(temp11a[1].toString());
-            getdatarule.setRule11a3(temp11a[2].toString());
-        }
-        
-        if(rulesebelasb == "-"){
-            getdatarule.setRule11B1(" ");
-            getdatarule.setRule11B2(" ");
-            getdatarule.setRule11B3(" ");
-        
-        }else{
-            String[] temp11b;
-            String delimiter = " ";
-
-            temp11b = rulesebelasb.split(delimiter);
-            getdatarule.setRule11B1(temp11b[0].toString());
-            getdatarule.setRule11B2(temp11b[1].toString());
-            getdatarule.setRule11B3(temp11b[2].toString());
-        }
-        
-        if(rulesebelasc == "-"){
-            getdatarule.setRule11C1(" ");
-            getdatarule.setRule11C2(" ");
-            getdatarule.setRule11C3(" ");
-        
-        }else{
-            String[] temp11c;
-            String delimiter = " ";
-
-            temp11c = rulesebelasc.split(delimiter);
-            getdatarule.setRule11C1(temp11c[0].toString());
-            getdatarule.setRule11C2(temp11c[1].toString());
-            getdatarule.setRule11C3(temp11c[2].toString());
-        }
-        
-        if(ruleduabelasa == "-"){
-            getdatarule.setRule12A1(" ");
-            getdatarule.setRule12A2(" ");
-            getdatarule.setRule12a3(" ");
-        
-        }else{
-            String[] temp12a;
-            String delimiter = " ";
-
-            temp12a = ruleduabelasa.split(delimiter);
-            getdatarule.setRule12A1(temp12a[0].toString());
-            getdatarule.setRule12A2(temp12a[1].toString());
-            getdatarule.setRule12a3(temp12a[2].toString());
-        }
-        
-        if(ruleduabelasb == "-"){
-            getdatarule.setRule12B1(" ");
-            getdatarule.setRule12B2(" ");
-            getdatarule.setRule12B3(" ");
-        
-        }else{
-            String[] temp12b;
-            String delimiter = " ";
-
-            temp12b = ruleduabelasb.split(delimiter);
-            getdatarule.setRule12B1(temp12b[0].toString());
-            getdatarule.setRule12B2(temp12b[1].toString());
-            getdatarule.setRule12B3(temp12b[2].toString());
-        }
-        
-        if(ruleduabelasc == "-"){
-            getdatarule.setRule12C1(" ");
-            getdatarule.setRule12C2(" ");
-            getdatarule.setRule12C3(" ");
-        
-        }else{
-            String[] temp12c;
-            String delimiter = " ";
-
-            temp12c = ruleduabelasc.split(delimiter);
-            getdatarule.setRule12C1(temp12c[0].toString());
-            getdatarule.setRule12C2(temp12c[1].toString());
-            getdatarule.setRule12C3(temp12c[2].toString());
-        }
-        
-        if(ruletigabelasa == "-"){
-            getdatarule.setRule13A1(" ");
-            getdatarule.setRule13A2(" ");
-            getdatarule.setRule13a3(" ");
-        
-        }else{
-            String[] temp13a;
-            String delimiter = " ";
-
-            temp13a = ruletigabelasa.split(delimiter);
-            getdatarule.setRule13A1(temp13a[0].toString());
-            getdatarule.setRule13A2(temp13a[1].toString());
-            getdatarule.setRule13a3(temp13a[2].toString());
-        }
-        
-        if(ruletigabelasb == "-"){
-            getdatarule.setRule13B1(" ");
-            getdatarule.setRule13B2(" ");
-            getdatarule.setRule13B3(" ");
-        
-        }else{
-            String[] temp13b;
-            String delimiter = " ";
-
-            temp13b = ruletigabelasb.split(delimiter);
-            getdatarule.setRule13B1(temp13b[0].toString());
-            getdatarule.setRule13B2(temp13b[1].toString());
-            getdatarule.setRule13B3(temp13b[2].toString());
-        }
-        
-        if(ruletigabelasc == "-"){
-            getdatarule.setRule13C1(" ");
-            getdatarule.setRule13C2(" ");
-            getdatarule.setRule13C3(" ");
-        
-        }else{
-            String[] temp13c;
-            String delimiter = " ";
-
-            temp13c = ruletigabelasc.split(delimiter);
-            getdatarule.setRule13C1(temp13c[0].toString());
-            getdatarule.setRule13C2(temp13c[1].toString());
-            getdatarule.setRule13C3(temp13c[2].toString());
-        }
-        
-        if(ruleempatbelasa == "-"){
-            getdatarule.setRule14A1(" ");
-            getdatarule.setRule14A2(" ");
-            getdatarule.setRule14a3(" ");
-        
-        }else{
-            String[] temp14a;
-            String delimiter = " ";
-
-            temp14a = ruleempatbelasa.split(delimiter);
-            getdatarule.setRule14A1(temp14a[0].toString());
-            getdatarule.setRule14A2(temp14a[1].toString());
-            getdatarule.setRule14a3(temp14a[2].toString());
-        }
-        
-        if(ruleempatbelasb == "-"){
-            getdatarule.setRule14B1(" ");
-            getdatarule.setRule14B2(" ");
-            getdatarule.setRule14B3(" ");
-        
-        }else{
-            String[] temp14b;
-            String delimiter = " ";
-
-            temp14b = ruleempatbelasb.split(delimiter);
-            getdatarule.setRule14B1(temp14b[0].toString());
-            getdatarule.setRule14B2(temp14b[1].toString());
-            getdatarule.setRule14B3(temp14b[2].toString());
-        }
-        
-        if(ruleempatbelasc == "-"){
-            getdatarule.setRule14C1(" ");
-            getdatarule.setRule14C2(" ");
-            getdatarule.setRule14C3(" ");
-        
-        }else{
-            String[] temp14c;
-            String delimiter = " ";
-
-            temp14c = ruleempatbelasc.split(delimiter);
-            getdatarule.setRule14C1(temp14c[0].toString());
-            getdatarule.setRule14C2(temp14c[1].toString());
-            getdatarule.setRule14C3(temp14c[2].toString());
-        }
-        
-        if(rulelimabelasa == "-"){
-            getdatarule.setRule15A1(" ");
-            getdatarule.setRule15A2(" ");
-            getdatarule.setRule15a3(" ");
-        
-        }else{
-            String[] temp15a;
-            String delimiter = " ";
-
-            temp15a = rulelimabelasa.split(delimiter);
-            getdatarule.setRule15A1(temp15a[0].toString());
-            getdatarule.setRule15A2(temp15a[1].toString());
-            getdatarule.setRule15a3(temp15a[2].toString());
-        }
-        
-        if(rulelimabelasb == "-"){
-            getdatarule.setRule15B1(" ");
-            getdatarule.setRule15B2(" ");
-            getdatarule.setRule15B3(" ");
-        
-        }else{
-            String[] temp15b;
-            String delimiter = " ";
-
-            temp15b = rulelimabelasb.split(delimiter);
-            getdatarule.setRule15B1(temp15b[0].toString());
-            getdatarule.setRule15B2(temp15b[1].toString());
-            getdatarule.setRule15B3(temp15b[2].toString());
-        }
-        
-        if(rulelimabelasc == "-"){
-            getdatarule.setRule15C1(" ");
-            getdatarule.setRule15C2(" ");
-            getdatarule.setRule15C3(" ");
-        
-        }else{
-            String[] temp15c;
-            String delimiter = " ";
-
-            temp15c = rulelimabelasc.split(delimiter);
-            getdatarule.setRule15C1(temp15c[0].toString());
-            getdatarule.setRule15C2(temp15c[1].toString());
-            getdatarule.setRule15C3(temp15c[2].toString());
-        }
-        
-        if(ruleenambelasa == "-"){
-            getdatarule.setRule16A1(" ");
-            getdatarule.setRule16A2(" ");
-            getdatarule.setRule16a3(" ");
-        
-        }else{
-            String[] temp16a;
-            String delimiter = " ";
-
-            temp16a = ruleenambelasa.split(delimiter);
-            getdatarule.setRule16A1(temp16a[0].toString());
-            getdatarule.setRule16A2(temp16a[1].toString());
-            getdatarule.setRule16a3(temp16a[2].toString());
-        }
-        
-        if(ruleenambelasb == "-"){
-            getdatarule.setRule16B1(" ");
-            getdatarule.setRule16B2(" ");
-            getdatarule.setRule16B3(" ");
-        
-        }else{
-            String[] temp16b;
-            String delimiter = " ";
-
-            temp16b = ruleenambelasb.split(delimiter);
-            getdatarule.setRule16B1(temp16b[0].toString());
-            getdatarule.setRule16B2(temp16b[1].toString());
-            getdatarule.setRule16B3(temp16b[2].toString());
-        }
-        
-        if(ruleenambelasc == "-"){
-            getdatarule.setRule16C1(" ");
-            getdatarule.setRule16C2(" ");
-            getdatarule.setRule16C3(" ");
-        
-        }else{
-            String[] temp16c;
-            String delimiter = " ";
-
-            temp16c = ruleenambelasc.split(delimiter);
-            getdatarule.setRule16C1(temp16c[0].toString());
-            getdatarule.setRule16C2(temp16c[1].toString());
-            getdatarule.setRule16C3(temp16c[2].toString());
-        }
-        
-        if(ruletujuhbelasa == "-"){
-            getdatarule.setRule17A1(" ");
-            getdatarule.setRule17A2(" ");
-            getdatarule.setRule17a3(" ");
-        
-        }else{
-            String[] temp17a;
-            String delimiter = " ";
-
-            temp17a = ruletujuhbelasa.split(delimiter);
-            getdatarule.setRule17A1(temp17a[0].toString());
-            getdatarule.setRule17A2(temp17a[1].toString());
-            getdatarule.setRule17a3(temp17a[2].toString());
-        }
-        
-        if(ruletujuhbelasb == "-"){
-            getdatarule.setRule17B1(" ");
-            getdatarule.setRule17B2(" ");
-            getdatarule.setRule17B3(" ");
-        
-        }else{
-            String[] temp17b;
-            String delimiter = " ";
-
-            temp17b = ruletujuhbelasb.split(delimiter);
-            getdatarule.setRule17B1(temp17b[0].toString());
-            getdatarule.setRule17B2(temp17b[1].toString());
-            getdatarule.setRule17B3(temp17b[2].toString());
-        }
-        
-         if(ruletujuhbelasc == "-"){
-            getdatarule.setRule17C1(" ");
-            getdatarule.setRule17C2(" ");
-            getdatarule.setRule17C3(" ");
-        
-        }else{
-            String[] temp17c;
-            String delimiter = " ";
-
-            temp17c = ruletujuhbelasc.split(delimiter);
-            getdatarule.setRule17C1(temp17c[0].toString());
-            getdatarule.setRule17C2(temp17c[1].toString());
-            getdatarule.setRule17C3(temp17c[2].toString());
-        }
-        
-         if(ruledelapanbelasa == "-"){
-            getdatarule.setRule18A1(" ");
-            getdatarule.setRule18A2(" ");
-            getdatarule.setRule18a3(" ");
-        
-        }else{
-            String[] temp18a;
-            String delimiter = " ";
-
-            temp18a = ruledelapanbelasa.split(delimiter);
-            getdatarule.setRule18A1(temp18a[0].toString());
-            getdatarule.setRule18A2(temp18a[1].toString());
-            getdatarule.setRule18a3(temp18a[2].toString());
-        }
-         
-         if(ruledelapanbelasb == "-"){
-            getdatarule.setRule18B1(" ");
-            getdatarule.setRule18B2(" ");
-            getdatarule.setRule18B3(" ");
-        
-        }else{
-            String[] temp18b;
-            String delimiter = " ";
-
-            temp18b = ruledelapanbelasb.split(delimiter);
-            getdatarule.setRule18B1(temp18b[0].toString());
-            getdatarule.setRule18B2(temp18b[1].toString());
-            getdatarule.setRule18B3(temp18b[2].toString());
-        }
-         
-         if(ruledelapanbelasc == "-"){
-            getdatarule.setRule18C1(" ");
-            getdatarule.setRule18C2(" ");
-            getdatarule.setRule18C3(" ");
-        
-        }else{
-            String[] temp18c;
-            String delimiter = " ";
-
-            temp18c = ruledelapanbelasc.split(delimiter);
-            getdatarule.setRule18C1(temp18c[0].toString());
-            getdatarule.setRule18C2(temp18c[1].toString());
-            getdatarule.setRule18C3(temp18c[2].toString());
-        }
-        
-    }
+//    public void getRuleSelected(){
+//        
+//        GetDataRule getdatarule = GetDataRule.getInstance();
+//        String rulesatua = jComboBoxRule1a4.getSelectedItem().toString();
+//        String rulesatub = jComboBoxRule1b4.getSelectedItem().toString();
+//        String rulesatuc = jComboBoxRule1C4.getSelectedItem().toString();
+//        String ruleduaa = jComboBoxRule2a4.getSelectedItem().toString();
+//        String ruleduab = jComboBoxRule2b4.getSelectedItem().toString();
+//        String ruleduac = jComboBoxRule2c4.getSelectedItem().toString();
+//        String ruletigaa = jComboBoxRule3a4.getSelectedItem().toString();
+//        String ruletigab = jComboBoxRule3b4.getSelectedItem().toString();
+//        String ruletigac = jComboBoxRule3c4.getSelectedItem().toString();
+//        String ruleempata = jComboBoxRule4a4.getSelectedItem().toString();
+//        String ruleempatb = jComboBoxRule4b4.getSelectedItem().toString();
+//        String ruleempatc = jComboBoxRule4c4.getSelectedItem().toString();
+//        String rulelimaa = jComboBoxRule5a4.getSelectedItem().toString();
+//        String rulelimab = jComboBoxRule5b4.getSelectedItem().toString();
+//        String rulelimac = jComboBoxRule5c4.getSelectedItem().toString();
+//        String ruleenama = jComboBoxRule6a4.getSelectedItem().toString();
+//        String ruleenamb = jComboBoxRule6b4.getSelectedItem().toString();
+//        String ruleenamc = jComboBoxRule6c4.getSelectedItem().toString();
+//        String ruletujuha = jComboBoxRule7a4.getSelectedItem().toString();
+//        String ruletujuhb = jComboBoxRule7b4.getSelectedItem().toString();
+//        String ruletujuhc = jComboBoxRule7c4.getSelectedItem().toString();
+//        String ruledelapana = jComboBoxRule8a4.getSelectedItem().toString();
+//        String ruledelapanb = jComboBoxRule8b4.getSelectedItem().toString();
+//        String ruledelapanc = jComboBoxRule8c4.getSelectedItem().toString();
+//        String rulesembilana = jComboBoxRule9a4.getSelectedItem().toString();
+//        String rulesembilanb = jComboBoxRule9b4.getSelectedItem().toString();
+//        String rulesembilanc = jComboBoxRule9c4.getSelectedItem().toString();
+//        String rulesepuluha = jComboBoxRule10a4.getSelectedItem().toString();
+//        String rulesepuluhb = jComboBoxRule10b4.getSelectedItem().toString();
+//        String rulesepuluhc = jComboBoxRule10c4.getSelectedItem().toString();
+//        String rulesebelasa = jComboBoxRule11a4.getSelectedItem().toString();
+//        String rulesebelasb = jComboBoxRule11b4.getSelectedItem().toString();
+//        String rulesebelasc = jComboBoxRule11c4.getSelectedItem().toString();
+//        String ruleduabelasa = jComboBoxRule12a4.getSelectedItem().toString();
+//        String ruleduabelasb = jComboBoxRule12b4.getSelectedItem().toString();
+//        String ruleduabelasc = jComboBoxRule12c4.getSelectedItem().toString();
+//        String ruletigabelasa = jComboBoxRule13a4.getSelectedItem().toString();
+//        String ruletigabelasb = jComboBoxRule13b4.getSelectedItem().toString();
+//        String ruletigabelasc = jComboBoxRule13c4.getSelectedItem().toString();
+//        String ruleempatbelasa = jComboBoxRule14a4.getSelectedItem().toString();
+//        String ruleempatbelasb = jComboBoxRule14b4.getSelectedItem().toString();
+//        String ruleempatbelasc = jComboBoxRule14c4.getSelectedItem().toString();
+//        String rulelimabelasa = jComboBoxRule15a4.getSelectedItem().toString();
+//        String rulelimabelasb = jComboBoxRule15b4.getSelectedItem().toString();
+//        String rulelimabelasc = jComboBoxRule15c4.getSelectedItem().toString();
+//        String ruleenambelasa = jComboBoxRule16a4.getSelectedItem().toString();
+//        String ruleenambelasb = jComboBoxRule16b4.getSelectedItem().toString();
+//        String ruleenambelasc = jComboBoxRule16c4.getSelectedItem().toString();
+//        String ruletujuhbelasa = jComboBoxRule17a4.getSelectedItem().toString();
+//        String ruletujuhbelasb = jComboBoxRule17b4.getSelectedItem().toString();
+//        String ruletujuhbelasc = jComboBoxRule17c4.getSelectedItem().toString();
+//        String ruledelapanbelasa = jComboBoxRule18a4.getSelectedItem().toString();
+//        String ruledelapanbelasb = jComboBoxRule18b4.getSelectedItem().toString();
+//        String ruledelapanbelasc = jComboBoxRule18c4.getSelectedItem().toString();
+//        
+//        if(rulesatua == "-"){
+//            getdatarule.setRule1A1(" ");
+//            getdatarule.setRule1A2(" ");
+//            getdatarule.setRule1a3(" ");
+//        
+//        }else{
+//            String[] temp1a;
+//            String delimiter = " ";
+//
+//            temp1a = rulesatua.split(delimiter);
+//            getdatarule.setRule1A1(temp1a[0].toString());
+//            getdatarule.setRule1A2(temp1a[1].toString());
+//            getdatarule.setRule1a3(temp1a[2].toString());
+//        }
+//        if(rulesatub == "-"){
+//            getdatarule.setRule1B1(" ");
+//            getdatarule.setRule1B2(" ");
+//            getdatarule.setRule1B3(" ");
+//        
+//        }else{
+//            String[] temp1b;
+//            String delimiter = " ";
+//
+//            temp1b = rulesatub.split(delimiter);
+//            getdatarule.setRule1B1(temp1b[0].toString());
+//            getdatarule.setRule1B2(temp1b[1].toString());
+//            getdatarule.setRule1B3(temp1b[2].toString());
+//        }
+//        
+//        if(rulesatuc == "-"){
+//            getdatarule.setRule1C1(" ");
+//            getdatarule.setRule1C2(" ");
+//            getdatarule.setRule1C3(" ");
+//        
+//        }else{
+//            String[] temp1c;
+//            String delimiter = " ";
+//
+//            temp1c = rulesatuc.split(delimiter);
+//            getdatarule.setRule1C1(temp1c[0].toString());
+//            getdatarule.setRule1C2(temp1c[1].toString());
+//            getdatarule.setRule1C3(temp1c[2].toString());
+//        }
+//        
+//        if(ruleduaa == "-"){
+//            getdatarule.setRule2A1(" ");
+//            getdatarule.setRule2A2(" ");
+//            getdatarule.setRule2a3(" ");
+//        
+//        }else{
+//            String[] temp2a;
+//            String delimiter = " ";
+//
+//            temp2a = ruleduaa.split(delimiter);
+//            getdatarule.setRule2A1(temp2a[0].toString());
+//            getdatarule.setRule2A2(temp2a[1].toString());
+//            getdatarule.setRule2a3(temp2a[2].toString());
+//        }
+//        
+//        if(ruleduab == "-"){
+//            getdatarule.setRule2B1(" ");
+//            getdatarule.setRule2B2(" ");
+//            getdatarule.setRule2B3(" ");
+//        
+//        }else{
+//            String[] temp2b;
+//            String delimiter = " ";
+//
+//            temp2b = ruleduab.split(delimiter);
+//            getdatarule.setRule2B1(temp2b[0].toString());
+//            getdatarule.setRule2B2(temp2b[1].toString());
+//            getdatarule.setRule2B3(temp2b[2].toString());
+//        }
+//        
+//        if(ruleduac == "-"){
+//            getdatarule.setRule2C1(" ");
+//            getdatarule.setRule2C2(" ");
+//            getdatarule.setRule2C3(" ");
+//        
+//        }else{
+//            String[] temp2c;
+//            String delimiter = " ";
+//
+//            temp2c = ruleduac.split(delimiter);
+//            getdatarule.setRule2C1(temp2c[0].toString());
+//            getdatarule.setRule2C2(temp2c[1].toString());
+//            getdatarule.setRule2C3(temp2c[2].toString());
+//        }
+//        
+//        if(ruletigaa == "-"){
+//            getdatarule.setRule3A1(" ");
+//            getdatarule.setRule3A2(" ");
+//            getdatarule.setRule3a3(" ");
+//        
+//        }else{
+//            String[] temp3a;
+//            String delimiter = " ";
+//
+//            temp3a = ruletigaa.split(delimiter);
+//            getdatarule.setRule3A1(temp3a[0].toString());
+//            getdatarule.setRule3A2(temp3a[1].toString());
+//            getdatarule.setRule3a3(temp3a[2].toString());
+//        }
+//        
+//        if(ruletigab == "-"){
+//            getdatarule.setRule3B1(" ");
+//            getdatarule.setRule3B2(" ");
+//            getdatarule.setRule3B3(" ");
+//        
+//        }else{
+//            String[] temp3b;
+//            String delimiter = " ";
+//
+//            temp3b = ruletigab.split(delimiter);
+//            getdatarule.setRule3B1(temp3b[0].toString());
+//            getdatarule.setRule3B2(temp3b[1].toString());
+//            getdatarule.setRule3B3(temp3b[2].toString());
+//        }
+//        
+//        if(ruletigac == "-"){
+//            getdatarule.setRule3C1(" ");
+//            getdatarule.setRule3C2(" ");
+//            getdatarule.setRule3C3(" ");
+//        
+//        }else{
+//            String[] temp3c;
+//            String delimiter = " ";
+//
+//            temp3c = ruletigac.split(delimiter);
+//            getdatarule.setRule3C1(temp3c[0].toString());
+//            getdatarule.setRule3C2(temp3c[1].toString());
+//            getdatarule.setRule3C3(temp3c[2].toString());
+//        }
+//        
+//        if(ruleempata == "-"){
+//            getdatarule.setRule4A1(" ");
+//            getdatarule.setRule4A2(" ");
+//            getdatarule.setRule4a3(" ");
+//        
+//        }else{
+//            String[] temp4a;
+//            String delimiter = " ";
+//
+//            temp4a = ruleempata.split(delimiter);
+//            getdatarule.setRule4A1(temp4a[0].toString());
+//            getdatarule.setRule4A2(temp4a[1].toString());
+//            getdatarule.setRule4a3(temp4a[2].toString());
+//        }
+//        
+//         if(ruleempatb == "-"){
+//            getdatarule.setRule4B1(" ");
+//            getdatarule.setRule4B2(" ");
+//            getdatarule.setRule4B3(" ");
+//        
+//        }else{
+//            String[] temp4b;
+//            String delimiter = " ";
+//
+//            temp4b = ruleempatb.split(delimiter);
+//            getdatarule.setRule4B1(temp4b[0].toString());
+//            getdatarule.setRule4B2(temp4b[1].toString());
+//            getdatarule.setRule4B3(temp4b[2].toString());
+//        }
+//         
+//        if(ruleempatc == "-"){
+//            getdatarule.setRule4C1(" ");
+//            getdatarule.setRule4C2(" ");
+//            getdatarule.setRule4C3(" ");
+//        
+//        }else{
+//            String[] temp4c;
+//            String delimiter = " ";
+//
+//            temp4c = ruleempatc.split(delimiter);
+//            getdatarule.setRule4C1(temp4c[0].toString());
+//            getdatarule.setRule4C2(temp4c[1].toString());
+//            getdatarule.setRule4C3(temp4c[2].toString());
+//        }
+//        
+//        if(rulelimaa == "-"){
+//            getdatarule.setRule5A1(" ");
+//            getdatarule.setRule5A2(" ");
+//            getdatarule.setRule5a3(" ");
+//        
+//        }else{
+//            String[] temp5a;
+//            String delimiter = " ";
+//
+//            temp5a = rulelimaa.split(delimiter);
+//            getdatarule.setRule5A1(temp5a[0].toString());
+//            getdatarule.setRule5A2(temp5a[1].toString());
+//            getdatarule.setRule5a3(temp5a[2].toString());
+//        }
+//        
+//        if(rulelimab == "-"){
+//            getdatarule.setRule5B1(" ");
+//            getdatarule.setRule5B2(" ");
+//            getdatarule.setRule5B3(" ");
+//        
+//        }else{
+//            String[] temp5b;
+//            String delimiter = " ";
+//
+//            temp5b = rulelimab.split(delimiter);
+//            getdatarule.setRule5B1(temp5b[0].toString());
+//            getdatarule.setRule5B2(temp5b[1].toString());
+//            getdatarule.setRule5B3(temp5b[2].toString());
+//        }
+//        
+//        if(rulelimac == "-"){
+//            getdatarule.setRule5C1(" ");
+//            getdatarule.setRule5C2(" ");
+//            getdatarule.setRule5C3(" ");
+//        
+//        }else{
+//            String[] temp5c;
+//            String delimiter = " ";
+//
+//            temp5c = rulelimac.split(delimiter);
+//            getdatarule.setRule5C1(temp5c[0].toString());
+//            getdatarule.setRule5C2(temp5c[1].toString());
+//            getdatarule.setRule5C3(temp5c[2].toString());
+//        }
+//        
+//        if(ruleenama == "-"){
+//            getdatarule.setRule6A1(" ");
+//            getdatarule.setRule6A2(" ");
+//            getdatarule.setRule6a3(" ");
+//        
+//        }else{
+//            String[] temp6a;
+//            String delimiter = " ";
+//
+//            temp6a = ruleenama.split(delimiter);
+//            getdatarule.setRule6A1(temp6a[0].toString());
+//            getdatarule.setRule6A2(temp6a[1].toString());
+//            getdatarule.setRule6a3(temp6a[2].toString());
+//        }
+//        
+//        if(ruleenamb == "-"){
+//            getdatarule.setRule6B1(" ");
+//            getdatarule.setRule6B2(" ");
+//            getdatarule.setRule6B3(" ");
+//        
+//        }else{
+//            String[] temp6b;
+//            String delimiter = " ";
+//
+//            temp6b = ruleenamb.split(delimiter);
+//            getdatarule.setRule6B1(temp6b[0].toString());
+//            getdatarule.setRule6B2(temp6b[1].toString());
+//            getdatarule.setRule6B3(temp6b[2].toString());
+//        }
+//        
+//        if(ruleenamc == "-"){
+//            getdatarule.setRule6C1(" ");
+//            getdatarule.setRule6C2(" ");
+//            getdatarule.setRule6C3(" ");
+//        
+//        }else{
+//            String[] temp6c;
+//            String delimiter = " ";
+//
+//            temp6c = ruleenamc.split(delimiter);
+//            getdatarule.setRule6C1(temp6c[0].toString());
+//            getdatarule.setRule6C2(temp6c[1].toString());
+//            getdatarule.setRule6C3(temp6c[2].toString());
+//        }
+//        
+//        if(ruletujuha == "-"){
+//            getdatarule.setRule7A1(" ");
+//            getdatarule.setRule7A2(" ");
+//            getdatarule.setRule7a3(" ");
+//        
+//        }else{
+//            String[] temp7a;
+//            String delimiter = " ";
+//
+//            temp7a = ruletujuha.split(delimiter);
+//            getdatarule.setRule7A1(temp7a[0].toString());
+//            getdatarule.setRule7A2(temp7a[1].toString());
+//            getdatarule.setRule7a3(temp7a[2].toString());
+//        }
+//        
+//        if(ruletujuhb == "-"){
+//            getdatarule.setRule7B1(" ");
+//            getdatarule.setRule7B2(" ");
+//            getdatarule.setRule7B3(" ");
+//        
+//        }else{
+//            String[] temp7b;
+//            String delimiter = " ";
+//
+//            temp7b = ruletujuhb.split(delimiter);
+//            getdatarule.setRule7B1(temp7b[0].toString());
+//            getdatarule.setRule7B2(temp7b[1].toString());
+//            getdatarule.setRule7B3(temp7b[2].toString());
+//        }
+//        
+//        if(ruletujuhc == "-"){
+//            getdatarule.setRule7C1(" ");
+//            getdatarule.setRule7C2(" ");
+//            getdatarule.setRule7C3(" ");
+//        
+//        }else{
+//            String[] temp7c;
+//            String delimiter = " ";
+//
+//            temp7c = ruletujuhc.split(delimiter);
+//            getdatarule.setRule7C1(temp7c[0].toString());
+//            getdatarule.setRule7C2(temp7c[1].toString());
+//            getdatarule.setRule7C3(temp7c[2].toString());
+//        }
+//        
+//        if(ruledelapana == "-"){
+//            getdatarule.setRule8A1(" ");
+//            getdatarule.setRule8A2(" ");
+//            getdatarule.setRule8a3(" ");
+//        
+//        }else{
+//            String[] temp8a;
+//            String delimiter = " ";
+//
+//            temp8a = ruledelapana.split(delimiter);
+//            getdatarule.setRule8A1(temp8a[0].toString());
+//            getdatarule.setRule8A2(temp8a[1].toString());
+//            getdatarule.setRule8a3(temp8a[2].toString());
+//        }
+//        
+//        if(ruledelapanb == "-"){
+//            getdatarule.setRule8B1(" ");
+//            getdatarule.setRule8B2(" ");
+//            getdatarule.setRule8B3(" ");
+//        
+//        }else{
+//            String[] temp8b;
+//            String delimiter = " ";
+//
+//            temp8b = ruledelapanb.split(delimiter);
+//            getdatarule.setRule8B1(temp8b[0].toString());
+//            getdatarule.setRule8B2(temp8b[1].toString());
+//            getdatarule.setRule8B3(temp8b[2].toString());
+//        }
+//        
+//        if(ruledelapanc == "-"){
+//            getdatarule.setRule8C1(" ");
+//            getdatarule.setRule8C2(" ");
+//            getdatarule.setRule8C3(" ");
+//        
+//        }else{
+//            String[] temp8c;
+//            String delimiter = " ";
+//
+//            temp8c = ruledelapanc.split(delimiter);
+//            getdatarule.setRule8C1(temp8c[0].toString());
+//            getdatarule.setRule8C2(temp8c[1].toString());
+//            getdatarule.setRule8C3(temp8c[2].toString());
+//        }
+//        
+//        if(rulesembilana == "-"){
+//            getdatarule.setRule9A1(" ");
+//            getdatarule.setRule9A2(" ");
+//            getdatarule.setRule9a3(" ");
+//        
+//        }else{
+//            String[] temp9a;
+//            String delimiter = " ";
+//
+//            temp9a = rulesembilana.split(delimiter);
+//            getdatarule.setRule9A1(temp9a[0].toString());
+//            getdatarule.setRule9A2(temp9a[1].toString());
+//            getdatarule.setRule9a3(temp9a[2].toString());
+//        }
+//        
+//        if(rulesembilanb == "-"){
+//            getdatarule.setRule9B1(" ");
+//            getdatarule.setRule9B2(" ");
+//            getdatarule.setRule9B3(" ");
+//        
+//        }else{
+//            String[] temp9b;
+//            String delimiter = " ";
+//
+//            temp9b = rulesembilanb.split(delimiter);
+//            getdatarule.setRule9B1(temp9b[0].toString());
+//            getdatarule.setRule9B2(temp9b[1].toString());
+//            getdatarule.setRule9B3(temp9b[2].toString());
+//        }
+//        
+//        if(rulesembilanc == "-"){
+//            getdatarule.setRule9C1(" ");
+//            getdatarule.setRule9C2(" ");
+//            getdatarule.setRule9C3(" ");
+//        
+//        }else{
+//            String[] temp9c;
+//            String delimiter = " ";
+//
+//            temp9c = rulesembilanc.split(delimiter);
+//            getdatarule.setRule9C1(temp9c[0].toString());
+//            getdatarule.setRule9C2(temp9c[1].toString());
+//            getdatarule.setRule9C3(temp9c[2].toString());
+//        }
+//        
+//        if(rulesepuluha == "-"){
+//            getdatarule.setRule10A1(" ");
+//            getdatarule.setRule10A2(" ");
+//            getdatarule.setRule10a3(" ");
+//        
+//        }else{
+//            String[] temp10a;
+//            String delimiter = " ";
+//
+//            temp10a = rulesepuluha.split(delimiter);
+//            getdatarule.setRule10A1(temp10a[0].toString());
+//            getdatarule.setRule10A2(temp10a[1].toString());
+//            getdatarule.setRule10a3(temp10a[2].toString());
+//        }
+//        
+//        if(rulesepuluhb == "-"){
+//            getdatarule.setRule10B1(" ");
+//            getdatarule.setRule10B2(" ");
+//            getdatarule.setRule10B3(" ");
+//        
+//        }else{
+//            String[] temp10b;
+//            String delimiter = " ";
+//
+//            temp10b = rulesepuluhb.split(delimiter);
+//            getdatarule.setRule10B1(temp10b[0].toString());
+//            getdatarule.setRule10B2(temp10b[1].toString());
+//            getdatarule.setRule10B3(temp10b[2].toString());
+//        }
+//        
+//        if(rulesepuluhc == "-"){
+//            getdatarule.setRule10C1(" ");
+//            getdatarule.setRule10C2(" ");
+//            getdatarule.setRule10C3(" ");
+//        
+//        }else{
+//            String[] temp10c;
+//            String delimiter = " ";
+//
+//            temp10c = rulesepuluhc.split(delimiter);
+//            getdatarule.setRule10A1(temp10c[0].toString());
+//            getdatarule.setRule10A2(temp10c[1].toString());
+//            getdatarule.setRule10a3(temp10c[2].toString());
+//        }
+//        
+//        if(rulesebelasa == "-"){
+//            getdatarule.setRule11A1(" ");
+//            getdatarule.setRule11A2(" ");
+//            getdatarule.setRule11a3(" ");
+//        
+//        }else{
+//            String[] temp11a;
+//            String delimiter = " ";
+//
+//            temp11a = rulesebelasa.split(delimiter);
+//            getdatarule.setRule11A1(temp11a[0].toString());
+//            getdatarule.setRule11A2(temp11a[1].toString());
+//            getdatarule.setRule11a3(temp11a[2].toString());
+//        }
+//        
+//        if(rulesebelasb == "-"){
+//            getdatarule.setRule11B1(" ");
+//            getdatarule.setRule11B2(" ");
+//            getdatarule.setRule11B3(" ");
+//        
+//        }else{
+//            String[] temp11b;
+//            String delimiter = " ";
+//
+//            temp11b = rulesebelasb.split(delimiter);
+//            getdatarule.setRule11B1(temp11b[0].toString());
+//            getdatarule.setRule11B2(temp11b[1].toString());
+//            getdatarule.setRule11B3(temp11b[2].toString());
+//        }
+//        
+//        if(rulesebelasc == "-"){
+//            getdatarule.setRule11C1(" ");
+//            getdatarule.setRule11C2(" ");
+//            getdatarule.setRule11C3(" ");
+//        
+//        }else{
+//            String[] temp11c;
+//            String delimiter = " ";
+//
+//            temp11c = rulesebelasc.split(delimiter);
+//            getdatarule.setRule11C1(temp11c[0].toString());
+//            getdatarule.setRule11C2(temp11c[1].toString());
+//            getdatarule.setRule11C3(temp11c[2].toString());
+//        }
+//        
+//        if(ruleduabelasa == "-"){
+//            getdatarule.setRule12A1(" ");
+//            getdatarule.setRule12A2(" ");
+//            getdatarule.setRule12a3(" ");
+//        
+//        }else{
+//            String[] temp12a;
+//            String delimiter = " ";
+//
+//            temp12a = ruleduabelasa.split(delimiter);
+//            getdatarule.setRule12A1(temp12a[0].toString());
+//            getdatarule.setRule12A2(temp12a[1].toString());
+//            getdatarule.setRule12a3(temp12a[2].toString());
+//        }
+//        
+//        if(ruleduabelasb == "-"){
+//            getdatarule.setRule12B1(" ");
+//            getdatarule.setRule12B2(" ");
+//            getdatarule.setRule12B3(" ");
+//        
+//        }else{
+//            String[] temp12b;
+//            String delimiter = " ";
+//
+//            temp12b = ruleduabelasb.split(delimiter);
+//            getdatarule.setRule12B1(temp12b[0].toString());
+//            getdatarule.setRule12B2(temp12b[1].toString());
+//            getdatarule.setRule12B3(temp12b[2].toString());
+//        }
+//        
+//        if(ruleduabelasc == "-"){
+//            getdatarule.setRule12C1(" ");
+//            getdatarule.setRule12C2(" ");
+//            getdatarule.setRule12C3(" ");
+//        
+//        }else{
+//            String[] temp12c;
+//            String delimiter = " ";
+//
+//            temp12c = ruleduabelasc.split(delimiter);
+//            getdatarule.setRule12C1(temp12c[0].toString());
+//            getdatarule.setRule12C2(temp12c[1].toString());
+//            getdatarule.setRule12C3(temp12c[2].toString());
+//        }
+//        
+//        if(ruletigabelasa == "-"){
+//            getdatarule.setRule13A1(" ");
+//            getdatarule.setRule13A2(" ");
+//            getdatarule.setRule13a3(" ");
+//        
+//        }else{
+//            String[] temp13a;
+//            String delimiter = " ";
+//
+//            temp13a = ruletigabelasa.split(delimiter);
+//            getdatarule.setRule13A1(temp13a[0].toString());
+//            getdatarule.setRule13A2(temp13a[1].toString());
+//            getdatarule.setRule13a3(temp13a[2].toString());
+//        }
+//        
+//        if(ruletigabelasb == "-"){
+//            getdatarule.setRule13B1(" ");
+//            getdatarule.setRule13B2(" ");
+//            getdatarule.setRule13B3(" ");
+//        
+//        }else{
+//            String[] temp13b;
+//            String delimiter = " ";
+//
+//            temp13b = ruletigabelasb.split(delimiter);
+//            getdatarule.setRule13B1(temp13b[0].toString());
+//            getdatarule.setRule13B2(temp13b[1].toString());
+//            getdatarule.setRule13B3(temp13b[2].toString());
+//        }
+//        
+//        if(ruletigabelasc == "-"){
+//            getdatarule.setRule13C1(" ");
+//            getdatarule.setRule13C2(" ");
+//            getdatarule.setRule13C3(" ");
+//        
+//        }else{
+//            String[] temp13c;
+//            String delimiter = " ";
+//
+//            temp13c = ruletigabelasc.split(delimiter);
+//            getdatarule.setRule13C1(temp13c[0].toString());
+//            getdatarule.setRule13C2(temp13c[1].toString());
+//            getdatarule.setRule13C3(temp13c[2].toString());
+//        }
+//        
+//        if(ruleempatbelasa == "-"){
+//            getdatarule.setRule14A1(" ");
+//            getdatarule.setRule14A2(" ");
+//            getdatarule.setRule14a3(" ");
+//        
+//        }else{
+//            String[] temp14a;
+//            String delimiter = " ";
+//
+//            temp14a = ruleempatbelasa.split(delimiter);
+//            getdatarule.setRule14A1(temp14a[0].toString());
+//            getdatarule.setRule14A2(temp14a[1].toString());
+//            getdatarule.setRule14a3(temp14a[2].toString());
+//        }
+//        
+//        if(ruleempatbelasb == "-"){
+//            getdatarule.setRule14B1(" ");
+//            getdatarule.setRule14B2(" ");
+//            getdatarule.setRule14B3(" ");
+//        
+//        }else{
+//            String[] temp14b;
+//            String delimiter = " ";
+//
+//            temp14b = ruleempatbelasb.split(delimiter);
+//            getdatarule.setRule14B1(temp14b[0].toString());
+//            getdatarule.setRule14B2(temp14b[1].toString());
+//            getdatarule.setRule14B3(temp14b[2].toString());
+//        }
+//        
+//        if(ruleempatbelasc == "-"){
+//            getdatarule.setRule14C1(" ");
+//            getdatarule.setRule14C2(" ");
+//            getdatarule.setRule14C3(" ");
+//        
+//        }else{
+//            String[] temp14c;
+//            String delimiter = " ";
+//
+//            temp14c = ruleempatbelasc.split(delimiter);
+//            getdatarule.setRule14C1(temp14c[0].toString());
+//            getdatarule.setRule14C2(temp14c[1].toString());
+//            getdatarule.setRule14C3(temp14c[2].toString());
+//        }
+//        
+//        if(rulelimabelasa == "-"){
+//            getdatarule.setRule15A1(" ");
+//            getdatarule.setRule15A2(" ");
+//            getdatarule.setRule15a3(" ");
+//        
+//        }else{
+//            String[] temp15a;
+//            String delimiter = " ";
+//
+//            temp15a = rulelimabelasa.split(delimiter);
+//            getdatarule.setRule15A1(temp15a[0].toString());
+//            getdatarule.setRule15A2(temp15a[1].toString());
+//            getdatarule.setRule15a3(temp15a[2].toString());
+//        }
+//        
+//        if(rulelimabelasb == "-"){
+//            getdatarule.setRule15B1(" ");
+//            getdatarule.setRule15B2(" ");
+//            getdatarule.setRule15B3(" ");
+//        
+//        }else{
+//            String[] temp15b;
+//            String delimiter = " ";
+//
+//            temp15b = rulelimabelasb.split(delimiter);
+//            getdatarule.setRule15B1(temp15b[0].toString());
+//            getdatarule.setRule15B2(temp15b[1].toString());
+//            getdatarule.setRule15B3(temp15b[2].toString());
+//        }
+//        
+//        if(rulelimabelasc == "-"){
+//            getdatarule.setRule15C1(" ");
+//            getdatarule.setRule15C2(" ");
+//            getdatarule.setRule15C3(" ");
+//        
+//        }else{
+//            String[] temp15c;
+//            String delimiter = " ";
+//
+//            temp15c = rulelimabelasc.split(delimiter);
+//            getdatarule.setRule15C1(temp15c[0].toString());
+//            getdatarule.setRule15C2(temp15c[1].toString());
+//            getdatarule.setRule15C3(temp15c[2].toString());
+//        }
+//        
+//        if(ruleenambelasa == "-"){
+//            getdatarule.setRule16A1(" ");
+//            getdatarule.setRule16A2(" ");
+//            getdatarule.setRule16a3(" ");
+//        
+//        }else{
+//            String[] temp16a;
+//            String delimiter = " ";
+//
+//            temp16a = ruleenambelasa.split(delimiter);
+//            getdatarule.setRule16A1(temp16a[0].toString());
+//            getdatarule.setRule16A2(temp16a[1].toString());
+//            getdatarule.setRule16a3(temp16a[2].toString());
+//        }
+//        
+//        if(ruleenambelasb == "-"){
+//            getdatarule.setRule16B1(" ");
+//            getdatarule.setRule16B2(" ");
+//            getdatarule.setRule16B3(" ");
+//        
+//        }else{
+//            String[] temp16b;
+//            String delimiter = " ";
+//
+//            temp16b = ruleenambelasb.split(delimiter);
+//            getdatarule.setRule16B1(temp16b[0].toString());
+//            getdatarule.setRule16B2(temp16b[1].toString());
+//            getdatarule.setRule16B3(temp16b[2].toString());
+//        }
+//        
+//        if(ruleenambelasc == "-"){
+//            getdatarule.setRule16C1(" ");
+//            getdatarule.setRule16C2(" ");
+//            getdatarule.setRule16C3(" ");
+//        
+//        }else{
+//            String[] temp16c;
+//            String delimiter = " ";
+//
+//            temp16c = ruleenambelasc.split(delimiter);
+//            getdatarule.setRule16C1(temp16c[0].toString());
+//            getdatarule.setRule16C2(temp16c[1].toString());
+//            getdatarule.setRule16C3(temp16c[2].toString());
+//        }
+//        
+//        if(ruletujuhbelasa == "-"){
+//            getdatarule.setRule17A1(" ");
+//            getdatarule.setRule17A2(" ");
+//            getdatarule.setRule17a3(" ");
+//        
+//        }else{
+//            String[] temp17a;
+//            String delimiter = " ";
+//
+//            temp17a = ruletujuhbelasa.split(delimiter);
+//            getdatarule.setRule17A1(temp17a[0].toString());
+//            getdatarule.setRule17A2(temp17a[1].toString());
+//            getdatarule.setRule17a3(temp17a[2].toString());
+//        }
+//        
+//        if(ruletujuhbelasb == "-"){
+//            getdatarule.setRule17B1(" ");
+//            getdatarule.setRule17B2(" ");
+//            getdatarule.setRule17B3(" ");
+//        
+//        }else{
+//            String[] temp17b;
+//            String delimiter = " ";
+//
+//            temp17b = ruletujuhbelasb.split(delimiter);
+//            getdatarule.setRule17B1(temp17b[0].toString());
+//            getdatarule.setRule17B2(temp17b[1].toString());
+//            getdatarule.setRule17B3(temp17b[2].toString());
+//        }
+//        
+//         if(ruletujuhbelasc == "-"){
+//            getdatarule.setRule17C1(" ");
+//            getdatarule.setRule17C2(" ");
+//            getdatarule.setRule17C3(" ");
+//        
+//        }else{
+//            String[] temp17c;
+//            String delimiter = " ";
+//
+//            temp17c = ruletujuhbelasc.split(delimiter);
+//            getdatarule.setRule17C1(temp17c[0].toString());
+//            getdatarule.setRule17C2(temp17c[1].toString());
+//            getdatarule.setRule17C3(temp17c[2].toString());
+//        }
+//        
+//         if(ruledelapanbelasa == "-"){
+//            getdatarule.setRule18A1(" ");
+//            getdatarule.setRule18A2(" ");
+//            getdatarule.setRule18a3(" ");
+//        
+//        }else{
+//            String[] temp18a;
+//            String delimiter = " ";
+//
+//            temp18a = ruledelapanbelasa.split(delimiter);
+//            getdatarule.setRule18A1(temp18a[0].toString());
+//            getdatarule.setRule18A2(temp18a[1].toString());
+//            getdatarule.setRule18a3(temp18a[2].toString());
+//        }
+//         
+//         if(ruledelapanbelasb == "-"){
+//            getdatarule.setRule18B1(" ");
+//            getdatarule.setRule18B2(" ");
+//            getdatarule.setRule18B3(" ");
+//        
+//        }else{
+//            String[] temp18b;
+//            String delimiter = " ";
+//
+//            temp18b = ruledelapanbelasb.split(delimiter);
+//            getdatarule.setRule18B1(temp18b[0].toString());
+//            getdatarule.setRule18B2(temp18b[1].toString());
+//            getdatarule.setRule18B3(temp18b[2].toString());
+//        }
+//         
+//         if(ruledelapanbelasc == "-"){
+//            getdatarule.setRule18C1(" ");
+//            getdatarule.setRule18C2(" ");
+//            getdatarule.setRule18C3(" ");
+//        
+//        }else{
+//            String[] temp18c;
+//            String delimiter = " ";
+//
+//            temp18c = ruledelapanbelasc.split(delimiter);
+//            getdatarule.setRule18C1(temp18c[0].toString());
+//            getdatarule.setRule18C2(temp18c[1].toString());
+//            getdatarule.setRule18C3(temp18c[2].toString());
+//        }
+        
+    //}
     //CorreferenceResolution cr = new CorreferenceResolution();
     //example ex = new example();
     //Stop st = new Stop();
@@ -1041,97 +1054,55 @@ public class Interface_TA extends javax.swing.JFrame {
         jCheckBoxTypeDepedency = new javax.swing.JCheckBox();
         jCheckBoxNpParser = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBoxTaxonomy = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         AreaExtraksi = new javax.swing.JTextArea();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel14 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jPanel20 = new javax.swing.JPanel();
-        jComboBoxRule1a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule1b4 = new javax.swing.JComboBox<>();
-        jLabel77 = new javax.swing.JLabel();
-        jLabel78 = new javax.swing.JLabel();
-        jComboBoxRule2a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule2b4 = new javax.swing.JComboBox<>();
-        jLabel79 = new javax.swing.JLabel();
-        jComboBoxRule3a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule3b4 = new javax.swing.JComboBox<>();
-        jLabel80 = new javax.swing.JLabel();
-        jComboBoxRule4a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule4b4 = new javax.swing.JComboBox<>();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
-        jComboBoxRule6a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule6b4 = new javax.swing.JComboBox<>();
-        jLabel83 = new javax.swing.JLabel();
-        jComboBoxRule7a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule7b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule1C4 = new javax.swing.JComboBox<>();
-        jComboBoxRule2c4 = new javax.swing.JComboBox<>();
-        jComboBoxRule3c4 = new javax.swing.JComboBox<>();
-        jComboBoxRule4c4 = new javax.swing.JComboBox<>();
-        jComboBoxRule5a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule6c4 = new javax.swing.JComboBox<>();
-        jComboBoxRule7c4 = new javax.swing.JComboBox<>();
-        jComboBoxRule5b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule5c4 = new javax.swing.JComboBox<>();
-        jLabel84 = new javax.swing.JLabel();
-        jComboBoxRule8a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule8b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule8c4 = new javax.swing.JComboBox<>();
-        jLabel85 = new javax.swing.JLabel();
-        jComboBoxRule9a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule9b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule9c4 = new javax.swing.JComboBox<>();
-        jLabel86 = new javax.swing.JLabel();
-        jComboBoxRule10a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule10b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule10c4 = new javax.swing.JComboBox<>();
-        jLabel87 = new javax.swing.JLabel();
-        jComboBoxRule11a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule11b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule11c4 = new javax.swing.JComboBox<>();
-        jLabel88 = new javax.swing.JLabel();
-        jComboBoxRule12a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule12b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule12c4 = new javax.swing.JComboBox<>();
-        jLabel89 = new javax.swing.JLabel();
-        jComboBoxRule13a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule13b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule13c4 = new javax.swing.JComboBox<>();
-        jLabel90 = new javax.swing.JLabel();
-        jComboBoxRule14a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule14b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule14c4 = new javax.swing.JComboBox<>();
-        jLabel91 = new javax.swing.JLabel();
-        jComboBoxRule15a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule15b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule15c4 = new javax.swing.JComboBox<>();
-        jLabel92 = new javax.swing.JLabel();
-        jComboBoxRule16a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule16b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule16c4 = new javax.swing.JComboBox<>();
-        jLabel93 = new javax.swing.JLabel();
-        jComboBoxRule17a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule17b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule17c4 = new javax.swing.JComboBox<>();
-        jLabel94 = new javax.swing.JLabel();
-        jComboBoxRule18a4 = new javax.swing.JComboBox<>();
-        jComboBoxRule18b4 = new javax.swing.JComboBox<>();
-        jComboBoxRule18c4 = new javax.swing.JComboBox<>();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel17 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
         jTextAreaRule = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jAreaHasilExtraksi = new javax.swing.JTextArea();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jmlFiturDataset = new javax.swing.JLabel();
+        jmlFiturTerekstrek = new javax.swing.JLabel();
+        jmlbenar1 = new javax.swing.JLabel();
+        precisionFitur = new javax.swing.JLabel();
+        recallFitur = new javax.swing.JLabel();
+        f1scoreFitur = new javax.swing.JLabel();
+        precissionPrediksi = new javax.swing.JLabel();
+        f1scorePrediksi = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jmlFiturPolaritasTerekstak = new javax.swing.JLabel();
+        jmlbenar2 = new javax.swing.JLabel();
+        precisionPolaritas = new javax.swing.JLabel();
+        recallPolaritas = new javax.swing.JLabel();
+        f1scorePolaritas = new javax.swing.JLabel();
+        recallPrediksi = new javax.swing.JLabel();
+        jArea = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jAreaAkurasi = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1197,25 +1168,28 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1106, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(283, 283, 283))
+                .addGap(441, 441, 441))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1223,8 +1197,8 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Dataset", jPanel2);
@@ -1343,7 +1317,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1352,7 +1326,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Preprocessing", jPanel3);
@@ -1382,7 +1356,7 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jLabel3.setText("Taxonomy");
 
-        jCheckBox4.setText("Automatic Taxonomy");
+        jCheckBoxTaxonomy.setText("Automatic Taxonomy");
 
         jButton3.setText("OK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -1414,8 +1388,8 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jCheckBox4))
-                .addContainerGap(131, Short.MAX_VALUE))
+                    .addComponent(jCheckBoxTaxonomy))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1427,7 +1401,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CheckRule)
-                    .addComponent(jCheckBox4))
+                    .addComponent(jCheckBoxTaxonomy))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBoxTypeDepedency)
@@ -1445,602 +1419,55 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
-
-        jComboBoxRule1a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule1a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule1a4jComboBoxRule1aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule1b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule1b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule1b4jComboBoxRule1bActionPerformed(evt);
-            }
-        });
-
-        jLabel77.setText("Rule 1");
-
-        jLabel78.setText("Rule 2");
-
-        jComboBoxRule2a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule2a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule2a4jComboBoxRule2aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule2b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule2b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule2b4jComboBoxRule2bActionPerformed(evt);
-            }
-        });
-
-        jLabel79.setText("Rule 3");
-
-        jComboBoxRule3a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule3a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule3a4jComboBoxRule3aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule3b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule3b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule3b4jComboBoxRule3bActionPerformed(evt);
-            }
-        });
-
-        jLabel80.setText("Rule 4");
-
-        jComboBoxRule4a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule4a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule4a4jComboBoxRule4aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule4b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule4b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule4b4jComboBoxRule4bActionPerformed(evt);
-            }
-        });
-
-        jLabel81.setText("Rule 5");
-
-        jLabel82.setText("Rule 6");
-
-        jComboBoxRule6a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule6a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule6a4jComboBoxRule6aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule6b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule6b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule6b4jComboBoxRule6bActionPerformed(evt);
-            }
-        });
-
-        jLabel83.setText("Rule 7");
-
-        jComboBoxRule7a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule7a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule7a4jComboBoxRule7aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule7b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule7b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule7b4jComboBoxRule7bActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule1C4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule1C4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule1C4jComboBoxRule1CActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule2c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule2c4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule2c4jComboBoxRule2cActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule3c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule3c4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule3c4jComboBoxRule3cActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule4c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule4c4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule4c4jComboBoxRule4cActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule5a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule5a4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule5a4jComboBoxRule5aActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule6c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule6c4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule6c4jComboBoxRule6cActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule7c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule7c4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule7c4jComboBoxRule7cActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule5b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule5b4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule5b4jComboBoxRule5bActionPerformed(evt);
-            }
-        });
-
-        jComboBoxRule5c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-        jComboBoxRule5c4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxRule5c4jComboBoxRule5cActionPerformed(evt);
-            }
-        });
-
-        jLabel84.setText("Rule 8");
-
-        jComboBoxRule8a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule8b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule8c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel85.setText("Rule 9");
-
-        jComboBoxRule9a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule9b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule9c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel86.setText("Rule 10");
-
-        jComboBoxRule10a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule10b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule10c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel87.setText("Rule 11");
-
-        jComboBoxRule11a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule11b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule11c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel88.setText("Rule 12");
-
-        jComboBoxRule12a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule12b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule12c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel89.setText("Rule 13");
-
-        jComboBoxRule13a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule13b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule13c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel90.setText("Rule 14");
-
-        jComboBoxRule14a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule14b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule14c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel91.setText("Rule 15");
-
-        jComboBoxRule15a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule15b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule15c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel92.setText("Rule 16");
-
-        jComboBoxRule16a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule16b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule16c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel93.setText("Rule 17");
-
-        jComboBoxRule17a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule17b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule17c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jLabel94.setText("Rule 18");
-
-        jComboBoxRule18a4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule18b4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        jComboBoxRule18c4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "_JJ _JJR _JJS", "_NN _NNS _", "_RB _RBR _RBS", "_VBN _VBD _" }));
-
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(jLabel94)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule18a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule18b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule18c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(jLabel93)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule17a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule17b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule17c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(jLabel92)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule16a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule16b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule16c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(jLabel91)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule15a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule15b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule15c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(jLabel87)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule11a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule11b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxRule11c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel20Layout.createSequentialGroup()
-                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel77)
-                                .addComponent(jLabel78)
-                                .addComponent(jLabel79)
-                                .addComponent(jLabel80)
-                                .addComponent(jLabel81, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel82))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel20Layout.createSequentialGroup()
-                                    .addComponent(jComboBoxRule4a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBoxRule4b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBoxRule4c4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel20Layout.createSequentialGroup()
-                                    .addComponent(jComboBoxRule3a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBoxRule3b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBoxRule3c4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel20Layout.createSequentialGroup()
-                                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jComboBoxRule2a4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBoxRule1a4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addComponent(jComboBoxRule1b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jComboBoxRule1C4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addComponent(jComboBoxRule2b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jComboBoxRule2c4, 0, 1, Short.MAX_VALUE))))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel20Layout.createSequentialGroup()
-                                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jComboBoxRule5a4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBoxRule6a4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addGap(5, 5, 5)
-                                            .addComponent(jComboBoxRule6b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jComboBoxRule7c4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jComboBoxRule6c4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addGap(7, 7, 7)
-                                            .addComponent(jComboBoxRule5b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jComboBoxRule5c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE))))))
-                        .addGroup(jPanel20Layout.createSequentialGroup()
-                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel20Layout.createSequentialGroup()
-                                    .addComponent(jLabel85)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jComboBoxRule9a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBoxRule9b4, 0, 1, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel20Layout.createSequentialGroup()
-                                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addComponent(jLabel84)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jComboBoxRule8a4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addComponent(jLabel83)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jComboBoxRule7a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addGap(5, 5, 5)
-                                            .addComponent(jComboBoxRule7b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel20Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jComboBoxRule8b4, 0, 1, Short.MAX_VALUE)))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboBoxRule8c4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBoxRule9c4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(jPanel20Layout.createSequentialGroup()
-                            .addComponent(jLabel86)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBoxRule10a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBoxRule10b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBoxRule10c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel20Layout.createSequentialGroup()
-                                .addComponent(jLabel88)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBoxRule12a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBoxRule12b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel20Layout.createSequentialGroup()
-                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel89)
-                                    .addComponent(jLabel90, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel20Layout.createSequentialGroup()
-                                        .addComponent(jComboBoxRule14a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBoxRule14b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel20Layout.createSequentialGroup()
-                                        .addComponent(jComboBoxRule13a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBoxRule13b4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxRule12c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxRule13c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxRule14c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jTextAreaRule.setColumns(20);
+        jTextAreaRule.setRows(5);
+        jScrollPane8.setViewportView(jTextAreaRule);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxRule1a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule1b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel77)
-                    .addComponent(jComboBoxRule1C4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel78)
-                    .addComponent(jComboBoxRule2a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule2b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule2c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel79)
-                    .addComponent(jComboBoxRule3a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule3b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule3c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel80)
-                    .addComponent(jComboBoxRule4a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule4b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule4c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel81)
-                    .addComponent(jComboBoxRule5a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule5b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule5c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel82)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBoxRule6b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxRule6a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxRule6c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBoxRule7a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxRule7b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel83)
-                            .addComponent(jComboBoxRule7c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel84)
-                    .addComponent(jComboBoxRule8a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule8b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule8c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel85)
-                    .addComponent(jComboBoxRule9a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule9b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule9c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel86)
-                    .addComponent(jComboBoxRule10a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule10b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule10c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel87)
-                    .addComponent(jComboBoxRule11a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule11b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule11c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel88)
-                    .addComponent(jComboBoxRule12a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule12b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule12c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxRule13a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel89)
-                    .addComponent(jComboBoxRule13b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule13c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel90)
-                    .addComponent(jComboBoxRule14a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule14b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule14c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel91)
-                    .addComponent(jComboBoxRule15a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule15b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule15c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel92)
-                    .addComponent(jComboBoxRule16a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule16b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule16c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel93)
-                    .addComponent(jComboBoxRule17a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule17b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule17c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel94)
-                    .addComponent(jComboBoxRule18a4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule18b4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRule18c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(236, Short.MAX_VALUE))
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+                .addContainerGap())
         );
-
-        jScrollPane5.setViewportView(jPanel20);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Rule", jPanel14);
-
-        jLabel7.setText("jLabel7");
-
-        jTextAreaRule.setColumns(20);
-        jTextAreaRule.setRows(5);
-        jScrollPane6.setViewportView(jTextAreaRule);
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
-        );
-
-        jTabbedPane3.addTab("NP Parser", jPanel16);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jTabbedPane3)
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3))
+                    .addComponent(jScrollPane3)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(48, 48, 48))
         );
         jPanel6Layout.setVerticalGroup(
@@ -2051,20 +1478,20 @@ public class Interface_TA extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTabbedPane3)))
-                .addContainerGap())
+                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Extraction", jPanel6);
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HASIL EKSTRAKSI", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane4.setViewportView(jTextArea2);
+        jAreaHasilExtraksi.setColumns(20);
+        jAreaHasilExtraksi.setRows(5);
+        jScrollPane4.setViewportView(jAreaHasilExtraksi);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -2086,7 +1513,7 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2099,18 +1526,250 @@ public class Interface_TA extends javax.swing.JFrame {
         jTabbedPane1.addTab("Feature & Opinion", jPanel9);
         jTabbedPane1.addTab("Evaluation", jTabbedPane2);
 
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Akurasi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        jLabel4.setText("Jumlah Fitur Dataset          :");
+
+        jLabel5.setText("Jumlah Fitur Terekstrak     :");
+
+        jLabel6.setText("Jumlah Benar                     :");
+
+        jLabel8.setText("Precision Fitur                    :");
+
+        jLabel9.setText("Recall Fitur                         :");
+
+        jLabel10.setText("F1-score Fitur                    :");
+
+        jLabel11.setText("Precission Prediksi              :");
+
+        jLabel12.setText("F1-Score Prediksi               :");
+
+        jmlFiturDataset.setText("0");
+
+        jmlFiturTerekstrek.setText("0");
+
+        jmlbenar1.setText("0");
+
+        precisionFitur.setText("0");
+
+        recallFitur.setText("0");
+
+        f1scoreFitur.setText("0");
+
+        precissionPrediksi.setText("0");
+
+        f1scorePrediksi.setText("0");
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Polaritas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+
+        jLabel21.setText("Jumlah Fitur Polaritas Terekstrak                  : ");
+
+        jLabel22.setText("Jumlah Benar                                                   :");
+
+        jLabel23.setText("Precision Polaritas                                          :");
+
+        jLabel24.setText("Recall Polaritas                                                :");
+
+        jLabel25.setText("F1-score Polaritas                                           :");
+
+        jLabel26.setText("Recall Prediksi                                                 :");
+
+        jmlFiturPolaritasTerekstak.setText("0");
+
+        jmlbenar2.setText("0");
+
+        precisionPolaritas.setText("0");
+
+        recallPolaritas.setText("0");
+
+        f1scorePolaritas.setText("0");
+
+        recallPrediksi.setText("0");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(recallPrediksi))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(f1scorePolaritas))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(recallPolaritas))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(precisionPolaritas))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jmlbenar2))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jmlFiturPolaritasTerekstak)))
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jmlFiturPolaritasTerekstak))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jmlbenar2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(precisionPolaritas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(recallPolaritas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(f1scorePolaritas))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(recallPrediksi))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11))
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(f1scorePrediksi, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precissionPrediksi, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jmlFiturTerekstrek, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                        .addComponent(jmlFiturDataset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jmlbenar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(precisionFitur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(recallFitur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(f1scoreFitur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(206, 206, 206)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jmlFiturDataset))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jmlFiturTerekstrek))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jmlbenar1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(precisionFitur))
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(recallFitur))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(f1scoreFitur))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(precissionPrediksi))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(f1scorePrediksi)))
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        jArea.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Akurasi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+
+        jAreaAkurasi.setColumns(20);
+        jAreaAkurasi.setRows(5);
+        jScrollPane7.setViewportView(jAreaAkurasi);
+
+        javax.swing.GroupLayout jAreaLayout = new javax.swing.GroupLayout(jArea);
+        jArea.setLayout(jAreaLayout);
+        jAreaLayout.setHorizontalGroup(
+            jAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jAreaLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 1011, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jAreaLayout.setVerticalGroup(
+            jAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jAreaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1083, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 805, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab6", jPanel12);
+        jTabbedPane1.addTab("Evaluation Result", jPanel12);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2124,9 +1783,8 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addGap(19, 19, 19))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -2137,7 +1795,9 @@ public class Interface_TA extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         pack();
@@ -2147,70 +1807,7 @@ public class Interface_TA extends javax.swing.JFrame {
         // TODO add your handling code here:
         //FITUR
        
-//        GetRule getrule = GetRule.getInstance();
-//        String r1a = jComboBoxRule1a.getSelectedItem().toString();
-//        getrule.setRule1a(r1a);
-//        
-//        String r1b = jComboBoxRule1b.getSelectedItem().toString();
-//        getrule.setRule1b(r1b);
-//        
-//        String r1c = jComboBoxRule1C.getSelectedItem().toString();
-//        getrule.setRule1c(r1c);
-//        
-//        String r2a = jComboBoxRule2a.getSelectedItem().toString();
-//        getrule.setRule2a(r2a);
-//
-//        String r2b = jComboBoxRule2b.getSelectedItem().toString();
-//        getrule.setRule2b(r2b);        
-//
-//        String r2c = jComboBoxRule2c.getSelectedItem().toString();
-//        getrule.setRule2c(r2c);
-//        
-//        String r3a = jComboBoxRule3a.getSelectedItem().toString();
-//        getrule.setRule3a(r3a);
-//        
-//        String r3b = jComboBoxRule3b.getSelectedItem().toString();
-//        getrule.setRule3b(r3b); 
-//        
-//        String r3c = jComboBoxRule3c.getSelectedItem().toString();
-//        getrule.setRule3c(r3c);
-//        
-//        String r4a = jComboBoxRule4a.getSelectedItem().toString();
-//        getrule.setRule4a(r4a); 
-//        
-//        String r4b = jComboBoxRule4b.getSelectedItem().toString();
-//        getrule.setRule4b(r4b);    
-//        
-//        String r4c = jComboBoxRule4c.getSelectedItem().toString();
-//        getrule.setRule4c(r4c);   
-//        
-//        String r5a = jComboBoxRule5a.getSelectedItem().toString();
-//        getrule.setRule5a(r5a);  
-//        
-//        String r5b = jComboBoxRule5b.getSelectedItem().toString();
-//        getrule.setRule5b(r5b);
-//        
-//        String r5c = jComboBoxRule5c.getSelectedItem().toString();
-//        getrule.setRule5c(r5c);        
-//
-//        String r6a = jComboBoxRule6a.getSelectedItem().toString();
-//        getrule.setRule6a(r6a);   
-//        
-//        String r6b = jComboBoxRule6b.getSelectedItem().toString();
-//        getrule.setRule6b(r6b);
-//        
-//        String r6c = jComboBoxRule6c.getSelectedItem().toString();
-//        getrule.setRule6c(r6c);    
-//        
-//        String r7a = jComboBoxRule7a.getSelectedItem().toString();
-//        getrule.setRule7a(r7a);  
-//        
-//        String r7b = jComboBoxRule7b.getSelectedItem().toString();
-//        getrule.setRule7b(r7b);
-//
-//        String r7c = jComboBoxRule7c.getSelectedItem().toString();
-//        getrule.setRule7c(r7c);        
-        
+
         //System.out.println("Isi rule gui : " + r1a + r1b);
         fiturkalimat.clear();
         fiturkalimattotal.clear();
@@ -2270,6 +1867,7 @@ public class Interface_TA extends javax.swing.JFrame {
         //============================//
         //System.out.println("Isi Kalimat Pre" + kalimatPre);
         for(int i = 0; i<kalimatPre.size(); i++){
+            //for(int b = 0; b < kalimatIob.size(); b++){
             nounPhrases.clear();
             fixFit.clear();
             temp1.clear();
@@ -2315,13 +1913,16 @@ public class Interface_TA extends javax.swing.JFrame {
                 parseRule parserule = parseRule.getInstance();
                 String textRule = jTextAreaRule.getText().toString();
                 parserule.setData(textRule);
-                getRuleSelected();
+                String cleaningTagging = ontolog.cleaningTag(kalimatPre.get(i));
+                //getRuleSelected();
                 ArrayList<String> fiturdanopini = new ArrayList<>();
                 AreaExtraksi.append(i+1+". Hasil Rule :");
                 AreaExtraksi.append("\n");
                 output.tulis("Hasil Rule : ");
                 String fiturkalimat = "";
                 String fituropinikalimat = "";
+                String hasiltaxonomy = "";
+                //String cleaningTagging = " ";
                 //2-gram ==========================================================
                 for (int j = 0; j < ngram.size(); j++) {
                     String opi=R2.rules(ngram.get(j));
@@ -2331,15 +1932,23 @@ public class Interface_TA extends javax.swing.JFrame {
 
                         AreaExtraksi.append(opi);
                         AreaExtraksi.append("\n");
-
+                        //cleaningTagging = ontolog.cleaningTag(opi);
+                        
+                        //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
                         //ambil opini dari ngram adj/adv
                         tmpOpini = Op.getToken(ngram.get(j));
 
                         //pilih fitur
                         //if(jRadioButton1.isSelected()){
-                            listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
+                            //listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
                             //}
-
+                            //listFit = Fit.getFiturNoCorp(opi);
+                            if(jCheckBoxTaxonomy.isSelected()){
+                                listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+                            }else{
+                                listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
+                            }
+                            
                         /*else if(jRadioButton2.isSelected()){
                             listFit=Fit.getFiturNoCorp(opi); //tanpa corpus
                         }*/
@@ -2393,16 +2002,23 @@ public class Interface_TA extends javax.swing.JFrame {
                         //output.tulis(opi2);
 
                         AreaExtraksi.append(opi2);
-                        AreaExtraksi.append("\n");
-
+                        //AreaExtraksi.append("\n");
+                        //cleaningTagging = ontolog.cleaningTag(opi2);
+                        //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
+                        //cleaningTagging = clnfit.Clean(opi2);
                         //ambil opini dari ngram adj/adv
                         tmpOpini = Op.getToken(ngram2.get(j));
 
                         //pilih fitur
                         //if(jRadioButton1.isSelected()){
-                            listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
+                            //listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
                             //}
-
+                            //listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+                            if(jCheckBoxTaxonomy.isSelected()){
+                                listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+                            }else{
+                                listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
+                            }
                         /*else if(jRadioButton2.isSelected()){
                             listFit=Fit.getFiturNoCorp(opi2); //tanpa corpus
                         }*/
@@ -2466,18 +2082,23 @@ public class Interface_TA extends javax.swing.JFrame {
                         fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
                     }
                     fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+                    
                 }
                 else{
                     fituropinikalimat = "-";
                 }
-
+                
                 output.tulis("Hasil Rule : "+fiturkalimat);
+                AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur : "+fiturkalimat);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
                 AreaExtraksi.append("\n");
+                AreaExtraksi.append("Taxonomy : " + cleaningTagging);
+                AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
                 AreaExtraksi.append("\n");
+                
             }
 //==============================================NP PARSER==============================================================================
             //NP PARSER CODE..
@@ -2485,17 +2106,20 @@ public class Interface_TA extends javax.swing.JFrame {
             ArrayList<String> fiturdanopini = new ArrayList<>();
                 String fiturkalimat = "";
                 String fituropinikalimat = "";
+                //for(int b = 0; b < kalimatIob.size(); b++){
+                    
                 
                 AreaExtraksi.append(i+1+". Hasil NP parser :");
                 AreaExtraksi.append("\n");
                 // Stanford Parser=================================================
                 //get tree
 
-                tree = Parser.parse(kalimatPre.get(i));
+                tree = Parser.parse(kalimatPre.get(i), kalimatIob.get(i));
                 List<Tree> leaves = tree.getLeaves();
                 for (Tree leaf : leaves) { 
                     Tree parent = leaf.parent(tree);
                     //System.out.print(leaf.label().value() + "-" + parent.label().value() + " ");
+                //}
                 }
                 //output.tulis("Tree = "+tree);
                 AreaExtraksi.append(tree.toString());
@@ -2791,8 +2415,429 @@ public class Interface_TA extends javax.swing.JFrame {
                 AreaExtraksi.append("\n");
             }
             
+            
+            
+            
+//===========================================AKURASI===========================================================================
+            
+            fixFit=Fit.cekFitur(temp1, temp2);
+            //output.tulis("Fix fitur sebelum di cek = "+fixFit.toString());
+            output.tulis("Hasil ekstraksi fitur : "+fixFit.toString());
+            output.tulis("Pasangan Fitur - Opini : "+listFitOp.toString());
+            
+            //menuliskan hasil ekstraksi fitur kandidat ke textarea
+            //jTextArea3.append(i+1+"."+fixFit.toString());
+            //jTextArea3.append("\n");
+            
+            jAreaHasilExtraksi.append(i+1+".");
+            jAreaHasilExtraksi.append("\n");
+            jAreaHasilExtraksi.append("Kandidat Fitur : "+fixFit.toString());
+            jAreaHasilExtraksi.append("\n");
+            jAreaHasilExtraksi.append("Kandidat Fitur dan Opini : "+listFitOp.toString());
+            jAreaHasilExtraksi.append("\n");
+            
+            
+            //mendapatkan polaritas=============================================
+            //dengan lexicon pos-neg
+            //polaritas = polar.getPolarElse(fixFit,listFitOp,opPos,opNeg);
+            
+            //mendapatkan sesuai format pengecekan fitur dan polar
+            //fp = polar.cgForm(polaritas);
+            //output.tulis("polaritas dengan Op.Lexicon = "+fp);
+            
+            //dengan skor dengan swn
+            polaritas = polar.getPolarSWN(fixFit,listFitOp);
+            //jTextArea17.append(i+1+"."+polaritas.toString());
+            //jTextArea17.append("\n");
+            
+            jAreaHasilExtraksi.append("Kandidat Fitur dan Polaritas : "+polaritas.toString());
+            jAreaHasilExtraksi.append("\n");
+            
+            //mendapatkan sesuai format pengecekan fitur dan polar
+            fp = polar.cgForm(polaritas);
+            output.tulis("polaritas dengan SWN = "+fp);
+            
+            //eliminasi fitur ekstrak yg tidak memiliki opini===============================================================
+            for(int j = 0; j<fixFit.size(); j++){
+                for(int it = 0; it<fp.size(); it++){
+                    if(fp.get(it).get(0)!="-"){
+                        if(fp.get(it).get(1).contains("no opini") && fp.get(it).get(0).equalsIgnoreCase(fixFit.get(j))){
+                            fixFit.remove(j);
+                        }
+                    }
+                }
+            }
+            
+            //jika setelah di remove ternyata list kosong
+            if(fixFit.isEmpty()){
+                fixFit.add("-");
+            }
+            
+            polaritas = polar.getPolarSWN(fixFit,listFitOp);
+            
+           for (int k = 0; k < fixFit.size(); k++) {
+                //tambahan
+               if(fixFit.get(k) != "-"){
+                    if ( (Collections.frequency(noDobel, fixFit.get(k))) < 1 ){
+                        noDobel.add(fixFit.get(k));
+                    }
+               }
+                //
+            }
+            
+            fiturkalimattotal.add(fixFit);
+            fiturpolaritastotal.add(polaritas);
+            
+            //System.out.println("fitur kalimat 1 = "+fixFit);
+            //System.out.println("fitur kalimat 2 = "+fiturkalimattotal);
+            
+           for (int k = 0; k < fixFit.size(); k++) {
+                //output.tulis("\nFitur : "+ fixFit.get(k) +"\n");
+
+                //==== grouping ====//
+                for (int l = 0; l< noDobel.size(); l++){
+                    ArrayList<String> Group = group.findGroup(noDobel.get(l), fixFit.get(k), polaritas, inputan.get(i), database);
+                    if(!listGroup.contains(Group) && Group.size()!=0){
+                        listGroup.add(Group);
+                    }
+                }
+                //==================//
+            }
            
+            
+            for(int tes2 = 0; tes2<fp.size(); tes2++){
+                totalfiturfp.add(fp.get(tes2));
+            }
+            
+            String fiturkal ="";
+            for(int tes=0; tes<fixFit.size(); tes++){
+                fiturkal = fiturkal+fixFit.get(tes)+",";
+                totalfitur.add(fixFit.get(tes));
+            }
+            
+            if(fiturkal.endsWith(",")){
+                fiturkal = fiturkal.substring(0, fiturkal.length()-1);
+            }
+            fiturkalimat.add(fiturkal);
+            
+            output.tulis("Fix fitur : "+fixFit.toString());
+            output.tulis("Fitur dataset : "+dataFitPre.get(i));
+            
+            //menuliskan hasil fitur fix ke textarea
+            //jTextArea5.append(i+1+"."+fixFit.toString()+"##"+inputan.get(i));
+            //jTextArea5.append("\n");
+            
+            //mendapatkan total fitur benar,salah==============================
+            temp3=Fit.validasiFitur3(fixFit, dataFitPre.get(i));
+            
+            for (int l = 0; l < jumlah.size(); l++) {
+                jumlah.set(l, jumlah.get(l)+Double.parseDouble(temp3.get(l)));
+            }
+            
+            //output.tulis("Fitur dataset : "+dataFitPre.get(i));
+            //output.tulis("==================================================");
+            output.tulis("P fitur : "+temp3.get(4));
+            output.tulis("R fitur: "+temp3.get(5));
+            
+            //mendapatkan fp kalimat
+            String fiturpolaritas = "";
+            for(int x = 0; x<fp.size(); x++){
+                if(fp.get(x).get(0)!="-"){
+                    if(!fp.get(x).get(1).contains("no opini")){
+                        fiturpolaritas = fiturpolaritas + fp.get(x).get(0) + "[" + fp.get(x).get(1) + "]" + ",";
+                    }
+                }
+            }
+            if(fiturpolaritas != ""){
+                fiturpolaritas = fiturpolaritas.substring(0, fiturpolaritas.length()-1);
+            }
+            
+            jAreaHasilExtraksi.append("Hasil Ekstraksi : "+fiturpolaritas+"##"+inputan.get(i));
+            jAreaHasilExtraksi.append("\n");
+            jAreaHasilExtraksi.append("================================================");
+            jAreaHasilExtraksi.append("\n");
+            
+            jAreaAkurasi.append(i+1+"."+fiturpolaritas+"##"+inputan.get(i));
+            jAreaAkurasi.append("\n");
+            jAreaAkurasi.append("Fitur dataset : "+dataFitPre.get(i));
+            jAreaAkurasi.append("\n");
+            jAreaAkurasi.append("P Fitur = "+temp3.get(4));
+            jAreaAkurasi.append("\n");
+            jAreaAkurasi.append("R Fitur = "+temp3.get(5));
+            jAreaAkurasi.append("\n");
+            //output.tulis("==================================================");
+            
+            //mendapatkan total fitur dan polaritas benar,salha================
+            temp4=Op.validasiOpini(fitpo, fp);
+            //System.out.println("fitpo : "+fitpo);
+            //System.out.println("fp : "+fp);
+            for (int l = 0; l < jumlah2.size(); l++) {
+                jumlah2.set(l, jumlah2.get(l)+Double.parseDouble(temp4.get(l)));
+            }
+            //total=jumlah.get(3);
+            //output.tulis("Fitur Polaritas dataset : "+dataFit.get(j));
+            //output.tulis("==================================================");
+            //output.tulis("Fitur Polaritas terekstrak : "+temp4.get(3));
+            //output.tulis("Fitur Polaritas benar : "+temp4.get(0));
+            //output.tulis("Fitur Polaritas salah : "+temp4.get(1));
+            output.tulis("P opini : "+temp4.get(4));
+            output.tulis("R opini : "+temp4.get(5));
+            
+            jAreaAkurasi.append("P Fitur Polaritas = "+temp4.get(4));
+            jAreaAkurasi.append("\n");
+            jAreaAkurasi.append("R Fitur Polaritas = "+temp4.get(5));
+            jAreaAkurasi.append("\n");
+            //output.tulis("==================================================");
+            jAreaAkurasi.append("==================================================");
+            jAreaAkurasi.append("\n");
+            /*jTextArea8.append("Bener Positif = "+temp4.get(6));
+            jTextArea8.append("\n");
+            jTextArea8.append("Bener Negatif = "+temp4.get(7));
+            jTextArea8.append("\n");
+            jTextArea8.append("Fitur datset Positif = "+temp4.get(8));
+            jTextArea8.append("\n");
+            jTextArea8.append("Fitur datset Negatif = "+temp4.get(9));
+            jTextArea8.append("\n");
+            jTextArea8.append("Fitur ekstrak Positif = "+temp4.get(10));
+            jTextArea8.append("\n");
+            jTextArea8.append("Fitur ekstrak Negatif = "+temp4.get(11));
+            jTextArea8.append("\n");
+            jTextArea8.append("P Fitur Positif = "+temp4.get(12));
+            jTextArea8.append("\n");
+            jTextArea8.append("R Fitur Positif = "+temp4.get(14));
+            jTextArea8.append("\n");
+            jTextArea8.append("P Fitur Negatif = "+temp4.get(13));
+            jTextArea8.append("\n");
+            jTextArea8.append("R Fitur Negatif = "+temp4.get(15));
+            jTextArea8.append("\n");
+            jTextArea8.append("==================================================");
+            jTextArea8.append("\n");*/
+            //=================================================================
+            
+            output.tulis("=====================================================");
+            //akhir kalimat
         }
+   // }
+        
+        /*
+        for(int ctr =0; ctr < inputan.size(); ctr++){
+            for (int k = 0; k < fiturkalimattotal.get(ctr).size(); k++) {
+                //output.tulis("\nFitur : "+ fixFit.get(k) +"\n");
+                //==== grouping ====//
+                for (int l = 0; l< noDobel.size(); l++){
+                    ArrayList<String> Group = group.findGroup(noDobel.get(l), fiturkalimattotal.get(ctr).get(k), fiturpolaritastotal.get(ctr), inputan.get(ctr), database);
+                    if(!listGroup.contains(Group) && Group.size()!=0){
+                        listGroup.add(Group);
+                    }
+                }
+                //==================//
+            }
+        }
+        */
+        //output.tulis("Fitur kalimat :");
+        int ext = 0;
+        int crt = 0;
+        int datset = 0;
+        for(int count = 0; count < fiturkalimat.size(); count++){
+            if(!fiturkalimat.get(count).equalsIgnoreCase("-")){
+                ext = ext+1; //jumlah kalimat memili fitur +1
+                if(!dataFitPre.get(count).equalsIgnoreCase("-")){
+                    //System.out.println(fiturkalimat.get(count)+" dan "+dataFitPre.get(count));
+                    crt = crt+1;
+                }
+            }
+            if(!dataFitPre.get(count).equalsIgnoreCase("-")){
+                datset = datset+1;
+            }
+        }
+        //System.out.println("bener:"+crt);
+        //System.out.println("ekstrak:"+ext);
+        //System.out.println("datset:"+datset);
+        
+        //akurasi prediksi fitur kalimat
+        double precPre = 0;
+        double recPre = 0;
+        double f1prediksi = 0;
+        precPre = akrs.precPrediksi(crt, ext);
+        recPre = akrs.recPrediksi(crt, datset);
+        precissionPrediksi.setText(precPre+"%");
+        recallPrediksi.setText(recPre+"%");
+        f1prediksi = (2*precPre*recPre)/(precPre+recPre);
+        f1scorePrediksi.setText(f1prediksi+"%");
+        //==============================
+        
+        /*output.tulis("Datafit kalimat :");
+        for(int count = 0; count < dataFitPre.size(); count++){
+            output.tulis(dataFitPre.get(count));
+        }*/
+        //PERHITUNGAN PRECISION RECALL=========================================
+        //FITUR
+        //menampilkan jumlah benar salah
+        //output.tulis("Jumlah Fitur Benar : "+jumlah.get(0));
+        //output.tulis("Jumlah Fitur Salah : "+jumlah.get(1));
+        //output.tulis("total Fitur dataset : "+jumlah.get(2));
+        jmlFiturDataset.setText(jumlah.get(2).toString());
+        //output.tulis("total Fitur ekstrak : "+jumlah.get(3));
+        
+        jmlbenar1.setText(jumlah.get(0).toString());
+        jmlFiturTerekstrek.setText(jumlah.get(3).toString());
+        
+        //FITUR POLARITAS
+         //menampilkan jumlah benar salah
+        //output.tulis("Jumlah Fitur Polaritas Benar : "+jumlah2.get(0));
+        //output.tulis("Jumlah Fitur Polaritas Salah : "+jumlah2.get(1));
+        //output.tulis("total Fitur Polaritas dataset : "+jumlah2.get(2));
+        //output.tulis("total Fitur Polaritas ekstrak : "+jumlah2.get(3));
+        
+        jmlbenar2.setText(jumlah2.get(0).toString());
+        jmlFiturPolaritasTerekstak.setText(jumlah2.get(3).toString());
+        
+        //========================================================================
+        
+        
+        //menghitung precision recall per kalimat
+        output.tulis("Total P fitur : "+akrs.precision(jumlah.get(4), inputan.size())+"%");
+        precisionFitur.setText(akrs.precision(jumlah.get(4), inputan.size())+"%");
+        
+        output.tulis("Total R fitur : "+akrs.recall(jumlah.get(5), inputan.size())+"%");
+        recallFitur.setText(akrs.recall(jumlah.get(5), inputan.size())+"%");
+        
+        //f1 score fitur
+        double prc = akrs.precision(jumlah.get(4), inputan.size());
+        double rec = akrs.recall(jumlah.get(5), inputan.size());
+        double f1 = (2*prc*rec)/(prc+rec);
+        f1scoreFitur.setText(f1+"%");
+        //=======================================================================
+        
+        //output.tulis("Precision fitur polaritas: "+akrs.precision(jumlah2.get(4), inputan.size())+"%");
+        output.tulis("");
+        jAreaAkurasi.append("Precision fitur : "+akrs.precision(jumlah.get(4), inputan.size())+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("Recall fitur : "+akrs.precision(jumlah.get(5), inputan.size())+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("F1 fitur : "+f1+"%");
+        jAreaAkurasi.append("\n");
+        
+        //ubah jika menggunakan perhitungan 1-3 atau 4
+        //output.tulis("Recall fitur : "+akrs.recall(jumlah.get/*(2)*/(0), jumlah.get/*(3)*/(2))+"%");
+        //output.tulis("Recall fitur : "+akrs.precision(jumlah.get(5), inputan.size())+"%");
+        output.tulis("Total P opini : "+akrs.precision(jumlah2.get(4), inputan.size())+"%");
+        precisionPolaritas.setText(akrs.precision(jumlah2.get(4), inputan.size())+"%");
+        
+        output.tulis("Total R opini : "+akrs.recall(jumlah2.get(5), inputan.size())+"%");
+        recallPolaritas.setText(akrs.recall(jumlah2.get(5), inputan.size())+"%");
+        
+        //f1 score polaritas
+        double prcPolar = akrs.precision(jumlah2.get(4), inputan.size());
+        double recPolar = akrs.recall(jumlah2.get(5), inputan.size());
+        double f1Polar = (2*prcPolar*recPolar)/(prcPolar+recPolar);
+        f1scorePolaritas.setText(f1Polar+"%");
+        //=======================================================================
+        
+        output.tulis("");
+        jAreaAkurasi.append("Precision fitur polaritas: "+akrs.precision(jumlah2.get(4), inputan.size())+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("Recall fitur polaritas: "+akrs.precision(jumlah2.get(5), inputan.size())+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("F1 polaritas : "+f1Polar+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("=====================================================");
+        jAreaAkurasi.append("\n");
+        /*jTextArea8.append("Precision fitur positif: "+akrs.precision(jumlah2.get(12), inputan.size())+"%");
+        jTextArea8.append("\n");
+        jTextArea8.append("Recall fitur positif: "+akrs.precision(jumlah2.get(14), inputan.size())+"%");
+        jTextArea8.append("\n");
+        jTextArea8.append("Precision fitur negatif: "+akrs.precision(jumlah2.get(13), inputan.size())+"%");
+        jTextArea8.append("\n");
+        jTextArea8.append("Recall fitur negatif: "+akrs.precision(jumlah2.get(15), inputan.size())+"%");
+        jTextArea8.append("\n");
+        jTextArea8.append("=====================================================");*/
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("Precision prediksi kalimat: "+precPre+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("Recall prediksi kalimat: "+recPre+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("F1 prediksi kalimat: "+f1prediksi+"%");
+        jAreaAkurasi.append("\n");
+        jAreaAkurasi.append("=====================================================");
+        jAreaAkurasi.append("\n");
+        //mengitung precision recall per dokumen
+        //output.tulis("Precision fitur dokumen : "+akrs.precision(jumlah.get(0), jumlah.get(3))+"%");
+        //output.tulis("Recall fitur dokumen : "+akrs.precision(jumlah.get(0), jumlah.get(2))+"%");
+        //output.tulis("");
+//        jTextArea8.append("Precision fitur dokumen : "+akrs.precision(jumlah.get(0), jumlah.get(3))+"%");
+//        jTextArea8.append("\n");
+//        jTextArea8.append("Recall fitur dokumen : "+akrs.recall(jumlah.get(0), jumlah.get(2))+"%");
+//        jTextArea8.append("\n");
+//        
+//        //output.tulis("Precision fitur polaritas dokumen: "+akrs.precision(jumlah2.get(0), jumlah2.get(3))+"%");
+//        //output.tulis("Recall fitur polaritas dokumen: "+akrs.precision(jumlah2.get(0), jumlah2.get(2))+"%");
+//        //output.tulis("");
+//        jTextArea8.append("Precision fitur polaritas dokumen: "+akrs.precision(jumlah2.get(0), jumlah2.get(3))+"%");
+//        jTextArea8.append("\n");
+//        jTextArea8.append("Recall fitur polaritas dokumen: "+akrs.recall(jumlah2.get(0), jumlah2.get(2))+"%");
+//        jTextArea8.append("\n");
+        /*
+        jTextArea8.append("Total TP Fitur : "+jumlah.get(0));
+        jTextArea8.append("\n");
+        jTextArea8.append("Total FP Fitur : "+jumlah.get(1));
+        jTextArea8.append("\n");
+        Double FN = Double.valueOf(jumlah.get(2))-Double.valueOf(jumlah.get(0));
+        jTextArea8.append("Total FN Fitur : "+FN);
+        jTextArea8.append("\n");
+        jTextArea8.append("Precision : "+String.valueOf(akrs.precisionTP(jumlah.get(0), jumlah.get(1))));
+        jTextArea8.append("\n");
+        jTextArea8.append("Recall : "+String.valueOf(akrs.precisionTP(jumlah.get(0), FN)));
+        jTextArea8.append("\n");
+        jTextArea8.append("=====================================================");
+        jTextArea8.append("\n");*/
+        //=====================================================================
+        
+        
+        
+        for(int num = 0; num < noDobel.size() ; num++){
+            //output.tulis("isi no dobel : "+noDobel.get(num));
+            if ( (Collections.frequency(noDobelDataFit, noDobel.get(num))) > 0 ){
+                benar=benar+1;
+            }
+            else{
+                //System.out.println("tdk ada pada data set : "+noDobel.get(num));
+            }
+        }
+        
+        /*jTextArea8.append("Akurasi dokumen :");
+        jTextArea8.append("\n");
+        jTextArea8.append("Benar : "+benar);
+        jTextArea8.append("\n");
+        jTextArea8.append("total fit dataset : "+noDobelDataFit.size());
+        jTextArea8.append("\n");
+        jTextArea8.append("total fitur ekstraksi  : "+noDobel.size());
+        jTextArea8.append("\n");
+        jTextArea8.append("Precision Dokumen : "+akrs.precision(benar, noDobel.size()));
+        jTextArea8.append("\n");
+        jTextArea8.append("Recall Dokumen : "+akrs.precision(benar, noDobelDataFit.size()));
+        jTextArea8.append("\n");
+        jTextArea8.append("=====================================================");*/
+        //System.out.println("data fit nodobel : "+noDobelDataFit);
+        //System.out.println("fit eks nodobel : "+noDobel);
+        
+        
+        
+        //grouping
+//        for(int l = 0; l< noDobel.size(); l++){
+//            jComboBox2.addItem(noDobel.get(l));
+//        }
+        
+        //grouping
+        for (int l = 0; l< noDobel.size(); l++){
+            output.tulis("Kelas : "+noDobel.get(l));
+            for(int ax=0;ax<listGroup.size();ax++){
+                if(noDobel.get(l) == listGroup.get(ax).get(0)){
+                    output.tulis(""+listGroup.get(ax).get(1)+"##"+listGroup.get(ax).get(2));
+                }
+            }
+        }
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jCheckBoxNpParserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxNpParserActionPerformed
@@ -2855,6 +2900,7 @@ public class Interface_TA extends javax.swing.JFrame {
             String tagging = ST.tagger(inputan.get(i));
             String lemanotag = lemma.lemmatizenotag(inputan.get(i));
             String stop = stopword.stopword(inputan.get(i));
+            String reg = " ";
            
             //pos tagging
 
@@ -3043,14 +3089,14 @@ public class Interface_TA extends javax.swing.JFrame {
                 String pt = ST.tagger(st);
                 String stpt = stopword.stopwordwithTag(tagging);
                 //String posstop = stopword.stopwordwithTag(tag);
-                String lemmas = lemma.lemmatize(stpt);
+                result = lemma.lemmatize(stpt);
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
                 AreaSW.append("Hasil POS Tagging : " + tagging);
                 AreaSW.append("\n");
                 AreaSW.append("Hasil Stopwords : " + stpt);
                 AreaSW.append("\n");
-                AreaSW.append("Hasil Lemmatization : " + lemmas);
+                AreaSW.append("Hasil Lemmatization : " + result);
                 AreaSW.append("\n");
 
             }
@@ -3064,22 +3110,25 @@ public class Interface_TA extends javax.swing.JFrame {
                     String st = stopword.stopword(inputan.get(i));
                     String pt = ST.tagger(st);
                     String stpt = stopword.stopwordwithTag(tagging);
-                    String lemmas = lemma.lemmatize(stpt);
+                    result = lemma.lemmatize(stpt);
                     String[] tamp = new String[inputan.size()];
                     tamp = inputan.toArray(tamp);
-                    result = iobchunk.Iob(stop);
-                    String reg = regbio.RegBio(result);
+                    String iob = iobchunk.Iob(stop);
+                    reg = regbio.RegBio(iob);
                     
                     AreaSW.append(i + 1 + "." + inputan.get(i));
                     AreaSW.append("\n");
                     AreaSW.append("Hasil POS Tagging : " + tagging);
                     AreaSW.append("\n");
-                    AreaSW.append("Hasil IOB" + Bio);
+                    AreaSW.append("Hasil IOB :" + iob);
                     AreaSW.append("\n");
-                    AreaSW.append("Hasil Stopwords : " + stpt);
+                    AreaSW.append("IOB NP :" + reg);
                     AreaSW.append("\n");
                     AreaSW.append("Hasil Lemmatization : " + result);
                     AreaSW.append("\n");
+                    AreaSW.append("Hasil Stopwords : " + stpt);
+                    AreaSW.append("\n");
+                    
                 } catch (IOException ex) {
                     Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -3094,7 +3143,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 String[] tamp = new String[inputan.size()];
                 tamp = inputan.toArray(tamp);
                 result = iobchunk.Iob(inputan.get(i));
-                String reg = regbio.RegBio(result);
+                reg = regbio.RegBio(result);
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
                 AreaSW.append("Hasil :" + result);
@@ -3116,6 +3165,7 @@ public class Interface_TA extends javax.swing.JFrame {
             }
             
             kalimatPre.add(result);
+            kalimatIob.add(reg);
             
             //
             //            if(CheckCR.isSelected()){
@@ -3164,100 +3214,21 @@ public class Interface_TA extends javax.swing.JFrame {
         inputanFull=input.inpFull("resources/dataset/"+value+".txt");
         dataFit=input.fiturpro("resources/dataset/"+value+".txt");
         dataFitPre = dataFit;
-        data();
+        try {
+            data();
+        } catch (IOException ex) {
+            Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_ComboDatasetActionPerformed
-
-    private void jComboBoxRule1a4jComboBoxRule1aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1a4jComboBoxRule1aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule1a4jComboBoxRule1aActionPerformed
-
-    private void jComboBoxRule1b4jComboBoxRule1bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1b4jComboBoxRule1bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule1b4jComboBoxRule1bActionPerformed
-
-    private void jComboBoxRule2a4jComboBoxRule2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2a4jComboBoxRule2aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule2a4jComboBoxRule2aActionPerformed
-
-    private void jComboBoxRule2b4jComboBoxRule2bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2b4jComboBoxRule2bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule2b4jComboBoxRule2bActionPerformed
-
-    private void jComboBoxRule3a4jComboBoxRule3aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3a4jComboBoxRule3aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule3a4jComboBoxRule3aActionPerformed
-
-    private void jComboBoxRule3b4jComboBoxRule3bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3b4jComboBoxRule3bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule3b4jComboBoxRule3bActionPerformed
-
-    private void jComboBoxRule4a4jComboBoxRule4aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4a4jComboBoxRule4aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule4a4jComboBoxRule4aActionPerformed
-
-    private void jComboBoxRule4b4jComboBoxRule4bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4b4jComboBoxRule4bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule4b4jComboBoxRule4bActionPerformed
-
-    private void jComboBoxRule6a4jComboBoxRule6aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6a4jComboBoxRule6aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule6a4jComboBoxRule6aActionPerformed
-
-    private void jComboBoxRule6b4jComboBoxRule6bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6b4jComboBoxRule6bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule6b4jComboBoxRule6bActionPerformed
-
-    private void jComboBoxRule7a4jComboBoxRule7aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7a4jComboBoxRule7aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule7a4jComboBoxRule7aActionPerformed
-
-    private void jComboBoxRule7b4jComboBoxRule7bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7b4jComboBoxRule7bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule7b4jComboBoxRule7bActionPerformed
-
-    private void jComboBoxRule1C4jComboBoxRule1CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule1C4jComboBoxRule1CActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule1C4jComboBoxRule1CActionPerformed
-
-    private void jComboBoxRule2c4jComboBoxRule2cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule2c4jComboBoxRule2cActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule2c4jComboBoxRule2cActionPerformed
-
-    private void jComboBoxRule3c4jComboBoxRule3cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule3c4jComboBoxRule3cActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule3c4jComboBoxRule3cActionPerformed
-
-    private void jComboBoxRule4c4jComboBoxRule4cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule4c4jComboBoxRule4cActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule4c4jComboBoxRule4cActionPerformed
-
-    private void jComboBoxRule5a4jComboBoxRule5aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5a4jComboBoxRule5aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule5a4jComboBoxRule5aActionPerformed
-
-    private void jComboBoxRule6c4jComboBoxRule6cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule6c4jComboBoxRule6cActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule6c4jComboBoxRule6cActionPerformed
-
-    private void jComboBoxRule7c4jComboBoxRule7cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule7c4jComboBoxRule7cActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule7c4jComboBoxRule7cActionPerformed
-
-    private void jComboBoxRule5b4jComboBoxRule5bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5b4jComboBoxRule5bActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule5b4jComboBoxRule5bActionPerformed
-
-    private void jComboBoxRule5c4jComboBoxRule5cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRule5c4jComboBoxRule5cActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxRule5c4jComboBoxRule5cActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         AreaExtraksi.setText(" ");
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    public void data(){
+    public void data() throws IOException{
     String value = ComboDataset.getSelectedItem().toString();
-    inputan = call.Inputan("resources/dataset/"+value+".txt");
+    //inputan = call.Inputan("resources/dataset/"+value+".txt");
+     inputan = call.Input("output/"+value+".txt");
         for(int i = 0; i < inputan.size(); i++){
             AreaDataset.append(i + 1 + "." + inputan.get(i));
             AreaDataset.append(inputan.get(i));
@@ -3313,97 +3284,45 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckRule;
     private javax.swing.JCheckBox CheckSW;
     private javax.swing.JComboBox<String> ComboDataset;
+    private javax.swing.JLabel f1scoreFitur;
+    private javax.swing.JLabel f1scorePolaritas;
+    private javax.swing.JLabel f1scorePrediksi;
+    private javax.swing.JPanel jArea;
+    private javax.swing.JTextArea jAreaAkurasi;
+    private javax.swing.JTextArea jAreaHasilExtraksi;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBoxNpParser;
+    private javax.swing.JCheckBox jCheckBoxTaxonomy;
     private javax.swing.JCheckBox jCheckBoxTypeDepedency;
-    private javax.swing.JComboBox<String> jComboBoxRule10a4;
-    private javax.swing.JComboBox<String> jComboBoxRule10b4;
-    private javax.swing.JComboBox<String> jComboBoxRule10c4;
-    private javax.swing.JComboBox<String> jComboBoxRule11a4;
-    private javax.swing.JComboBox<String> jComboBoxRule11b4;
-    private javax.swing.JComboBox<String> jComboBoxRule11c4;
-    private javax.swing.JComboBox<String> jComboBoxRule12a4;
-    private javax.swing.JComboBox<String> jComboBoxRule12b4;
-    private javax.swing.JComboBox<String> jComboBoxRule12c4;
-    private javax.swing.JComboBox<String> jComboBoxRule13a4;
-    private javax.swing.JComboBox<String> jComboBoxRule13b4;
-    private javax.swing.JComboBox<String> jComboBoxRule13c4;
-    private javax.swing.JComboBox<String> jComboBoxRule14a4;
-    private javax.swing.JComboBox<String> jComboBoxRule14b4;
-    private javax.swing.JComboBox<String> jComboBoxRule14c4;
-    private javax.swing.JComboBox<String> jComboBoxRule15a4;
-    private javax.swing.JComboBox<String> jComboBoxRule15b4;
-    private javax.swing.JComboBox<String> jComboBoxRule15c4;
-    private javax.swing.JComboBox<String> jComboBoxRule16a4;
-    private javax.swing.JComboBox<String> jComboBoxRule16b4;
-    private javax.swing.JComboBox<String> jComboBoxRule16c4;
-    private javax.swing.JComboBox<String> jComboBoxRule17a4;
-    private javax.swing.JComboBox<String> jComboBoxRule17b4;
-    private javax.swing.JComboBox<String> jComboBoxRule17c4;
-    private javax.swing.JComboBox<String> jComboBoxRule18a4;
-    private javax.swing.JComboBox<String> jComboBoxRule18b4;
-    private javax.swing.JComboBox<String> jComboBoxRule18c4;
-    private javax.swing.JComboBox<String> jComboBoxRule1C4;
-    private javax.swing.JComboBox<String> jComboBoxRule1a4;
-    private javax.swing.JComboBox<String> jComboBoxRule1b4;
-    private javax.swing.JComboBox<String> jComboBoxRule2a4;
-    private javax.swing.JComboBox<String> jComboBoxRule2b4;
-    private javax.swing.JComboBox<String> jComboBoxRule2c4;
-    private javax.swing.JComboBox<String> jComboBoxRule3a4;
-    private javax.swing.JComboBox<String> jComboBoxRule3b4;
-    private javax.swing.JComboBox<String> jComboBoxRule3c4;
-    private javax.swing.JComboBox<String> jComboBoxRule4a4;
-    private javax.swing.JComboBox<String> jComboBoxRule4b4;
-    private javax.swing.JComboBox<String> jComboBoxRule4c4;
-    private javax.swing.JComboBox<String> jComboBoxRule5a4;
-    private javax.swing.JComboBox<String> jComboBoxRule5b4;
-    private javax.swing.JComboBox<String> jComboBoxRule5c4;
-    private javax.swing.JComboBox<String> jComboBoxRule6a4;
-    private javax.swing.JComboBox<String> jComboBoxRule6b4;
-    private javax.swing.JComboBox<String> jComboBoxRule6c4;
-    private javax.swing.JComboBox<String> jComboBoxRule7a4;
-    private javax.swing.JComboBox<String> jComboBoxRule7b4;
-    private javax.swing.JComboBox<String> jComboBoxRule7c4;
-    private javax.swing.JComboBox<String> jComboBoxRule8a4;
-    private javax.swing.JComboBox<String> jComboBoxRule8b4;
-    private javax.swing.JComboBox<String> jComboBoxRule8c4;
-    private javax.swing.JComboBox<String> jComboBoxRule9a4;
-    private javax.swing.JComboBox<String> jComboBoxRule9b4;
-    private javax.swing.JComboBox<String> jComboBoxRule9c4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
-    private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -3415,12 +3334,22 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextAreaRule;
+    private javax.swing.JLabel jmlFiturDataset;
+    private javax.swing.JLabel jmlFiturPolaritasTerekstak;
+    private javax.swing.JLabel jmlFiturTerekstrek;
+    private javax.swing.JLabel jmlbenar1;
+    private javax.swing.JLabel jmlbenar2;
+    private javax.swing.JLabel precisionFitur;
+    private javax.swing.JLabel precisionPolaritas;
+    private javax.swing.JLabel precissionPrediksi;
+    private javax.swing.JLabel recallFitur;
+    private javax.swing.JLabel recallPolaritas;
+    private javax.swing.JLabel recallPrediksi;
     // End of variables declaration//GEN-END:variables
 }

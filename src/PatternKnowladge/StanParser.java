@@ -22,8 +22,12 @@ public class StanParser {
     public static String[] tag = {
         "_CC","_CD","_DT","_EX","_FW","_IN","_JJ","_JJR","_JJS","_LS","_MD","_NN","_NNS","_NNP","_NNPS","_PDT","_POS","_PRP","_PRP$","_RB","_RBR","_RBS","_RP","_SYM","_TO","_UH","_VB","_VBD","_VBG","_VBN","_VBP","_VBZ","_WDT","_WP","_WP$","_WRB","_#","_$","_.","_,","_:","_(","_)","_`","_'"
     };
+    public static String[] tagiob = {
+        "_I-ADJP", "_I-ADVP", "_I-CONJP", "_I-INTJ", "_I-LST", "_I-NP", "_I-PP", "_I-PRT", "_I-SBAR", "_I-UCP", "_I-VP"
+    };
     Tree subtree;
     public static ArrayList<String> wordsList = new ArrayList<String>();
+    public static ArrayList<String> wordsListbio = new ArrayList<String>();
     public static ArrayList<String> fituropini = new ArrayList<String>();
     public static List<String> phraseList=new ArrayList<String>();
     public static List<CoreLabel> tokens= new ArrayList<CoreLabel>();
@@ -36,18 +40,25 @@ public class StanParser {
     private final LexicalizedParser parser = LexicalizedParser.loadModel(PCG_MODEL);
     
     //mendapatkan tree
-    public Tree parse(String str) {
+    public Tree parse(String str, String iob) {
         tokens=null;
         wordsList.clear();
-        
+        //String iob = " ";
         Tree tree=null;
         String s=str;
         String kalimat="";
         s=s.trim().replaceAll("\\s+", " ");
         String[] words = s.split(" ");
+        String bio = iob;
+        String kalimatBio = " ";
+        bio= bio.trim().replaceAll("\\s+", " ");
+        String[] biowords = bio.split(" ");
         
         for (String word : words) {
             wordsList.add(word);
+        }
+        for(String bioword : biowords){
+            wordsListbio.add(bioword);
         }
         //menghilangkan tag pada input
         for (int i = 0; i < wordsList.size(); i++) {
@@ -59,7 +70,16 @@ public class StanParser {
                 }
             }
         }
-        //
+        for(int b = 0; b < wordsListbio.size(); b++){
+            String bioList = wordsListbio.get(b);
+            for(int o = 0; o < tagiob.length; o++){
+                String bioTag = tagiob[o];
+                if(wordsListbio.get(b).endsWith(bioTag)){
+                    kalimatBio = kalimatBio + bioList.replace(bioTag, " ")+ " ";
+                }
+            }
+        }
+        String tampkalimat = kalimat + kalimatBio;
         tokens = tokenize(kalimat);
         tree = parser.apply(tokens);
         return tree;

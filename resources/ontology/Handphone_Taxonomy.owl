@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#"
+     xml:base="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Accessories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Accessories"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Bag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Bag">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Band -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Band">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Battery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Big_Buttons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Big_Buttons">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Key_pad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Call_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Call_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Voice_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Color -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Color">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Communication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Communication"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Connectivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Connectivity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Cover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Cover">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Design -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Design">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Dual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Dual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Dual_Sim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Dual_Sim">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Email -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Email">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Massages"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Enterteinment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Enterteinment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#IM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#IM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Massages"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Input_for_handphone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Input_for_handphone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Joy_Pad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Joy_Pad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Key_pad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Key_pad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Key_pad"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#MMS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#MMS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Massages"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Massages -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Massages">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Memory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Memory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Quad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Quad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Radio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Radio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Enterteinment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#SMS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#SMS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Massages"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Screen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Screen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Signal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Signal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Size -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Size">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Small_Buttons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Small_Buttons">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Key_pad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Speaker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Speaker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Voice_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Vibrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Vibrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Voice_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Voice_Quality"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Weight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Weight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Enterteinment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#picture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#picture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Enterteinment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Flash/LED -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Flash/LED">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

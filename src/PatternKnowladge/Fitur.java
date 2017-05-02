@@ -257,6 +257,7 @@ public class Fitur {
                 }
             }
         }
+        System.out.println("List Corpus : " + listCorp);
         return listFitur;
     }
     

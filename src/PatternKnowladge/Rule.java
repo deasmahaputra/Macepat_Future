@@ -423,10 +423,10 @@ public class Rule{
    
    
    //pengecekan dengan regex =========================================================================================================================
-//   public static String Reg(String input){
-//       String Str = new String(input);      
-//       String hasilRule = null;
-//       
+   public static String Reg(String input){
+       String Str = new String(input);      
+       String hasilRule = null;
+       
 //       GetRule ruleget = new GetRule();
 //      String getRule1a = ruleget.getRule1a();
 //      String getRule1b = ruleget.getRule1b();
@@ -450,79 +450,80 @@ public class Rule{
 //      String getRule7b = ruleget.getRule7b();
 //      String getRule7c = ruleget.getRule7c();
 //       
-//       for (String retval: Str.split(" ")){
-//           listinput.add(retval);
-//       }
-//       
-//       String rule1="\\S*_JJ+\\S* (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
-//       String rule2="\\S*_JJ+\\S* (\\S*_NN+\\S*|\\S*_NNS+\\S*) (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
-//       String rule3="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) \\S*_JJ+\\S*";
-//       String rule4="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_JJ+\\S*|\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
-//       String rule5="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_VBN+\\S*|\\S*_VBD+\\S*)";
-//       String rule6="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) \\S*_JJ+\\S*";
-//       String rule7="(\\S*_VBN+\\S*|\\S*_VBD+\\S*) (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
-//       String rule8="(\\S*_VBN+\\S*|\\S*_VBD+\\S*) (\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*)";
-//       String rule9="(\\S*_NN+\\S*|\\S*_NNS+\\S*) \\S*_JJ+\\S*";
-//       //tambahan
-//       String rule10="\\S*_NN+\\S*";
-//       String rule11="\\S*_VB+\\S*";
-//       String rule12="\\S*_VB+\\S* \\S*_RP+\\S*";
-//       String rule13="\\S*_DT+\\S* \\S*_NN+\\S*";
-//       String rule14="\\S*_NN+\\S* \\S*_NN+\\S*";
-//       String rule15="\\S*_JJ+\\S* \\S*_VB+\\S* \\S*_NN+\\S*";
-//       String rule16="\\S*_NN+\\S* \\S*_VB+\\S* \\S*_NN+\\S*";
-//       String rule17="\\S*_NN+\\S* \\S*_IN+\\S* \\S*_NN+\\S*";
-//       String rule18="\\S*_NN+\\S* \\S*_NN+\\S* \\S*_NN+\\S*";
-//       //String rule19="\\S*_NN+\\S* \\S*_IN+\\S* \\S*_DT+\\S* \\S*_NN+\\S*";
-//       //String rule20="\\S*_NN+\\S* \\S*_TO+\\S* \\S*_NN+\\S* \\S*_NN+\\S*";
-//       //
-//       
-//       if(listinput.size()==2){
-//           Pattern p = Pattern.compile(rule1+"|"+rule3+"|"+rule5+"|"+rule7+"|"+rule8+"|"+rule9+"|"+rule12+"|"+rule13+"|"+rule14);
-//           Matcher m = p.matcher(input);
-//           while (m.find()) {
-//                   hasilRule= m.group();
-//           }
-//       }
-//       else if(listinput.size()==1){
-//           Pattern p = Pattern.compile(rule10+"|"+rule11);
-//           Matcher m = p.matcher(input);
-//           while (m.find()) {
-//                   hasilRule= m.group();
-//           }
-//       }
-//       else{
-//           Pattern p = Pattern.compile(rule2+"|"+rule4+"|"+rule6+"|"+rule15+"|"+rule16+"|"+rule17+"|"+rule18);
-//           Matcher m = p.matcher(input);
-//           while (m.find()) {
-//                   hasilRule= m.group();
-//           }
-//       }
-//
-////        if(listinput.size()==2){
-////           Pattern p = Pattern.compile(rule1+"|"+rule3+"|"+rule5+"|"+rule7+"|"+rule8+"|"+rule9);
-////           Matcher m = p.matcher(input);
-////           while (m.find()) {
-////                   hasilRule= m.group();
-////           }
-////       }
-////       else if(listinput.size()==1){
-////           Pattern p = Pattern.compile(rule10+"|"+rule11);
-////           Matcher m = p.matcher(input);
-////           while (m.find()) {
-////                   hasilRule= m.group();
-////           }
-////       }
-////       else{
-////           Pattern p = Pattern.compile(rule2+"|"+rule4+"|"+rule6);
-////           Matcher m = p.matcher(input);
-////           while (m.find()) {
-////                   hasilRule= m.group();
-////           }
-////       }
-//       
-//       listinput.clear();
-//       return hasilRule;
+       for (String retval: Str.split(" ")){
+           listinput.add(retval);
+       }
+       
+       String rule1="\\S*_JJ+\\S* (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
+       String rule2="\\S*_JJ+\\S* (\\S*_NN+\\S*|\\S*_NNS+\\S*) (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
+       String rule3="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) \\S*_JJ+\\S*";
+       String rule4="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_JJ+\\S*|\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
+       String rule5="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_VBN+\\S*|\\S*_VBD+\\S*)";
+       String rule6="(\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) (\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*) \\S*_JJ+\\S*";
+       String rule7="(\\S*_VBN+\\S*|\\S*_VBD+\\S*) (\\S*_NN+\\S*|\\S*_NNS+\\S*)";
+       String rule8="(\\S*_VBN+\\S*|\\S*_VBD+\\S*) (\\S*_RB+\\S*|\\S*_RBR+\\S*|\\S*_RBS+\\S*)";
+       String rule9="(\\S*_NN+\\S*|\\S*_NNS+\\S*) \\S*_JJ+\\S*";
+       //tambahan
+       String rule10="\\S*_NN+\\S*";
+       String rule11="\\S*_VB+\\S*";
+       String rule12="\\S*_VB+\\S* \\S*_RP+\\S*";
+       String rule13="\\S*_DT+\\S* \\S*_NN+\\S*";
+       String rule14="\\S*_NN+\\S* \\S*_NN+\\S*";
+       String rule15="\\S*_JJ+\\S* \\S*_VB+\\S* \\S*_NN+\\S*";
+       String rule16="\\S*_NN+\\S* \\S*_VB+\\S* \\S*_NN+\\S*";
+       String rule17="\\S*_NN+\\S* \\S*_IN+\\S* \\S*_NN+\\S*";
+       String rule18="\\S*_NN+\\S* \\S*_NN+\\S* \\S*_NN+\\S*";
+       //String rule19="\\S*_NN+\\S* \\S*_IN+\\S* \\S*_DT+\\S* \\S*_NN+\\S*";
+       //String rule20="\\S*_NN+\\S* \\S*_TO+\\S* \\S*_NN+\\S* \\S*_NN+\\S*";
+       //
+       
+       if(listinput.size()==2){
+           Pattern p = Pattern.compile(rule1+"|"+rule3+"|"+rule5+"|"+rule7+"|"+rule8+"|"+rule9+"|"+rule12+"|"+rule13+"|"+rule14);
+           Matcher m = p.matcher(input);
+           while (m.find()) {
+                   hasilRule= m.group();
+           }
+       }
+       else if(listinput.size()==1){
+           Pattern p = Pattern.compile(rule10+"|"+rule11);
+           Matcher m = p.matcher(input);
+           while (m.find()) {
+                   hasilRule= m.group();
+           }
+       }
+       else{
+           Pattern p = Pattern.compile(rule2+"|"+rule4+"|"+rule6+"|"+rule15+"|"+rule16+"|"+rule17+"|"+rule18);
+           Matcher m = p.matcher(input);
+           while (m.find()) {
+                   hasilRule= m.group();
+           }
+       }
+
+        if(listinput.size()==2){
+           Pattern p = Pattern.compile(rule1+"|"+rule3+"|"+rule5+"|"+rule7+"|"+rule8+"|"+rule9);
+           Matcher m = p.matcher(input);
+           while (m.find()) {
+                   hasilRule= m.group();
+           }
+       }
+       else if(listinput.size()==1){
+           Pattern p = Pattern.compile(rule10+"|"+rule11);
+           Matcher m = p.matcher(input);
+           while (m.find()) {
+                   hasilRule= m.group();
+           }
+       }
+       else{
+           Pattern p = Pattern.compile(rule2+"|"+rule4+"|"+rule6);
+           Matcher m = p.matcher(input);
+           while (m.find()) {
+                   hasilRule= m.group();
+           }
+       }
+       
+       listinput.clear();
+       return hasilRule;
    }
+}
    //==================================================================================================================================================
    
