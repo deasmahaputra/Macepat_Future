@@ -44,9 +44,10 @@ public class RegIob {
 //        String reg10 = "\\S*_I-SBAR+\\S*"; //is inside a subordinated clause.
 //        String reg11 = "\\S*_I-UCP+\\S*"; //is inside an unlike coordinated phrase.
 //        String coba = "\\*([\\w -]+) *\\I_\\";
+        String rule1="\\S*_B-NP+\\S*";
+       String rule2="\\S*_I-NP+\\S*";
         
-        
-        Pattern p = Pattern.compile("\\S*_I+\\S*");
+        Pattern p = Pattern.compile("\\S*-NP+\\S*");
         Matcher m = p.matcher(input);
         while(m.find()){
             list.add(m.group() + " ");

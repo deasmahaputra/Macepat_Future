@@ -10,6 +10,7 @@ import static Taxonomy.OntologyTranverserAPI2.kalimat;
 import static Taxonomy.OntologyTranverserAPI2.tag;
 import static Taxonomy.OntologyTranverserAPI2.wordsList;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -18,14 +19,14 @@ import java.util.ArrayList;
 public class CleaningFitur {
     
     public static ArrayList<String> wordsList = new ArrayList<String>();
-    
-    public String Clean (String WordTag){
-        String kalim = " ";
+    public static ArrayList<String> kalimat = new ArrayList<String>();
+    public List<String> Clean (String WordTag){
+        String kalim = "";
         String StopW=null;
         StopW="";
     
         String s = WordTag;
-        s=s.trim().replaceAll("\\s+", " ");
+        //s=s.trim().replaceAll("\\s+", " ");
         String[] words = s.split(" ");
         
         //tambahan
@@ -40,10 +41,15 @@ public class CleaningFitur {
             for (int j = 0; j < tag.length; j++) {
                 String sTag=tag[j];
                 if (wordsList.get(i).endsWith(tag[j])) {
-                    kalim=kalim+wordsList.get(i).replace(tag[j],"")+" ";
+                    kalim=kalim+wordsList.get(i).replace(tag[j]," ");
                     //kalimat.add(wordsList.get(i).replace(tag[j],"")+" ");
                     System.out.println(" ISI dari KALIMAT :" + kalimat );
-                }
+                    //String kalimato = kalim.trim().replaceAll("\\s+", " ");
+                    String getkalim[] = kalim.split(" ");
+                    for(int k = 0; k < getkalim.length; k++){
+                        kalimat.add(getkalim[k]);
+                    }
+                 }
             }
         }
         
@@ -54,6 +60,6 @@ public class CleaningFitur {
         
     
     
-    return kalim;
+    return kalimat;
     }
 }

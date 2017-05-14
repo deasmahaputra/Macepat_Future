@@ -33,11 +33,19 @@ public class akurasi {
     
     public double precPrediksi(double benar, double terekstrak) {
         nilai=(benar/terekstrak)*100;
+        
+        System.out.println("ISI Jumlah Benar :" + benar);
+        System.out.println("Fitur yang Terekstrak :" + terekstrak);
+        System.out.println("Nilainya : " + nilai);
         return nilai;
     }
     
     public double recPrediksi(double benar, double datafit) {
         nilai=(benar/datafit)*100;
+        
+        System.out.println("ISI Jumlah Benar Recall Prediksi :" + benar);
+        System.out.println("Fitur Sebenarnya :" + datafit);
+        System.out.println("Nilainya : " + nilai);
         return nilai;
     }
 }

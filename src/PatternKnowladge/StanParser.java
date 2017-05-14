@@ -19,11 +19,11 @@ import java.util.List;
  * @author cahyadi
  */
 public class StanParser {
-    public static String[] tag = {
+    public static String[] tag = { "_I-ADJP", "_I-ADVP", "_I-CONJP", "_I-INTJ", "_I-LST", "_I-NP", "_I-PP", "_I-PRT", "_I-SBAR", "_I-UCP", "_I-VP", "_B-NP",
         "_CC","_CD","_DT","_EX","_FW","_IN","_JJ","_JJR","_JJS","_LS","_MD","_NN","_NNS","_NNP","_NNPS","_PDT","_POS","_PRP","_PRP$","_RB","_RBR","_RBS","_RP","_SYM","_TO","_UH","_VB","_VBD","_VBG","_VBN","_VBP","_VBZ","_WDT","_WP","_WP$","_WRB","_#","_$","_.","_,","_:","_(","_)","_`","_'"
     };
     public static String[] tagiob = {
-        "_I-ADJP", "_I-ADVP", "_I-CONJP", "_I-INTJ", "_I-LST", "_I-NP", "_I-PP", "_I-PRT", "_I-SBAR", "_I-UCP", "_I-VP"
+        "_I-ADJP", "_I-ADVP", "_I-CONJP", "_I-INTJ", "_I-LST", "_I-NP", "_I-PP", "_I-PRT", "_I-SBAR", "_I-UCP", "_I-VP", "_B-NP"
     };
     Tree subtree;
     public static ArrayList<String> wordsList = new ArrayList<String>();
@@ -40,7 +40,7 @@ public class StanParser {
     private final LexicalizedParser parser = LexicalizedParser.loadModel(PCG_MODEL);
     
     //mendapatkan tree
-    public Tree parse(String str, String iob) {
+    public Tree parse(String str) {
         tokens=null;
         wordsList.clear();
         //String iob = " ";
@@ -49,17 +49,17 @@ public class StanParser {
         String kalimat="";
         s=s.trim().replaceAll("\\s+", " ");
         String[] words = s.split(" ");
-        String bio = iob;
+        //String bio = iob;
         String kalimatBio = " ";
-        bio= bio.trim().replaceAll("\\s+", " ");
-        String[] biowords = bio.split(" ");
+        //bio= bio.trim().replaceAll("\\s+", " ");
+        //String[] biowords = bio.split(" ");
         
         for (String word : words) {
             wordsList.add(word);
         }
-        for(String bioword : biowords){
-            wordsListbio.add(bioword);
-        }
+//        for(String bioword : biowords){
+//            wordsListbio.add(bioword);
+//        }
         //menghilangkan tag pada input
         for (int i = 0; i < wordsList.size(); i++) {
             String sList=wordsList.get(i);
@@ -94,6 +94,33 @@ public class StanParser {
     
     //mendapatkan NP dgn maks 3 kata
     public static List<String> GetNounPhrases(Tree parse)
+    {
+        phraseList.clear();
+        for (Tree subtree: parse)
+        {
+          String np = "";
+          //ambil yg memiliki tag NP dan maks 3 kata
+          if(subtree.label().value().equals("NP"))
+          {
+            if(subtree.getLeaves().size()<=3){
+                //menggabungkan kata yg ada pada subtree NP
+                for(int it=0; it<subtree.getLeaves().size(); it++){
+                    np=np+subtree.getLeaves().get(it).toString()+" ";
+                }
+                //
+                //System.out.println("NP : "+subtree.getChildrenAsList());
+                np=np.trim().replaceAll("\\s+", " ");
+                //System.out.println("Hasil loop np : "+np);
+                //phraseList.add(subtree.getLeaves().toString());
+                phraseList.add(np);
+            }
+          }
+          //
+        }
+        return phraseList;
+    }
+    
+     public static List<String> GetNP(Tree parse)
     {
         phraseList.clear();
         for (Tree subtree: parse)
@@ -206,5 +233,28 @@ public class StanParser {
         typed = gs.typedDependenciesCCprocessed(true);
         
         return typed;
+    }
+    
+    public List<String> NPFitur (String kalimat){
+        ArrayList<String> hasil = new ArrayList<>();
+        kalimat=kalimat.trim().replaceAll("\\s+"," ");
+        String[] tamp = kalimat.split(" ");
+        String rep2 = "";
+        //String hasil = " ";
+        for(int i = 0; i< tamp.length; i++){
+            if(tamp[i].endsWith("I-NP")){
+                //hasil = tamp[i];
+                String rep = tamp[i].replaceAll("_I-NP", "");
+                
+                hasil.add(rep);
+            }
+            else if(tamp[i].endsWith("B-NP")){
+                rep2 = tamp[i].replaceAll("_B-NP", "");
+                hasil.add(rep2);
+            }
+        }
+        
+        System.out.println("hasulnya adalah = " + hasil);
+    return hasil ;
     }
 }

@@ -242,22 +242,28 @@ public class Fitur {
     //get fitur untuk stanford parser. cek NP dengan corpus
     public ArrayList<String> getFiturParser(String kandidat,ArrayList<String> listCorp){
         //tambahan
+        
+        
         listKandidat.clear();
         listFitur.clear();
         
         listKandidat.add(kandidat);
-        
-        //untuk ngecek NP stanford parser dengan corpus
+       
+        //untuk ngecek NP stanford parser dengan expert judgedment
         for (int i = 0; i < listKandidat.size(); i++) {
             for (int j = 0; j < listCorp.size(); j++) {
+                 System.out.println("Kandidatnya" + listKandidat);
+                        System.out.println("corpusnya" + listCorp.get(j));
+                        System.out.println("Hasilnya" + listFitur);
                 if (listKandidat.get(i).equalsIgnoreCase(listCorp.get(j).trim().replaceAll("\\s+", " "))){
                     if ( (Collections.frequency(listFitur, listKandidat.get(i))) < 1 ){
                         listFitur.add(listKandidat.get(i));
+                       
                     } 
                 }
             }
         }
-        System.out.println("List Corpus : " + listCorp);
+        //System.out.println("List Fitur : " + listFitur);
         return listFitur;
     }
     

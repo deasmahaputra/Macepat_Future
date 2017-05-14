@@ -27,8 +27,8 @@ public class OntologyTranverserAPI extends Object{
     
     public static ArrayList<String> listkalimat = new ArrayList<>();
     //public static List<String> kalimat = new ArrayList<>();
-     static final String inputFileName = "resources/ontology/Handphone_Taxonomy.owl";
-    static String camNS = "http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#";
+     static final String inputFileName = "resources/ontology/Taxonomy_all.owl";
+    static String camNS = "http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-34#";
     public static String tamp[] = {"Memory", "camera"};
     
         
@@ -50,18 +50,24 @@ public class OntologyTranverserAPI extends Object{
     m.read( in, "" );
         
     // list the subclass of class Camera
-    OntClass camera = m.getOntClass( camNS + "Entertainment" );
+    OntClass camera = m.getOntClass( camNS + "camera" );
 	for (ExtendedIterator i = camera.listSubClasses(); i.hasNext(); ) {
   		OntClass c = (OntClass) i.next();
   		System.out.println( "Subclass : " + c.getLocalName());
+//                OntClass general = m.getOntClass( camNS + "camera" );
+//                for(ExtendedIterator j = general.listSubClasses(); j.hasNext();){
+//                    OntClass d = (OntClass) j.next();
+//                    System.out.println( "Subclass camera : " + d.getLocalName());
+//                }
                 listkalimat.add(c.getLocalName());
                 for(int j = 0 ; j < listkalimat.size(); j++ ){
                     for (int k = 0; k < tamp.length; k++){
                 if(listkalimat.get(j).equalsIgnoreCase(tamp[k])){
                     //System.out.println("Ibunya adalah "+c.getSuperClass());
                     String hasil = c.getSuperClass().toString();
-                    String tampungan = hasil.replaceAll("http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#"," ");
+                    String tampungan = hasil.replaceAll("http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-34#"," ");
                     System.out.println("Hasilnya adalah : " + tampungan);
+                    //System.out.println("Hasil2 : " + );
                 }else{
                     //System.out.println("Tidak ada COCOK");
                 }

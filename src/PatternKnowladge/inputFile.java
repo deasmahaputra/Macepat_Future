@@ -247,6 +247,7 @@ public class inputFile {
                 fiturds.add(fiturkalimat.trim().replaceAll("\\s+", " "));
             }
         }
+        
         return fiturds;
     }
     

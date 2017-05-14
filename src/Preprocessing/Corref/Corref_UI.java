@@ -262,7 +262,7 @@ public class Corref_UI extends javax.swing.JFrame {
       //}
       try
         {
-            PrintWriter pr = new PrintWriter("output/Diaper Champ.txt");    
+            PrintWriter pr = new PrintWriter("output/data.txt");    
 
             for (int j=0; j<outputnya.size() ; j++)
             {

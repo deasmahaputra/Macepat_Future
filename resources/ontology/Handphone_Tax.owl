@@ -185,14 +185,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Memory -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Memory">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Quad -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Quad">
@@ -290,7 +282,7 @@
     <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Enterteinment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
     </owl:Class>
     
 
@@ -298,7 +290,39 @@
     <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#canon -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#canon">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#flash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#flash">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#g3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#g3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#canon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#lense -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#lense">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#nikon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#nikon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
     </owl:Class>
     
 
@@ -306,7 +330,7 @@
     <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#picture -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#picture">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
     </owl:Class>
     
 
@@ -316,6 +340,41 @@
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#Flash/LED">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#General"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#canon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#canon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#nikon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#nikon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#picture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#picture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21#camera"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

@@ -11,7 +11,7 @@ import java.util.HashSet;
 
 /**
  *
- * @author cahyadi
+ * @author DEAS
  */
 public class grouping {
     public static ArrayList<String> getSynonyms ( WordNetDatabase database , String word){

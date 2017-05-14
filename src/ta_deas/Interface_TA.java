@@ -9,8 +9,10 @@ package ta_deas;
 //import Preprocessing.Lemmatization;
 import PatternKnowladge.inputFile;
 import PatternKnowladge.Fitur;
+import PatternKnowladge.FiturNpParser;
 import PatternKnowladge.GetDataRule;
 import PatternKnowladge.GetRule;
+import PatternKnowladge.NpPherase;
 import PatternKnowladge.Opini;
 import PatternKnowladge.Rule;
 import PatternKnowladge.Rule2;
@@ -70,6 +72,7 @@ public class Interface_TA extends javax.swing.JFrame {
     //public static ArrayList<String> inputan = new ArrayList<String>();
     public static ArrayList<String> inputanFull = new ArrayList<String>();
     public static List<String> nounPhrases = new ArrayList<String>();
+    public static List<String> TypeParser = new ArrayList<String>();
     public static ArrayList<String> corpus = new ArrayList<String>();
     public static ArrayList<String> corpuspre = new ArrayList<String>();
     public static ArrayList<String> dataFit = new ArrayList<String>();
@@ -82,6 +85,8 @@ public class Interface_TA extends javax.swing.JFrame {
     public static ArrayList<String> kalimatIob = new ArrayList<String>();
     public static ArrayList<String> ngram = new ArrayList<String>();
     public static ArrayList<String> ngram2 = new ArrayList<String>();
+    public static ArrayList<String> ngramIob = new ArrayList<String>();
+    public static ArrayList<String> ngramIob2 = new ArrayList<String>();
     public static ArrayList<String> listFit = new ArrayList<String>();
     public static ArrayList<String> noDobel = new ArrayList<String>();
     public static ArrayList<String> listKandidat = new ArrayList<String>();
@@ -116,6 +121,7 @@ public class Interface_TA extends javax.swing.JFrame {
     
     public static ArrayList<String> inputan = new ArrayList<String>();
     public static List<String> inputann = new ArrayList<>();
+    public static String regIOB = "";
 
     CallFile call = new CallFile();
     Stopwords sw = new Stopwords();
@@ -142,874 +148,11 @@ public class Interface_TA extends javax.swing.JFrame {
     grouping group = new grouping();
     CleaningFitur clnfit = new CleaningFitur();
     FiturTaxonomy fitTax = new FiturTaxonomy();
+    NpPherase npParser = new NpPherase();
+    FiturNpParser fiturnpphrase = new FiturNpParser();
     
     
-//    public void getRuleSelected(){
-//        
-//        GetDataRule getdatarule = GetDataRule.getInstance();
-//        String rulesatua = jComboBoxRule1a4.getSelectedItem().toString();
-//        String rulesatub = jComboBoxRule1b4.getSelectedItem().toString();
-//        String rulesatuc = jComboBoxRule1C4.getSelectedItem().toString();
-//        String ruleduaa = jComboBoxRule2a4.getSelectedItem().toString();
-//        String ruleduab = jComboBoxRule2b4.getSelectedItem().toString();
-//        String ruleduac = jComboBoxRule2c4.getSelectedItem().toString();
-//        String ruletigaa = jComboBoxRule3a4.getSelectedItem().toString();
-//        String ruletigab = jComboBoxRule3b4.getSelectedItem().toString();
-//        String ruletigac = jComboBoxRule3c4.getSelectedItem().toString();
-//        String ruleempata = jComboBoxRule4a4.getSelectedItem().toString();
-//        String ruleempatb = jComboBoxRule4b4.getSelectedItem().toString();
-//        String ruleempatc = jComboBoxRule4c4.getSelectedItem().toString();
-//        String rulelimaa = jComboBoxRule5a4.getSelectedItem().toString();
-//        String rulelimab = jComboBoxRule5b4.getSelectedItem().toString();
-//        String rulelimac = jComboBoxRule5c4.getSelectedItem().toString();
-//        String ruleenama = jComboBoxRule6a4.getSelectedItem().toString();
-//        String ruleenamb = jComboBoxRule6b4.getSelectedItem().toString();
-//        String ruleenamc = jComboBoxRule6c4.getSelectedItem().toString();
-//        String ruletujuha = jComboBoxRule7a4.getSelectedItem().toString();
-//        String ruletujuhb = jComboBoxRule7b4.getSelectedItem().toString();
-//        String ruletujuhc = jComboBoxRule7c4.getSelectedItem().toString();
-//        String ruledelapana = jComboBoxRule8a4.getSelectedItem().toString();
-//        String ruledelapanb = jComboBoxRule8b4.getSelectedItem().toString();
-//        String ruledelapanc = jComboBoxRule8c4.getSelectedItem().toString();
-//        String rulesembilana = jComboBoxRule9a4.getSelectedItem().toString();
-//        String rulesembilanb = jComboBoxRule9b4.getSelectedItem().toString();
-//        String rulesembilanc = jComboBoxRule9c4.getSelectedItem().toString();
-//        String rulesepuluha = jComboBoxRule10a4.getSelectedItem().toString();
-//        String rulesepuluhb = jComboBoxRule10b4.getSelectedItem().toString();
-//        String rulesepuluhc = jComboBoxRule10c4.getSelectedItem().toString();
-//        String rulesebelasa = jComboBoxRule11a4.getSelectedItem().toString();
-//        String rulesebelasb = jComboBoxRule11b4.getSelectedItem().toString();
-//        String rulesebelasc = jComboBoxRule11c4.getSelectedItem().toString();
-//        String ruleduabelasa = jComboBoxRule12a4.getSelectedItem().toString();
-//        String ruleduabelasb = jComboBoxRule12b4.getSelectedItem().toString();
-//        String ruleduabelasc = jComboBoxRule12c4.getSelectedItem().toString();
-//        String ruletigabelasa = jComboBoxRule13a4.getSelectedItem().toString();
-//        String ruletigabelasb = jComboBoxRule13b4.getSelectedItem().toString();
-//        String ruletigabelasc = jComboBoxRule13c4.getSelectedItem().toString();
-//        String ruleempatbelasa = jComboBoxRule14a4.getSelectedItem().toString();
-//        String ruleempatbelasb = jComboBoxRule14b4.getSelectedItem().toString();
-//        String ruleempatbelasc = jComboBoxRule14c4.getSelectedItem().toString();
-//        String rulelimabelasa = jComboBoxRule15a4.getSelectedItem().toString();
-//        String rulelimabelasb = jComboBoxRule15b4.getSelectedItem().toString();
-//        String rulelimabelasc = jComboBoxRule15c4.getSelectedItem().toString();
-//        String ruleenambelasa = jComboBoxRule16a4.getSelectedItem().toString();
-//        String ruleenambelasb = jComboBoxRule16b4.getSelectedItem().toString();
-//        String ruleenambelasc = jComboBoxRule16c4.getSelectedItem().toString();
-//        String ruletujuhbelasa = jComboBoxRule17a4.getSelectedItem().toString();
-//        String ruletujuhbelasb = jComboBoxRule17b4.getSelectedItem().toString();
-//        String ruletujuhbelasc = jComboBoxRule17c4.getSelectedItem().toString();
-//        String ruledelapanbelasa = jComboBoxRule18a4.getSelectedItem().toString();
-//        String ruledelapanbelasb = jComboBoxRule18b4.getSelectedItem().toString();
-//        String ruledelapanbelasc = jComboBoxRule18c4.getSelectedItem().toString();
-//        
-//        if(rulesatua == "-"){
-//            getdatarule.setRule1A1(" ");
-//            getdatarule.setRule1A2(" ");
-//            getdatarule.setRule1a3(" ");
-//        
-//        }else{
-//            String[] temp1a;
-//            String delimiter = " ";
-//
-//            temp1a = rulesatua.split(delimiter);
-//            getdatarule.setRule1A1(temp1a[0].toString());
-//            getdatarule.setRule1A2(temp1a[1].toString());
-//            getdatarule.setRule1a3(temp1a[2].toString());
-//        }
-//        if(rulesatub == "-"){
-//            getdatarule.setRule1B1(" ");
-//            getdatarule.setRule1B2(" ");
-//            getdatarule.setRule1B3(" ");
-//        
-//        }else{
-//            String[] temp1b;
-//            String delimiter = " ";
-//
-//            temp1b = rulesatub.split(delimiter);
-//            getdatarule.setRule1B1(temp1b[0].toString());
-//            getdatarule.setRule1B2(temp1b[1].toString());
-//            getdatarule.setRule1B3(temp1b[2].toString());
-//        }
-//        
-//        if(rulesatuc == "-"){
-//            getdatarule.setRule1C1(" ");
-//            getdatarule.setRule1C2(" ");
-//            getdatarule.setRule1C3(" ");
-//        
-//        }else{
-//            String[] temp1c;
-//            String delimiter = " ";
-//
-//            temp1c = rulesatuc.split(delimiter);
-//            getdatarule.setRule1C1(temp1c[0].toString());
-//            getdatarule.setRule1C2(temp1c[1].toString());
-//            getdatarule.setRule1C3(temp1c[2].toString());
-//        }
-//        
-//        if(ruleduaa == "-"){
-//            getdatarule.setRule2A1(" ");
-//            getdatarule.setRule2A2(" ");
-//            getdatarule.setRule2a3(" ");
-//        
-//        }else{
-//            String[] temp2a;
-//            String delimiter = " ";
-//
-//            temp2a = ruleduaa.split(delimiter);
-//            getdatarule.setRule2A1(temp2a[0].toString());
-//            getdatarule.setRule2A2(temp2a[1].toString());
-//            getdatarule.setRule2a3(temp2a[2].toString());
-//        }
-//        
-//        if(ruleduab == "-"){
-//            getdatarule.setRule2B1(" ");
-//            getdatarule.setRule2B2(" ");
-//            getdatarule.setRule2B3(" ");
-//        
-//        }else{
-//            String[] temp2b;
-//            String delimiter = " ";
-//
-//            temp2b = ruleduab.split(delimiter);
-//            getdatarule.setRule2B1(temp2b[0].toString());
-//            getdatarule.setRule2B2(temp2b[1].toString());
-//            getdatarule.setRule2B3(temp2b[2].toString());
-//        }
-//        
-//        if(ruleduac == "-"){
-//            getdatarule.setRule2C1(" ");
-//            getdatarule.setRule2C2(" ");
-//            getdatarule.setRule2C3(" ");
-//        
-//        }else{
-//            String[] temp2c;
-//            String delimiter = " ";
-//
-//            temp2c = ruleduac.split(delimiter);
-//            getdatarule.setRule2C1(temp2c[0].toString());
-//            getdatarule.setRule2C2(temp2c[1].toString());
-//            getdatarule.setRule2C3(temp2c[2].toString());
-//        }
-//        
-//        if(ruletigaa == "-"){
-//            getdatarule.setRule3A1(" ");
-//            getdatarule.setRule3A2(" ");
-//            getdatarule.setRule3a3(" ");
-//        
-//        }else{
-//            String[] temp3a;
-//            String delimiter = " ";
-//
-//            temp3a = ruletigaa.split(delimiter);
-//            getdatarule.setRule3A1(temp3a[0].toString());
-//            getdatarule.setRule3A2(temp3a[1].toString());
-//            getdatarule.setRule3a3(temp3a[2].toString());
-//        }
-//        
-//        if(ruletigab == "-"){
-//            getdatarule.setRule3B1(" ");
-//            getdatarule.setRule3B2(" ");
-//            getdatarule.setRule3B3(" ");
-//        
-//        }else{
-//            String[] temp3b;
-//            String delimiter = " ";
-//
-//            temp3b = ruletigab.split(delimiter);
-//            getdatarule.setRule3B1(temp3b[0].toString());
-//            getdatarule.setRule3B2(temp3b[1].toString());
-//            getdatarule.setRule3B3(temp3b[2].toString());
-//        }
-//        
-//        if(ruletigac == "-"){
-//            getdatarule.setRule3C1(" ");
-//            getdatarule.setRule3C2(" ");
-//            getdatarule.setRule3C3(" ");
-//        
-//        }else{
-//            String[] temp3c;
-//            String delimiter = " ";
-//
-//            temp3c = ruletigac.split(delimiter);
-//            getdatarule.setRule3C1(temp3c[0].toString());
-//            getdatarule.setRule3C2(temp3c[1].toString());
-//            getdatarule.setRule3C3(temp3c[2].toString());
-//        }
-//        
-//        if(ruleempata == "-"){
-//            getdatarule.setRule4A1(" ");
-//            getdatarule.setRule4A2(" ");
-//            getdatarule.setRule4a3(" ");
-//        
-//        }else{
-//            String[] temp4a;
-//            String delimiter = " ";
-//
-//            temp4a = ruleempata.split(delimiter);
-//            getdatarule.setRule4A1(temp4a[0].toString());
-//            getdatarule.setRule4A2(temp4a[1].toString());
-//            getdatarule.setRule4a3(temp4a[2].toString());
-//        }
-//        
-//         if(ruleempatb == "-"){
-//            getdatarule.setRule4B1(" ");
-//            getdatarule.setRule4B2(" ");
-//            getdatarule.setRule4B3(" ");
-//        
-//        }else{
-//            String[] temp4b;
-//            String delimiter = " ";
-//
-//            temp4b = ruleempatb.split(delimiter);
-//            getdatarule.setRule4B1(temp4b[0].toString());
-//            getdatarule.setRule4B2(temp4b[1].toString());
-//            getdatarule.setRule4B3(temp4b[2].toString());
-//        }
-//         
-//        if(ruleempatc == "-"){
-//            getdatarule.setRule4C1(" ");
-//            getdatarule.setRule4C2(" ");
-//            getdatarule.setRule4C3(" ");
-//        
-//        }else{
-//            String[] temp4c;
-//            String delimiter = " ";
-//
-//            temp4c = ruleempatc.split(delimiter);
-//            getdatarule.setRule4C1(temp4c[0].toString());
-//            getdatarule.setRule4C2(temp4c[1].toString());
-//            getdatarule.setRule4C3(temp4c[2].toString());
-//        }
-//        
-//        if(rulelimaa == "-"){
-//            getdatarule.setRule5A1(" ");
-//            getdatarule.setRule5A2(" ");
-//            getdatarule.setRule5a3(" ");
-//        
-//        }else{
-//            String[] temp5a;
-//            String delimiter = " ";
-//
-//            temp5a = rulelimaa.split(delimiter);
-//            getdatarule.setRule5A1(temp5a[0].toString());
-//            getdatarule.setRule5A2(temp5a[1].toString());
-//            getdatarule.setRule5a3(temp5a[2].toString());
-//        }
-//        
-//        if(rulelimab == "-"){
-//            getdatarule.setRule5B1(" ");
-//            getdatarule.setRule5B2(" ");
-//            getdatarule.setRule5B3(" ");
-//        
-//        }else{
-//            String[] temp5b;
-//            String delimiter = " ";
-//
-//            temp5b = rulelimab.split(delimiter);
-//            getdatarule.setRule5B1(temp5b[0].toString());
-//            getdatarule.setRule5B2(temp5b[1].toString());
-//            getdatarule.setRule5B3(temp5b[2].toString());
-//        }
-//        
-//        if(rulelimac == "-"){
-//            getdatarule.setRule5C1(" ");
-//            getdatarule.setRule5C2(" ");
-//            getdatarule.setRule5C3(" ");
-//        
-//        }else{
-//            String[] temp5c;
-//            String delimiter = " ";
-//
-//            temp5c = rulelimac.split(delimiter);
-//            getdatarule.setRule5C1(temp5c[0].toString());
-//            getdatarule.setRule5C2(temp5c[1].toString());
-//            getdatarule.setRule5C3(temp5c[2].toString());
-//        }
-//        
-//        if(ruleenama == "-"){
-//            getdatarule.setRule6A1(" ");
-//            getdatarule.setRule6A2(" ");
-//            getdatarule.setRule6a3(" ");
-//        
-//        }else{
-//            String[] temp6a;
-//            String delimiter = " ";
-//
-//            temp6a = ruleenama.split(delimiter);
-//            getdatarule.setRule6A1(temp6a[0].toString());
-//            getdatarule.setRule6A2(temp6a[1].toString());
-//            getdatarule.setRule6a3(temp6a[2].toString());
-//        }
-//        
-//        if(ruleenamb == "-"){
-//            getdatarule.setRule6B1(" ");
-//            getdatarule.setRule6B2(" ");
-//            getdatarule.setRule6B3(" ");
-//        
-//        }else{
-//            String[] temp6b;
-//            String delimiter = " ";
-//
-//            temp6b = ruleenamb.split(delimiter);
-//            getdatarule.setRule6B1(temp6b[0].toString());
-//            getdatarule.setRule6B2(temp6b[1].toString());
-//            getdatarule.setRule6B3(temp6b[2].toString());
-//        }
-//        
-//        if(ruleenamc == "-"){
-//            getdatarule.setRule6C1(" ");
-//            getdatarule.setRule6C2(" ");
-//            getdatarule.setRule6C3(" ");
-//        
-//        }else{
-//            String[] temp6c;
-//            String delimiter = " ";
-//
-//            temp6c = ruleenamc.split(delimiter);
-//            getdatarule.setRule6C1(temp6c[0].toString());
-//            getdatarule.setRule6C2(temp6c[1].toString());
-//            getdatarule.setRule6C3(temp6c[2].toString());
-//        }
-//        
-//        if(ruletujuha == "-"){
-//            getdatarule.setRule7A1(" ");
-//            getdatarule.setRule7A2(" ");
-//            getdatarule.setRule7a3(" ");
-//        
-//        }else{
-//            String[] temp7a;
-//            String delimiter = " ";
-//
-//            temp7a = ruletujuha.split(delimiter);
-//            getdatarule.setRule7A1(temp7a[0].toString());
-//            getdatarule.setRule7A2(temp7a[1].toString());
-//            getdatarule.setRule7a3(temp7a[2].toString());
-//        }
-//        
-//        if(ruletujuhb == "-"){
-//            getdatarule.setRule7B1(" ");
-//            getdatarule.setRule7B2(" ");
-//            getdatarule.setRule7B3(" ");
-//        
-//        }else{
-//            String[] temp7b;
-//            String delimiter = " ";
-//
-//            temp7b = ruletujuhb.split(delimiter);
-//            getdatarule.setRule7B1(temp7b[0].toString());
-//            getdatarule.setRule7B2(temp7b[1].toString());
-//            getdatarule.setRule7B3(temp7b[2].toString());
-//        }
-//        
-//        if(ruletujuhc == "-"){
-//            getdatarule.setRule7C1(" ");
-//            getdatarule.setRule7C2(" ");
-//            getdatarule.setRule7C3(" ");
-//        
-//        }else{
-//            String[] temp7c;
-//            String delimiter = " ";
-//
-//            temp7c = ruletujuhc.split(delimiter);
-//            getdatarule.setRule7C1(temp7c[0].toString());
-//            getdatarule.setRule7C2(temp7c[1].toString());
-//            getdatarule.setRule7C3(temp7c[2].toString());
-//        }
-//        
-//        if(ruledelapana == "-"){
-//            getdatarule.setRule8A1(" ");
-//            getdatarule.setRule8A2(" ");
-//            getdatarule.setRule8a3(" ");
-//        
-//        }else{
-//            String[] temp8a;
-//            String delimiter = " ";
-//
-//            temp8a = ruledelapana.split(delimiter);
-//            getdatarule.setRule8A1(temp8a[0].toString());
-//            getdatarule.setRule8A2(temp8a[1].toString());
-//            getdatarule.setRule8a3(temp8a[2].toString());
-//        }
-//        
-//        if(ruledelapanb == "-"){
-//            getdatarule.setRule8B1(" ");
-//            getdatarule.setRule8B2(" ");
-//            getdatarule.setRule8B3(" ");
-//        
-//        }else{
-//            String[] temp8b;
-//            String delimiter = " ";
-//
-//            temp8b = ruledelapanb.split(delimiter);
-//            getdatarule.setRule8B1(temp8b[0].toString());
-//            getdatarule.setRule8B2(temp8b[1].toString());
-//            getdatarule.setRule8B3(temp8b[2].toString());
-//        }
-//        
-//        if(ruledelapanc == "-"){
-//            getdatarule.setRule8C1(" ");
-//            getdatarule.setRule8C2(" ");
-//            getdatarule.setRule8C3(" ");
-//        
-//        }else{
-//            String[] temp8c;
-//            String delimiter = " ";
-//
-//            temp8c = ruledelapanc.split(delimiter);
-//            getdatarule.setRule8C1(temp8c[0].toString());
-//            getdatarule.setRule8C2(temp8c[1].toString());
-//            getdatarule.setRule8C3(temp8c[2].toString());
-//        }
-//        
-//        if(rulesembilana == "-"){
-//            getdatarule.setRule9A1(" ");
-//            getdatarule.setRule9A2(" ");
-//            getdatarule.setRule9a3(" ");
-//        
-//        }else{
-//            String[] temp9a;
-//            String delimiter = " ";
-//
-//            temp9a = rulesembilana.split(delimiter);
-//            getdatarule.setRule9A1(temp9a[0].toString());
-//            getdatarule.setRule9A2(temp9a[1].toString());
-//            getdatarule.setRule9a3(temp9a[2].toString());
-//        }
-//        
-//        if(rulesembilanb == "-"){
-//            getdatarule.setRule9B1(" ");
-//            getdatarule.setRule9B2(" ");
-//            getdatarule.setRule9B3(" ");
-//        
-//        }else{
-//            String[] temp9b;
-//            String delimiter = " ";
-//
-//            temp9b = rulesembilanb.split(delimiter);
-//            getdatarule.setRule9B1(temp9b[0].toString());
-//            getdatarule.setRule9B2(temp9b[1].toString());
-//            getdatarule.setRule9B3(temp9b[2].toString());
-//        }
-//        
-//        if(rulesembilanc == "-"){
-//            getdatarule.setRule9C1(" ");
-//            getdatarule.setRule9C2(" ");
-//            getdatarule.setRule9C3(" ");
-//        
-//        }else{
-//            String[] temp9c;
-//            String delimiter = " ";
-//
-//            temp9c = rulesembilanc.split(delimiter);
-//            getdatarule.setRule9C1(temp9c[0].toString());
-//            getdatarule.setRule9C2(temp9c[1].toString());
-//            getdatarule.setRule9C3(temp9c[2].toString());
-//        }
-//        
-//        if(rulesepuluha == "-"){
-//            getdatarule.setRule10A1(" ");
-//            getdatarule.setRule10A2(" ");
-//            getdatarule.setRule10a3(" ");
-//        
-//        }else{
-//            String[] temp10a;
-//            String delimiter = " ";
-//
-//            temp10a = rulesepuluha.split(delimiter);
-//            getdatarule.setRule10A1(temp10a[0].toString());
-//            getdatarule.setRule10A2(temp10a[1].toString());
-//            getdatarule.setRule10a3(temp10a[2].toString());
-//        }
-//        
-//        if(rulesepuluhb == "-"){
-//            getdatarule.setRule10B1(" ");
-//            getdatarule.setRule10B2(" ");
-//            getdatarule.setRule10B3(" ");
-//        
-//        }else{
-//            String[] temp10b;
-//            String delimiter = " ";
-//
-//            temp10b = rulesepuluhb.split(delimiter);
-//            getdatarule.setRule10B1(temp10b[0].toString());
-//            getdatarule.setRule10B2(temp10b[1].toString());
-//            getdatarule.setRule10B3(temp10b[2].toString());
-//        }
-//        
-//        if(rulesepuluhc == "-"){
-//            getdatarule.setRule10C1(" ");
-//            getdatarule.setRule10C2(" ");
-//            getdatarule.setRule10C3(" ");
-//        
-//        }else{
-//            String[] temp10c;
-//            String delimiter = " ";
-//
-//            temp10c = rulesepuluhc.split(delimiter);
-//            getdatarule.setRule10A1(temp10c[0].toString());
-//            getdatarule.setRule10A2(temp10c[1].toString());
-//            getdatarule.setRule10a3(temp10c[2].toString());
-//        }
-//        
-//        if(rulesebelasa == "-"){
-//            getdatarule.setRule11A1(" ");
-//            getdatarule.setRule11A2(" ");
-//            getdatarule.setRule11a3(" ");
-//        
-//        }else{
-//            String[] temp11a;
-//            String delimiter = " ";
-//
-//            temp11a = rulesebelasa.split(delimiter);
-//            getdatarule.setRule11A1(temp11a[0].toString());
-//            getdatarule.setRule11A2(temp11a[1].toString());
-//            getdatarule.setRule11a3(temp11a[2].toString());
-//        }
-//        
-//        if(rulesebelasb == "-"){
-//            getdatarule.setRule11B1(" ");
-//            getdatarule.setRule11B2(" ");
-//            getdatarule.setRule11B3(" ");
-//        
-//        }else{
-//            String[] temp11b;
-//            String delimiter = " ";
-//
-//            temp11b = rulesebelasb.split(delimiter);
-//            getdatarule.setRule11B1(temp11b[0].toString());
-//            getdatarule.setRule11B2(temp11b[1].toString());
-//            getdatarule.setRule11B3(temp11b[2].toString());
-//        }
-//        
-//        if(rulesebelasc == "-"){
-//            getdatarule.setRule11C1(" ");
-//            getdatarule.setRule11C2(" ");
-//            getdatarule.setRule11C3(" ");
-//        
-//        }else{
-//            String[] temp11c;
-//            String delimiter = " ";
-//
-//            temp11c = rulesebelasc.split(delimiter);
-//            getdatarule.setRule11C1(temp11c[0].toString());
-//            getdatarule.setRule11C2(temp11c[1].toString());
-//            getdatarule.setRule11C3(temp11c[2].toString());
-//        }
-//        
-//        if(ruleduabelasa == "-"){
-//            getdatarule.setRule12A1(" ");
-//            getdatarule.setRule12A2(" ");
-//            getdatarule.setRule12a3(" ");
-//        
-//        }else{
-//            String[] temp12a;
-//            String delimiter = " ";
-//
-//            temp12a = ruleduabelasa.split(delimiter);
-//            getdatarule.setRule12A1(temp12a[0].toString());
-//            getdatarule.setRule12A2(temp12a[1].toString());
-//            getdatarule.setRule12a3(temp12a[2].toString());
-//        }
-//        
-//        if(ruleduabelasb == "-"){
-//            getdatarule.setRule12B1(" ");
-//            getdatarule.setRule12B2(" ");
-//            getdatarule.setRule12B3(" ");
-//        
-//        }else{
-//            String[] temp12b;
-//            String delimiter = " ";
-//
-//            temp12b = ruleduabelasb.split(delimiter);
-//            getdatarule.setRule12B1(temp12b[0].toString());
-//            getdatarule.setRule12B2(temp12b[1].toString());
-//            getdatarule.setRule12B3(temp12b[2].toString());
-//        }
-//        
-//        if(ruleduabelasc == "-"){
-//            getdatarule.setRule12C1(" ");
-//            getdatarule.setRule12C2(" ");
-//            getdatarule.setRule12C3(" ");
-//        
-//        }else{
-//            String[] temp12c;
-//            String delimiter = " ";
-//
-//            temp12c = ruleduabelasc.split(delimiter);
-//            getdatarule.setRule12C1(temp12c[0].toString());
-//            getdatarule.setRule12C2(temp12c[1].toString());
-//            getdatarule.setRule12C3(temp12c[2].toString());
-//        }
-//        
-//        if(ruletigabelasa == "-"){
-//            getdatarule.setRule13A1(" ");
-//            getdatarule.setRule13A2(" ");
-//            getdatarule.setRule13a3(" ");
-//        
-//        }else{
-//            String[] temp13a;
-//            String delimiter = " ";
-//
-//            temp13a = ruletigabelasa.split(delimiter);
-//            getdatarule.setRule13A1(temp13a[0].toString());
-//            getdatarule.setRule13A2(temp13a[1].toString());
-//            getdatarule.setRule13a3(temp13a[2].toString());
-//        }
-//        
-//        if(ruletigabelasb == "-"){
-//            getdatarule.setRule13B1(" ");
-//            getdatarule.setRule13B2(" ");
-//            getdatarule.setRule13B3(" ");
-//        
-//        }else{
-//            String[] temp13b;
-//            String delimiter = " ";
-//
-//            temp13b = ruletigabelasb.split(delimiter);
-//            getdatarule.setRule13B1(temp13b[0].toString());
-//            getdatarule.setRule13B2(temp13b[1].toString());
-//            getdatarule.setRule13B3(temp13b[2].toString());
-//        }
-//        
-//        if(ruletigabelasc == "-"){
-//            getdatarule.setRule13C1(" ");
-//            getdatarule.setRule13C2(" ");
-//            getdatarule.setRule13C3(" ");
-//        
-//        }else{
-//            String[] temp13c;
-//            String delimiter = " ";
-//
-//            temp13c = ruletigabelasc.split(delimiter);
-//            getdatarule.setRule13C1(temp13c[0].toString());
-//            getdatarule.setRule13C2(temp13c[1].toString());
-//            getdatarule.setRule13C3(temp13c[2].toString());
-//        }
-//        
-//        if(ruleempatbelasa == "-"){
-//            getdatarule.setRule14A1(" ");
-//            getdatarule.setRule14A2(" ");
-//            getdatarule.setRule14a3(" ");
-//        
-//        }else{
-//            String[] temp14a;
-//            String delimiter = " ";
-//
-//            temp14a = ruleempatbelasa.split(delimiter);
-//            getdatarule.setRule14A1(temp14a[0].toString());
-//            getdatarule.setRule14A2(temp14a[1].toString());
-//            getdatarule.setRule14a3(temp14a[2].toString());
-//        }
-//        
-//        if(ruleempatbelasb == "-"){
-//            getdatarule.setRule14B1(" ");
-//            getdatarule.setRule14B2(" ");
-//            getdatarule.setRule14B3(" ");
-//        
-//        }else{
-//            String[] temp14b;
-//            String delimiter = " ";
-//
-//            temp14b = ruleempatbelasb.split(delimiter);
-//            getdatarule.setRule14B1(temp14b[0].toString());
-//            getdatarule.setRule14B2(temp14b[1].toString());
-//            getdatarule.setRule14B3(temp14b[2].toString());
-//        }
-//        
-//        if(ruleempatbelasc == "-"){
-//            getdatarule.setRule14C1(" ");
-//            getdatarule.setRule14C2(" ");
-//            getdatarule.setRule14C3(" ");
-//        
-//        }else{
-//            String[] temp14c;
-//            String delimiter = " ";
-//
-//            temp14c = ruleempatbelasc.split(delimiter);
-//            getdatarule.setRule14C1(temp14c[0].toString());
-//            getdatarule.setRule14C2(temp14c[1].toString());
-//            getdatarule.setRule14C3(temp14c[2].toString());
-//        }
-//        
-//        if(rulelimabelasa == "-"){
-//            getdatarule.setRule15A1(" ");
-//            getdatarule.setRule15A2(" ");
-//            getdatarule.setRule15a3(" ");
-//        
-//        }else{
-//            String[] temp15a;
-//            String delimiter = " ";
-//
-//            temp15a = rulelimabelasa.split(delimiter);
-//            getdatarule.setRule15A1(temp15a[0].toString());
-//            getdatarule.setRule15A2(temp15a[1].toString());
-//            getdatarule.setRule15a3(temp15a[2].toString());
-//        }
-//        
-//        if(rulelimabelasb == "-"){
-//            getdatarule.setRule15B1(" ");
-//            getdatarule.setRule15B2(" ");
-//            getdatarule.setRule15B3(" ");
-//        
-//        }else{
-//            String[] temp15b;
-//            String delimiter = " ";
-//
-//            temp15b = rulelimabelasb.split(delimiter);
-//            getdatarule.setRule15B1(temp15b[0].toString());
-//            getdatarule.setRule15B2(temp15b[1].toString());
-//            getdatarule.setRule15B3(temp15b[2].toString());
-//        }
-//        
-//        if(rulelimabelasc == "-"){
-//            getdatarule.setRule15C1(" ");
-//            getdatarule.setRule15C2(" ");
-//            getdatarule.setRule15C3(" ");
-//        
-//        }else{
-//            String[] temp15c;
-//            String delimiter = " ";
-//
-//            temp15c = rulelimabelasc.split(delimiter);
-//            getdatarule.setRule15C1(temp15c[0].toString());
-//            getdatarule.setRule15C2(temp15c[1].toString());
-//            getdatarule.setRule15C3(temp15c[2].toString());
-//        }
-//        
-//        if(ruleenambelasa == "-"){
-//            getdatarule.setRule16A1(" ");
-//            getdatarule.setRule16A2(" ");
-//            getdatarule.setRule16a3(" ");
-//        
-//        }else{
-//            String[] temp16a;
-//            String delimiter = " ";
-//
-//            temp16a = ruleenambelasa.split(delimiter);
-//            getdatarule.setRule16A1(temp16a[0].toString());
-//            getdatarule.setRule16A2(temp16a[1].toString());
-//            getdatarule.setRule16a3(temp16a[2].toString());
-//        }
-//        
-//        if(ruleenambelasb == "-"){
-//            getdatarule.setRule16B1(" ");
-//            getdatarule.setRule16B2(" ");
-//            getdatarule.setRule16B3(" ");
-//        
-//        }else{
-//            String[] temp16b;
-//            String delimiter = " ";
-//
-//            temp16b = ruleenambelasb.split(delimiter);
-//            getdatarule.setRule16B1(temp16b[0].toString());
-//            getdatarule.setRule16B2(temp16b[1].toString());
-//            getdatarule.setRule16B3(temp16b[2].toString());
-//        }
-//        
-//        if(ruleenambelasc == "-"){
-//            getdatarule.setRule16C1(" ");
-//            getdatarule.setRule16C2(" ");
-//            getdatarule.setRule16C3(" ");
-//        
-//        }else{
-//            String[] temp16c;
-//            String delimiter = " ";
-//
-//            temp16c = ruleenambelasc.split(delimiter);
-//            getdatarule.setRule16C1(temp16c[0].toString());
-//            getdatarule.setRule16C2(temp16c[1].toString());
-//            getdatarule.setRule16C3(temp16c[2].toString());
-//        }
-//        
-//        if(ruletujuhbelasa == "-"){
-//            getdatarule.setRule17A1(" ");
-//            getdatarule.setRule17A2(" ");
-//            getdatarule.setRule17a3(" ");
-//        
-//        }else{
-//            String[] temp17a;
-//            String delimiter = " ";
-//
-//            temp17a = ruletujuhbelasa.split(delimiter);
-//            getdatarule.setRule17A1(temp17a[0].toString());
-//            getdatarule.setRule17A2(temp17a[1].toString());
-//            getdatarule.setRule17a3(temp17a[2].toString());
-//        }
-//        
-//        if(ruletujuhbelasb == "-"){
-//            getdatarule.setRule17B1(" ");
-//            getdatarule.setRule17B2(" ");
-//            getdatarule.setRule17B3(" ");
-//        
-//        }else{
-//            String[] temp17b;
-//            String delimiter = " ";
-//
-//            temp17b = ruletujuhbelasb.split(delimiter);
-//            getdatarule.setRule17B1(temp17b[0].toString());
-//            getdatarule.setRule17B2(temp17b[1].toString());
-//            getdatarule.setRule17B3(temp17b[2].toString());
-//        }
-//        
-//         if(ruletujuhbelasc == "-"){
-//            getdatarule.setRule17C1(" ");
-//            getdatarule.setRule17C2(" ");
-//            getdatarule.setRule17C3(" ");
-//        
-//        }else{
-//            String[] temp17c;
-//            String delimiter = " ";
-//
-//            temp17c = ruletujuhbelasc.split(delimiter);
-//            getdatarule.setRule17C1(temp17c[0].toString());
-//            getdatarule.setRule17C2(temp17c[1].toString());
-//            getdatarule.setRule17C3(temp17c[2].toString());
-//        }
-//        
-//         if(ruledelapanbelasa == "-"){
-//            getdatarule.setRule18A1(" ");
-//            getdatarule.setRule18A2(" ");
-//            getdatarule.setRule18a3(" ");
-//        
-//        }else{
-//            String[] temp18a;
-//            String delimiter = " ";
-//
-//            temp18a = ruledelapanbelasa.split(delimiter);
-//            getdatarule.setRule18A1(temp18a[0].toString());
-//            getdatarule.setRule18A2(temp18a[1].toString());
-//            getdatarule.setRule18a3(temp18a[2].toString());
-//        }
-//         
-//         if(ruledelapanbelasb == "-"){
-//            getdatarule.setRule18B1(" ");
-//            getdatarule.setRule18B2(" ");
-//            getdatarule.setRule18B3(" ");
-//        
-//        }else{
-//            String[] temp18b;
-//            String delimiter = " ";
-//
-//            temp18b = ruledelapanbelasb.split(delimiter);
-//            getdatarule.setRule18B1(temp18b[0].toString());
-//            getdatarule.setRule18B2(temp18b[1].toString());
-//            getdatarule.setRule18B3(temp18b[2].toString());
-//        }
-//         
-//         if(ruledelapanbelasc == "-"){
-//            getdatarule.setRule18C1(" ");
-//            getdatarule.setRule18C2(" ");
-//            getdatarule.setRule18C3(" ");
-//        
-//        }else{
-//            String[] temp18c;
-//            String delimiter = " ";
-//
-//            temp18c = ruledelapanbelasc.split(delimiter);
-//            getdatarule.setRule18C1(temp18c[0].toString());
-//            getdatarule.setRule18C2(temp18c[1].toString());
-//            getdatarule.setRule18C3(temp18c[2].toString());
-//        }
+
         
     //}
     //CorreferenceResolution cr = new CorreferenceResolution();
@@ -1025,8 +168,9 @@ public class Interface_TA extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        Grouping = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -1041,7 +185,6 @@ public class Interface_TA extends javax.swing.JFrame {
         CheckLemma = new javax.swing.JCheckBox();
         CheckPT = new javax.swing.JCheckBox();
         CheckBC = new javax.swing.JCheckBox();
-        CheckCR = new javax.swing.JCheckBox();
         ButtonPreprocessing = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -1057,6 +200,8 @@ public class Interface_TA extends javax.swing.JFrame {
         jCheckBoxTaxonomy = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jNoun = new javax.swing.JCheckBox();
+        jCheckBoxnounPherase = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         AreaExtraksi = new javax.swing.JTextArea();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -1068,7 +213,6 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jAreaHasilExtraksi = new javax.swing.JTextArea();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -1103,6 +247,13 @@ public class Interface_TA extends javax.swing.JFrame {
         jArea = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jAreaAkurasi = new javax.swing.JTextArea();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jComboBoxGrouping = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextAreaHasilGrouping = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1201,7 +352,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Dataset", jPanel2);
+        Grouping.addTab("Dataset", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1233,8 +384,6 @@ public class Interface_TA extends javax.swing.JFrame {
 
         CheckBC.setText("BIO Chunking");
 
-        CheckCR.setText("Coreference Resolution");
-
         ButtonPreprocessing.setText("OK");
         ButtonPreprocessing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1254,17 +403,15 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(101, 101, 101)
                 .addComponent(CheckSW)
-                .addGap(51, 51, 51)
+                .addGap(71, 71, 71)
                 .addComponent(CheckLemma)
-                .addGap(51, 51, 51)
+                .addGap(55, 55, 55)
                 .addComponent(CheckPT)
-                .addGap(47, 47, 47)
+                .addGap(49, 49, 49)
                 .addComponent(CheckBC)
-                .addGap(34, 34, 34)
-                .addComponent(CheckCR)
-                .addGap(32, 32, 32)
+                .addGap(84, 84, 84)
                 .addComponent(ButtonPreprocessing)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
@@ -1279,7 +426,6 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addComponent(CheckLemma)
                     .addComponent(CheckPT)
                     .addComponent(CheckBC)
-                    .addComponent(CheckCR)
                     .addComponent(ButtonPreprocessing)
                     .addComponent(jButton2))
                 .addGap(40, 40, 40))
@@ -1329,7 +475,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Preprocessing", jPanel3);
+        Grouping.addTab("Preprocessing", jPanel3);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1372,6 +518,10 @@ public class Interface_TA extends javax.swing.JFrame {
             }
         });
 
+        jNoun.setText("Noun");
+
+        jCheckBoxnounPherase.setText("Noun Phrase");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -1381,15 +531,24 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(CheckRule)
-                    .addComponent(jCheckBoxTypeDepedency)
-                    .addComponent(jCheckBoxNpParser))
+                    .addComponent(jCheckBoxTypeDepedency))
                 .addGap(72, 72, 72)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jCheckBoxTaxonomy))
-                .addContainerGap(420, Short.MAX_VALUE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jCheckBoxTaxonomy)
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jNoun)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBoxNpParser)
+                                    .addComponent(jCheckBoxnounPherase, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1401,16 +560,18 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CheckRule)
-                    .addComponent(jCheckBoxTaxonomy))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxTypeDepedency)
+                    .addComponent(jCheckBoxTaxonomy)
+                    .addComponent(jCheckBoxNpParser)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxNpParser)
-                    .addComponent(jButton4))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(jCheckBoxTypeDepedency)
+                    .addComponent(jNoun))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jCheckBoxnounPherase))
+                .addGap(19, 19, 19))
         );
 
         AreaExtraksi.setColumns(20);
@@ -1429,8 +590,8 @@ public class Interface_TA extends javax.swing.JFrame {
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1463,11 +624,11 @@ public class Interface_TA extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
                 .addGap(48, 48, 48))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1485,7 +646,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Extraction", jPanel6);
+        Grouping.addTab("Extraction", jPanel6);
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HASIL EKSTRAKSI", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
@@ -1523,8 +684,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Feature & Opinion", jPanel9);
-        jTabbedPane1.addTab("Evaluation", jTabbedPane2);
+        Grouping.addTab("Feature & Opinion", jPanel9);
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Akurasi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
@@ -1769,22 +929,100 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Evaluation Result", jPanel12);
+        Grouping.addTab("Evaluation Result", jPanel12);
+
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Grouping", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        jComboBoxGrouping.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxGroupingActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Pilih Fitur :");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(27, 27, 27)
+                .addComponent(jComboBoxGrouping, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(501, 501, 501))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxGrouping, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder("Hasil Grouping"));
+
+        jTextAreaHasilGrouping.setColumns(20);
+        jTextAreaHasilGrouping.setRows(5);
+        jScrollPane5.setViewportView(jTextAreaHasilGrouping);
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1075, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        Grouping.addTab("Grouping", jPanel16);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(Grouping)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(Grouping, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1797,7 +1035,7 @@ public class Interface_TA extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
@@ -1908,6 +1146,10 @@ public class Interface_TA extends javax.swing.JFrame {
 
             // 3 Grams
             ngram2=Ng.PNgrams2(kalimatPre.get(i));
+            
+//            ngramIob = Ng.PNgrams(kalimatIob.get(i));
+//            ngramIob2 = Ng.PNgrams2(kalimatIob.get(i));
+            
 
             if(CheckRule.isSelected()){
                 parseRule parserule = parseRule.getInstance();
@@ -2002,7 +1244,7 @@ public class Interface_TA extends javax.swing.JFrame {
                         //output.tulis(opi2);
 
                         AreaExtraksi.append(opi2);
-                        //AreaExtraksi.append("\n");
+                        AreaExtraksi.append("\n");
                         //cleaningTagging = ontolog.cleaningTag(opi2);
                         //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
                         //cleaningTagging = clnfit.Clean(opi2);
@@ -2016,6 +1258,7 @@ public class Interface_TA extends javax.swing.JFrame {
                             //listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
                             if(jCheckBoxTaxonomy.isSelected()){
                                 listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+                                //listFit=Fit.getFitur(opi2, corpuspre);
                             }else{
                                 listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
                             }
@@ -2089,7 +1332,6 @@ public class Interface_TA extends javax.swing.JFrame {
                 }
                 
                 output.tulis("Hasil Rule : "+fiturkalimat);
-                AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur : "+fiturkalimat);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
@@ -2100,26 +1342,328 @@ public class Interface_TA extends javax.swing.JFrame {
                 AreaExtraksi.append("\n");
                 
             }
+            
+            
+//================================================NOUN PHRASE==============================================================
+            if(jCheckBoxnounPherase.isSelected()){
+                ArrayList<String> fiturdanopini = new ArrayList<>();
+                String fiturkalimat = "";
+                String fituropinikalimat = "";
+                
+                AreaExtraksi.append(i+1+". Hasil Type Dependencies :");
+                AreaExtraksi.append("\n");
+                
+                //typeD=Parser.typeDP(Ps.removetag(kalimatPre.get(i)));
+                //String hasiliob = npParser.NPPherase(kalimatIob.get(i));
+                typeD=Parser.typeDP(inputan.get(i));
+                AreaExtraksi.append(kalimatIob.get(i));
+                TypeParser = Parser.NPFitur(kalimatIob.get(i));
+                //TypeParser = clnfit.Clean(kalimatIob.get(i));
+                System.out.println("HASIL PEMBERSIHAN" + TypeParser);
+                AreaExtraksi.append("\n");
+                String tampfitur = " ";
+                //String cleaningTagging = ontolog.cleaningTag(kalimatIob.get(i));
+                //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
+                //jTextArea15.append("\n");
+                //output.tulis("Fitur dan opini : "+typeD);
+                for(int it=0;it<TypeParser.size();it++){
+//                    AreaExtraksi.append(typeD.get(it));
+//                    AreaExtraksi.append("\n");
+                    String[] words = TypeParser.get(it).split(" ");
+//
+                    String tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
+                    String tdOpini=words[0].trim().replaceAll("\\s+", " "); //mengambil opini
+                    
+                    //System.out.println("TDFITUR : " + tdFitur);
+
+                    //if(jRadioButton1.isSelected()){
+                        //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
+                    tampfitur = TypeParser.get(it);
+                    System.out.println("ISINYA TAMP PARSER :" + tampfitur);
+//                         if(jCheckBoxTaxonomy.isSelected()){
+//                                listFit = fitTax.taxoFitur(tdFitur, corpuspre);
+//                            }else{
+//                                listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
+//                            }
+                    //}
+                    //listFit = fitTax.taxoFitur(TypeParser.get(it), corpuspre);
+                     listFit=Fit.getFiturParser(TypeParser.get(it), corpuspre); //dengan corpus
+                     //listFit=fiturnpphrase.npFitur(TypeParser.get(it), corpuspre); //dengan corpus
+                    
+                    /*
+                    else if(jRadioButton2.isSelected()){
+                        listFit=Fit.getFiturParserNoCorp(tdFitur); //cek fitur tanpa corpus
+                    }
+                    */
+                        
+                    if(!listFit.isEmpty()){
+
+                        //ambil pasangan fitur dan opini nya
+                        //tmpFitOp.clear();
+                        ArrayList<String> tmpFitOp = new ArrayList<String>();
+                        tmpFitOp.add(tdFitur);
+                        tmpFitOp.add(tdOpini);
+                        String fituropini = tdFitur;
+                        System.out.println("Dari FiturOpini : " + fituropini);
+                        if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+                            fiturdanopini.add(fituropini);
+                            
+                        }
+                        if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+                            listFitOp.add(tmpFitOp);
+                        }
+                        
+
+                        for (int l = 0; l < listFit.size(); l++) {
+                            String fitr=listFit.get(l);
+                            
+                            if(fitr!=null){                                
+                                fiturkalimat = fiturkalimat + fitr + ",";
+                                System.out.println("PERHITUNGANNYA : " + Collections.frequency(temp1, fitr));
+                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+                                    temp1.add(fitr);
+                                    //temp2.add(fitr);
+                                    //output.tulis("TD = "+fitr);
+                                } 
+                            }
+                        }
+                    }
+                }
+                if(fiturkalimat != ""){
+                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+                }
+                else{
+                    fiturkalimat = "-";
+                }
+                
+                if(!fiturdanopini.isEmpty()){
+                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
+                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
+                    }
+                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+                }
+                else{
+                    fituropinikalimat = "-";
+                }
+                
+                output.tulis("Hasil Parser : "+fiturkalimat);
+                AreaExtraksi.append("Fitur : "+fiturkalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("=============================================");
+                AreaExtraksi.append("\n");
+            
+            }
+            
+            
+//=======================================================================================================
+//            if(jNoun.isSelected()){
+//                String cleaningTagging = ontolog.cleaningTag(kalimatIob.get(i));
+//                //getRuleSelected();
+//                ArrayList<String> fiturdanopini = new ArrayList<>();
+//                AreaExtraksi.append(i+1+". Hasil Rule :");
+//                AreaExtraksi.append("\n");
+//                output.tulis("Hasil Rule : ");
+//                AreaExtraksi.append(kalimatIob.get(i));
+//                AreaExtraksi.append("\n");
+//                String fiturkalimat = "";
+//                String fituropinikalimat = "";
+//                String hasiltaxonomy = "";
+//                //String cleaningTagging = " ";
+//                //2-gram ==========================================================
+//                for (int j = 0; j < ngramIob.size(); j++) {
+//                    for(int l = 0; l < ngram.size(); l++){
+//                    String opi=Parser.NPFitur(ngramIob.get(j));
+//                    if(opi!=null){
+//                        //hasil rule
+//                        //output.tulis(opi);
+//
+//                        
+//                        //cleaningTagging = ontolog.cleaningTag(opi);
+//                        
+//                        //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
+//                        //ambil opini dari ngram adj/adv
+//                        tmpOpini = Op.getToken(ngram.get(l));
+//
+//                        //pilih fitur
+//                        //if(jRadioButton1.isSelected()){
+//                            //listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
+//                            //}
+//                            //listFit = Fit.getFiturNoCorp(opi);
+//                            
+//                                listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+//                            
+//                            
+//                        /*else if(jRadioButton2.isSelected()){
+//                            listFit=Fit.getFiturNoCorp(opi); //tanpa corpus
+//                        }*/
+//
+//                        //pilih fitur
+//                        for (int k = 0; k < listFit.size(); k++) {
+//                            String fitr=listFit.get(k);
+//                            if(fitr!=null){
+//                                //fiturkalimat = fiturkalimat + fitr + ",";
+//
+//                                //masukkan opini pada list jika fitur dari 2-gram didapatkan
+//                                //pasangkan opini dengan fitur
+//                                if(!tmpOpini.isEmpty()){
+//                                    for(int count = 0; count < tmpOpini.size(); count++){
+//                                        //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+//                                        if(!fitr.contains(tmpOpini.get(count))){
+//                                            //tmpFitOp.clear();
+//                                            ArrayList<String> tmpFitOp = new ArrayList<String>();
+//                                            tmpFitOp.add(fitr);
+//                                            tmpFitOp.add(tmpOpini.get(count));
+//                                            if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+//                                                listFitOp.add(tmpFitOp);
+//                                                String fituropini = fitr + "-" + tmpOpini.get(count);
+//                                                fiturdanopini.add(fituropini);
+//                                            }
+//                                        }
+//                                    }
+//                                }
+//
+//                                //masukkan fitur ke list fitur
+//                                //System.out.println("Fitur : "+fitr);
+//                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+//                                    temp1.add(fitr);
+//                                    System.out.println("dari NOUN PHERASE TAMP 2 GRAM : " + temp1);
+//                                }
+//                                if ( (Collections.frequency(fiturrule, fitr)) < 1 ){
+//                                    fiturrule.add(fitr);
+//                                    System.out.println("dari NOUN PHERASE TAMP 2 GRAM Rule: " + fiturrule);
+//                                }
+//
+//                            }
+//                        }
+//                    }
+//                }
+//                }
+//                //3-gram ==========================================================
+//
+//                for (int j = 0; j < ngramIob2.size(); j++) {
+//                    for(int l = 0; l < ngram2.size(); l++){
+//                    String opi2=Parser.NPFitur(ngramIob2.get(j));
+//                    if(opi2!=null){
+//                        //output.tulis(opi2);
+//
+////                        AreaExtraksi.append(opi2);
+////                        AreaExtraksi.append("\n");
+//                        //cleaningTagging = ontolog.cleaningTag(opi2);
+//                        //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
+//                        //cleaningTagging = clnfit.Clean(opi2);
+//                        //ambil opini dari ngram adj/adv
+//                        tmpOpini = Op.getToken(ngram2.get(l));
+//
+//                        //pilih fitur
+//                        //if(jRadioButton1.isSelected()){
+//                            //listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
+//                            //}
+//                            //listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+//                            
+//                                listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+//                                //listFit=Fit.getFitur(opi2, corpuspre);
+//                            
+//                        /*else if(jRadioButton2.isSelected()){
+//                            listFit=Fit.getFiturNoCorp(opi2); //tanpa corpus
+//                        }*/
+//
+//                        for (int k = 0; k < listFit.size(); k++) {
+//                            String fitr=listFit.get(k);
+//                            if(fitr!=null){
+//                                //fiturkalimat = fiturkalimat + fitr + ",";
+//
+//                                //masukkan opini pada list jika fitur dari 3-gram didapatkan
+//                                //pasangkan opini dengan fitur
+//                                if(!tmpOpini.isEmpty()){
+//                                    for(int count = 0; count < tmpOpini.size(); count++){
+//                                        //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
+//                                        if(!fitr.contains(tmpOpini.get(count))){
+//                                            //tmpFitOp.clear();
+//                                            ArrayList<String> tmpFitOp = new ArrayList<String>();
+//                                            tmpFitOp.add(fitr);
+//                                            tmpFitOp.add(tmpOpini.get(count));
+//                                            if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+//                                                listFitOp.add(tmpFitOp);
+//                                                String fituropini = fitr + "-" + tmpOpini.get(count);
+//                                                fiturdanopini.add(fituropini);
+//                                            }
+//                                        }
+//                                    }
+//                                }
+//
+//                                    System.out.println("Fiturnya :" + fitr);
+//                                if ((Collections.frequency(temp2, fitr)) < 1 ){
+//                                    temp2.add(fitr);
+//                                    //output.tulis("dari rule 3gram = "+fitr);
+//                                }
+//                                if ((Collections.frequency(fiturrule, fitr)) < 1 ){
+//                                    fiturrule.add(fitr);
+//                                    System.out.print("dari rule 3gram = "+fitr);
+//                                    System.out.println("ISI RULE" + fiturrule);
+//                                }
+//                            }
+//                            //System.out.println("Fiturnya : "+fitr);
+//                        }
+//                         
+//                         //System.out.println("ISI RULE" + fiturrule);
+//                    }
+//                }
+//                }
+//                System.out.println("ISI RULE" + fiturrule);
+//                 //AreaExtraksi.append("ISI FITURRULE" + fiturrule.get(i));
+//                if(!fiturrule.isEmpty()){
+//                    
+//                    for(int cnt = 0; cnt < fiturrule.size(); cnt++){
+//                        fiturkalimat = fiturkalimat + fiturrule.get(cnt) + ",";
+//                    }
+//                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+//                }
+//                else{
+//                    fiturkalimat = "-";
+//                }
+//
+//                if(!fiturdanopini.isEmpty()){
+//                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
+//                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
+//                    }
+//                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+//                    
+//                }
+//                else{
+//                    fituropinikalimat = "-";
+//                }
+//                
+//                output.tulis("Hasil Rule : "+fiturkalimat);
+//                AreaExtraksi.append("Fitur : "+fiturkalimat);
+//                AreaExtraksi.append("\n");
+//                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+//                AreaExtraksi.append("\n");
+//                AreaExtraksi.append("Taxonomy : " + cleaningTagging);
+//                AreaExtraksi.append("\n");
+//                AreaExtraksi.append("=============================================");
+//                AreaExtraksi.append("\n");
+//            
+//            
+//            }
 //==============================================NP PARSER==============================================================================
             //NP PARSER CODE..
             if(jCheckBoxNpParser.isSelected()){
             ArrayList<String> fiturdanopini = new ArrayList<>();
                 String fiturkalimat = "";
                 String fituropinikalimat = "";
-                //for(int b = 0; b < kalimatIob.size(); b++){
-                    
                 
                 AreaExtraksi.append(i+1+". Hasil NP parser :");
                 AreaExtraksi.append("\n");
                 // Stanford Parser=================================================
                 //get tree
 
-                tree = Parser.parse(kalimatPre.get(i), kalimatIob.get(i));
+                tree = Parser.parse(kalimatPre.get(i));
                 List<Tree> leaves = tree.getLeaves();
                 for (Tree leaf : leaves) { 
                     Tree parent = leaf.parent(tree);
                     //System.out.print(leaf.label().value() + "-" + parent.label().value() + " ");
-                //}
                 }
                 //output.tulis("Tree = "+tree);
                 AreaExtraksi.append(tree.toString());
@@ -2312,6 +1856,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     fituropinikalimat = "-";
                 }
                 
+                
                 output.tulis("Hasil Nounphrase : "+fiturkalimat);
                 AreaExtraksi.append("Fitur : "+fiturkalimat);
                 AreaExtraksi.append("\n");
@@ -2319,7 +1864,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
                 AreaExtraksi.append("\n");
-            
+                //}
             }
             
             
@@ -2344,13 +1889,23 @@ public class Interface_TA extends javax.swing.JFrame {
                     AreaExtraksi.append(typeD.get(it));
                     AreaExtraksi.append("\n");
                     String[] words = typeD.get(it).split(" ");
-
+                    System.out.println("dari type depedency : " + typeD);
                     String tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
                     String tdOpini=words[1].trim().replaceAll("\\s+", " "); //mengambil opini
+                    
+                    System.out.println("TDFITUR : " + tdFitur);
 
                     //if(jRadioButton1.isSelected()){
-                        listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
+                        //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
+                        
+//                         if(jCheckBoxTaxonomy.isSelected()){
+//                                listFit = fitTax.taxoFitur(tdFitur, corpuspre);
+//                            }else{
+//                                listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
+//                            }
                     //}
+                     listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
+
                     
                     /*
                     else if(jRadioButton2.isSelected()){
@@ -2370,6 +1925,7 @@ public class Interface_TA extends javax.swing.JFrame {
                         if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
                             fiturdanopini.add(fituropini);
                         }
+                        System.out.println("PERHITUNGANNYA OP : " + Collections.frequency(listFitOp, tmpFitOp));
                         if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
                             listFitOp.add(tmpFitOp);
                         }
@@ -2380,9 +1936,10 @@ public class Interface_TA extends javax.swing.JFrame {
                             
                             if(fitr!=null){                                
                                 fiturkalimat = fiturkalimat + fitr + ",";
-                                
+                                System.out.println("PERHITUNGANNYA : " + Collections.frequency(temp1, fitr));
                                 if ( (Collections.frequency(temp1, fitr)) < 1 ){
                                     temp1.add(fitr);
+                                    
                                     //output.tulis("TD = "+fitr);
                                 } 
                             }
@@ -2446,7 +2003,10 @@ public class Interface_TA extends javax.swing.JFrame {
             //output.tulis("polaritas dengan Op.Lexicon = "+fp);
             
             //dengan skor dengan swn
+            System.out.println("LIST SWN :" + fixFit);
+            System.out.println("LIST SWN OP :" + listFitOp);
             polaritas = polar.getPolarSWN(fixFit,listFitOp);
+            
             //jTextArea17.append(i+1+"."+polaritas.toString());
             //jTextArea17.append("\n");
             
@@ -2644,6 +2204,9 @@ public class Interface_TA extends javax.swing.JFrame {
                 if(!dataFitPre.get(count).equalsIgnoreCase("-")){
                     //System.out.println(fiturkalimat.get(count)+" dan "+dataFitPre.get(count));
                     crt = crt+1;
+                   // for(int deas = 0; deas < dataFitPre.size(); deas++){
+                    System.out.println("ISI DATA FIT PRE :" + !dataFitPre.get(count).equalsIgnoreCase("-"));
+                   // }
                 }
             }
             if(!dataFitPre.get(count).equalsIgnoreCase("-")){
@@ -2666,6 +2229,9 @@ public class Interface_TA extends javax.swing.JFrame {
         f1scorePrediksi.setText(f1prediksi+"%");
         //==============================
         
+        System.out.println("ISI Jumlah Benar :" + crt);
+        System.out.println("Fitur yang Terekstrak :" + ext);
+         
         /*output.tulis("Datafit kalimat :");
         for(int count = 0; count < dataFitPre.size(); count++){
             output.tulis(dataFitPre.get(count));
@@ -2824,9 +2390,9 @@ public class Interface_TA extends javax.swing.JFrame {
         
         
         //grouping
-//        for(int l = 0; l< noDobel.size(); l++){
-//            jComboBox2.addItem(noDobel.get(l));
-//        }
+        for(int l = 0; l< noDobel.size(); l++){
+            jComboBoxGrouping.addItem(noDobel.get(l));
+        }
         
         //grouping
         for (int l = 0; l< noDobel.size(); l++){
@@ -2897,6 +2463,7 @@ public class Interface_TA extends javax.swing.JFrame {
             //String data = inputan.get(i);
             
             String result = ST.tagger(inputan.get(i));
+            String resultIob = " ";
             String tagging = ST.tagger(inputan.get(i));
             String lemanotag = lemma.lemmatizenotag(inputan.get(i));
             String stop = stopword.stopword(inputan.get(i));
@@ -2920,7 +2487,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 //
                 //            }
             //stopwords && POS TAG
-            if(CheckSW.isSelected() && CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
+            if(CheckSW.isSelected() && CheckPT.isSelected() && !CheckBC.isSelected()
                 && !CheckLemma.isSelected()){
                 result = ST.tagger(stop);
                 AreaSW.append(i + 1 + "." + inputan.get(i));
@@ -2932,8 +2499,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 //                AreaSW.append("Hasil Coba : " + stop);
             }
             //STOPWORD
-            if(CheckSW.isSelected() && !CheckPT.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
-                && !CheckLemma.isSelected()){
+            if(CheckSW.isSelected() && !CheckPT.isSelected() && !CheckBC.isSelected()){
                 result = stopword.stopword(inputan.get(i));
                 //String pt = ST.tagger(st);
                 //String stpt = stopword.stopwordwithTag(tag);
@@ -2948,7 +2514,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 //                AreaSW.append("Hasil Coba : " + stop);
             }
             //lemma
-            if(CheckLemma.isSelected() && !CheckBC.isSelected() && !CheckCR.isSelected()
+            if(CheckLemma.isSelected() && !CheckBC.isSelected() 
                 && !CheckSW.isSelected() && !CheckPT.isSelected()){
                 result = lemma.lemmatizenotag(inputan.get(i));
                 AreaSW.append(i + 1 + "." + inputan.get(i));
@@ -2985,7 +2551,7 @@ public class Interface_TA extends javax.swing.JFrame {
 //            }
 
 //=========================================CORREF RESOLUTION =========================================================
-             if(!CheckLemma.isSelected() && !CheckBC.isSelected() && CheckCR.isSelected()
+             if(!CheckLemma.isSelected() && !CheckBC.isSelected() 
                 && !CheckSW.isSelected() && !CheckPT.isSelected()){
                  
 //                 StringBuilder sb = new StringBuilder();
@@ -3017,7 +2583,7 @@ public class Interface_TA extends javax.swing.JFrame {
 //==========================================POS TAG ============================================================
 
                         if(CheckPT.isSelected() && !CheckSW.isSelected() && !CheckBC.isSelected()
-                                    && !CheckCR.isSelected() && !CheckLemma.isSelected()){
+                                     && !CheckLemma.isSelected()){
                                //String[] tampung = ST.tagger(inputan.get(i)).split("");
                                 FileWriter writer;
                                 String tamp = " ";
@@ -3048,7 +2614,7 @@ public class Interface_TA extends javax.swing.JFrame {
                             }
             //Lemma dan Stopwords
             if(CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() &&
-                !CheckCR.isSelected() && !CheckPT.isSelected()){
+                 !CheckPT.isSelected()){
                 result = sw.stopword(lemanotag);
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("Hasil Lemmatization :" + lemanotag);
@@ -3059,7 +2625,7 @@ public class Interface_TA extends javax.swing.JFrame {
             }
             //Post tag dan lemma
             if(CheckPT.isSelected() && CheckLemma.isSelected() && !CheckBC.isSelected()
-                && !CheckCR.isSelected() && !CheckSW.isSelected()){
+                && !CheckSW.isSelected()){
                 result = lemma.lemmatize(tagging);
                 String[] tampung = result.split("");
                 AreaSW.append(i + 1 + "." + inputan.get(i));
@@ -3082,51 +2648,52 @@ public class Interface_TA extends javax.swing.JFrame {
 
             }
             //POS TAG, LEMMA, STOPWORDS
-            if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected()
-                && !CheckCR.isSelected() ){
+            if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && !CheckBC.isSelected() ){
                 //String st = stopword.stopwordwithTag(tag);
-                String st = stopword.stopword(inputan.get(i));
-                String pt = ST.tagger(st);
-                String stpt = stopword.stopwordwithTag(tagging);
+                String lemmas = lemma.lemmatizenotag(inputan.get(i));
+                String st = stopword.stopword(lemmas);
+//                String pt = ST.tagger(st);
+//                String stpt = stopword.stopwordwithTag(tagging);
                 //String posstop = stopword.stopwordwithTag(tag);
-                result = lemma.lemmatize(stpt);
+                result = ST.tagger(st);
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
-                AreaSW.append("Hasil POS Tagging : " + tagging);
+                AreaSW.append("Hasil Lemmatization : " + lemmas);
                 AreaSW.append("\n");
-                AreaSW.append("Hasil Stopwords : " + stpt);
+                AreaSW.append("Hasil Stopwords : " + st);
                 AreaSW.append("\n");
-                AreaSW.append("Hasil Lemmatization : " + result);
+                AreaSW.append("Hasil POS Tagging : " + result);
                 AreaSW.append("\n");
 
             }
             //POS TAG, LEMMA, STOPWORDS, IOB
-            if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && CheckBC.isSelected()
-                && !CheckCR.isSelected() ){
+            if(CheckPT.isSelected() && CheckLemma.isSelected() && CheckSW.isSelected() && CheckBC.isSelected() ){
                 //String st = stopword.stopwordwithTag(tag);
                 
                 try {
                     String Bio = bio.Chunker(stop);
-                    String st = stopword.stopword(inputan.get(i));
-                    String pt = ST.tagger(st);
-                    String stpt = stopword.stopwordwithTag(tagging);
-                    result = lemma.lemmatize(stpt);
+                    
+                    
+                    //String stpt = stopword.stopwordwithTag(tagging);
+                    String lemmas = lemma.lemmatizenotag(inputan.get(i));
+                    String st = stopword.stopword(lemmas);
                     String[] tamp = new String[inputan.size()];
                     tamp = inputan.toArray(tamp);
-                    String iob = iobchunk.Iob(stop);
-                    reg = regbio.RegBio(iob);
+                    result = ST.tagger(st);
+                    regIOB = iobchunk.Iob(st);
+                    String iob = regbio.RegBio(regIOB);
                     
                     AreaSW.append(i + 1 + "." + inputan.get(i));
                     AreaSW.append("\n");
-                    AreaSW.append("Hasil POS Tagging : " + tagging);
+                    AreaSW.append("Hasil Lemmatization : " + lemmas);
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil Stopwords : " + st);
+                    AreaSW.append("\n");
+                    AreaSW.append("Hasil POS Tagging : " + result);
                     AreaSW.append("\n");
                     AreaSW.append("Hasil IOB :" + iob);
                     AreaSW.append("\n");
-                    AreaSW.append("IOB NP :" + reg);
-                    AreaSW.append("\n");
-                    AreaSW.append("Hasil Lemmatization : " + result);
-                    AreaSW.append("\n");
-                    AreaSW.append("Hasil Stopwords : " + stpt);
+                    AreaSW.append("IOB NP :" + regIOB);
                     AreaSW.append("\n");
                     
                 } catch (IOException ex) {
@@ -3137,7 +2704,7 @@ public class Interface_TA extends javax.swing.JFrame {
 
             }
 //=======================================BIO CHUNKING ========================================================
-            if(!CheckLemma.isSelected() && CheckBC.isSelected() && !CheckCR.isSelected()
+            if(!CheckLemma.isSelected() && CheckBC.isSelected()
                 && !CheckSW.isSelected() && !CheckPT.isSelected()){
                 //String reg = null;
                 String[] tamp = new String[inputan.size()];
@@ -3165,7 +2732,7 @@ public class Interface_TA extends javax.swing.JFrame {
             }
             
             kalimatPre.add(result);
-            kalimatIob.add(reg);
+            kalimatIob.add(regIOB);
             
             //
             //            if(CheckCR.isSelected()){
@@ -3225,6 +2792,24 @@ public class Interface_TA extends javax.swing.JFrame {
         AreaExtraksi.setText(" ");
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jComboBoxGroupingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxGroupingActionPerformed
+        jTextAreaHasilGrouping.setText("");
+        String value=jComboBoxGrouping.getSelectedItem().toString();
+        
+        if(value != "-"){
+            //grouping
+            jTextAreaHasilGrouping.append("Kelas : "+value);
+            jTextAreaHasilGrouping.append("\n");
+            for(int ax=0;ax<listGroup.size();ax++){
+                if(value == listGroup.get(ax).get(0)){
+                    jTextAreaHasilGrouping.append(""+listGroup.get(ax).get(1)+"##"+listGroup.get(ax).get(2));
+                    jTextAreaHasilGrouping.append("\n");
+                }
+                //System.out.println(listGroup.get(ax));
+            }
+        }
+    }//GEN-LAST:event_jComboBoxGroupingActionPerformed
+
     public void data() throws IOException{
     String value = ComboDataset.getSelectedItem().toString();
     //inputan = call.Inputan("resources/dataset/"+value+".txt");
@@ -3278,12 +2863,13 @@ public class Interface_TA extends javax.swing.JFrame {
     public static javax.swing.JTextArea AreaSW;
     private javax.swing.JButton ButtonPreprocessing;
     private javax.swing.JCheckBox CheckBC;
-    private javax.swing.JCheckBox CheckCR;
     private javax.swing.JCheckBox CheckLemma;
     private javax.swing.JCheckBox CheckPT;
     private javax.swing.JCheckBox CheckRule;
     private javax.swing.JCheckBox CheckSW;
     private javax.swing.JComboBox<String> ComboDataset;
+    private javax.swing.JTabbedPane Grouping;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel f1scoreFitur;
     private javax.swing.JLabel f1scorePolaritas;
     private javax.swing.JLabel f1scorePrediksi;
@@ -3297,6 +2883,8 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxNpParser;
     private javax.swing.JCheckBox jCheckBoxTaxonomy;
     private javax.swing.JCheckBox jCheckBoxTypeDepedency;
+    private javax.swing.JCheckBox jCheckBoxnounPherase;
+    private javax.swing.JComboBox<String> jComboBoxGrouping;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3312,8 +2900,10 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JCheckBox jNoun;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3321,7 +2911,10 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -3334,11 +2927,11 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTextArea jTextAreaHasilGrouping;
     private javax.swing.JTextArea jTextAreaRule;
     private javax.swing.JLabel jmlFiturDataset;
     private javax.swing.JLabel jmlFiturPolaritasTerekstak;

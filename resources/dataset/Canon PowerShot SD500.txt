@@ -1,26 +1,26 @@
 [t]SD500
-##We really enjoyed shooting with the Canon PowerShot SD500. 
+canon[+2]##We really enjoyed shooting with the Canon PowerShot SD500. 
 design[+2]##It has an exterior design that combines form and function more elegantly than any point-and-shoot we've ever tested. 
 image-processing system[+1]##A Digic II-powered image-processing system enables the SD500 to snap a limitless stream of 7-megapixel photos at a respectable clip, its start-up time is tops in its class, and it delivers decent photos when compared to its competition. 
 image[+2]##The SD500 rivals the Canon G6 in image quality. 
 ##I've had it for about a month and it is simply the best point-and-shoot your money can buy. 
-##I sincerely question the CNET reviewer's ability and/or their bias. 
+entertainment[+2]##I sincerely question the CNET reviewer's ability and/or their bias. 
 ##If you want something resembling a REAL and professional review before plunking down your $500.00, I suggest going to dpreview or dcresource and reading the reviews there. 
 ##I post under JTL at dcresource...check out my images if you want to see what this camera can do. 
 pricey[-1]##I thought given all the "10" reviews about this camera that I would buy it in spite of being a bit pricey. 
 LCD[-1]##I did see the review here and other places about a cracked LCD screen. 
-##I figured that the few people who reported that the LCD screen cracked on them was episodic and it would never happen to me. 
-##I received the SD500 on Monday, charged the battery and inserted the SD card that came with it, took a few pictures and waited until Thursday when the 2 GB SD card came that I had ordered. 
+general[+2]##I figured that the few people who reported that the LCD screen cracked on them was episodic and it would never happen to me. 
+battery[+2]##I received the SD500 on Monday, charged the battery and inserted the SD card that came with it, took a few pictures and waited until Thursday when the 2 GB SD card came that I had ordered. 
 ##The camera was sitting on my home desk waiting for the new digital card and the weekend for the first round of serious shooting. 
-##It was NOT dropped or sat on or subjected to any other trauma -- it just sat on my desk in my home office – where no one goes but me. 
+audio[+2]##It was NOT dropped or sat on or subjected to any other trauma -- it just sat on my desk in my home office – where no one goes but me. 
 LCD[-1]##When I went to put in the new SD Card I looked at the LCD Screen -- CRACKED-- and the fluid gave a Jackson Pollock type appearance to the screen, black and blue and purple blotches and streaks --useless. 
-##I have called Cannon they are sending me an RFA-- I will let you know if they treat me well or otherwise. 
+type[+2]##I have called Cannon they are sending me an RFA-- I will let you know if they treat me well or otherwise. 
 camera[+3]##This camera is truely superb.
 pictures[+2]##The startup time, quality of pictures and videos is outstanding.
 manual control[-1]##Some more manual control would have been nice. 
-##And shooters in low light should either select the iso manually and/or make sure that they don't shake much, as the camera's chip goes for detail over smoothness. 
-##Also ensure that the low light focusing LED is pointing at the point you want in focus - and use the focus lock (something the cnet reviewer was obviously not familiar with).
-##I have showed the pictures I have taken to many of my colleagues, alot of whom have expensive dslrs. 
+connectifity[+2]##And shooters in low light should either select the iso manually and/or make sure that they don't shake much, as the camera's chip goes for detail over smoothness. 
+media[+2]##Also ensure that the low light focusing LED is pointing at the point you want in focus - and use the focus lock (something the cnet reviewer was obviously not familiar with).
+accessories[+2]##I have showed the pictures I have taken to many of my colleagues, alot of whom have expensive dslrs. 
 pictures[+3]##They say that they are the best pictures they have ever see from a compact. 
 ##These are some shaky ones I took just after delivery:
 Canon[+2]## I went out and got the Canon today. 
@@ -29,22 +29,22 @@ picture[+3]##I've taken about hundred shot with the Canon, in varying lighting s
 quality[+2],Sony[-2]##The quality, detail and clarity is much better than the Sony in my opinion. 
 Canon[+3]##I did not conduct a rigorous test, but just took some identical shots in identical lighting with both cameras, and the Canon won hands down. 
 pictures[+2]##Sharper pictures. 
-##More detail. More natural color. 
+band[+2]##More detail. More natural color. 
 size[+3]##The Canon is very small, definitely pocket size, but still easy to hold firmly. 
 powers up[+3]##It powers up quickly, so you won't miss that quick shot. 
 ##I can't comment on most of the manual features of the camera because I've been shooting in auto mode, but based on my experience so far, manual adjustment, while available, won't be needed for most of the shots I will be taking. 
 ##Once I have the time, I plan to explore all the high end features of the camera, but for now, I can't comment intelligently or fairly. 
 flash[-2]##The only knock I have is that the flash is underpowered. 
-##This is a common problem with all ultra compacts, but I think I will probably go out and buy an external flash at some point. 
-##A few of my indoor shots could have benefited from a stronger flash, but even those shots were not all that bad. 
+keypad[+2]##This is a common problem with all ultra compacts, but I think I will probably go out and buy an external flash at some point. 
+voice[+2]##A few of my indoor shots could have benefited from a stronger flash, but even those shots were not all that bad. 
 image[+2]##Good image quality. 
-##I expected more from a 7MP sensor and a Digic II processor. 
-##Lacking a high speed/sports mode is something I'll never understand in a camera of this caliber and price. 
-##You don't have a shutter or aperture priority mode...so the lack of a high speed program is a total dealbreaker for me.
+dimension[+2]##I expected more from a 7MP sensor and a Digic II processor. 
+depth[+2]##Lacking a high speed/sports mode is something I'll never understand in a camera of this caliber and price. 
+height[+2]##You don't have a shutter or aperture priority mode...so the lack of a high speed program is a total dealbreaker for me.
 pics[+2],user interface[+2],battery charger[+2]##All I have to say is that the pics I get with my SD500 are both rich and color and high in detail, the user interface is awesome, the battery charger is tiny and super light and SD cards are relatively cheap and getting cheaper all the time.
-##I have had the SD500 for less than one week. 
+weight[+2]##I have had the SD500 for less than one week. 
 LCD[-1]##After reading reviews of LCD problems, cracked, black blobs etc, I figured that it was probably a very limited problem. 
-##Wrong, except that my problems are different. 
+width[+2]##Wrong, except that my problems are different. 
 ##Camera has been treated with kid gloves since day one. 
 ##Stored in a padded case. 
 ##Never abused. 
