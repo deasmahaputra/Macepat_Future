@@ -37,7 +37,9 @@ import Preprocessing.Stopwords;
 import Preprocessing.getData;
 import Taxonomy.CleaningFitur;
 import Taxonomy.FiturTaxonomy;
+import Taxonomy.OntologyTranverserAPI;
 import Taxonomy.OntologyTranverserAPI2;
+import Taxonomy.TaxnoClean;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 import edu.stanford.nlp.trees.Tree;
 import java.io.BufferedWriter;
@@ -141,6 +143,7 @@ public class Interface_TA extends javax.swing.JFrame {
     inputFile input = new inputFile();
     IobChunk iobchunk = new IobChunk();
     OntologyTranverserAPI2 ontolog = new OntologyTranverserAPI2();
+    OntologyTranverserAPI ontolog2 = new OntologyTranverserAPI();
 //    GetRule ruleget = new GetRule();
     RegIob regbio = new RegIob();
     akurasi akrs= new akurasi();
@@ -150,6 +153,7 @@ public class Interface_TA extends javax.swing.JFrame {
     FiturTaxonomy fitTax = new FiturTaxonomy();
     NpPherase npParser = new NpPherase();
     FiturNpParser fiturnpphrase = new FiturNpParser();
+    TaxnoClean taxnoclean = new TaxnoClean();
     
     
 
@@ -200,7 +204,6 @@ public class Interface_TA extends javax.swing.JFrame {
         jCheckBoxTaxonomy = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jNoun = new javax.swing.JCheckBox();
         jCheckBoxnounPherase = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         AreaExtraksi = new javax.swing.JTextArea();
@@ -518,8 +521,6 @@ public class Interface_TA extends javax.swing.JFrame {
             }
         });
 
-        jNoun.setText("Noun");
-
         jCheckBoxnounPherase.setText("Noun Phrase");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -539,15 +540,12 @@ public class Interface_TA extends javax.swing.JFrame {
                         .addComponent(jCheckBoxTaxonomy)
                         .addGap(53, 53, 53)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jNoun)
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBoxNpParser)
-                                    .addComponent(jCheckBoxnounPherase, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jCheckBoxNpParser)
+                            .addComponent(jCheckBoxnounPherase, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -566,11 +564,9 @@ public class Interface_TA extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBoxTypeDepedency)
-                    .addComponent(jNoun))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
                     .addComponent(jCheckBoxnounPherase))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
+                .addComponent(jButton4)
                 .addGap(19, 19, 19))
         );
 
@@ -1187,6 +1183,7 @@ public class Interface_TA extends javax.swing.JFrame {
                             //listFit = Fit.getFiturNoCorp(opi);
                             if(jCheckBoxTaxonomy.isSelected()){
                                 listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
+                                //listFit=Fit.getFiturParser(cleaningTagging, corpuspre);
                             }else{
                                 listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
                             }
@@ -1259,6 +1256,7 @@ public class Interface_TA extends javax.swing.JFrame {
                             if(jCheckBoxTaxonomy.isSelected()){
                                 listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
                                 //listFit=Fit.getFitur(opi2, corpuspre);
+                                //listFit=Fit.getFiturParser(cleaningTagging, corpuspre);
                             }else{
                                 listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
                             }
@@ -1355,9 +1353,18 @@ public class Interface_TA extends javax.swing.JFrame {
                 
                 //typeD=Parser.typeDP(Ps.removetag(kalimatPre.get(i)));
                 //String hasiliob = npParser.NPPherase(kalimatIob.get(i));
-                typeD=Parser.typeDP(inputan.get(i));
+                //typeD=Parser.typeDP(inputan.get(i));
                 AreaExtraksi.append(kalimatIob.get(i));
+                String taxo = ontolog.cleaningTag(kalimatIob.get(i));
+                
+               //if(jCheckBoxTaxonomy.isSelected()){
+                                
+                                //System.out.println("Hasil taxonomy = " + TypeParser);
+                            //}else{
                 TypeParser = Parser.NPFitur(kalimatIob.get(i));
+                            //}
+                //TypeParser = Parser.NPFitur(kalimatIob.get(i));
+                
                 //TypeParser = clnfit.Clean(kalimatIob.get(i));
                 System.out.println("HASIL PEMBERSIHAN" + TypeParser);
                 AreaExtraksi.append("\n");
@@ -1366,19 +1373,23 @@ public class Interface_TA extends javax.swing.JFrame {
                 //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
                 //jTextArea15.append("\n");
                 //output.tulis("Fitur dan opini : "+typeD);
+                String tdFitur = "";
+                String tdOpini = "";
+                String tampParser = "";
                 for(int it=0;it<TypeParser.size();it++){
 //                    AreaExtraksi.append(typeD.get(it));
 //                    AreaExtraksi.append("\n");
+                    tampParser = TypeParser.get(it);
                     String[] words = TypeParser.get(it).split(" ");
 //
-                    String tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
-                    String tdOpini=words[0].trim().replaceAll("\\s+", " "); //mengambil opini
-                    
+                    tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
+                    tdOpini=words[0].trim().replaceAll("\\s+", " "); //mengambil opini
+                
                     //System.out.println("TDFITUR : " + tdFitur);
 
                     //if(jRadioButton1.isSelected()){
                         //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
-                    tampfitur = TypeParser.get(it);
+                    //tampfitur = TypeParser.get(it);
                     System.out.println("ISINYA TAMP PARSER :" + tampfitur);
 //                         if(jCheckBoxTaxonomy.isSelected()){
 //                                listFit = fitTax.taxoFitur(tdFitur, corpuspre);
@@ -1386,8 +1397,14 @@ public class Interface_TA extends javax.swing.JFrame {
 //                                listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
 //                            }
                     //}
+                    //String tapparser = TypeParser.get(it);
                     //listFit = fitTax.taxoFitur(TypeParser.get(it), corpuspre);
-                     listFit=Fit.getFiturParser(TypeParser.get(it), corpuspre); //dengan corpus
+                            if(jCheckBoxTaxonomy.isSelected()){
+                                listFit = fitTax.taxoFitur(taxo, corpuspre);
+                            }else{
+                                listFit=Fit.getFiturParser(tampParser, corpuspre); 
+                            }
+                     //listFit=Fit.getFiturParser(TypeParser.get(it), corpuspre); //dengan corpus
                      //listFit=fiturnpphrase.npFitur(TypeParser.get(it), corpuspre); //dengan corpus
                     
                     /*
@@ -1395,7 +1412,7 @@ public class Interface_TA extends javax.swing.JFrame {
                         listFit=Fit.getFiturParserNoCorp(tdFitur); //cek fitur tanpa corpus
                     }
                     */
-                        
+                
                     if(!listFit.isEmpty()){
 
                         //ambil pasangan fitur dan opini nya
@@ -1413,28 +1430,45 @@ public class Interface_TA extends javax.swing.JFrame {
                             listFitOp.add(tmpFitOp);
                         }
                         
-
+                    }
                         for (int l = 0; l < listFit.size(); l++) {
                             String fitr=listFit.get(l);
                             
                             if(fitr!=null){                                
                                 fiturkalimat = fiturkalimat + fitr + ",";
-                                System.out.println("PERHITUNGANNYA : " + Collections.frequency(temp1, fitr));
+                                System.out.println("isi fitur kalimat : " + fitr);
                                 if ( (Collections.frequency(temp1, fitr)) < 1 ){
                                     temp1.add(fitr);
                                     //temp2.add(fitr);
                                     //output.tulis("TD = "+fitr);
                                 } 
+                                if ((Collections.frequency(fiturrule, fitr)) < 1 ){
+                                    fiturrule.add(fitr);
+                                    System.out.print("dari rule 3gram = "+fitr);
+                                    System.out.println("ISI RULE" + fiturrule);
+                                }
                             }
                         }
                     }
-                }
-                if(fiturkalimat != ""){
+                
+//                if(fiturkalimat != ""){
+//                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+//                }
+//                else{
+//                    fiturkalimat = "-";
+//                }
+
+                if(!fiturrule.isEmpty()){
+                    
+                    for(int cnt = 0; cnt < fiturrule.size(); cnt++){
+                        fiturkalimat = fiturkalimat + fiturrule.get(cnt) + ",";
+                    }
                     fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
                 }
                 else{
                     fiturkalimat = "-";
                 }
+
                 
                 if(!fiturdanopini.isEmpty()){
                     for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
@@ -1451,207 +1485,21 @@ public class Interface_TA extends javax.swing.JFrame {
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
                 AreaExtraksi.append("\n");
+                AreaExtraksi.append("Taxonomynta : "+ taxo);
+                AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
                 AreaExtraksi.append("\n");
             
             }
             
             
-//=======================================================================================================
-//            if(jNoun.isSelected()){
-//                String cleaningTagging = ontolog.cleaningTag(kalimatIob.get(i));
-//                //getRuleSelected();
-//                ArrayList<String> fiturdanopini = new ArrayList<>();
-//                AreaExtraksi.append(i+1+". Hasil Rule :");
-//                AreaExtraksi.append("\n");
-//                output.tulis("Hasil Rule : ");
-//                AreaExtraksi.append(kalimatIob.get(i));
-//                AreaExtraksi.append("\n");
-//                String fiturkalimat = "";
-//                String fituropinikalimat = "";
-//                String hasiltaxonomy = "";
-//                //String cleaningTagging = " ";
-//                //2-gram ==========================================================
-//                for (int j = 0; j < ngramIob.size(); j++) {
-//                    for(int l = 0; l < ngram.size(); l++){
-//                    String opi=Parser.NPFitur(ngramIob.get(j));
-//                    if(opi!=null){
-//                        //hasil rule
-//                        //output.tulis(opi);
-//
-//                        
-//                        //cleaningTagging = ontolog.cleaningTag(opi);
-//                        
-//                        //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
-//                        //ambil opini dari ngram adj/adv
-//                        tmpOpini = Op.getToken(ngram.get(l));
-//
-//                        //pilih fitur
-//                        //if(jRadioButton1.isSelected()){
-//                            //listFit=Fit.getFitur(opi, corpuspre); //dengan corpus
-//                            //}
-//                            //listFit = Fit.getFiturNoCorp(opi);
-//                            
-//                                listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
-//                            
-//                            
-//                        /*else if(jRadioButton2.isSelected()){
-//                            listFit=Fit.getFiturNoCorp(opi); //tanpa corpus
-//                        }*/
-//
-//                        //pilih fitur
-//                        for (int k = 0; k < listFit.size(); k++) {
-//                            String fitr=listFit.get(k);
-//                            if(fitr!=null){
-//                                //fiturkalimat = fiturkalimat + fitr + ",";
-//
-//                                //masukkan opini pada list jika fitur dari 2-gram didapatkan
-//                                //pasangkan opini dengan fitur
-//                                if(!tmpOpini.isEmpty()){
-//                                    for(int count = 0; count < tmpOpini.size(); count++){
-//                                        //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
-//                                        if(!fitr.contains(tmpOpini.get(count))){
-//                                            //tmpFitOp.clear();
-//                                            ArrayList<String> tmpFitOp = new ArrayList<String>();
-//                                            tmpFitOp.add(fitr);
-//                                            tmpFitOp.add(tmpOpini.get(count));
-//                                            if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
-//                                                listFitOp.add(tmpFitOp);
-//                                                String fituropini = fitr + "-" + tmpOpini.get(count);
-//                                                fiturdanopini.add(fituropini);
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//
-//                                //masukkan fitur ke list fitur
-//                                //System.out.println("Fitur : "+fitr);
-//                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
-//                                    temp1.add(fitr);
-//                                    System.out.println("dari NOUN PHERASE TAMP 2 GRAM : " + temp1);
-//                                }
-//                                if ( (Collections.frequency(fiturrule, fitr)) < 1 ){
-//                                    fiturrule.add(fitr);
-//                                    System.out.println("dari NOUN PHERASE TAMP 2 GRAM Rule: " + fiturrule);
-//                                }
-//
-//                            }
-//                        }
-//                    }
-//                }
-//                }
-//                //3-gram ==========================================================
-//
-//                for (int j = 0; j < ngramIob2.size(); j++) {
-//                    for(int l = 0; l < ngram2.size(); l++){
-//                    String opi2=Parser.NPFitur(ngramIob2.get(j));
-//                    if(opi2!=null){
-//                        //output.tulis(opi2);
-//
-////                        AreaExtraksi.append(opi2);
-////                        AreaExtraksi.append("\n");
-//                        //cleaningTagging = ontolog.cleaningTag(opi2);
-//                        //hasiltaxonomy = ontolog.OntologyApi(cleaningTagging);
-//                        //cleaningTagging = clnfit.Clean(opi2);
-//                        //ambil opini dari ngram adj/adv
-//                        tmpOpini = Op.getToken(ngram2.get(l));
-//
-//                        //pilih fitur
-//                        //if(jRadioButton1.isSelected()){
-//                            //listFit=Fit.getFitur(opi2, corpuspre); //dengan corpus
-//                            //}
-//                            //listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
-//                            
-//                                listFit = fitTax.taxoFitur(cleaningTagging, corpuspre);
-//                                //listFit=Fit.getFitur(opi2, corpuspre);
-//                            
-//                        /*else if(jRadioButton2.isSelected()){
-//                            listFit=Fit.getFiturNoCorp(opi2); //tanpa corpus
-//                        }*/
-//
-//                        for (int k = 0; k < listFit.size(); k++) {
-//                            String fitr=listFit.get(k);
-//                            if(fitr!=null){
-//                                //fiturkalimat = fiturkalimat + fitr + ",";
-//
-//                                //masukkan opini pada list jika fitur dari 3-gram didapatkan
-//                                //pasangkan opini dengan fitur
-//                                if(!tmpOpini.isEmpty()){
-//                                    for(int count = 0; count < tmpOpini.size(); count++){
-//                                        //kata fitur dan opini tidak boleh sama / fitur tidak boleh mengandung kata opini
-//                                        if(!fitr.contains(tmpOpini.get(count))){
-//                                            //tmpFitOp.clear();
-//                                            ArrayList<String> tmpFitOp = new ArrayList<String>();
-//                                            tmpFitOp.add(fitr);
-//                                            tmpFitOp.add(tmpOpini.get(count));
-//                                            if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
-//                                                listFitOp.add(tmpFitOp);
-//                                                String fituropini = fitr + "-" + tmpOpini.get(count);
-//                                                fiturdanopini.add(fituropini);
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//
-//                                    System.out.println("Fiturnya :" + fitr);
-//                                if ((Collections.frequency(temp2, fitr)) < 1 ){
-//                                    temp2.add(fitr);
-//                                    //output.tulis("dari rule 3gram = "+fitr);
-//                                }
-//                                if ((Collections.frequency(fiturrule, fitr)) < 1 ){
-//                                    fiturrule.add(fitr);
-//                                    System.out.print("dari rule 3gram = "+fitr);
-//                                    System.out.println("ISI RULE" + fiturrule);
-//                                }
-//                            }
-//                            //System.out.println("Fiturnya : "+fitr);
-//                        }
-//                         
-//                         //System.out.println("ISI RULE" + fiturrule);
-//                    }
-//                }
-//                }
-//                System.out.println("ISI RULE" + fiturrule);
-//                 //AreaExtraksi.append("ISI FITURRULE" + fiturrule.get(i));
-//                if(!fiturrule.isEmpty()){
-//                    
-//                    for(int cnt = 0; cnt < fiturrule.size(); cnt++){
-//                        fiturkalimat = fiturkalimat + fiturrule.get(cnt) + ",";
-//                    }
-//                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
-//                }
-//                else{
-//                    fiturkalimat = "-";
-//                }
-//
-//                if(!fiturdanopini.isEmpty()){
-//                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
-//                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
-//                    }
-//                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
-//                    
-//                }
-//                else{
-//                    fituropinikalimat = "-";
-//                }
-//                
-//                output.tulis("Hasil Rule : "+fiturkalimat);
-//                AreaExtraksi.append("Fitur : "+fiturkalimat);
-//                AreaExtraksi.append("\n");
-//                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
-//                AreaExtraksi.append("\n");
-//                AreaExtraksi.append("Taxonomy : " + cleaningTagging);
-//                AreaExtraksi.append("\n");
-//                AreaExtraksi.append("=============================================");
-//                AreaExtraksi.append("\n");
-//            
-//            
-//            }
+
 //==============================================NP PARSER==============================================================================
             //NP PARSER CODE..
             if(jCheckBoxNpParser.isSelected()){
-            ArrayList<String> fiturdanopini = new ArrayList<>();
-                String fiturkalimat = "";
+             ArrayList<String> fiturdanopini = new ArrayList<>();
+             ArrayList<String> fiturkalimat = new ArrayList<>();
+                String fiturkalimate = "";
                 String fituropinikalimat = "";
                 
                 AreaExtraksi.append(i+1+". Hasil NP parser :");
@@ -1671,18 +1519,31 @@ public class Interface_TA extends javax.swing.JFrame {
                 
                 //ambil tag NP pada tree dgn maks 3 kata
                 nounPhrases=Parser.GetNounPhrases(tree);
-
+                String tangkap = "";
+                String tangkap2 = tangkap.join(" ", nounPhrases);
+                System.out.println("SETELAH TREE : " + tangkap2);
+                
+                String TampungFitur = "";
                 for(int it = 0; it < nounPhrases.size(); it++)
                 {
+                    String taxo = TaxnoClean.TaxoNoTag(tangkap2);
                     //output.tulis("Hasil NounPhrases : "+nounPhrases.get(it));
-
+                    
                     AreaExtraksi.append(nounPhrases.get(it));
                     AreaExtraksi.append("\n");
+                    TampungFitur = nounPhrases.get(it);
                     //if(jRadioButton1.isSelected()){
                         //cek Np dengan corpus
-                        listFit=Fit.getFiturParser(nounPhrases.get(it), corpuspre); //dengan corpus
+                
+                        //System.out.println("TAXOOOO : " + nounPhrases.get(it).replaceAll(",", " "));
                     //}
+                    if(jCheckBoxTaxonomy.isSelected()){
                         
+                        listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+                    }else{
+                        listFit=Fit.getFiturParser2(TampungFitur, corpuspre); //dengan corpus
+                    }
+                
                     /*else if(jRadioButton1.isSelected()){
                         listFit=Fit.getFiturParserNoCorp(nounPhrases.get(it)); //tanpa corpus
                     }*/
@@ -1693,8 +1554,8 @@ public class Interface_TA extends javax.swing.JFrame {
                             //jTextArea16.append("Fitur : ");
                             String fitr=listFit.get(l);
                             if(fitr!=null){
-                                fiturkalimat = fiturkalimat + fitr + ",";
-                                
+                                //fiturkalimat = fiturkalimat + fitr + ",";
+                                fiturkalimat.add(fitr);
                                 if ( (Collections.frequency(temp1, fitr)) < 1 ){
                                     //output.tulis("Dari parser: "+fitr);
                                     temp1.add(fitr);
@@ -1762,8 +1623,15 @@ public class Interface_TA extends javax.swing.JFrame {
                     //cek setiap kata yg ada pada NP dengan corpus
                     else{
                         //if(jRadioButton1.isSelected()){
-                            listFit=Fit.getFiturParser2(nounPhrases.get(it), corpuspre); //dengan corpus
+                            //listFit=Fit.getFiturParser2(nounPhrases.get(it), corpuspre); //dengan corpus
                         //}
+                        //listFit=Fit.getFiturParser(taxo, corpuspre);
+                        if(jCheckBoxTaxonomy.isSelected()){
+                            //String taxo = TaxnoClean.TaxoNoTag(tangkap2);
+                            listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+                        }else{
+                            listFit=Fit.getFiturParser2(TampungFitur, corpuspre); //dengan corpus
+                        }
                             
                         /*           
                         else if(jRadioButton2.isSelected()){
@@ -1774,8 +1642,8 @@ public class Interface_TA extends javax.swing.JFrame {
                         for (int l = 0; l < listFit.size(); l++) {
                             String fitr=listFit.get(l);
                             if(fitr!=null){
-                                fiturkalimat = fiturkalimat + fitr + ",";
-                                
+                                //fiturkalimat = fiturkalimat + fitr + ",";
+                                fiturkalimat.add(fitr);
                                 if ( (Collections.frequency(temp1, fitr)) < 1 ){
                                     temp1.add(fitr);
                                 } 
@@ -1839,11 +1707,14 @@ public class Interface_TA extends javax.swing.JFrame {
                         }
                     }
                 }
-                if(fiturkalimat != ""){
-                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+                if(!fiturkalimat.isEmpty()){
+                    for(int ft = 0; ft < fiturkalimat.size(); ft++){
+                        fiturkalimate = fiturkalimate + fiturkalimat.get(ft) + ",";
+                    }
+                    fiturkalimate = fiturkalimate.substring(0, fiturkalimate.length()-1);
                 }
                 else{
-                    fiturkalimat = "-";
+                    fiturkalimate = "-";
                 }
                 
                 if(!fiturdanopini.isEmpty()){
@@ -1856,15 +1727,13 @@ public class Interface_TA extends javax.swing.JFrame {
                     fituropinikalimat = "-";
                 }
                 
-                
                 output.tulis("Hasil Nounphrase : "+fiturkalimat);
-                AreaExtraksi.append("Fitur : "+fiturkalimat);
+                AreaExtraksi.append("Fitur : "+fiturkalimate);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
                 AreaExtraksi.append("\n");
-                //}
             }
             
             
@@ -1885,27 +1754,34 @@ public class Interface_TA extends javax.swing.JFrame {
                 //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
                 //jTextArea15.append("\n");
                 //output.tulis("Fitur dan opini : "+typeD);
+                String taxo = "";
+                String tdFitur = "";
+                String tdOpini = "";
                 for(int it=0;it<typeD.size();it++){
                     AreaExtraksi.append(typeD.get(it));
                     AreaExtraksi.append("\n");
                     String[] words = typeD.get(it).split(" ");
                     System.out.println("dari type depedency : " + typeD);
-                    String tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
-                    String tdOpini=words[1].trim().replaceAll("\\s+", " "); //mengambil opini
+                    tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
+                    tdOpini=words[1].trim().replaceAll("\\s+", " "); //mengambil opini
                     
                     System.out.println("TDFITUR : " + tdFitur);
-
+                
                     //if(jRadioButton1.isSelected()){
                         //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
                         
-//                         if(jCheckBoxTaxonomy.isSelected()){
-//                                listFit = fitTax.taxoFitur(tdFitur, corpuspre);
-//                            }else{
-//                                listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
-//                            }
+//                         
                     //}
-                     listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
-
+                     taxo = TaxnoClean.TaxoNoTag(tdFitur);
+                     System.out.println("TD FITUR DIATXONOMY : " + taxo);
+                     
+                    
+                     
+                     if(jCheckBoxTaxonomy.isSelected()){
+                         listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+                     }else{
+                         listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
+                     }
                     
                     /*
                     else if(jRadioButton2.isSelected()){
@@ -2680,8 +2556,8 @@ public class Interface_TA extends javax.swing.JFrame {
                     String[] tamp = new String[inputan.size()];
                     tamp = inputan.toArray(tamp);
                     result = ST.tagger(st);
-                    regIOB = iobchunk.Iob(st);
-                    String iob = regbio.RegBio(regIOB);
+                    String iob = iobchunk.Iob(st);
+                    regIOB = regbio.RegBio(iob);
                     
                     AreaSW.append(i + 1 + "." + inputan.get(i));
                     AreaSW.append("\n");
@@ -2703,31 +2579,18 @@ public class Interface_TA extends javax.swing.JFrame {
                 
 
             }
-//=======================================BIO CHUNKING ========================================================
+//=======================================BIO CHUNKING  && POST TAG ========================================================
             if(!CheckLemma.isSelected() && CheckBC.isSelected()
-                && !CheckSW.isSelected() && !CheckPT.isSelected()){
-                //String reg = null;
-                String[] tamp = new String[inputan.size()];
-                tamp = inputan.toArray(tamp);
-                result = iobchunk.Iob(inputan.get(i));
-                reg = regbio.RegBio(result);
+                && !CheckSW.isSelected() && CheckPT.isSelected()){
+               
+                regIOB = iobchunk.Iob(inputan.get(i));
+                result = ST.tagger(inputan.get(i));
                 AreaSW.append(i + 1 + "." + inputan.get(i));
                 AreaSW.append("\n");
                 AreaSW.append("Hasil :" + result);
                 AreaSW.append("\n");
-                AreaSW.append("Hasil Regex :" + reg);
-                AreaSW.append("\n");
-//                String Bio;
-//                try {
-//                    Bio = bio.Chunker(lemanotag);
-//                    AreaSW.append(i + 1 + "." + inputan.get(i));
-//                    AreaSW.append("\n");
-//                    AreaSW.append("Hasil :" + Bio);
-//                    AreaSW.append("\n");
-//                } catch (IOException ex) {
-//                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-                
+                AreaSW.append("Hasil Regex :" + regIOB);
+                AreaSW.append("\n");      
 
             }
             
@@ -2903,7 +2766,6 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JCheckBox jNoun;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

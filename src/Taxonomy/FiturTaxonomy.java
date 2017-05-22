@@ -6,6 +6,7 @@
 package Taxonomy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -21,9 +22,10 @@ public class FiturTaxonomy {
             for(int i = 0; i < listCorp.size() ; i++){
                 for(int j = 0; j < taxHasil.length; j++){
                if(taxHasil[j].equalsIgnoreCase(listCorp.get(i).trim().replaceAll("\\s+", " "))){
+                   if ( (Collections.frequency(listtamp, taxHasil[j])) < 1 ){
                    listtamp.add(taxHasil[j]);
                    System.out.println("ISI FITURNYA DEASSSSSSSSS :" + listtamp);
-               
+                   }
                } 
                    }
             }

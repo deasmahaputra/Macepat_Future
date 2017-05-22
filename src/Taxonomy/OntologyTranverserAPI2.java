@@ -95,6 +95,7 @@ public class OntologyTranverserAPI2 {
         String tampungan21 = " ";
         String tampungan22 = " ";
         String tampungan23 = " ";
+        String tampungan24 = "";
         String kirim = " ";
         String kirim2 = " ";
         String fitur = " ";
@@ -666,13 +667,36 @@ public class OntologyTranverserAPI2 {
                     }
                 }
 	}
+        OntClass cg3 = m.getOntClass(camNS + "CameraG3");
+        for (ExtendedIterator i = cg3.listSubClasses(); i.hasNext(); ) {
+  		OntClass c = (OntClass) i.next();
+  		System.out.println( "Subclass : " + c.getLocalName());
+                listkalimat.add(c.getLocalName());
+                String localname = c.getLocalName();
+                String[] localnamesplt = localname.split(" ");
+                for(int j = 0 ; j < localnamesplt.length; j++ ){
+                    for (int k = 0; k < kalimatsplit.length; k++){
+                  //if(listkalimat != null){
+                if(kalimatsplit[k].equalsIgnoreCase(localnamesplt[j])){
+                    String hasil = c.getSuperClass().toString();
+                    String getHasil = hasil.replaceAll("http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#"," ");
+                    System.out.println("Hasilnya adalah : " + tampungan);
+                    String anak = localnamesplt[0];
+                    tampungan24 = getHasil + " " + anak;
+                    System.out.println("INI ISINYA GAN : " + kirim);
+                }else{
+                    //tampungan2 = " kosong 2";
+                }
+                    }
+                }
+	}
         //fitur = tampungan + " " + tampungan2 + " " + tampungan3;
         fitur = tampungan + "" + tampungan2 + "" + tampungan3 + "" + tampungan4 + "" +
                 tampungan5 + "" + tampungan6 + "" + tampungan7 + "" +tampungan8 + "" +
                 tampungan9 + "" + tampungan10 + "" + tampungan11 + "" + tampungan12 + "" +
                 tampungan13 + "" + tampungan14 + "" + tampungan15 + "" +tampungan16 + "" +
                 tampungan17 + "" + tampungan18 + "" + tampungan19 + "" + tampungan20 + "" +
-                tampungan21 + "" + tampungan22 + "" + tampungan23;
+                tampungan21 + "" + tampungan22 + "" + tampungan23 + "" + tampungan24;
         //System.out.println("ISI TAMPUNGAN HASIL TAXONOMY : " + tampungan);
         System.out.println("ISI TAMPUNGAN : " + tampungan);
         

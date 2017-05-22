@@ -1,12 +1,31 @@
-[t]excellent picture quality / color 
+[t]excellent picture quality / color
 canon powershot g3[+3]##i recently purchased the canon powershot g3 and am extremely satisfied with the purchase . 
-flash[+2]##the camera is very easy to use , in fact on a recent trip this past week i was asked to take a picture of a vacationing elderly group . 
-general[+2]##after i took their picture with their general camera , they offered to take a picture of us . very general 
-use[+2]##i just told them , press halfway , wait for the box to turn green and press the rest of the way . 
+use[+2]##the camera is very easy to use , in fact on a recent trip this past week i was asked to take a picture of a vacationing elderly group . 
+##after i took their picture with their camera , they offered to take a picture of us . 
+##i just told them , press halfway , wait for the box to turn green and press the rest of the way . 
 picture[+2]##they fired away and the picture turned out quite nicely . ( as all of my pictures have thusfar ) . 
-flash[+1]##a few of my work constituants owned the g2 and highly recommended the canon for picture quality . 
-card[+1]##i'm easily enlarging pictures to 8 1/2 x 11 with no visable loss in picture quality and not even using the best possible setting as yet ( super fine ) . 
-##ensure you get a larger flash , 128 or 256 , some are selling with the larger flash , 32mb will do in a pinch but you'll quickly want a larger flash card as with any of the 4mp cameras . 
+picture quality[+1]##a few of my work constituants owned the g2 and highly recommended the canon for picture quality . 
+picture quality[+1]##i 'm easily enlarging pictures to 8 1/2 x 11 with no visable loss in picture quality and not even using the best possible setting as yet ( super fine ) . 
+##ensure you get a larger flash , 128 or 256 , some are selling with the larger flash , 32mb will do in a pinch but you 'll quickly want a larger flash card as with any of the 4mp cameras . 
 camera[+2], use[+2], feature[+1]##bottom line , well made camera , easy to use , very flexible and powerful features to include the ability to use external flash and lense / filters choices . 
-picture[+3], use[+1], option[+1]##i'd highly recommend this camera for anyone who is looking for excellent quality pictures and a combination of ease of use and the flexibility to get advanced with many options to adjust if you like . 
-##great job canon camera ! 
+picture quality[+3], use[+1], option[+1]##i 'd highly recommend this camera for anyone who is looking for excellent quality pictures and a combination of ease of use and the flexibility to get advanced with many options to adjust if you like . 
+##great job canon ! 
+[t]cool toy
+##yep . 
+camera[+2]##this is my first digital camera , and what a ' toy ' it is ! 
+##i am a software engineer and am very keen into technical details of everything i buy , i spend around 3 months before buying the digital camera ; and i must say , g3 worth every single cent i spent on it . 
+picture[+2]##just a little overview , powershot g3 is the flagship of canon 's powershot series and its an slr-like camera , its 4 megapixel and ( alsmost ) full manual control gives the pictures a touch of brilliance . 
+use[+1]##whether you are a novice or an expert , its ease of use and functionality goes together . 
+##+ you can have different kind of lens if you want + flashes , etc. 
+##as its 4mp , you might need bigger storage to store high quality images and recording movies ( you can record 3 minutes of video ) . 
+##i am using kingston 512mb cf which works great and is very fast . 
+##a good choice could be cf type ii , microdrives that can store around 1 gb of images . 
+##some things that i did n't like ( but hey . nothing is perfect ). 
+dial[-1]##* main dial is not backlit . 
+viewfinder[-2]##* lens visible in optical viewfinder . 
+##( well thats only for old-school die-hard optical viewfinder fans ) use lcd instead which is brilliant and you can twist around too . 
+camera[+2][p]##overall i 'm happy with my toy . 
+[t]canon g3 ? incredible camera 
+##i did extensive research comparing different 4 and 5 megapixel cameras . 
+##a couple of online camera review sites were extremely helpful , as they provided complete exhaustive reviews of nearly every camera made , plus provided a great number of high resolution sample images to compare amongst the models . 
+##following my research , i decided on the g3 . 
