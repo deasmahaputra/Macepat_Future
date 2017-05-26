@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#"
+     xml:base="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#amazone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#amazone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#android -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#android">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#operating_system"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#audio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#audio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#backlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#backlight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#screen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bag">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#battery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#battery_life -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#battery_life">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#black_berry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#black_berry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bluetooth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bluetooth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#box -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#box">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#browser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#browser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#browsing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#browsing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#build -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#build">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#call -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#call">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#card -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#card">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#memory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#case -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#case">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#casing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#casing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#color -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#color">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#construction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#construction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cover">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#design -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#design">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#earpiece -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#earpiece">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#edge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#edge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#email -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#email">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#feature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#flash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#flash">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#game">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#gb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#gb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#memory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#good -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#good">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#gprs -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#gprs">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#gps -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#gps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#great -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#great">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#headset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#headset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#im -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#im">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#internet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#internet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ios">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#operating_system"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#iphone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#iphone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#jack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#jack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accessories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#key -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#key">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#keypad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#keypad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#layout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#layout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#design"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#led -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#led">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#light -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#light">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#weight"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#massage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#massage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#megapixel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#megapixel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#memory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#memory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#motorola -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#motorola">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#network -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#network">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#nice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#nice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#nokia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#nokia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#office -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#office">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#operating_system -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#operating_system">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#panasonic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#panasonic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#pc_cable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#pc_cable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#pc_sync -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#pc_sync">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#phone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#phone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#photo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#photo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#picture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#picture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#radio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#radio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#reception -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#reception">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ringer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ringer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ringtone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ringtone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#screen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#screen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#signal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#signal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#size -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#size">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#software -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#software">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sony -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sony">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sony_ericson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sony_ericson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#speaker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#speaker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#speakerphone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#speakerphone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sprint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sprint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#symbian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#symbian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#operating_system"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#t-mobile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#t-mobile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#t-zone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#t-zone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#tone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#tone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#entertainment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#vibration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#vibration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#vibrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#vibrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_dialing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_dialing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#Nokia6610"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_recognition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_recognition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#volume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#volume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#voice_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#web -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#web">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#communication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#weight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#weight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#wifi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#wifi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#windows -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#windows">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#operating_system"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#2g -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#2g">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#3g -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#3g">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#4g -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#4g">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#connectivity"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

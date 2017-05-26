@@ -3809,8 +3809,8 @@ public class Rule2 {
          delapanbelas3c = " ";  
       }
     
-       System.out.println("Isinya sebelum rule : " + duaa);
-       System.out.println("Isinya rule deas : " + dua1a + dua1b + dua1c);
+//       System.out.println("Isinya sebelum rule : " + duaa);
+//       System.out.println("Isinya rule deas : " + dua1a + dua1b + dua1c);
        
       String Str = new String(input);
       String opini = null;

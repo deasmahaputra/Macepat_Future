@@ -29,3 +29,4 @@ camera[+2][p]##overall i 'm happy with my toy .
 ##i did extensive research comparing different 4 and 5 megapixel cameras . 
 ##a couple of online camera review sites were extremely helpful , as they provided complete exhaustive reviews of nearly every camera made , plus provided a great number of high resolution sample images to compare amongst the models . 
 ##following my research , i decided on the g3 . 
+memory[+2]##i bought a 512 mb card , which seems to hold about 400 photos at the highest resolution . 

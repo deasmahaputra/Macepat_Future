@@ -37,8 +37,10 @@ import Preprocessing.Stopwords;
 import Preprocessing.getData;
 import Taxonomy.CleaningFitur;
 import Taxonomy.FiturTaxonomy;
+import Taxonomy.Ontology;
 import Taxonomy.OntologyTranverserAPI;
 import Taxonomy.OntologyTranverserAPI2;
+import Taxonomy.SingletonFileOntology;
 import Taxonomy.TaxnoClean;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 import edu.stanford.nlp.trees.Tree;
@@ -154,6 +156,7 @@ public class Interface_TA extends javax.swing.JFrame {
     NpPherase npParser = new NpPherase();
     FiturNpParser fiturnpphrase = new FiturNpParser();
     TaxnoClean taxnoclean = new TaxnoClean();
+    Ontology ontology = new Ontology();
     
     
 
@@ -205,6 +208,7 @@ public class Interface_TA extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jCheckBoxnounPherase = new javax.swing.JCheckBox();
+        jComboBoxOntologyFile = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         AreaExtraksi = new javax.swing.JTextArea();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -523,6 +527,13 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jCheckBoxnounPherase.setText("Noun Phrase");
 
+        jComboBoxOntologyFile.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CanonG3_Taxonomy", "Nokia6610_Taxonomy", "Item 3", "Item 4" }));
+        jComboBoxOntologyFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxOntologyFileActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -540,13 +551,18 @@ public class Interface_TA extends javax.swing.JFrame {
                         .addComponent(jCheckBoxTaxonomy)
                         .addGap(53, 53, 53)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBoxNpParser)
-                            .addComponent(jCheckBoxnounPherase, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(196, Short.MAX_VALUE))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(jCheckBoxnounPherase, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(65, 65, 65)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 46, Short.MAX_VALUE))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(jCheckBoxNpParser)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBoxOntologyFile, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(49, 49, 49))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -560,14 +576,19 @@ public class Interface_TA extends javax.swing.JFrame {
                     .addComponent(CheckRule)
                     .addComponent(jCheckBoxTaxonomy)
                     .addComponent(jCheckBoxNpParser)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxTypeDepedency)
-                    .addComponent(jCheckBoxnounPherase))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(19, 19, 19))
+                    .addComponent(jComboBoxOntologyFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBoxTypeDepedency)
+                            .addComponent(jCheckBoxnounPherase)))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         AreaExtraksi.setColumns(20);
@@ -635,7 +656,7 @@ public class Interface_TA extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1098,6 +1119,12 @@ public class Interface_TA extends javax.swing.JFrame {
         //setting path for the WordNet Directory
 
         WordNetDatabase database = WordNetDatabase.getFileInstance();
+        
+        String value= jComboBoxOntologyFile.getSelectedItem().toString();
+      //String callowlfile =  "resources/ontology/"+value+".owl";
+        SingletonFileOntology sengletonontologyfile = SingletonFileOntology.getInstance();
+        sengletonontologyfile.setUrlfile(value);
+        
         //============================//
         //System.out.println("Isi Kalimat Pre" + kalimatPre);
         for(int i = 0; i<kalimatPre.size(); i++){
@@ -1151,7 +1178,13 @@ public class Interface_TA extends javax.swing.JFrame {
                 parseRule parserule = parseRule.getInstance();
                 String textRule = jTextAreaRule.getText().toString();
                 parserule.setData(textRule);
-                String cleaningTagging = ontolog.cleaningTag(kalimatPre.get(i));
+                //String cleaningTagging = ontolog.cleaningTag(kalimatPre.get(i));
+                String cleaningTagging = "";
+                try {
+                    cleaningTagging = ontology.OntologyJena(kalimatPre.get(i));
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 //getRuleSelected();
                 ArrayList<String> fiturdanopini = new ArrayList<>();
                 AreaExtraksi.append(i+1+". Hasil Rule :");
@@ -1348,7 +1381,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 String fiturkalimat = "";
                 String fituropinikalimat = "";
                 
-                AreaExtraksi.append(i+1+". Hasil Type Dependencies :");
+                AreaExtraksi.append(i+1+". Hasil Noun Pherase :");
                 AreaExtraksi.append("\n");
                 
                 //typeD=Parser.typeDP(Ps.removetag(kalimatPre.get(i)));
@@ -1483,8 +1516,8 @@ public class Interface_TA extends javax.swing.JFrame {
                 output.tulis("Hasil Parser : "+fiturkalimat);
                 AreaExtraksi.append("Fitur : "+fiturkalimat);
                 AreaExtraksi.append("\n");
-                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
-                AreaExtraksi.append("\n");
+//                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+//                AreaExtraksi.append("\n");
                 AreaExtraksi.append("Taxonomynta : "+ taxo);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
@@ -1519,14 +1552,15 @@ public class Interface_TA extends javax.swing.JFrame {
                 
                 //ambil tag NP pada tree dgn maks 3 kata
                 nounPhrases=Parser.GetNounPhrases(tree);
+                
                 String tangkap = "";
                 String tangkap2 = tangkap.join(" ", nounPhrases);
                 System.out.println("SETELAH TREE : " + tangkap2);
-                
+                String taxo = TaxnoClean.TaxoNoTag(tangkap2);
                 String TampungFitur = "";
                 for(int it = 0; it < nounPhrases.size(); it++)
                 {
-                    String taxo = TaxnoClean.TaxoNoTag(tangkap2);
+                    
                     //output.tulis("Hasil NounPhrases : "+nounPhrases.get(it));
                     
                     AreaExtraksi.append(nounPhrases.get(it));
@@ -1732,6 +1766,8 @@ public class Interface_TA extends javax.swing.JFrame {
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
                 AreaExtraksi.append("\n");
+                AreaExtraksi.append("Taxonomy : "+ taxo);
+                AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
                 AreaExtraksi.append("\n");
             }
@@ -1754,6 +1790,7 @@ public class Interface_TA extends javax.swing.JFrame {
                 //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
                 //jTextArea15.append("\n");
                 //output.tulis("Fitur dan opini : "+typeD);
+                String tampungtaxo = "";
                 String taxo = "";
                 String tdFitur = "";
                 String tdOpini = "";
@@ -1774,7 +1811,7 @@ public class Interface_TA extends javax.swing.JFrame {
                     //}
                      taxo = TaxnoClean.TaxoNoTag(tdFitur);
                      System.out.println("TD FITUR DIATXONOMY : " + taxo);
-                     
+                     tampungtaxo = taxo;
                     
                      
                      if(jCheckBoxTaxonomy.isSelected()){
@@ -1843,6 +1880,8 @@ public class Interface_TA extends javax.swing.JFrame {
                 AreaExtraksi.append("Fitur : "+fiturkalimat);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+                AreaExtraksi.append("\n");
+                AreaExtraksi.append("Taxonomy : "+ tampungtaxo);
                 AreaExtraksi.append("\n");
                 AreaExtraksi.append("=============================================");
                 AreaExtraksi.append("\n");
@@ -2673,6 +2712,11 @@ public class Interface_TA extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBoxGroupingActionPerformed
 
+    private void jComboBoxOntologyFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxOntologyFileActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_jComboBoxOntologyFileActionPerformed
+
     public void data() throws IOException{
     String value = ComboDataset.getSelectedItem().toString();
     //inputan = call.Inputan("resources/dataset/"+value+".txt");
@@ -2748,6 +2792,7 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxTypeDepedency;
     private javax.swing.JCheckBox jCheckBoxnounPherase;
     private javax.swing.JComboBox<String> jComboBoxGrouping;
+    private javax.swing.JComboBox<String> jComboBoxOntologyFile;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
