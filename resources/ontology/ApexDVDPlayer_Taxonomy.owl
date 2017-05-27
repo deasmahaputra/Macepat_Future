@@ -1,0 +1,760 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#"
+     xml:base="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#aff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#aff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#amazon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#amazon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#apex -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#apex">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#audio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#audio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#auto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#auto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#automatic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#automatic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#bag">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#best -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#best">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#box -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#box">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#case -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#case">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cd-r -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cd-r">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cd-rw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cd-rw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#color -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#color">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#company">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#costumer_service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#costumer_service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#cover">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#design -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#design">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#direction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#direction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#disc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#disc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#disk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#disk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#display -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#display">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#door -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#door">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd-r -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd-r">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd-video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd-video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd_player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#dvd_player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#feature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#finish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#finish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#format -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#format">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#freeze -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#freeze">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#freezing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#freezing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#good -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#good">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#great -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#great">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#heat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#heat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#input -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#input">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#jpeg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#jpeg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#light -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#light">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#weight"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#load -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#load">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#machine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#machine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#manual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#manual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mp3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mp3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mpeg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mpeg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#nice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#nice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#noise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#noise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#off -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#off">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#on -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#on">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#output -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#output">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#panel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#panel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#picture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#picture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#play -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#play">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#power_supply -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#power_supply">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#accecories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#product -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#product">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#read -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#read">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#recognize -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#recognize">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#reliability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#reliability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#remote -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#remote">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#run -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#run">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#s-video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#s-video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#shipping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#shipping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#size -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#size">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#smell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#smell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#sound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#audio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#speed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#speed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#stop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#stop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ApexDVD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#svcd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#svcd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#unit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#use -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#use">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#vcd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#vcd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#weight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#weight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#work -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#work">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#look"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#zoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#zoom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#zoom_mode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#zoom_mode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#i/p_button -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#i/p_button">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#on/off -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#on/off">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#button"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

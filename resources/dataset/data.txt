@@ -16,17 +16,5 @@ camera[+2]##this is my first digital camera , and what a ' toy ' it is !
 ##i am a software engineer and am very keen into technical details of everything i buy , i spend around 3 months before buying the digital camera ; and i must say , g3 worth every single cent i spent on it . 
 picture[+2]##just a little overview , powershot g3 is the flagship of canon 's powershot series and its an slr-like camera , its 4 megapixel and ( alsmost ) full manual control gives the pictures a touch of brilliance . 
 use[+1]##whether you are a novice or an expert , its ease of use and functionality goes together . 
-##+ you can have different kind of lens if you want + flashes , etc. 
-##as its 4mp , you might need bigger storage to store high quality images and recording movies ( you can record 3 minutes of video ) . 
-##i am using kingston 512mb cf which works great and is very fast . 
-##a good choice could be cf type ii , microdrives that can store around 1 gb of images . 
-##some things that i did n't like ( but hey . nothing is perfect ). 
 dial[-1]##* main dial is not backlit . 
 viewfinder[-2]##* lens visible in optical viewfinder . 
-##( well thats only for old-school die-hard optical viewfinder fans ) use lcd instead which is brilliant and you can twist around too . 
-camera[+2][p]##overall i 'm happy with my toy . 
-[t]canon g3 ? incredible camera 
-##i did extensive research comparing different 4 and 5 megapixel cameras . 
-##a couple of online camera review sites were extremely helpful , as they provided complete exhaustive reviews of nearly every camera made , plus provided a great number of high resolution sample images to compare amongst the models . 
-##following my research , i decided on the g3 . 
-memory[+2]##i bought a 512 mb card , which seems to hold about 400 photos at the highest resolution . 

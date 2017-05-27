@@ -38,6 +38,7 @@ import Preprocessing.getData;
 import Taxonomy.CleaningFitur;
 import Taxonomy.FiturTaxonomy;
 import Taxonomy.Ontology;
+import Taxonomy.OntologyNoTag;
 import Taxonomy.OntologyTranverserAPI;
 import Taxonomy.OntologyTranverserAPI2;
 import Taxonomy.SingletonFileOntology;
@@ -157,6 +158,7 @@ public class Interface_TA extends javax.swing.JFrame {
     FiturNpParser fiturnpphrase = new FiturNpParser();
     TaxnoClean taxnoclean = new TaxnoClean();
     Ontology ontology = new Ontology();
+    OntologyNoTag ontologynotag = new OntologyNoTag();
     
     
 
@@ -527,7 +529,7 @@ public class Interface_TA extends javax.swing.JFrame {
 
         jCheckBoxnounPherase.setText("Noun Phrase");
 
-        jComboBoxOntologyFile.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CanonG3_Taxonomy", "Nokia6610_Taxonomy", "Item 3", "Item 4" }));
+        jComboBoxOntologyFile.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CanonG3_Taxonomy", "Nokia6610_Taxonomy", "ApexDVDPlayer_Taxonomy", "CreativeLab_Taxonomy" }));
         jComboBoxOntologyFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxOntologyFileActionPerformed(evt);
@@ -1556,7 +1558,12 @@ public class Interface_TA extends javax.swing.JFrame {
                 String tangkap = "";
                 String tangkap2 = tangkap.join(" ", nounPhrases);
                 System.out.println("SETELAH TREE : " + tangkap2);
-                String taxo = TaxnoClean.TaxoNoTag(tangkap2);
+                String taxo = "";
+                try {
+                    taxo = ontologynotag.OntologyJena(tangkap2);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 String TampungFitur = "";
                 for(int it = 0; it < nounPhrases.size(); it++)
                 {
@@ -1798,19 +1805,23 @@ public class Interface_TA extends javax.swing.JFrame {
                     AreaExtraksi.append(typeD.get(it));
                     AreaExtraksi.append("\n");
                     String[] words = typeD.get(it).split(" ");
-                    System.out.println("dari type depedency : " + typeD);
+                    //System.out.println("dari type depedency : " + typeD);
                     tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
                     tdOpini=words[1].trim().replaceAll("\\s+", " "); //mengambil opini
                     
-                    System.out.println("TDFITUR : " + tdFitur);
+                    //System.out.println("TDFITUR : " + tdFitur);
                 
-                    //if(jRadioButton1.isSelected()){
+                    try {
+                        //if(jRadioButton1.isSelected()){
                         //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
                         
-//                         
-                    //}
-                     taxo = TaxnoClean.TaxoNoTag(tdFitur);
-                     System.out.println("TD FITUR DIATXONOMY : " + taxo);
+//
+//}
+                    taxo = ontologynotag.OntologyJena(tdFitur);
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                     
                      tampungtaxo = taxo;
                     
                      

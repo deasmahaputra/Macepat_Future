@@ -655,8 +655,8 @@
                           <StringArray count="4">
                             <StringItem index="0" value="CanonG3_Taxonomy"/>
                             <StringItem index="1" value="Nokia6610_Taxonomy"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
+                            <StringItem index="2" value="ApexDVDPlayer_Taxonomy"/>
+                            <StringItem index="3" value="CreativeLab_Taxonomy"/>
                           </StringArray>
                         </Property>
                       </Properties>
