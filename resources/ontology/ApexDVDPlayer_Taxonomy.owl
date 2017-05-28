@@ -35,6 +35,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ad-1600 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#ad-1600">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#apex"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#aff -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#aff">
@@ -671,6 +679,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#unit">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#general"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#usage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#usage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48#durability"/>
     </owl:Class>
     
 

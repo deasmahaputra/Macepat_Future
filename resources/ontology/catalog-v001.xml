@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21" uri="Handphone_Tax.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21" uri="Handphone_Taxonomy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="ApexDVDPlayer_Taxonomy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="CanonG3_Taxonomy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="CreativeLab_Taxonomy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="Nokia6610_Taxonomy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495924885621" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="tax_deas.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21" uri="Handphone_Tax.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/3/untitled-ontology-21" uri="Handphone_Taxonomy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="ApexDVDPlayer_Taxonomy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="CanonG3_Taxonomy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="CreativeLab_Taxonomy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="Nokia6610_Taxonomy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1495925385956" name="duplicate:http://www.semanticweb.org/deas/ontologies/2017/4/untitled-ontology-48" uri="tax_deas.owl"/>
     </group>
 </catalog>

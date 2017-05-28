@@ -1378,154 +1378,154 @@ public class Interface_TA extends javax.swing.JFrame {
             
             
 //================================================NOUN PHRASE==============================================================
-            if(jCheckBoxnounPherase.isSelected()){
-                ArrayList<String> fiturdanopini = new ArrayList<>();
-                String fiturkalimat = "";
-                String fituropinikalimat = "";
-                
-                AreaExtraksi.append(i+1+". Hasil Noun Pherase :");
-                AreaExtraksi.append("\n");
-                
-                //typeD=Parser.typeDP(Ps.removetag(kalimatPre.get(i)));
+//            if(jCheckBoxnounPherase.isSelected()){
+//                ArrayList<String> fiturdanopini = new ArrayList<>();
+//                String fiturkalimat = "";
+//                String fituropinikalimat = "";
+//                
+//                AreaExtraksi.append(i+1+". Hasil Noun Pherase :");
+//                AreaExtraksi.append("\n");
+//                
+//                //typeD=Parser.typeDP(Ps.removetag(kalimatPre.get(i)));
                 //String hasiliob = npParser.NPPherase(kalimatIob.get(i));
-                //typeD=Parser.typeDP(inputan.get(i));
-                AreaExtraksi.append(kalimatIob.get(i));
-                String taxo = ontolog.cleaningTag(kalimatIob.get(i));
-                
-               //if(jCheckBoxTaxonomy.isSelected()){
-                                
-                                //System.out.println("Hasil taxonomy = " + TypeParser);
-                            //}else{
-                TypeParser = Parser.NPFitur(kalimatIob.get(i));
-                            //}
-                //TypeParser = Parser.NPFitur(kalimatIob.get(i));
-                
-                //TypeParser = clnfit.Clean(kalimatIob.get(i));
-                System.out.println("HASIL PEMBERSIHAN" + TypeParser);
-                AreaExtraksi.append("\n");
-                String tampfitur = " ";
-                //String cleaningTagging = ontolog.cleaningTag(kalimatIob.get(i));
-                //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
-                //jTextArea15.append("\n");
-                //output.tulis("Fitur dan opini : "+typeD);
-                String tdFitur = "";
-                String tdOpini = "";
-                String tampParser = "";
-                for(int it=0;it<TypeParser.size();it++){
-//                    AreaExtraksi.append(typeD.get(it));
-//                    AreaExtraksi.append("\n");
-                    tampParser = TypeParser.get(it);
-                    String[] words = TypeParser.get(it).split(" ");
+//                //typeD=Parser.typeDP(inputan.get(i));
+//                AreaExtraksi.append(kalimatIob.get(i));
+//                String taxo = ontolog.cleaningTag(kalimatIob.get(i));
+//                
+//               //if(jCheckBoxTaxonomy.isSelected()){
+//                                
+//                                //System.out.println("Hasil taxonomy = " + TypeParser);
+//                            //}else{
+//                TypeParser = Parser.NPFitur(kalimatIob.get(i));
+//                            //}
+//                //TypeParser = Parser.NPFitur(kalimatIob.get(i));
+//                
+//                //TypeParser = clnfit.Clean(kalimatIob.get(i));
+//                System.out.println("HASIL PEMBERSIHAN" + TypeParser);
+//                AreaExtraksi.append("\n");
+//                String tampfitur = " ";
+//                //String cleaningTagging = ontolog.cleaningTag(kalimatIob.get(i));
+//                //jTextArea15.append(Parser.typeDPTree(inputan.get(i)).toString());
+//                //jTextArea15.append("\n");
+//                //output.tulis("Fitur dan opini : "+typeD);
+//                String tdFitur = "";
+//                String tdOpini = "";
+//                String tampParser = "";
+//                for(int it=0;it<TypeParser.size();it++){
+////                    AreaExtraksi.append(typeD.get(it));
+////                    AreaExtraksi.append("\n");
+//                    tampParser = TypeParser.get(it);
+//                    String[] words = TypeParser.get(it).split(" ");
+////
+//                    tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
+//                    tdOpini=words[0].trim().replaceAll("\\s+", " "); //mengambil opini
+//                
+//                    //System.out.println("TDFITUR : " + tdFitur);
 //
-                    tdFitur=words[0].trim().replaceAll("\\s+", " "); //mengambil fitur
-                    tdOpini=words[0].trim().replaceAll("\\s+", " "); //mengambil opini
-                
-                    //System.out.println("TDFITUR : " + tdFitur);
-
-                    //if(jRadioButton1.isSelected()){
-                        //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
-                    //tampfitur = TypeParser.get(it);
-                    System.out.println("ISINYA TAMP PARSER :" + tampfitur);
-//                         if(jCheckBoxTaxonomy.isSelected()){
-//                                listFit = fitTax.taxoFitur(tdFitur, corpuspre);
+//                    //if(jRadioButton1.isSelected()){
+//                        //listFit=Fit.getFiturParser(tdFitur, corpuspre); //cek fitur dengan corpus
+//                    //tampfitur = TypeParser.get(it);
+//                    System.out.println("ISINYA TAMP PARSER :" + tampfitur);
+////                         if(jCheckBoxTaxonomy.isSelected()){
+////                                listFit = fitTax.taxoFitur(tdFitur, corpuspre);
+////                            }else{
+////                                listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
+////                            }
+//                    //}
+//                    //String tapparser = TypeParser.get(it);
+//                    //listFit = fitTax.taxoFitur(TypeParser.get(it), corpuspre);
+//                            if(jCheckBoxTaxonomy.isSelected()){
+//                                listFit = fitTax.taxoFitur(taxo, corpuspre);
 //                            }else{
-//                                listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
+//                                listFit=Fit.getFiturParser(tampParser, corpuspre); 
 //                            }
-                    //}
-                    //String tapparser = TypeParser.get(it);
-                    //listFit = fitTax.taxoFitur(TypeParser.get(it), corpuspre);
-                            if(jCheckBoxTaxonomy.isSelected()){
-                                listFit = fitTax.taxoFitur(taxo, corpuspre);
-                            }else{
-                                listFit=Fit.getFiturParser(tampParser, corpuspre); 
-                            }
-                     //listFit=Fit.getFiturParser(TypeParser.get(it), corpuspre); //dengan corpus
-                     //listFit=fiturnpphrase.npFitur(TypeParser.get(it), corpuspre); //dengan corpus
-                    
-                    /*
-                    else if(jRadioButton2.isSelected()){
-                        listFit=Fit.getFiturParserNoCorp(tdFitur); //cek fitur tanpa corpus
-                    }
-                    */
-                
-                    if(!listFit.isEmpty()){
-
-                        //ambil pasangan fitur dan opini nya
-                        //tmpFitOp.clear();
-                        ArrayList<String> tmpFitOp = new ArrayList<String>();
-                        tmpFitOp.add(tdFitur);
-                        tmpFitOp.add(tdOpini);
-                        String fituropini = tdFitur;
-                        System.out.println("Dari FiturOpini : " + fituropini);
-                        if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
-                            fiturdanopini.add(fituropini);
-                            
-                        }
-                        if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
-                            listFitOp.add(tmpFitOp);
-                        }
-                        
-                    }
-                        for (int l = 0; l < listFit.size(); l++) {
-                            String fitr=listFit.get(l);
-                            
-                            if(fitr!=null){                                
-                                fiturkalimat = fiturkalimat + fitr + ",";
-                                System.out.println("isi fitur kalimat : " + fitr);
-                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
-                                    temp1.add(fitr);
-                                    //temp2.add(fitr);
-                                    //output.tulis("TD = "+fitr);
-                                } 
-                                if ((Collections.frequency(fiturrule, fitr)) < 1 ){
-                                    fiturrule.add(fitr);
-                                    System.out.print("dari rule 3gram = "+fitr);
-                                    System.out.println("ISI RULE" + fiturrule);
-                                }
-                            }
-                        }
-                    }
-                
-//                if(fiturkalimat != ""){
+//                     //listFit=Fit.getFiturParser(TypeParser.get(it), corpuspre); //dengan corpus
+//                     //listFit=fiturnpphrase.npFitur(TypeParser.get(it), corpuspre); //dengan corpus
+//                    
+//                    /*
+//                    else if(jRadioButton2.isSelected()){
+//                        listFit=Fit.getFiturParserNoCorp(tdFitur); //cek fitur tanpa corpus
+//                    }
+//                    */
+//                
+//                    if(!listFit.isEmpty()){
+//
+//                        //ambil pasangan fitur dan opini nya
+//                        //tmpFitOp.clear();
+//                        ArrayList<String> tmpFitOp = new ArrayList<String>();
+//                        tmpFitOp.add(tdFitur);
+//                        tmpFitOp.add(tdOpini);
+//                        String fituropini = tdFitur;
+//                        System.out.println("Dari FiturOpini : " + fituropini);
+//                        if ( (Collections.frequency(fiturdanopini, fituropini)) < 1 ){
+//                            fiturdanopini.add(fituropini);
+//                            
+//                        }
+//                        if ( (Collections.frequency(listFitOp, tmpFitOp)) < 1 ){
+//                            listFitOp.add(tmpFitOp);
+//                        }
+//                        
+//                    }
+//                        for (int l = 0; l < listFit.size(); l++) {
+//                            String fitr=listFit.get(l);
+//                            
+//                            if(fitr!=null){                                
+//                                fiturkalimat = fiturkalimat + fitr + ",";
+//                                System.out.println("isi fitur kalimat : " + fitr);
+//                                if ( (Collections.frequency(temp1, fitr)) < 1 ){
+//                                    temp1.add(fitr);
+//                                    //temp2.add(fitr);
+//                                    //output.tulis("TD = "+fitr);
+//                                } 
+//                                if ((Collections.frequency(fiturrule, fitr)) < 1 ){
+//                                    fiturrule.add(fitr);
+//                                    System.out.print("dari rule 3gram = "+fitr);
+//                                    System.out.println("ISI RULE" + fiturrule);
+//                                }
+//                            }
+//                        }
+//                    }
+//                
+////                if(fiturkalimat != ""){
+////                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
+////                }
+////                else{
+////                    fiturkalimat = "-";
+////                }
+//
+//                if(!fiturrule.isEmpty()){
+//                    
+//                    for(int cnt = 0; cnt < fiturrule.size(); cnt++){
+//                        fiturkalimat = fiturkalimat + fiturrule.get(cnt) + ",";
+//                    }
 //                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
 //                }
 //                else{
 //                    fiturkalimat = "-";
 //                }
-
-                if(!fiturrule.isEmpty()){
-                    
-                    for(int cnt = 0; cnt < fiturrule.size(); cnt++){
-                        fiturkalimat = fiturkalimat + fiturrule.get(cnt) + ",";
-                    }
-                    fiturkalimat = fiturkalimat.substring(0, fiturkalimat.length()-1);
-                }
-                else{
-                    fiturkalimat = "-";
-                }
-
-                
-                if(!fiturdanopini.isEmpty()){
-                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
-                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
-                    }
-                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
-                }
-                else{
-                    fituropinikalimat = "-";
-                }
-                
-                output.tulis("Hasil Parser : "+fiturkalimat);
-                AreaExtraksi.append("Fitur : "+fiturkalimat);
-                AreaExtraksi.append("\n");
-//                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+//
+//                
+//                if(!fiturdanopini.isEmpty()){
+//                    for(int cnt = 0; cnt < fiturdanopini.size(); cnt++){
+//                        fituropinikalimat = fituropinikalimat + fiturdanopini.get(cnt) + ",";
+//                    }
+//                    fituropinikalimat = fituropinikalimat.substring(0, fituropinikalimat.length()-1);
+//                }
+//                else{
+//                    fituropinikalimat = "-";
+//                }
+//                
+//                output.tulis("Hasil Parser : "+fiturkalimat);
+//                AreaExtraksi.append("Fitur : "+fiturkalimat);
 //                AreaExtraksi.append("\n");
-                AreaExtraksi.append("Taxonomynta : "+ taxo);
-                AreaExtraksi.append("\n");
-                AreaExtraksi.append("=============================================");
-                AreaExtraksi.append("\n");
-            
-            }
+////                AreaExtraksi.append("Fitur - Opini : "+fituropinikalimat);
+////                AreaExtraksi.append("\n");
+//                AreaExtraksi.append("Taxonomynta : "+ taxo);
+//                AreaExtraksi.append("\n");
+//                AreaExtraksi.append("=============================================");
+//                AreaExtraksi.append("\n");
+//            
+//            }
             
             
 
@@ -1556,17 +1556,32 @@ public class Interface_TA extends javax.swing.JFrame {
                 nounPhrases=Parser.GetNounPhrases(tree);
                 
                 String tangkap = "";
+                String NounPhrase = "";
                 String tangkap2 = tangkap.join(" ", nounPhrases);
                 System.out.println("SETELAH TREE : " + tangkap2);
-                String taxo = "";
+                String tampiob = kalimatIob.get(i);
+                String taxonp = "";
                 try {
-                    taxo = ontologynotag.OntologyJena(tangkap2);
+                    taxonp = ontology.OntologyJena(tampiob);
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                String taxo = "";
+                
                 String TampungFitur = "";
-                for(int it = 0; it < nounPhrases.size(); it++)
-                {
+                //TypeParser = Parser.NPFitur(kalimatIob.get(i));
+                String hasiliob = npParser.NPPherase(kalimatIob.get(i));
+                System.out.println("HASIL IOOOOOOOBBBB : " + hasiliob);
+                //for(int np = 0; np < TypeParser.size(); np++){
+                    //NounPhrase = TypeParser.get(np);
+                try {
+                    taxo = ontologynotag.OntologyJena(hasiliob);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Interface_TA.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                for(int it = 0; it < nounPhrases.size(); it++){
+                    //for(int itu = 0; itu < TypeParser.size(); itu++){
                     
                     //output.tulis("Hasil NounPhrases : "+nounPhrases.get(it));
                     
@@ -1578,12 +1593,24 @@ public class Interface_TA extends javax.swing.JFrame {
                 
                         //System.out.println("TAXOOOO : " + nounPhrases.get(it).replaceAll(",", " "));
                     //}
+//                    if(jCheckBoxTaxonomy.isSelected()){
+//                        
+//                        listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+//                    }else{
+//                        listFit=Fit.getFiturParser2(TypeParser.get(itu), corpuspre); //dengan corpus
+//                    }
+
                     if(jCheckBoxTaxonomy.isSelected()){
-                        
-                        listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
-                    }else{
-                        listFit=Fit.getFiturParser2(TampungFitur, corpuspre); //dengan corpus
-                    }
+                            //String taxo = TaxnoClean.TaxoNoTag(tangkap2);
+                            listFit=fitTax.taxoFitur(taxo, corpuspre); 
+                        }else if(jCheckBoxnounPherase.isSelected()){
+                            //listFit=Fit.getFiturParser2(TypeParser.get(itu), corpuspre); 
+                            listFit=Fit.getFiturParserFix(hasiliob, corpuspre); 
+                        }else if(jCheckBoxTaxonomy.isSelected() && jCheckBoxnounPherase.isSelected()){
+                            listFit = fitTax.taxoFitur(taxonp, corpuspre);
+                        }else{
+                            listFit=Fit.getFiturParser2(TampungFitur, corpuspre); 
+                        }
                 
                     /*else if(jRadioButton1.isSelected()){
                         listFit=Fit.getFiturParserNoCorp(nounPhrases.get(it)); //tanpa corpus
@@ -1670,9 +1697,14 @@ public class Interface_TA extends javax.swing.JFrame {
                         if(jCheckBoxTaxonomy.isSelected()){
                             //String taxo = TaxnoClean.TaxoNoTag(tangkap2);
                             listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+                        }else if(jCheckBoxnounPherase.isSelected()){
+                            //listFit=Fit.getFiturParser2(TypeParser.get(itu), corpuspre); //dengan corpus
+                            listFit=Fit.getFiturParser(hasiliob, corpuspre); 
+                        }else if(jCheckBoxTaxonomy.isSelected() && jCheckBoxnounPherase.isSelected()){
+                            listFit = fitTax.taxoFitur(taxonp, corpuspre);
                         }else{
                             listFit=Fit.getFiturParser2(TampungFitur, corpuspre); //dengan corpus
-                        }
+                       }
                             
                         /*           
                         else if(jRadioButton2.isSelected()){
@@ -1747,6 +1779,7 @@ public class Interface_TA extends javax.swing.JFrame {
                             }
                         }
                     }
+                //}
                 }
                 if(!fiturkalimat.isEmpty()){
                     for(int ft = 0; ft < fiturkalimat.size(); ft++){

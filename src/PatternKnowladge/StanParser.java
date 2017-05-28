@@ -257,4 +257,6 @@ public class StanParser {
         System.out.println("hasulnya adalah = " + hasil);
     return hasil ;
     }
+    
+   
 }
