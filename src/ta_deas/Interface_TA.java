@@ -218,6 +218,7 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextAreaRule = new javax.swing.JTextArea();
+        jButtonTagDefault = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -597,7 +598,9 @@ public class Interface_TA extends javax.swing.JFrame {
         AreaExtraksi.setRows(5);
         jScrollPane3.setViewportView(AreaExtraksi);
 
-        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel14.setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel17.setBackground(new java.awt.Color(204, 204, 204));
 
         jTextAreaRule.setColumns(20);
         jTextAreaRule.setRows(5);
@@ -607,18 +610,25 @@ public class Interface_TA extends javax.swing.JFrame {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
+
+        jButtonTagDefault.setText("Default Tag");
+        jButtonTagDefault.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTagDefaultActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -627,12 +637,19 @@ public class Interface_TA extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(jButtonTagDefault)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(jButtonTagDefault)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Rule", jPanel14);
@@ -1859,7 +1876,8 @@ public class Interface_TA extends javax.swing.JFrame {
                     
                      
                      if(jCheckBoxTaxonomy.isSelected()){
-                         listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+                         //listFit=fitTax.taxoFitur(taxo, corpuspre); //dengan corpus
+                         listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
                      }else{
                          listFit=Fit.getFiturParser(tdFitur, corpuspre); //dengan corpus
                      }
@@ -2761,6 +2779,24 @@ public class Interface_TA extends javax.swing.JFrame {
       
     }//GEN-LAST:event_jComboBoxOntologyFileActionPerformed
 
+    private void jButtonTagDefaultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTagDefaultActionPerformed
+        jTextAreaRule.setText("_VB" + "\n"
+                + "_JJ _VB _NN" + "\n"
+                + "_NN _NN _NN" + "\n"
+                + "_NN _NN" + "\n"
+                + "_NN" + "\n"
+                + "_JJ _JJ _NN" + "\n"
+                + "_JJ _NN" + "\n"
+                + "_JJ _NN _NN" + "\n"
+                + "_RB _JJ" + "\n"
+                + "_RB _JJ _NN" + "\n"
+                + "_RB _VBN" + "\n"
+                + "_RB _RB _JJ" + "\n"
+                + "_NN _NN _JJ" + "\n"
+                + "_VBN _NN" + "\n"
+                + "_VBN _RB");
+    }//GEN-LAST:event_jButtonTagDefaultActionPerformed
+
     public void data() throws IOException{
     String value = ComboDataset.getSelectedItem().toString();
     //inputan = call.Inputan("resources/dataset/"+value+".txt");
@@ -2831,6 +2867,7 @@ public class Interface_TA extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonTagDefault;
     private javax.swing.JCheckBox jCheckBoxNpParser;
     private javax.swing.JCheckBox jCheckBoxTaxonomy;
     private javax.swing.JCheckBox jCheckBoxTypeDepedency;
